@@ -3,895 +3,718 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Vertriebswerk – B2B-Vertriebstools aus der Praxis. Für KAMs, Außendienst und Vertriebsteams die Salesforce nutzen und mehr daraus machen wollen.">
-  <meta name="keywords" content="B2B Vertrieb, KAM, Salesforce, Pipeline, Kaltakquise, Vertriebstools, DACH">
+  <meta name="description" content="Vertriebswerk – B2B-Vertriebstools aus der Praxis. Für KAMs, Außendienst und Vertriebsteams im DACH-Raum.">
+  <meta name="keywords" content="B2B Vertrieb, KAM, Salesforce, Pipeline, Kaltakquise, Vertriebstools, DACH, Excel Template">
   <meta property="og:title" content="Vertriebswerk – B2B-Vertriebstools aus der Praxis">
-  <meta property="og:description" content="7 praxiserprobte Tools für den deutschen B2B-Vertrieb. Kein Buzzword-Bingo – nur Werkzeuge die funktionieren.">
-  <meta property="og:type" content="website">
+  <meta property="og:description" content="7 praxiserprobte Tools für den deutschen B2B-Vertrieb. Sofort einsetzbar, auf Deutsch, ohne Abonnement.">
   <title>Vertriebswerk – B2B-Vertriebstools aus der Praxis</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --navy: #1B2A4A;
-      --navy-dark: #111d33;
-      --navy-mid: #243660;
-      --red: #C0392B;
-      --red-light: #e84a3a;
+      --ink: #1a1f2e;
+      --ink-mid: #2e3650;
+      --ink-soft: #4a5568;
+      --accent: #b83225;
+      --accent-warm: #d4402f;
+      --sand: #f7f4ef;
+      --sand-dark: #ede9e1;
       --white: #ffffff;
-      --off-white: #f4f5f7;
-      --light-gray: #e8ecf2;
-      --text: #1C2833;
-      --text-muted: #556070;
-      --font-display: 'Barlow Condensed', sans-serif;
-      --font-body: 'Barlow', sans-serif;
+      --border: #e2ddd6;
+      --border-dark: #c8c2b8;
+      --font-serif: 'DM Serif Display', serif;
+      --font-sans: 'DM Sans', sans-serif;
     }
 
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: var(--font-body);
-      color: var(--text);
+      font-family: var(--font-sans);
+      color: var(--ink);
       background: var(--white);
       overflow-x: hidden;
-      line-height: 1.6;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
     }
 
-    /* ── NOISE TEXTURE OVERLAY ── */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 0;
-      opacity: 0.4;
-    }
-
-    /* ── NAVIGATION ── */
+    /* ── NAV ── */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      background: rgba(27, 42, 74, 0.97);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      padding: 0 2rem;
-      height: 64px;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      height: 68px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      padding: 0 2.5rem;
+      transition: box-shadow 0.3s;
     }
 
-    .nav-logo {
+    nav.scrolled { box-shadow: 0 2px 20px rgba(26,31,46,0.08); }
+
+    .nav-brand {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
+      gap: 0.6rem;
       text-decoration: none;
     }
 
-    .logo-icon {
-      width: 36px;
-      height: 36px;
-      position: relative;
+    .brand-mark {
+      width: 32px;
+      height: 32px;
     }
 
-    .logo-text {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 1.5rem;
-      letter-spacing: 0.08em;
-      color: var(--white);
-      text-transform: uppercase;
+    .brand-name {
+      font-family: var(--font-sans);
+      font-weight: 600;
+      font-size: 1.05rem;
+      letter-spacing: 0.02em;
+      color: var(--ink);
     }
 
-    .logo-text span {
-      color: var(--red);
+    .brand-name span {
+      color: var(--accent);
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 2rem;
+      gap: 2.5rem;
       list-style: none;
     }
 
     .nav-links a {
-      color: rgba(255,255,255,0.7);
-      text-decoration: none;
-      font-family: var(--font-body);
+      font-size: 0.88rem;
       font-weight: 500;
-      font-size: 0.9rem;
-      letter-spacing: 0.04em;
+      color: var(--ink-soft);
+      text-decoration: none;
+      letter-spacing: 0.01em;
       transition: color 0.2s;
     }
 
-    .nav-links a:hover { color: var(--white); }
+    .nav-links a:hover { color: var(--ink); }
 
     .nav-cta {
-      background: var(--red) !important;
+      background: var(--ink) !important;
       color: var(--white) !important;
-      padding: 0.5rem 1.25rem;
-      border-radius: 2px;
+      padding: 0.5rem 1.2rem !important;
+      border-radius: 6px;
       font-weight: 600 !important;
       transition: background 0.2s !important;
+      font-size: 0.88rem !important;
     }
 
-    .nav-cta:hover { background: var(--red-light) !important; }
+    .nav-cta:hover { background: var(--ink-mid) !important; }
 
     /* ── HERO ── */
     .hero {
       min-height: 100vh;
-      background: var(--navy-dark);
+      background: var(--sand);
       display: flex;
       align-items: center;
+      padding: 9rem 2.5rem 5rem;
       position: relative;
       overflow: hidden;
-      padding: 8rem 2rem 4rem;
     }
 
-    .hero-grid {
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 85% 40%, rgba(184,50,37,0.06) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 15% 70%, rgba(26,31,46,0.04) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-lines {
       position: absolute;
       inset: 0;
       background-image:
-        linear-gradient(rgba(192,57,43,0.08) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(192,57,43,0.08) 1px, transparent 1px);
-      background-size: 60px 60px;
-      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+        linear-gradient(var(--border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      background-size: 80px 80px;
+      opacity: 0.3;
+      mask-image: radial-gradient(ellipse 100% 100% at 50% 50%, black 20%, transparent 75%);
     }
 
-    .hero-accent {
-      position: absolute;
-      top: 20%;
-      right: -5%;
-      width: 500px;
-      height: 500px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(192,57,43,0.12) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .hero-accent-2 {
-      position: absolute;
-      bottom: 10%;
-      left: -10%;
-      width: 400px;
-      height: 400px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(27,42,74,0.8) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .hero-content {
+    .hero-inner {
       max-width: 1100px;
       margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 6rem;
+      align-items: center;
       position: relative;
       z-index: 1;
     }
 
-    .hero-label {
+    .hero-eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      font-family: var(--font-display);
-      font-size: 0.85rem;
+      gap: 0.6rem;
+      font-size: 0.78rem;
       font-weight: 600;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--red);
-      margin-bottom: 1.5rem;
-      animation: fadeUp 0.6s ease both;
+      color: var(--accent);
+      margin-bottom: 1.75rem;
+      animation: fadeUp 0.7s ease both;
     }
 
-    .hero-label::before {
+    .hero-eyebrow::before {
       content: '';
       display: block;
-      width: 24px;
-      height: 2px;
-      background: var(--red);
+      width: 18px;
+      height: 1.5px;
+      background: currentColor;
+      border-radius: 2px;
     }
 
-    .hero-title {
-      font-family: var(--font-display);
-      font-size: clamp(3rem, 8vw, 6.5rem);
-      font-weight: 800;
-      line-height: 0.95;
-      color: var(--white);
-      text-transform: uppercase;
-      letter-spacing: -0.01em;
-      margin-bottom: 1.5rem;
-      animation: fadeUp 0.6s 0.1s ease both;
+    .hero-h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      line-height: 1.08;
+      color: var(--ink);
+      margin-bottom: 1.75rem;
+      animation: fadeUp 0.7s 0.08s ease both;
     }
 
-    .hero-title em {
-      font-style: normal;
-      color: var(--red);
-      position: relative;
+    .hero-h1 em {
+      font-style: italic;
+      color: var(--accent);
     }
 
-    .hero-title em::after {
-      content: '';
-      position: absolute;
-      bottom: 4px;
-      left: 0; right: 0;
-      height: 3px;
-      background: var(--red);
-      opacity: 0.4;
-    }
-
-    .hero-sub {
-      font-size: clamp(1rem, 2vw, 1.25rem);
-      color: rgba(255,255,255,0.6);
+    .hero-desc {
+      font-size: 1.05rem;
+      color: var(--ink-soft);
       font-weight: 300;
-      max-width: 560px;
-      line-height: 1.7;
-      margin-bottom: 3rem;
-      animation: fadeUp 0.6s 0.2s ease both;
+      max-width: 500px;
+      line-height: 1.75;
+      margin-bottom: 2.75rem;
+      animation: fadeUp 0.7s 0.16s ease both;
     }
 
-    .hero-actions {
+    .hero-btns {
       display: flex;
       gap: 1rem;
       flex-wrap: wrap;
-      animation: fadeUp 0.6s 0.3s ease both;
+      animation: fadeUp 0.7s 0.24s ease both;
     }
 
-    .btn-primary {
+    .btn-fill {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      background: var(--red);
+      background: var(--ink);
       color: var(--white);
-      padding: 0.9rem 2rem;
-      font-family: var(--font-display);
-      font-size: 1rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
+      padding: 0.85rem 1.75rem;
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      font-weight: 600;
       text-decoration: none;
-      border-radius: 2px;
+      border-radius: 8px;
       transition: all 0.2s;
-      position: relative;
-      overflow: hidden;
+      letter-spacing: 0.01em;
     }
 
-    .btn-primary::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(255,255,255,0.1);
-      transform: translateX(-100%);
-      transition: transform 0.3s;
+    .btn-fill:hover {
+      background: var(--ink-mid);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(26,31,46,0.2);
     }
 
-    .btn-primary:hover::after { transform: translateX(0); }
-    .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(192,57,43,0.4); }
-
-    .btn-secondary {
+    .btn-outline {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
       background: transparent;
-      color: rgba(255,255,255,0.8);
-      padding: 0.9rem 2rem;
-      font-family: var(--font-display);
-      font-size: 1rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
+      color: var(--ink);
+      padding: 0.85rem 1.75rem;
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      font-weight: 500;
       text-decoration: none;
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 2px;
+      border: 1.5px solid var(--border-dark);
+      border-radius: 8px;
       transition: all 0.2s;
     }
 
-    .btn-secondary:hover {
-      border-color: rgba(255,255,255,0.5);
-      color: var(--white);
-      background: rgba(255,255,255,0.05);
+    .btn-outline:hover {
+      border-color: var(--ink);
+      background: rgba(26,31,46,0.04);
     }
 
-    .hero-stats {
-      display: flex;
-      gap: 3rem;
-      margin-top: 4rem;
-      padding-top: 3rem;
-      border-top: 1px solid rgba(255,255,255,0.1);
-      animation: fadeUp 0.6s 0.4s ease both;
+    .hero-right {
+      animation: fadeUp 0.7s 0.32s ease both;
     }
 
-    .stat-item {
-      display: flex;
-      flex-direction: column;
+    .hero-stats-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 4px 32px rgba(26,31,46,0.06);
     }
 
-    .stat-number {
-      font-family: var(--font-display);
-      font-size: 2.5rem;
-      font-weight: 800;
-      color: var(--white);
-      line-height: 1;
-    }
-
-    .stat-number span { color: var(--red); }
-
-    .stat-label {
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.4);
-      letter-spacing: 0.08em;
+    .stats-title {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      margin-top: 0.25rem;
+      color: var(--ink-soft);
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+
+    .stat-box {
+      padding: 1.25rem;
+      background: var(--sand);
+      border-radius: 10px;
+      border: 1px solid var(--border);
+    }
+
+    .stat-val {
+      font-family: var(--font-serif);
+      font-size: 2.2rem;
+      color: var(--ink);
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+
+    .stat-val span { color: var(--accent); font-style: italic; }
+
+    .stat-lbl {
+      font-size: 0.78rem;
+      color: var(--ink-soft);
+      font-weight: 500;
+    }
+
+    .trust-row {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-top: 1.5rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.82rem;
+      color: var(--ink-soft);
+    }
+
+    .trust-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #22c55e;
+      flex-shrink: 0;
     }
 
     /* ── SECTIONS ── */
-    section { padding: 6rem 2rem; }
+    section { padding: 6rem 2.5rem; }
 
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
+    .container { max-width: 1100px; margin: 0 auto; }
 
-    .section-label {
-      font-family: var(--font-display);
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--red);
-      margin-bottom: 1rem;
-      display: flex;
+    .eyebrow {
+      display: inline-flex;
       align-items: center;
-      gap: 0.75rem;
+      gap: 0.6rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
     }
 
-    .section-label::before {
+    .eyebrow::before {
       content: '';
       display: block;
-      width: 20px;
-      height: 2px;
-      background: var(--red);
+      width: 16px;
+      height: 1.5px;
+      background: currentColor;
     }
 
-    .section-title {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      font-weight: 800;
-      text-transform: uppercase;
-      line-height: 1.05;
-      color: var(--navy);
-      margin-bottom: 1.5rem;
+    .section-h {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.12;
+      color: var(--ink);
+      margin-bottom: 1.25rem;
     }
 
-    .section-title em {
-      font-style: normal;
-      color: var(--red);
-    }
+    .section-h em { font-style: italic; color: var(--accent); }
 
-    .section-desc {
-      font-size: 1.05rem;
-      color: var(--text-muted);
-      max-width: 580px;
+    .section-p {
+      font-size: 1rem;
+      color: var(--ink-soft);
+      font-weight: 300;
+      max-width: 560px;
       line-height: 1.75;
     }
 
-    /* ── ABOUT / VALUE PROP ── */
-    .about {
-      background: var(--off-white);
-      position: relative;
+    /* ── PRODUCTS ── */
+    .products { background: var(--white); }
+
+    .products-top {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
     }
 
-    .about-grid {
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .pcard {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.75rem;
+      background: var(--white);
+      display: flex;
+      flex-direction: column;
+      transition: all 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pcard:hover {
+      border-color: var(--border-dark);
+      box-shadow: 0 8px 40px rgba(26,31,46,0.08);
+      transform: translateY(-3px);
+    }
+
+    .pcard.highlight {
+      background: var(--ink);
+      border-color: var(--ink);
+    }
+
+    .pcard-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.65rem;
+      border-radius: 4px;
+      margin-bottom: 1.25rem;
+    }
+
+    .tag-excel { background: rgba(26,31,46,0.06); color: var(--ink-soft); }
+    .tag-word { background: rgba(184,50,37,0.08); color: var(--accent); }
+    .tag-kit { background: rgba(184,50,37,0.12); color: var(--accent); }
+    .tag-dash { background: rgba(26,31,46,0.06); color: var(--ink-soft); }
+    .tag-top { background: var(--accent); color: var(--white); }
+
+    .pcard.highlight .tag-top { background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.9); }
+
+    .pcard-name {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      line-height: 1.2;
+      color: var(--ink);
+      margin-bottom: 0.4rem;
+    }
+
+    .pcard.highlight .pcard-name { color: var(--white); }
+
+    .pcard-sub {
+      font-size: 0.83rem;
+      color: var(--ink-soft);
+      margin-bottom: 1.25rem;
+      line-height: 1.5;
+    }
+
+    .pcard.highlight .pcard-sub { color: rgba(255,255,255,0.5); }
+
+    .pcard-feats {
+      list-style: none;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .pcard-feats li {
+      font-size: 0.83rem;
+      color: var(--ink-soft);
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+    }
+
+    .pcard-feats li::before {
+      content: '✓';
+      color: var(--accent);
+      font-size: 0.75rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .pcard.highlight .pcard-feats li { color: rgba(255,255,255,0.55); }
+    .pcard.highlight .pcard-feats li::before { color: rgba(255,120,100,0.9); }
+
+    .pcard-foot {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .pcard.highlight .pcard-foot { border-color: rgba(255,255,255,0.1); }
+
+    .pcard-price {
+      font-family: var(--font-serif);
+      font-size: 1.75rem;
+      color: var(--ink);
+      line-height: 1;
+    }
+
+    .pcard.highlight .pcard-price { color: var(--white); }
+
+    .pcard-fmt {
+      font-size: 0.72rem;
+      color: var(--ink-soft);
+      margin-top: 0.15rem;
+    }
+
+    .pcard.highlight .pcard-fmt { color: rgba(255,255,255,0.35); }
+
+    .pcard-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: var(--sand);
+      color: var(--ink);
+      border: 1px solid var(--border-dark);
+      padding: 0.55rem 1.1rem;
+      border-radius: 7px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .pcard-btn:hover {
+      background: var(--sand-dark);
+      transform: translateY(-1px);
+    }
+
+    .pcard.highlight .pcard-btn {
+      background: rgba(255,255,255,0.12);
+      border-color: rgba(255,255,255,0.2);
+      color: var(--white);
+    }
+
+    .pcard.highlight .pcard-btn:hover {
+      background: rgba(255,255,255,0.2);
+    }
+
+    /* ── WHY ── */
+    .why { background: var(--sand); }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .why-item {
+      padding: 2rem;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      transition: all 0.25s;
+    }
+
+    .why-item:hover {
+      box-shadow: 0 6px 28px rgba(26,31,46,0.07);
+      transform: translateY(-2px);
+    }
+
+    .why-num {
+      font-family: var(--font-serif);
+      font-size: 3rem;
+      color: var(--border-dark);
+      line-height: 1;
+      margin-bottom: 1rem;
+      font-style: italic;
+    }
+
+    .why-title {
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 0.6rem;
+      letter-spacing: 0.01em;
+    }
+
+    .why-text {
+      font-size: 0.88rem;
+      color: var(--ink-soft);
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    /* ── QUOTE / BANNER ── */
+    .quote-banner {
+      background: var(--ink);
+      padding: 5rem 2.5rem;
+      text-align: center;
+    }
+
+    .quote-text {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+      font-style: italic;
+      color: var(--white);
+      max-width: 700px;
+      margin: 0 auto 1.25rem;
+      line-height: 1.4;
+    }
+
+    .quote-text em { color: rgba(184,50,37,0.9); font-style: normal; }
+
+    .quote-attr {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ── AFFILIATE ── */
+    .affiliate { background: var(--white); }
+
+    .affiliate-inner {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 5rem;
       align-items: center;
     }
 
-    .about-visual {
-      position: relative;
-    }
-
-    .about-card {
-      background: var(--navy);
+    .affiliate-visual {
+      background: var(--sand);
+      border: 1px solid var(--border);
+      border-radius: 16px;
       padding: 2.5rem;
-      border-radius: 4px;
       position: relative;
       overflow: hidden;
     }
 
-    .about-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 4px;
-      height: 100%;
-      background: var(--red);
+    .affiliate-big {
+      font-family: var(--font-serif);
+      font-size: 6rem;
+      font-style: italic;
+      color: var(--ink);
+      line-height: 1;
+      margin-bottom: 0.5rem;
     }
 
-    .about-card-quote {
-      font-family: var(--font-display);
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: var(--white);
-      line-height: 1.4;
-      margin-bottom: 1rem;
-    }
+    .affiliate-big span { color: var(--accent); }
 
-    .about-card-attr {
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.4);
-      letter-spacing: 0.05em;
-    }
-
-    .about-card-2 {
-      background: var(--white);
-      border: 1px solid var(--light-gray);
-      padding: 1.5rem 2rem;
-      border-radius: 4px;
-      margin-top: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .about-card-2-icon {
-      width: 42px;
-      height: 42px;
-      background: var(--red);
-      border-radius: 2px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      font-size: 1.2rem;
-    }
-
-    .about-card-2-text {
+    .affiliate-sub {
       font-size: 0.9rem;
-      color: var(--text-muted);
-      line-height: 1.5;
-    }
-
-    .about-card-2-text strong {
-      display: block;
-      font-size: 1rem;
-      color: var(--text);
-      font-weight: 600;
-      margin-bottom: 0.1rem;
-    }
-
-    .values-list {
-      list-style: none;
-      margin-top: 2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .values-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.75rem;
-      font-size: 0.95rem;
-      color: var(--text-muted);
+      color: var(--ink-soft);
+      margin-bottom: 2rem;
       line-height: 1.6;
     }
 
-    .values-list li::before {
-      content: '→';
-      color: var(--red);
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      font-size: 0.88rem;
+      color: var(--ink-soft);
+      line-height: 1.5;
+    }
+
+    .step-n {
+      width: 24px;
+      height: 24px;
+      background: var(--ink);
+      color: var(--white);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
       font-weight: 700;
       flex-shrink: 0;
       margin-top: 0.05rem;
     }
 
-    /* ── PRODUCTS ── */
-    .products {
-      background: var(--white);
-    }
-
-    .products-header {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      margin-bottom: 3.5rem;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .product-card {
-      background: var(--white);
-      border: 1px solid var(--light-gray);
-      border-radius: 4px;
-      padding: 2rem;
-      position: relative;
-      overflow: hidden;
-      transition: all 0.3s;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .product-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      background: var(--navy);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.3s;
-    }
-
-    .product-card:hover {
-      border-color: var(--navy);
-      box-shadow: 0 12px 40px rgba(27,42,74,0.12);
-      transform: translateY(-3px);
-    }
-
-    .product-card:hover::before { transform: scaleX(1); }
-
-    .product-card.featured {
-      background: var(--navy);
-      border-color: var(--navy);
-    }
-
-    .product-card.featured::before {
-      background: var(--red);
-      transform: scaleX(1);
-    }
-
-    .product-badge {
-      display: inline-block;
-      font-family: var(--font-display);
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      padding: 0.2rem 0.6rem;
-      border-radius: 2px;
-      margin-bottom: 1.25rem;
-    }
-
-    .badge-kit { background: rgba(192,57,43,0.1); color: var(--red); }
-    .badge-template { background: rgba(27,42,74,0.08); color: var(--navy); }
-    .badge-bundle { background: var(--red); color: var(--white); }
-    .badge-featured { background: rgba(192,57,43,0.2); color: #ff8070; }
-
-    .product-card.featured .badge-featured { background: rgba(192,57,43,0.3); color: #ff9080; }
-
-    .product-title {
-      font-family: var(--font-display);
-      font-size: 1.4rem;
-      font-weight: 700;
-      line-height: 1.2;
-      color: var(--navy);
-      margin-bottom: 0.5rem;
-    }
-
-    .product-card.featured .product-title { color: var(--white); }
-
-    .product-subtitle {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      margin-bottom: 1rem;
-      line-height: 1.5;
-    }
-
-    .product-card.featured .product-subtitle { color: rgba(255,255,255,0.5); }
-
-    .product-features {
-      list-style: none;
-      margin-bottom: 1.5rem;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-    }
-
-    .product-features li {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .product-features li::before {
-      content: '✓';
-      color: var(--red);
-      font-weight: 700;
-      font-size: 0.8rem;
-    }
-
-    .product-card.featured .product-features li { color: rgba(255,255,255,0.6); }
-    .product-card.featured .product-features li::before { color: #ff7060; }
-
-    .product-footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: auto;
-      padding-top: 1.25rem;
-      border-top: 1px solid var(--light-gray);
-    }
-
-    .product-card.featured .product-footer { border-color: rgba(255,255,255,0.1); }
-
-    .product-price {
-      font-family: var(--font-display);
-      font-size: 1.6rem;
-      font-weight: 800;
-      color: var(--navy);
-      letter-spacing: -0.01em;
-    }
-
-    .product-card.featured .product-price { color: var(--white); }
-
-    .product-format {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      letter-spacing: 0.05em;
-    }
-
-    .product-card.featured .product-format { color: rgba(255,255,255,0.4); }
-
-    .product-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      background: var(--navy);
-      color: var(--white);
-      padding: 0.55rem 1.1rem;
-      font-family: var(--font-display);
-      font-size: 0.85rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      text-decoration: none;
-      border-radius: 2px;
-      transition: all 0.2s;
-    }
-
-    .product-btn:hover { background: var(--navy-mid); transform: translateY(-1px); }
-
-    .product-card.featured .product-btn {
-      background: var(--red);
-    }
-
-    .product-card.featured .product-btn:hover { background: var(--red-light); }
-
-    /* ── WHY SECTION ── */
-    .why {
-      background: var(--navy-dark);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .why::before {
-      content: 'VERTRIEBSWERK';
-      position: absolute;
-      font-family: var(--font-display);
-      font-size: clamp(6rem, 15vw, 14rem);
-      font-weight: 800;
-      color: rgba(255,255,255,0.02);
-      white-space: nowrap;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      pointer-events: none;
-      letter-spacing: 0.05em;
-    }
-
-    .why .section-title { color: var(--white); }
-    .why .section-desc { color: rgba(255,255,255,0.5); }
-
-    .why-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      margin-top: 3.5rem;
-    }
-
-    .why-item {
-      padding: 2rem;
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 4px;
-      transition: all 0.3s;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .why-item::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 3px;
-      height: 0;
-      background: var(--red);
-      transition: height 0.3s;
-    }
-
-    .why-item:hover { border-color: rgba(255,255,255,0.15); background: rgba(255,255,255,0.03); }
-    .why-item:hover::before { height: 100%; }
-
-    .why-number {
-      font-family: var(--font-display);
-      font-size: 3.5rem;
-      font-weight: 800;
-      color: rgba(255,255,255,0.06);
-      line-height: 1;
-      margin-bottom: 1rem;
-    }
-
-    .why-title {
-      font-family: var(--font-display);
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: var(--white);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 0.75rem;
-    }
-
-    .why-text {
-      font-size: 0.9rem;
-      color: rgba(255,255,255,0.45);
-      line-height: 1.7;
-    }
-
-    /* ── AFFILIATE ── */
-    .affiliate {
-      background: var(--off-white);
-    }
-
-    .affiliate-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-    }
-
-    .affiliate-box {
-      background: var(--navy);
-      padding: 3rem;
-      border-radius: 4px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .affiliate-box::after {
-      content: '40%';
-      position: absolute;
-      font-family: var(--font-display);
-      font-size: 8rem;
-      font-weight: 800;
-      color: rgba(255,255,255,0.04);
-      bottom: -1rem;
-      right: 1rem;
-      line-height: 1;
-      pointer-events: none;
-    }
-
-    .affiliate-box-label {
-      font-family: var(--font-display);
-      font-size: 0.8rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--red);
-      margin-bottom: 0.75rem;
-    }
-
-    .affiliate-box-title {
-      font-family: var(--font-display);
-      font-size: 2.5rem;
-      font-weight: 800;
-      color: var(--white);
-      text-transform: uppercase;
-      line-height: 1.1;
-      margin-bottom: 1rem;
-    }
-
-    .affiliate-box-title span { color: var(--red); }
-
-    .affiliate-box-text {
-      font-size: 0.9rem;
-      color: rgba(255,255,255,0.5);
-      line-height: 1.7;
-      margin-bottom: 2rem;
-    }
-
-    .affiliate-steps {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-
-    .affiliate-steps li {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.75rem;
-      font-size: 0.9rem;
-      color: rgba(255,255,255,0.6);
-    }
-
-    .step-num {
-      width: 22px;
-      height: 22px;
-      background: var(--red);
-      border-radius: 2px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--font-display);
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: var(--white);
-      flex-shrink: 0;
-      margin-top: 0.1rem;
-    }
-
     /* ── CONTACT ── */
     .contact {
-      background: var(--white);
-      padding: 5rem 2rem;
-    }
-
-    .contact-inner {
-      max-width: 600px;
-      margin: 0 auto;
+      background: var(--sand);
       text-align: center;
+      padding: 6rem 2.5rem;
     }
 
-    .contact-title {
-      font-family: var(--font-display);
+    .contact-inner { max-width: 540px; margin: 0 auto; }
+
+    .contact-h {
+      font-family: var(--font-serif);
       font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 800;
-      text-transform: uppercase;
-      color: var(--navy);
+      color: var(--ink);
       margin-bottom: 1rem;
+      line-height: 1.15;
     }
 
-    .contact-title em { font-style: normal; color: var(--red); }
+    .contact-h em { font-style: italic; color: var(--accent); }
 
-    .contact-text {
-      font-size: 1rem;
-      color: var(--text-muted);
-      line-height: 1.7;
+    .contact-p {
+      font-size: 0.95rem;
+      color: var(--ink-soft);
+      font-weight: 300;
+      line-height: 1.75;
       margin-bottom: 2rem;
     }
 
-    .contact-email {
+    .contact-link {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      font-family: var(--font-display);
-      font-size: 1.1rem;
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      color: var(--navy);
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--ink);
       text-decoration: none;
-      border-bottom: 2px solid var(--red);
+      border-bottom: 1.5px solid var(--accent);
       padding-bottom: 2px;
       transition: color 0.2s;
     }
 
-    .contact-email:hover { color: var(--red); }
+    .contact-link:hover { color: var(--accent); }
 
     /* ── FOOTER ── */
     footer {
-      background: var(--navy-dark);
-      padding: 3rem 2rem;
-      border-top: 1px solid rgba(255,255,255,0.06);
+      background: var(--ink);
+      padding: 2.5rem;
     }
 
     .footer-inner {
@@ -905,15 +728,14 @@
     }
 
     .footer-brand {
-      font-family: var(--font-display);
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: var(--white);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
+      font-family: var(--font-sans);
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.7);
+      letter-spacing: 0.02em;
     }
 
-    .footer-brand span { color: var(--red); }
+    .footer-brand span { color: var(--accent); }
 
     .footer-links {
       display: flex;
@@ -922,164 +744,119 @@
     }
 
     .footer-links a {
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       color: rgba(255,255,255,0.35);
       text-decoration: none;
       transition: color 0.2s;
-      letter-spacing: 0.03em;
     }
 
-    .footer-links a:hover { color: rgba(255,255,255,0.7); }
+    .footer-links a:hover { color: rgba(255,255,255,0.65); }
 
     .footer-copy {
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       color: rgba(255,255,255,0.2);
-      letter-spacing: 0.04em;
     }
 
     /* ── ANIMATIONS ── */
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
+      from { opacity: 0; transform: translateY(18px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
     .reveal {
       opacity: 0;
-      transform: translateY(24px);
+      transform: translateY(20px);
       transition: opacity 0.6s ease, transform 0.6s ease;
     }
 
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .reveal.in { opacity: 1; transform: none; }
 
-    /* ── SVG LOGO ── */
-    .logo-svg {
-      width: 36px;
-      height: 36px;
-    }
+    .reveal-d1 { transition-delay: 0.05s; }
+    .reveal-d2 { transition-delay: 0.12s; }
+    .reveal-d3 { transition-delay: 0.19s; }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 768px) {
+    @media (max-width: 860px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .hero-right { display: none; }
       .nav-links { display: none; }
-      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
       .why-grid { grid-template-columns: 1fr; }
       .affiliate-inner { grid-template-columns: 1fr; }
-      .hero-stats { gap: 2rem; flex-wrap: wrap; }
-      .products-header { flex-direction: column; align-items: flex-start; }
+      .products-top { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
 <body>
 
   <!-- NAVIGATION -->
-  <nav>
-    <a href="#" class="nav-logo">
-      <svg class="logo-svg" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="18" cy="18" r="17" stroke="#C0392B" stroke-width="1.5" opacity="0.6"/>
-        <circle cx="18" cy="18" r="11" stroke="#C0392B" stroke-width="1" opacity="0.4"/>
-        <line x1="18" y1="1" x2="18" y2="35" stroke="#C0392B" stroke-width="0.8" opacity="0.3"/>
-        <line x1="1" y1="18" x2="35" y2="18" stroke="#C0392B" stroke-width="0.8" opacity="0.3"/>
-        <ellipse cx="18" cy="18" rx="8" ry="17" stroke="#1B2A4A" stroke-width="1" opacity="0.5"/>
-        <polygon points="18,8 22,20 18,32 14,20" fill="#C0392B" opacity="0.9"/>
-        <polygon points="18,8 22,20 18,17" fill="#1B2A4A" opacity="0.5"/>
+  <nav id="nav">
+    <a href="#" class="nav-brand">
+      <svg class="brand-mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="32" height="32" rx="8" fill="#1a1f2e"/>
+        <circle cx="16" cy="16" r="11" stroke="#b83225" stroke-width="1.2" opacity="0.6"/>
+        <circle cx="16" cy="16" r="6" stroke="#b83225" stroke-width="0.8" opacity="0.4"/>
+        <line x1="16" y1="5" x2="16" y2="27" stroke="rgba(255,255,255,0.15)" stroke-width="0.8"/>
+        <line x1="5" y1="16" x2="27" y2="16" stroke="rgba(255,255,255,0.15)" stroke-width="0.8"/>
+        <polygon points="16,7 19.5,18 16,26 12.5,18" fill="#b83225" opacity="0.85"/>
+        <polygon points="16,7 19.5,18 16,16" fill="rgba(255,255,255,0.15)"/>
       </svg>
-      <span class="logo-text">Vertriebs<span>werk</span></span>
+      <span class="brand-name">Vertriebs<span>werk</span></span>
     </a>
     <ul class="nav-links">
       <li><a href="#produkte">Produkte</a></li>
       <li><a href="#warum">Warum wir</a></li>
       <li><a href="#affiliate">Affiliate</a></li>
       <li><a href="#kontakt">Kontakt</a></li>
-      <li><a href="https://gumroad.com/vertriebswerk" target="_blank" class="nav-cta">Zum Shop →</a></li>
+      <li><a href="https://vertriebswerk.gumroad.com" target="_blank" class="nav-cta">Shop →</a></li>
     </ul>
   </nav>
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-grid"></div>
-    <div class="hero-accent"></div>
-    <div class="hero-accent-2"></div>
-    <div class="hero-content">
-      <div class="hero-label">B2B-Vertriebstools aus der Praxis</div>
-      <h1 class="hero-title">
-        Kein Theorie-<br>
-        bingo. Nur<br>
-        <em>Werkzeuge</em><br>
-        die wirken.
-      </h1>
-      <p class="hero-sub">
-        7 praxiserprobte Tools für KAMs, Außendienstler und Vertriebsteams 
-        im deutschsprachigen Raum – entstanden aus 10+ Jahren B2B-Vertriebspraxis.
-      </p>
-      <div class="hero-actions">
-        <a href="#produkte" class="btn-primary">Alle Produkte ansehen →</a>
-        <a href="https://gumroad.com/vertriebswerk" target="_blank" class="btn-secondary">Zum Gumroad-Shop</a>
-      </div>
-      <div class="hero-stats">
-        <div class="stat-item">
-          <div class="stat-number">7<span>×</span></div>
-          <div class="stat-label">Praxistools</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">10<span>+</span></div>
-          <div class="stat-label">Jahre Erfahrung</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">40<span>%</span></div>
-          <div class="stat-label">Affiliate-Provision</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">DACH</div>
-          <div class="stat-label">Zielmarkt</div>
+    <div class="hero-bg"></div>
+    <div class="hero-lines"></div>
+    <div class="hero-inner">
+      <div>
+        <div class="hero-eyebrow">B2B-Vertriebstools · DACH</div>
+        <h1 class="hero-h1">
+          Werkzeuge die<br>
+          im Vertrieb<br>
+          <em>wirklich</em> helfen.
+        </h1>
+        <p class="hero-desc">
+          7 praxiserprobte Tools für KAMs, Außendienstler und Vertriebsteams
+          im deutschsprachigen Raum. Sofort einsetzbar, ohne Abonnement.
+        </p>
+        <div class="hero-btns">
+          <a href="#produkte" class="btn-fill">Alle Produkte →</a>
+          <a href="https://vertriebswerk.gumroad.com" target="_blank" class="btn-outline">Zum Shop</a>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="about" id="warum">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-visual reveal">
-          <div class="about-card">
-            <div class="about-card-quote">
-              "Vertrieb ist kein Talent – es ist ein Prozess. Wer den Prozess kennt, verkauft."
+      <div class="hero-right">
+        <div class="hero-stats-card">
+          <div class="stats-title">Vertriebswerk auf einen Blick</div>
+          <div class="stats-grid">
+            <div class="stat-box">
+              <div class="stat-val">7<span>×</span></div>
+              <div class="stat-lbl">Praxistools</div>
             </div>
-            <div class="about-card-attr">— Vertriebswerk Grundsatz</div>
-          </div>
-          <div class="about-card-2">
-            <div class="about-card-2-icon">📋</div>
-            <div class="about-card-2-text">
-              <strong>Sofort einsetzbar</strong>
-              Gelbe Felder ausfüllen, alles andere läuft automatisch.
+            <div class="stat-box">
+              <div class="stat-val">10<span>+</span></div>
+              <div class="stat-lbl">Jahre B2B-Praxis</div>
             </div>
-          </div>
-          <div class="about-card-2">
-            <div class="about-card-2-icon">🇩🇪</div>
-            <div class="about-card-2-text">
-              <strong>DACH-spezifisch</strong>
-              Auf Deutsch, für den deutschen Mittelstand gemacht.
+            <div class="stat-box">
+              <div class="stat-val">40<span>%</span></div>
+              <div class="stat-lbl">Affiliate-Provision</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-val"><span>DE</span></div>
+              <div class="stat-lbl">DACH-Markt</div>
             </div>
           </div>
-        </div>
-        <div class="reveal">
-          <div class="section-label">Über Vertriebswerk</div>
-          <h2 class="section-title">
-            Aus der <em>Praxis</em> –<br>für die Praxis.
-          </h2>
-          <p class="section-desc">
-            Vertriebswerk entwickelt Tools und Templates die im echten Vertriebsalltag funktionieren. 
-            Keine Powerpoint-Folien, keine generischen Vorlagen, kein Berater-Speak. 
-            Nur strukturierte Werkzeuge für die wichtigsten Vertriebssituationen.
-          </p>
-          <ul class="values-list">
-            <li>Alle Produkte entstanden aus konkreten Alltagsproblemen im B2B-Vertrieb</li>
-            <li>Von KAMs, Außendienstlern und Vertriebsleitern entwickelt und getestet</li>
-            <li>Editierbar, anpassbar, sofort nutzbar – ohne Implementierungsaufwand</li>
-            <li>Speziell für den deutschsprachigen Raum konzipiert</li>
-          </ul>
+          <div class="trust-row">
+            <div class="trust-dot"></div>
+            Alle Produkte sofort nach Kauf verfügbar · Einmalzahlung
+          </div>
         </div>
       </div>
     </div>
@@ -1088,155 +865,148 @@
   <!-- PRODUCTS -->
   <section class="products" id="produkte">
     <div class="container">
-      <div class="products-header reveal">
+      <div class="products-top reveal">
         <div>
-          <div class="section-label">Das Portfolio</div>
-          <h2 class="section-title">7 Tools.<br><em>Ein System.</em></h2>
+          <div class="eyebrow">Das Portfolio</div>
+          <h2 class="section-h">7 Tools.<br><em>Ein System.</em></h2>
         </div>
-        <p class="section-desc" style="max-width: 360px;">
-          Von der Pipeline-Pflege bis zum Investorengespräch – alle Tools 
-          decken kritische Phasen im B2B-Vertriebsprozess ab.
+        <p class="section-p">
+          Vom Pipeline-Cleanup bis zur Investor-Vorbereitung –
+          alle kritischen Phasen des B2B-Vertriebs abgedeckt.
         </p>
       </div>
       <div class="products-grid">
 
-        <!-- Produkt 1 -->
-        <div class="product-card reveal">
-          <span class="product-badge badge-kit">Excel-Kit</span>
-          <div class="product-title">B2B Pipeline Cleanup Kit</div>
-          <div class="product-subtitle">Salesforce-Pipelines bereinigen & Forecast-Qualität steigern</div>
-          <ul class="product-features">
+        <div class="pcard reveal">
+          <span class="pcard-tag tag-excel">Excel</span>
+          <div class="pcard-name">B2B Pipeline Cleanup Kit</div>
+          <div class="pcard-sub">Salesforce-Pipelines bereinigen & Forecast-Qualität steigern</div>
+          <ul class="pcard-feats">
             <li>Opportunity Standard-Vorlage</li>
             <li>Forecast & Auslastungsplanung</li>
             <li>Monatlicher Review-Prozess</li>
-            <li>Naming-Konventionen & Stage-Definitionen</li>
+            <li>Stage-Definitionen & Naming-Regeln</li>
           </ul>
-          <div class="product-footer">
+          <div class="pcard-foot">
             <div>
-              <div class="product-price">19 €</div>
-              <div class="product-format">Excel (.xlsx)</div>
+              <div class="pcard-price">19 €</div>
+              <div class="pcard-fmt">Excel (.xlsx)</div>
             </div>
-            <a href="https://gumroad.com/vertriebswerk" target="_blank" class="product-btn">Kaufen →</a>
+            <a href="https://vertriebswerk.gumroad.com/l/b2b-pipeline-cleanup-kit" target="_blank" class="pcard-btn">Kaufen →</a>
           </div>
         </div>
 
-        <!-- Produkt 2 -->
-        <div class="product-card reveal">
-          <span class="product-badge badge-template">Word-Template</span>
-          <div class="product-title">KAM Jahresgespräch Template</div>
-          <div class="product-subtitle">Vorbereitung · Protokoll · Nachbereitung</div>
-          <ul class="product-features">
+        <div class="pcard reveal reveal-d1">
+          <span class="pcard-tag tag-word">Word</span>
+          <div class="pcard-name">KAM Jahresgespräch Template</div>
+          <div class="pcard-sub">Vorbereitung · Protokoll · Nachbereitung</div>
+          <ul class="pcard-feats">
             <li>Vorbereitungsbogen mit Umsatz-Analyse</li>
             <li>Gesprächsprotokoll mit Ampel-Bewertung</li>
             <li>Maßnahmen-Tabelle mit Owner & Termin</li>
             <li>8-Punkte CRM-Update-Checkliste</li>
           </ul>
-          <div class="product-footer">
+          <div class="pcard-foot">
             <div>
-              <div class="product-price">19 €</div>
-              <div class="product-format">Word (.docx)</div>
+              <div class="pcard-price">19 €</div>
+              <div class="pcard-fmt">Word (.docx)</div>
             </div>
-            <a href="https://gumroad.com/vertriebswerk" target="_blank" class="product-btn">Kaufen →</a>
+            <a href="https://vertriebswerk.gumroad.com/l/kam-jahresgespraech-template" target="_blank" class="pcard-btn">Kaufen →</a>
           </div>
         </div>
 
-        <!-- Produkt 3 -->
-        <div class="product-card featured reveal">
-          <span class="product-badge badge-featured">⭐ Kit</span>
-          <div class="product-title">Kaltakquise Blueprint</div>
-          <div class="product-subtitle">E-Mail-Sequenzen · Telefonskript · Einwandbehandlung</div>
-          <ul class="product-features">
+        <div class="pcard highlight reveal reveal-d2">
+          <span class="pcard-tag tag-top">⭐ Bestseller</span>
+          <div class="pcard-name">Kaltakquise Blueprint</div>
+          <div class="pcard-sub">E-Mail-Sequenzen · Telefonskript · Einwandbehandlung</div>
+          <ul class="pcard-feats">
             <li>3 Mail-Vorlagen als Serienbrief-System</li>
-            <li>Personalisierung per Merge-Felder</li>
+            <li>Merge-Felder für Personalisierung</li>
             <li>Telefon-Einstiegsskript (7 Phasen)</li>
             <li>5 Einwände mit Muster-Antworten</li>
           </ul>
-          <div class="product-footer">
+          <div class="pcard-foot">
             <div>
-              <div class="product-price">29 €</div>
-              <div class="product-format">Word + Excel Kit</div>
+              <div class="pcard-price">29 €</div>
+              <div class="pcard-fmt">Word + Excel Kit</div>
             </div>
-            <a href="https://gumroad.com/vertriebswerk" target="_blank" class="product-btn">Kaufen →</a>
+            <a href="https://vertriebswerk.gumroad.com/l/kaltakquise-blueprint-b2b" target="_blank" class="pcard-btn">Kaufen →</a>
           </div>
         </div>
 
-        <!-- Produkt 4 -->
-        <div class="product-card reveal">
-          <span class="product-badge badge-kit">Excel-Kit</span>
-          <div class="product-title">Ausschreibungs-Check</div>
-          <div class="product-subtitle">GO / NO-GO · Kalkulation · Angebotsvorbereitung</div>
-          <ul class="product-features">
+        <div class="pcard reveal">
+          <span class="pcard-tag tag-excel">Excel</span>
+          <div class="pcard-name">Ausschreibungs-Check</div>
+          <div class="pcard-sub">GO / NO-GO · Kalkulation · Angebotsvorbereitung</div>
+          <ul class="pcard-feats">
             <li>Block 1: GO/NO-GO (16 Prüfpunkte)</li>
-            <li>Block 2–4: Anforderung, Kalkulation, Angebot</li>
-            <li>Kurzform-Kalkulationstabelle</li>
-            <li>Block 5: Post-Mortem-Analyse</li>
+            <li>Anforderungsanalyse & Kalkulation</li>
+            <li>Preisuntergrenze-Tabelle</li>
+            <li>Post-Mortem nach Vergabe</li>
           </ul>
-          <div class="product-footer">
+          <div class="pcard-foot">
             <div>
-              <div class="product-price">39 €</div>
-              <div class="product-format">Excel (.xlsx)</div>
+              <div class="pcard-price">39 €</div>
+              <div class="pcard-fmt">Excel (.xlsx)</div>
             </div>
-            <a href="https://gumroad.com/vertriebswerk" target="_blank" class="product-btn">Kaufen →</a>
+            <a href="https://vertriebswerk.gumroad.com/l/ausschreibungs-check-b2b-mittelstand" target="_blank" class="pcard-btn">Kaufen →</a>
           </div>
         </div>
 
-        <!-- Produkt 5 -->
-        <div class="product-card reveal">
-          <span class="product-badge badge-kit">Kit</span>
-          <div class="product-title">First Sales Playbook</div>
-          <div class="product-subtitle">B2B-Vertrieb für Gründer & Einsteiger</div>
-          <ul class="product-features">
+        <div class="pcard reveal reveal-d1">
+          <span class="pcard-tag tag-kit">Kit</span>
+          <div class="pcard-name">First Sales Playbook</div>
+          <div class="pcard-sub">B2B-Vertrieb für Gründer & Einsteiger</div>
+          <ul class="pcard-feats">
             <li>ICP-Definition & Value Proposition</li>
             <li>Erster Outreach & Gesprächsführung</li>
-            <li>Erstes Angebot schreiben & Preisfindung</li>
+            <li>Erstes Angebot & Preisfindung</li>
             <li>CRM-Einstieg ohne teure Tools</li>
           </ul>
-          <div class="product-footer">
+          <div class="pcard-foot">
             <div>
-              <div class="product-price">24 €</div>
-              <div class="product-format">Word + Excel Kit</div>
+              <div class="pcard-price">24 €</div>
+              <div class="pcard-fmt">Word + Excel Kit</div>
             </div>
-            <a href="https://gumroad.com/vertriebswerk" target="_blank" class="product-btn">Kaufen →</a>
+            <a href="https://vertriebswerk.gumroad.com/l/first-sales-playbook-b2b" target="_blank" class="pcard-btn">Kaufen →</a>
           </div>
         </div>
 
-        <!-- Produkt 6 -->
-        <div class="product-card reveal">
-          <span class="product-badge badge-template">Kit</span>
-          <div class="product-title">Investor Readiness Check</div>
-          <div class="product-subtitle">8 Bereiche · Selbstbewertung · Pitch-Vorbereitung</div>
-          <ul class="product-features">
+        <div class="pcard reveal reveal-d2">
+          <span class="pcard-tag tag-kit">Kit</span>
+          <div class="pcard-name">Investor Readiness Check</div>
+          <div class="pcard-sub">8 Bereiche · Selbstbewertung · Pitch-Vorbereitung</div>
+          <ul class="pcard-feats">
             <li>80+ Prüfpunkte in 8 Investor-Bereichen</li>
             <li>Score-Tracking mit Gesamtbewertung</li>
             <li>Aktionsplan für identifizierte Lücken</li>
             <li>Die 3 härtesten Investor-Fragen</li>
           </ul>
-          <div class="product-footer">
+          <div class="pcard-foot">
             <div>
-              <div class="product-price">34 €</div>
-              <div class="product-format">Word + Excel Kit</div>
+              <div class="pcard-price">34 €</div>
+              <div class="pcard-fmt">Word + Excel Kit</div>
             </div>
-            <a href="https://gumroad.com/vertriebswerk" target="_blank" class="product-btn">Kaufen →</a>
+            <a href="https://vertriebswerk.gumroad.com/l/investor-readiness-check-startup" target="_blank" class="pcard-btn">Kaufen →</a>
           </div>
         </div>
 
-        <!-- Produkt 7 -->
-        <div class="product-card reveal">
-          <span class="product-badge badge-kit">Dashboard</span>
-          <div class="product-title">Vertriebscontrolling Dashboard</div>
-          <div class="product-subtitle">DB-Rechnung · CAC & Payback · Pipeline · Forecast</div>
-          <ul class="product-features">
+        <div class="pcard reveal">
+          <span class="pcard-tag tag-dash">Dashboard</span>
+          <div class="pcard-name">Vertriebscontrolling Dashboard</div>
+          <div class="pcard-sub">DB-Rechnung · CAC & Payback · Pipeline · Forecast</div>
+          <ul class="pcard-feats">
             <li>DB I & II pro Kunde mit Ampel-Bewertung</li>
             <li>CAC, LTV & Payback-Analyse</li>
             <li>Gewichteter Pipeline-Forecast</li>
             <li>Top-Flop-Analyse Kunden & Regionen</li>
           </ul>
-          <div class="product-footer">
+          <div class="pcard-foot">
             <div>
-              <div class="product-price">39 €</div>
-              <div class="product-format">Excel (.xlsx)</div>
+              <div class="pcard-price">39 €</div>
+              <div class="pcard-fmt">Excel (.xlsx)</div>
             </div>
-            <a href="https://gumroad.com/vertriebswerk" target="_blank" class="product-btn">Kaufen →</a>
+            <a href="https://vertriebswerk.gumroad.com/l/vertriebscontrolling-dashboard-b2b" target="_blank" class="pcard-btn">Kaufen →</a>
           </div>
         </div>
 
@@ -1244,63 +1014,53 @@
     </div>
   </section>
 
+  <!-- QUOTE BANNER -->
+  <div class="quote-banner">
+    <p class="quote-text">
+      "Vertrieb ist kein Talent – es ist ein Prozess.<br>
+      Wer den Prozess kennt, <em>verkauft.</em>"
+    </p>
+    <div class="quote-attr">— Vertriebswerk Grundsatz</div>
+  </div>
+
   <!-- WHY -->
-  <section class="why">
+  <section class="why" id="warum">
     <div class="container">
       <div class="reveal">
-        <div class="section-label" style="color: var(--red);">Warum Vertriebswerk</div>
-        <h2 class="section-title" style="color: var(--white);">
-          Werkzeuge die<br><em>wirklich</em> helfen.
-        </h2>
+        <div class="eyebrow">Warum Vertriebswerk</div>
+        <h2 class="section-h">Aus der Praxis.<br><em>Für die Praxis.</em></h2>
+        <p class="section-p">Keine Theorie, kein Berater-Speak – nur Werkzeuge die im echten Vertriebsalltag entstanden sind.</p>
       </div>
       <div class="why-grid">
         <div class="why-item reveal">
-          <div class="why-number">01</div>
-          <div class="why-title">Aus der Praxis</div>
-          <div class="why-text">
-            Keine Theorie. Alle Produkte entstanden aus konkreten Alltagsproblemen 
-            im B2B-Vertrieb – KAM, Innendienst, LogTech, IoT, Automotive.
-          </div>
+          <div class="why-num">01</div>
+          <div class="why-title">Aus echter Vertriebspraxis</div>
+          <div class="why-text">Alle Produkte entstanden aus konkreten Alltagsproblemen im B2B-Vertrieb – KAM, Innendienst, LogTech, IoT, Automotive.</div>
         </div>
-        <div class="why-item reveal">
-          <div class="why-number">02</div>
-          <div class="why-title">Sofort nutzbar</div>
-          <div class="why-text">
-            Keine Einarbeitung, kein Consulting-Mandat. Datei öffnen, gelbe 
-            Felder ausfüllen, loslegen. Maximale Zeit bis zur ersten Anwendung: 5 Minuten.
-          </div>
+        <div class="why-item reveal reveal-d1">
+          <div class="why-num">02</div>
+          <div class="why-title">Sofort einsetzbar</div>
+          <div class="why-text">Keine Einarbeitung. Datei öffnen, gelbe Felder befüllen, loslegen. Maximale Zeit bis zur ersten Nutzung: 5 Minuten.</div>
         </div>
-        <div class="why-item reveal">
-          <div class="why-number">03</div>
+        <div class="why-item reveal reveal-d2">
+          <div class="why-num">03</div>
           <div class="why-title">DACH-spezifisch</div>
-          <div class="why-text">
-            Auf Deutsch, für den deutschen Markt. Keine amerikanischen 
-            Frameworks die im Mittelstand-Alltag nicht funktionieren.
-          </div>
+          <div class="why-text">Auf Deutsch, für den deutschen Markt gemacht. Keine amerikanischen Frameworks die im Mittelstand nicht funktionieren.</div>
         </div>
         <div class="why-item reveal">
-          <div class="why-number">04</div>
-          <div class="why-title">Kein Abo</div>
-          <div class="why-text">
-            Einmal kaufen, dauerhaft nutzen. Keine monatlichen Kosten, 
-            keine Cloud-Abhängigkeit, keine versteckten Gebühren.
-          </div>
+          <div class="why-num">04</div>
+          <div class="why-title">Einmalzahlung, kein Abo</div>
+          <div class="why-text">Einmal kaufen, dauerhaft nutzen. Keine monatlichen Kosten, keine Cloud-Abhängigkeit, keine versteckten Gebühren.</div>
         </div>
-        <div class="why-item reveal">
-          <div class="why-number">05</div>
+        <div class="why-item reveal reveal-d1">
+          <div class="why-num">05</div>
           <div class="why-title">Vollständig editierbar</div>
-          <div class="why-text">
-            Alle Produkte in Standard-Formaten (Word, Excel). 
-            Anpassung an eigene CI, eigene Prozesse, eigene Sprache.
-          </div>
+          <div class="why-text">Word und Excel – Standardformate die jeder kennt. Anpassung an eigene CI, Prozesse und Sprache jederzeit möglich.</div>
         </div>
-        <div class="why-item reveal">
-          <div class="why-number">06</div>
-          <div class="why-title">Ein komplettes System</div>
-          <div class="why-text">
-            7 Tools die den kompletten Vertriebsprozess abbilden – 
-            von der Neukundenakquise bis zur Investor-Vorbereitung.
-          </div>
+        <div class="why-item reveal reveal-d2">
+          <div class="why-num">06</div>
+          <div class="why-title">Ein vollständiges System</div>
+          <div class="why-text">7 Tools die den gesamten Vertriebsprozess abdecken – von der Neukundenakquise bis zur Investoren-Vorbereitung.</div>
         </div>
       </div>
     </div>
@@ -1311,45 +1071,39 @@
     <div class="container">
       <div class="affiliate-inner">
         <div class="reveal">
-          <div class="section-label">Partnerprogramm</div>
-          <h2 class="section-title">
-            40% Provision.<br>
-            Automatisch.<br>
-            <em>Ohne Aufwand.</em>
-          </h2>
-          <p class="section-desc">
-            Du hast eine Community aus Vertrieblern, Trainern oder Gründern? 
-            Dann passt Vertriebswerk perfekt. Empfiehl unsere Tools und 
-            erhalte 40% auf jeden Verkauf – automatisch über Gumroad ausgezahlt.
+          <div class="eyebrow">Partnerprogramm</div>
+          <h2 class="section-h">40 % Provision.<br><em>Automatisch.</em></h2>
+          <p class="section-p" style="margin-bottom: 1.5rem;">
+            Du hast eine Community aus Vertrieblern, Coaches oder Gründern?
+            Empfiehl unsere Tools und erhalte 40 % auf jeden Verkauf –
+            automatisch über Gumroad, ohne Vertrag, ohne Aufwand.
           </p>
+          <a href="mailto:danielt.toth.85@gmail.com" class="btn-fill">Anfrage stellen →</a>
         </div>
-        <div class="affiliate-box reveal">
-          <div class="affiliate-box-label">So funktioniert es</div>
-          <div class="affiliate-box-title">
-            Einfach.<br>Fair.<br><span>40%.</span>
+        <div class="affiliate-visual reveal reveal-d1">
+          <div class="affiliate-big">40<span>%</span></div>
+          <div class="affiliate-sub">
+            Deutlich über Marktstandard (10–20 %).<br>
+            Alle Produkte kostenlos zum Testen erhalten.
           </div>
-          <div class="affiliate-box-text">
-            Kein Vertrag, kein Call, keine Verpflichtung. 
-            Teste die Produkte kostenlos und entscheide dann.
-          </div>
-          <ul class="affiliate-steps">
-            <li>
-              <span class="step-num">1</span>
+          <div class="steps">
+            <div class="step">
+              <span class="step-n">1</span>
               Kurze Anfrage per E-Mail oder Instagram
-            </li>
-            <li>
-              <span class="step-num">2</span>
-              Alle Produkte kostenlos zum Testen erhalten
-            </li>
-            <li>
-              <span class="step-num">3</span>
+            </div>
+            <div class="step">
+              <span class="step-n">2</span>
+              Alle 7 Produkte kostenlos zum Testen
+            </div>
+            <div class="step">
+              <span class="step-n">3</span>
               Affiliate-Link aktivieren – fertig
-            </li>
-            <li>
-              <span class="step-num">4</span>
-              40% Provision automatisch für jeden Kauf
-            </li>
-          </ul>
+            </div>
+            <div class="step">
+              <span class="step-n">4</span>
+              40 % Provision automatisch für jeden Kauf
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -1358,15 +1112,13 @@
   <!-- CONTACT -->
   <section class="contact" id="kontakt">
     <div class="contact-inner reveal">
-      <div class="section-label" style="justify-content: center;">Kontakt</div>
-      <h2 class="contact-title">
-        Fragen?<br><em>Einfach schreiben.</em>
-      </h2>
-      <p class="contact-text">
-        Bei Fragen zu Produkten, Affiliate-Anfragen oder individuellen 
-        Wünschen – einfach eine kurze Nachricht.
+      <div class="eyebrow" style="justify-content: center;">Kontakt</div>
+      <h2 class="contact-h">Fragen?<br><em>Einfach schreiben.</em></h2>
+      <p class="contact-p">
+        Für Produktfragen, Affiliate-Anfragen oder individuelle Wünsche –
+        eine kurze Nachricht genügt.
       </p>
-      <a href="mailto:danielt.toth.85@gmail.com" class="contact-email">
+      <a href="mailto:danielt.toth.85@gmail.com" class="contact-link">
         danielt.toth.85@gmail.com →
       </a>
     </div>
@@ -1380,32 +1132,30 @@
         <li><a href="#produkte">Produkte</a></li>
         <li><a href="#affiliate">Affiliate</a></li>
         <li><a href="#kontakt">Kontakt</a></li>
-        <li><a href="https://gumroad.com/vertriebswerk" target="_blank">Gumroad-Shop</a></li>
+        <li><a href="https://vertriebswerk.gumroad.com" target="_blank">Gumroad-Shop</a></li>
       </ul>
-      <div class="footer-copy">© 2026 Vertriebswerk · Alle Rechte vorbehalten</div>
+      <div class="footer-copy">© 2026 Vertriebswerk</div>
     </div>
   </footer>
 
   <script>
+    // Nav scroll effect
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 30);
+    });
+
     // Scroll reveal
     const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, i) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => entry.target.classList.add('visible'), i * 80);
-          observer.unobserve(entry.target);
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          obs.unobserve(e.target);
         }
       });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-    reveals.forEach(el => observer.observe(el));
-
-    // Smooth nav background
-    window.addEventListener('scroll', () => {
-      const nav = document.querySelector('nav');
-      nav.style.background = window.scrollY > 50
-        ? 'rgba(17, 29, 51, 0.99)'
-        : 'rgba(27, 42, 74, 0.97)';
-    });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(el => obs.observe(el));
   </script>
 </body>
 </html>
