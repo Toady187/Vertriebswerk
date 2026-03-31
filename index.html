@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="7 praxiserprobte B2B-Vertriebstools für KAMs und Vertriebsteams im DACH-Raum. Kaltakquise, Pipeline, KAM-Jahresgespräch, Ausschreibung. Sofort einsetzbar, auf Deutsch.">
-  <meta name="keywords" content="B2B Vertrieb, KAM Jahresgespräch Template, Kaltakquise Blueprint, Pipeline Cleanup, Vertriebscontrolling Dashboard, Ausschreibung B2B, First Sales Playbook, Investor Readiness, Vertriebstools DACH, Excel Vorlage Vertrieb, Word Template Vertrieb, B2B Innendienst, Key Account Management">
+  <meta name="description" content="7 praxiserprobte B2B-Vertriebstools für KAMs und Vertriebsteams im DACH-Raum. Kaltakquise, Pipeline, KAM-Jahresgespräch, Ausschreibung. Keine improvisierten Gespräche mehr, auf Deutsch.">
+  <meta name="keywords" content="B2B Vertrieb, KAM Jahresgespräch Template, Kaltakquise Blueprint, Pipeline Cleanup, Follow-up E-Mail Vorlagen, Vertriebscontrolling Dashboard, Ausschreibung B2B, First Sales Playbook, Investor Readiness, Vertriebstools DACH, Excel Vorlage Vertrieb, Word Template Vertrieb, B2B Innendienst, Key Account Management">
   <meta name="author" content="Vertriebswerk">
   <meta name="robots" content="index, follow">
   <meta name="google-site-verification" content="google2e2e5d364f822384">
   <link rel="canonical" href="https://vertriebswerk.shop">
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
   <meta property="og:title" content="Vertriebswerk – B2B-Vertriebstools aus der Praxis">
-  <meta property="og:description" content="7 praxiserprobte Tools für den deutschen B2B-Vertrieb. Kaltakquise, KAM, Pipeline, Controlling. Sofort einsetzbar, ohne Abonnement.">
+  <meta property="og:description" content="7 praxiserprobte Tools für den deutschen B2B-Vertrieb. Kaltakquise, KAM, Pipeline, Controlling. Keine improvisierten Gespräche mehr, ohne Abonnement.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://vertriebswerk.shop">
   <meta property="og:locale" content="de_DE">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Vertriebswerk – B2B-Vertriebstools aus der Praxis">
-  <meta name="twitter:description" content="7 praxiserprobte Tools für den deutschen B2B-Vertrieb. Sofort einsetzbar, ohne Abonnement.">
-  <title>Vertriebswerk – B2B-Vertriebstools für KAM, Kaltakquise & Pipeline | DACH</title>
+  <meta name="twitter:description" content="7 praxiserprobte Tools für den deutschen B2B-Vertrieb. Keine improvisierten Gespräche mehr, ohne Abonnement.">
+  <title>Vertriebswerk – B2B-Vertriebstools für KAM, Kaltakquise, Follow-up & Pipeline | DACH</title>
   <!-- Fonts via Bunny.net – DSGVO-konform, EU-Server, keine IP-Weitergabe -->
   <link rel="preconnect" href="https://fonts.bunny.net">
   <link href="https://fonts.bunny.net/css?family=dm-sans:300,400,500,600|dm-serif-display:400,400i&display=swap" rel="stylesheet">
@@ -823,6 +823,98 @@
       animation: fadeUp 0.7s ease both;
     }
 
+
+    /* ── BUNDLES ── */
+    .bundles { background: var(--sand); }
+
+    .bundle-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+
+    .bundle-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 2rem;
+      position: relative;
+      transition: all 0.25s;
+    }
+
+    .bundle-card:hover {
+      box-shadow: 0 8px 32px rgba(26,31,46,0.08);
+      transform: translateY(-2px);
+    }
+
+    .bundle-card.highlight {
+      background: var(--ink);
+      border-color: var(--ink);
+    }
+
+    .bundle-badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent);
+      color: white;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+    }
+
+    .bundle-label {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      color: var(--ink);
+      margin-bottom: 0.4rem;
+    }
+
+    .bundle-card.highlight .bundle-label { color: var(--white); }
+
+    .bundle-tools {
+      font-size: 0.83rem;
+      color: var(--ink-soft);
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+
+    .bundle-card.highlight .bundle-tools { color: rgba(255,255,255,0.45); }
+
+    .bundle-prices {
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .bundle-old {
+      font-size: 1rem;
+      color: var(--ink-soft);
+      text-decoration: line-through;
+    }
+
+    .bundle-new {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      color: var(--ink);
+      line-height: 1;
+    }
+
+    .bundle-save {
+      font-size: 0.78rem;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    @media (max-width: 860px) {
+      .bundle-grid { grid-template-columns: 1fr; }
+    }
+
     /* ── LEAD MAGNET BANNER ── */
     .lm-banner {
       background: var(--ink);
@@ -1010,7 +1102,7 @@
         </h1>
         <p class="hero-desc">
           7 praxiserprobte Tools für KAMs, Außendienstler und Vertriebsteams
-          im deutschsprachigen Raum. Sofort einsetzbar, ohne Abonnement.
+          im deutschsprachigen Raum. Keine improvisierten Gespräche mehr, ohne Abonnement.
         </p>
         <div class="hero-btns">
           <a href="#produkte" class="btn-fill">Alle Produkte →</a>
@@ -1022,7 +1114,7 @@
           <div class="stats-title">Vertriebswerk auf einen Blick</div>
           <div class="stats-grid">
             <div class="stat-box">
-              <div class="stat-val">7<span>×</span></div>
+              <div class="stat-val">8<span>×</span></div>
               <div class="stat-lbl">Praxistools</div>
             </div>
             <div class="stat-box">
@@ -1055,7 +1147,7 @@
         <div class="lm-title">6 Fehler die deinen B2B-Vertrieb bremsen – und wie du sie vermeidest</div>
         <div class="lm-sub">Aus 10+ Jahren Vertriebspraxis. Direkt, ungeschönt, sofort anwendbar.</div>
       </div>
-      <a href="https://vertriebswerk.gumroad.com/l/b2b-vertrieb-fehler" target="_blank" class="lm-btn">
+      <a href="https://vertriebswerk.gumroad.com/l/b2b-vertrieb-fehler?wanted=true" target="_blank" class="lm-btn">
         Kostenlos herunterladen →
       </a>
     </div>
@@ -1091,7 +1183,7 @@
               <div class="pcard-price">19 €</div>
               <div class="pcard-fmt">Excel (.xlsx)</div>
             </div>
-            <a href="https://vertriebswerk.gumroad.com/l/b2b-pipeline-cleanup-kit" target="_blank" class="pcard-btn">Kaufen →</a>
+            <a href="https://vertriebswerk.gumroad.com/l/b2b-pipeline-cleanup-kit?wanted=true" target="_blank" class="pcard-btn">Kaufen →</a>
           </div>
         </div>
 
@@ -1110,7 +1202,7 @@
               <div class="pcard-price">19 €</div>
               <div class="pcard-fmt">Word (.docx)</div>
             </div>
-            <a href="https://vertriebswerk.gumroad.com/l/kam-jahresgespraech-template" target="_blank" class="pcard-btn">Kaufen →</a>
+            <a href="https://vertriebswerk.gumroad.com/l/kam-jahresgespraech-template?wanted=true" target="_blank" class="pcard-btn">Kaufen →</a>
           </div>
         </div>
 
@@ -1129,7 +1221,7 @@
               <div class="pcard-price">29 €</div>
               <div class="pcard-fmt">Word + Excel Kit</div>
             </div>
-            <a href="https://vertriebswerk.gumroad.com/l/kaltakquise-blueprint-b2b" target="_blank" class="pcard-btn">Kaufen →</a>
+            <a href="https://vertriebswerk.gumroad.com/l/kaltakquise-blueprint-b2b?wanted=true" target="_blank" class="pcard-btn">Kaufen →</a>
           </div>
         </div>
 
@@ -1148,7 +1240,7 @@
               <div class="pcard-price">39 €</div>
               <div class="pcard-fmt">Excel (.xlsx)</div>
             </div>
-            <a href="https://vertriebswerk.gumroad.com/l/ausschreibungs-check-b2b-mittelstand" target="_blank" class="pcard-btn">Kaufen →</a>
+            <a href="https://vertriebswerk.gumroad.com/l/ausschreibungs-check-b2b-mittelstand?wanted=true" target="_blank" class="pcard-btn">Kaufen →</a>
           </div>
         </div>
 
@@ -1167,7 +1259,7 @@
               <div class="pcard-price">24 €</div>
               <div class="pcard-fmt">Word + Excel Kit</div>
             </div>
-            <a href="https://vertriebswerk.gumroad.com/l/first-sales-playbook-b2b" target="_blank" class="pcard-btn">Kaufen →</a>
+            <a href="https://vertriebswerk.gumroad.com/l/first-sales-playbook-b2b?wanted=true" target="_blank" class="pcard-btn">Kaufen →</a>
           </div>
         </div>
 
@@ -1186,7 +1278,7 @@
               <div class="pcard-price">34 €</div>
               <div class="pcard-fmt">Word + Excel Kit</div>
             </div>
-            <a href="https://vertriebswerk.gumroad.com/l/investor-readiness-check-startup" target="_blank" class="pcard-btn">Kaufen →</a>
+            <a href="https://vertriebswerk.gumroad.com/l/investor-readiness-check-startup?wanted=true" target="_blank" class="pcard-btn">Kaufen →</a>
           </div>
         </div>
 
@@ -1205,7 +1297,27 @@
               <div class="pcard-price">39 €</div>
               <div class="pcard-fmt">Excel (.xlsx)</div>
             </div>
-            <a href="https://vertriebswerk.gumroad.com/l/vertriebscontrolling-dashboard-b2b" target="_blank" class="pcard-btn">Kaufen →</a>
+            <a href="https://vertriebswerk.gumroad.com/l/vertriebscontrolling-dashboard-b2b?wanted=true" target="_blank" class="pcard-btn">Kaufen →</a>
+          </div>
+        </div>
+
+        <!-- Produkt 8: Follow-up E-Mail Kit -->
+        <div class="pcard highlight reveal">
+          <span class="pcard-tag tag-top">🆕 Neu</span>
+          <div class="pcard-name">Follow-up E-Mail Kit</div>
+          <div class="pcard-sub">5 Szenarien · 15 Vorlagen · Frequenz-Checkliste</div>
+          <ul class="pcard-feats">
+            <li>Ghosting-Szenario inkl. Break-up E-Mail</li>
+            <li>Hinhaltetaktik & verbindlicher Check-in</li>
+            <li>Preisdruck-Antworten & Value-Matrix</li>
+            <li>Reaktivierung nach langer Pause</li>
+          </ul>
+          <div class="pcard-foot">
+            <div>
+              <div class="pcard-price">34 €</div>
+              <div class="pcard-fmt">Word (.docx)</div>
+            </div>
+            <a href="https://vertriebswerk.gumroad.com/l/follow-up-email-kit-b2b?wanted=true" target="_blank" class="pcard-btn">Kaufen →</a>
           </div>
         </div>
 
@@ -1233,33 +1345,80 @@
       <div class="why-grid">
         <div class="why-item reveal">
           <div class="why-num">01</div>
-          <div class="why-title">Aus echter Vertriebspraxis</div>
-          <div class="why-text">Alle Produkte entstanden aus konkreten Alltagsproblemen im B2B-Vertrieb – KAM, Innendienst, LogTech, IoT, Automotive.</div>
+          <div class="why-title">Schluss mit der aufgeblähten Pipeline</div>
+          <div class="why-text">Opportunities die schön aussehen aber nie schließen? Das Pipeline Cleanup Kit bringt Struktur in dein CRM – und Ehrlichkeit in deinen Forecast.</div>
         </div>
         <div class="why-item reveal reveal-d1">
           <div class="why-num">02</div>
-          <div class="why-title">Sofort einsetzbar</div>
-          <div class="why-text">Keine Einarbeitung. Datei öffnen, gelbe Felder befüllen, loslegen. Maximale Zeit bis zur ersten Nutzung: 5 Minuten.</div>
+          <div class="why-title">Keine improvisierten Gespräche mehr</div>
+          <div class="why-text">Jahresgespräche ohne Vorbereitung, Kaltakquise ohne Skript – das kostet Abschlüsse. Diese Tools ändern das.</div>
         </div>
         <div class="why-item reveal reveal-d2">
           <div class="why-num">03</div>
-          <div class="why-title">DACH-spezifisch</div>
-          <div class="why-text">Auf Deutsch, für den deutschen Markt gemacht. Keine amerikanischen Frameworks die im Mittelstand nicht funktionieren.</div>
+          <div class="why-title">Kein US-Framework das im Mittelstand nicht funktioniert</div>
+          <div class="why-text">Auf Deutsch, für den DACH-Markt entwickelt. Nicht adaptiert – von Anfang an für die deutsche Vertriebsrealität gebaut.</div>
         </div>
         <div class="why-item reveal">
           <div class="why-num">04</div>
-          <div class="why-title">Einmalzahlung, kein Abo</div>
-          <div class="why-text">Einmal kaufen, dauerhaft nutzen. Keine monatlichen Kosten, keine Cloud-Abhängigkeit, keine versteckten Gebühren.</div>
+          <div class="why-title">Einmal kaufen – nie wieder zahlen</div>
+          <div class="why-text">Kein Monatsabo, keine Cloud-Pflicht, keine versteckten Gebühren. Du kaufst einmal und nutzt es so lange du willst.</div>
         </div>
         <div class="why-item reveal reveal-d1">
           <div class="why-num">05</div>
-          <div class="why-title">Vollständig editierbar</div>
-          <div class="why-text">Word und Excel – Standardformate die jeder kennt. Anpassung an eigene CI, Prozesse und Sprache jederzeit möglich.</div>
+          <div class="why-title">In 5 Minuten einsatzbereit</div>
+          <div class="why-text">Keine Schulung, kein Onboarding. Datei öffnen, gelbe Felder ausfüllen – in weniger als 5 Minuten einsatzbereit.</div>
         </div>
         <div class="why-item reveal reveal-d2">
           <div class="why-num">06</div>
-          <div class="why-title">Ein vollständiges System</div>
-          <div class="why-text">7 Tools die den gesamten Vertriebsprozess abdecken – von der Neukundenakquise bis zur Investoren-Vorbereitung.</div>
+          <div class="why-title">Ein System – nicht sieben Einzelteile</div>
+          <div class="why-text">Von der Kaltakquise bis zur Investor-Vorbereitung. Alle Tools greifen ineinander – du baust damit einen vollständigen Vertriebsprozess.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- BUNDLES -->
+  <section class="bundles" id="bundles">
+    <div class="container">
+      <div class="reveal">
+        <div class="eyebrow">Sparpakete</div>
+        <h2 class="section-h">Mehr Tools,<br><em>weniger zahlen.</em></h2>
+        <p class="section-p" style="margin-bottom: 2.5rem;">
+          Die häufigsten Kombinationen – direkt als Bundle mit Rabatt.
+        </p>
+      </div>
+      <div class="bundle-grid">
+        <div class="bundle-card reveal">
+          <div class="bundle-label">Neukundenmaschine</div>
+          <div class="bundle-tools">Pipeline Cleanup Kit + Kaltakquise Blueprint</div>
+          <div class="bundle-prices">
+            <span class="bundle-old">48 €</span>
+            <span class="bundle-new">39 €</span>
+          </div>
+          <div class="bundle-save">Du sparst 9 € (–19%)</div>
+          <a href="https://vertriebswerk.gumroad.com" target="_blank" class="btn-fill" style="width:100%;justify-content:center;margin-top:1.25rem;">Bundle kaufen →</a>
+        </div>
+        <div class="bundle-card highlight reveal reveal-d1">
+          <div class="bundle-badge">Beliebt</div>
+          <div class="bundle-label">KAM Komplett-Kit</div>
+          <div class="bundle-tools">Jahresgespräch Template + Ausschreibungs-Check</div>
+          <div class="bundle-prices">
+            <span class="bundle-old" style="color:rgba(255,255,255,0.35);">58 €</span>
+            <span class="bundle-new" style="color:#fff;">49 €</span>
+          </div>
+          <div class="bundle-save" style="color:rgba(255,255,255,0.5);">Du sparst 9 € (–16%)</div>
+          <a href="https://vertriebswerk.gumroad.com" target="_blank" class="btn-fill" style="width:100%;justify-content:center;margin-top:1.25rem;background:var(--accent);">Bundle kaufen →</a>
+        </div>
+        <div class="bundle-card reveal reveal-d2">
+          <div class="bundle-label">Vertrieb von A–Z</div>
+          <div class="bundle-tools">Alle 7 Tools im Komplettpaket</div>
+          <div class="bundle-prices">
+            <span class="bundle-old">203 €</span>
+            <span class="bundle-new">149 €</span>
+          </div>
+          <div class="bundle-save">Du sparst 54 € (–27%)</div>
+          <a href="https://vertriebswerk.gumroad.com" target="_blank" class="btn-fill" style="width:100%;justify-content:center;margin-top:1.25rem;">Bundle kaufen →</a>
         </div>
       </div>
     </div>
@@ -1387,6 +1546,7 @@
     </div>
   </footer>
 
+  <script src="https://gumroad.com/js/gumroad.js"></script>
   <script>
     // Nav scroll effect
     const nav = document.getElementById('nav');
