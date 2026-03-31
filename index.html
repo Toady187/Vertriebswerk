@@ -1436,7 +1436,7 @@
             Empfiehl unsere Tools und erhalte 40 % auf jeden Verkauf –
             automatisch über Gumroad, ohne Vertrag, ohne Aufwand.
           </p>
-          <a href="/cdn-cgi/l/email-protection#a3c7c2cdcac6cfd78dd7ccd7cb8d9b96e3c4cec2cacf8dc0ccce" class="btn-fill">Anfrage stellen →</a>
+          <a href="mailto:danielt.toth.85@gmail.com" class="btn-fill">Anfrage stellen →</a>
         </div>
         <div class="affiliate-visual reveal reveal-d1">
           <div class="affiliate-big">40<span>%</span></div>
@@ -1478,14 +1478,18 @@
         </div>
         <div class="bio-content reveal reveal-d1">
           <div class="eyebrow">Hinter Vertriebswerk</div>
-          <h2 class="section-h">Struktur schlägt<br><em>Zufall.</em></h2>
+          <h2 class="section-h">Kein Berater.<br><em>Ein Praktiker.</em></h2>
           <p class="bio-text">
-            Ich bin Daniel. 10+ Jahre B2B-Vertriebspraxis — Innendienst, Key Account
-            Management, LogTech, IoT, Automotive.
+            Ich bin Daniel – aufgewachsen mit Vertrieb, Logistik und dem Anspruch 
+            dass Dinge funktionieren müssen. Ausgebildeter Kaufmann für Speditions- 
+            und Logistikdienstleistungen, später B.A. Business Administration – 
+            und über 10 Jahre im B2B-Vertrieb gelernt was Theorie und Praxis trennt.
           </p>
           <p class="bio-text">
-            Vertriebswerk ist meine Antwort auf ein altes Problem: Gute Vertriebsstrukturen
-            landen in PowerPoints. Ich baue sie als Tools — direkt einsetzbar, ohne Overhead.
+            In dieser Zeit habe ich Pipelines aufgebaut, Ausschreibungen im zweistelligen 
+            Millionenbereich gemanagt und Key Accounts in Logistik, IoT-Infrastruktur 
+            und Automotive entwickelt. Die Tools die ich dabei vermisst habe – 
+            die habe ich jetzt selbst gebaut.
           </p>
           <p class="bio-text">
             Kein Consulting-Hintergrund. Keine Agentur. Nur Werkzeuge die ich selbst 
@@ -1506,12 +1510,8 @@
               <div class="bio-fact-lbl">B2B-Vertriebspraxis</div>
             </div>
           </div>
-          <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;">
-            <a href="https://www.linkedin.com/in/daniel-toth-a7117712a" target="_blank" rel="noopener noreferrer" class="btn-fill" style="display:inline-flex;align-items:center;gap:0.6rem;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-              Expertise auf LinkedIn prüfen
-            </a>
-            <a href="#produkte" class="btn-outline">Direkt zu den Tools →</a>
+          <div style="margin-top: 2rem;">
+            <a href="#produkte" class="btn-fill">Zu den Tools →</a>
           </div>
         </div>
       </div>
@@ -1527,8 +1527,8 @@
         Für Produktfragen, Affiliate-Anfragen oder individuelle Wünsche –
         eine kurze Nachricht genügt.
       </p>
-      <a href="/cdn-cgi/l/email-protection#dfbbbeb1b6bab3abf1abb0abb7f1e7ea9fb8b2beb6b3f1bcb0b2" class="contact-link">
-        <span class="__cf_email__" data-cfemail="4c282d222529203862382338246274790c2b212d2520622f2321">[email&#160;protected]</span> →
+      <a href="mailto:danielt.toth.85@gmail.com" class="contact-link">
+        danielt.toth.85@gmail.com →
       </a>
     </div>
   </section>
@@ -1549,7 +1549,7 @@
     </div>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://gumroad.com/js/gumroad.js"></script>
+  <script src="https://gumroad.com/js/gumroad.js"></script>
   <script>
     // Nav scroll effect
     const nav = document.getElementById('nav');
@@ -1562,12 +1562,12 @@
     const obs = new IntersectionObserver((entries) => {
       entries.forEach(e => {
         if (e.isIntersecting) {
-          e.target.classList.add('visible');
+          e.target.classList.add('in');
           obs.unobserve(e.target);
         }
       });
-    }, { threshold: 0.12 });
-    reveals.forEach(r => obs.observe(r));
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(el => obs.observe(el));
   </script>
 </body>
 </html>
