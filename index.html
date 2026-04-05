@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="8 praxiserprobte B2B-Vertriebstools für KAMs und Vertriebsteams im DACH-Raum. Kaltakquise, Pipeline, KAM-Jahresgespräch, Ausschreibung. Keine improvisierten Gespräche mehr, auf Deutsch.">
+  <meta name="description" content="10 praxiserprobte B2B-Vertriebstools für KAMs und Vertriebsteams im DACH-Raum. Kaltakquise, Pipeline, KAM-Jahresgespräch, Ausschreibung. Keine improvisierten Gespräche mehr, auf Deutsch.">
   <meta name="keywords" content="B2B Vertrieb, KAM Jahresgespräch Template, Kaltakquise Blueprint, Pipeline Cleanup, Follow-up E-Mail Vorlagen, Vertriebscontrolling Dashboard, Ausschreibung B2B, First Sales Playbook, Investor Readiness, Vertriebstools DACH, Excel Vorlage Vertrieb, Word Template Vertrieb, B2B Innendienst, Key Account Management">
   <meta name="author" content="Vertriebswerk">
   <meta name="robots" content="index, follow">
@@ -18,7 +18,7 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Vertriebswerk – B2B-Vertriebstools aus der Praxis">
   <meta name="twitter:description" content="8 praxiserprobte Tools für den deutschen B2B-Vertrieb. Keine improvisierten Gespräche mehr, ohne Abonnement.">
-  <title>Vertriebswerk – B2B-Vertriebstools für KAM, Kaltakquise, Follow-up & Pipeline | DACH</title>
+  <title>Vertriebswerk – 10 B2B-Vertriebstools für KAM, Kaltakquise, Follow-up & Einwandbehandlung | DACH</title>
   <!-- Fonts via Bunny.net – DSGVO-konform, EU-Server, keine IP-Weitergabe -->
   <link rel="preconnect" href="https://fonts.bunny.net">
   <link href="https://fonts.bunny.net/css?family=dm-sans:300,400,500,600|dm-serif-display:400,400i&display=swap" rel="stylesheet">
@@ -940,6 +940,51 @@
       box-shadow: 0 4px 16px rgba(10,102,194,0.35);
     }
 
+
+    /* ── FAQ ── */
+    .faq { background: var(--white); }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+      margin-top: 2.5rem;
+    }
+
+    .faq-item {
+      background: var(--sand);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      border-left: 4px solid var(--accent);
+      transition: all 0.2s;
+    }
+
+    .faq-item:hover {
+      box-shadow: 0 4px 20px rgba(26,31,46,0.07);
+      transform: translateY(-1px);
+    }
+
+    .faq-q {
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 0.75rem;
+      line-height: 1.4;
+    }
+
+    .faq-a {
+      font-size: 0.88rem;
+      color: var(--ink-soft);
+      line-height: 1.65;
+      font-weight: 300;
+    }
+
+    @media (max-width: 720px) {
+      .faq-grid { grid-template-columns: 1fr; }
+    }
+
     /* ── LEAD MAGNET BANNER ── */
     .lm-banner {
       background: var(--ink);
@@ -1095,7 +1140,8 @@
       <li><a href="#warum">Warum wir</a></li>
       <li><a href="#ueber">Über mich</a></li>
       <li><a href="#affiliate">Affiliate</a></li>
-      <li><a href="#kontakt">Kontakt</a></li>
+      <li><a href="#faq">FAQ</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
       <li><a href="https://vertriebswerk.gumroad.com" target="_blank" class="nav-cta">Shop →</a></li>
     </ul>
   </nav>
@@ -1130,7 +1176,7 @@
           <div class="stats-title">Vertriebswerk auf einen Blick</div>
           <div class="stats-grid">
             <div class="stat-box">
-              <div class="stat-val">8<span>×</span></div>
+              <div class="stat-val">10<span>×</span></div>
               <div class="stat-lbl">Praxistools</div>
             </div>
             <div class="stat-box">
@@ -1328,8 +1374,8 @@
         </div>
 
         <!-- Produkt 8: Follow-up E-Mail Kit -->
-        <div class="pcard highlight reveal">
-          <span class="pcard-tag tag-top">🆕 Neu</span>
+        <div class="pcard reveal">
+          <span class="pcard-tag tag-kit">Word-Kit</span>
           <div class="pcard-name">Follow-up E-Mail Kit</div>
           <div class="pcard-sub">5 Szenarien · 15 Vorlagen · Frequenz-Checkliste</div>
           <ul class="pcard-feats">
@@ -1344,6 +1390,48 @@
               <div class="pcard-fmt">Word (.docx)</div>
             </div>
             <a href="https://vertriebswerk.gumroad.com/l/follow-up-email-kit-b2b?wanted=true" target="_blank" class="pcard-btn">Kaufen →</a>
+          </div>
+        </div>
+
+
+        <!-- Produkt 9: Einwandbehandlung Mastersheet -->
+        <div class="pcard reveal">
+          <span class="pcard-tag tag-top">🆕 Neu</span>
+          <div class="pcard-name">Einwandbehandlung Mastersheet</div>
+          <div class="pcard-sub">25 Einwände · 75 Antworten · Erfolgs-Tracker</div>
+          <ul class="pcard-feats">
+            <li>7 Kategorien: Preis, Bedarf, Timing, Entscheider & mehr</li>
+            <li>Quick Reference Card – druckfertig fürs Gespräch</li>
+            <li>Erfolgs-Tracker mit Abschlussquote</li>
+            <li>Psychologie-Tab: warum Einwände entstehen</li>
+          </ul>
+          <div class="pcard-foot">
+            <div>
+              <div class="pcard-price">19 €</div>
+              <div class="pcard-fmt">Excel (.xlsx)</div>
+            </div>
+            <a href="https://vertriebswerk.gumroad.com/l/einwandbehandlung-mastersheet-b2b?wanted=true" target="_blank" class="pcard-btn">Kaufen →</a>
+          </div>
+        </div>
+
+
+        <!-- Produkt 10: E-Mail Baukasten Kaltakquise -->
+        <div class="pcard reveal">
+          <span class="pcard-tag tag-top">🆕 Neu</span>
+          <div class="pcard-name">E-Mail Baukasten Kaltakquise</div>
+          <div class="pcard-sub">10 Vorlagen · 5-Stufen-Sequenz · Betreffzeilen-Swipe-File</div>
+          <ul class="pcard-feats">
+            <li>Erstkontakt bis Break-up – vollstaendige Sequenz</li>
+            <li>30 getestete Betreffzeilen zum Kopieren</li>
+            <li>Psychologischer Hebel pro Sequenz-Stufe erklaert</li>
+            <li>7 goldene Regeln der B2B-Kaltakquise-Mail</li>
+          </ul>
+          <div class="pcard-foot">
+            <div>
+              <div class="pcard-price">19 €</div>
+              <div class="pcard-fmt">Word (.docx)</div>
+            </div>
+            <a href="https://vertriebswerk.gumroad.com/l/email-baukasten-kaltakquise-b2b?wanted=true" target="_blank" class="pcard-btn">Kaufen →</a>
           </div>
         </div>
 
@@ -1554,6 +1642,60 @@
     </div>
   </section>
 
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="reveal">
+        <div class="eyebrow">Häufige Fragen</div>
+        <h2 class="section-h">Antworten<br><em>bevor du fragst.</em></h2>
+      </div>
+      <div class="faq-grid">
+
+        <div class="faq-item reveal">
+          <div class="faq-q">Funktionieren die Tools mit Salesforce, HubSpot oder anderen CRMs?</div>
+          <div class="faq-a">Ja – alle Tools sind systemunabhängig konzipiert. Sie laufen in Excel und Word, nicht im CRM. Du überträgst die Ergebnisse in dein System. Das funktioniert mit Salesforce, HubSpot, Pipedrive, oder einer einfachen Tabelle.</div>
+        </div>
+
+        <div class="faq-item reveal reveal-d1">
+          <div class="faq-q">Für wen sind die Tools gedacht – Einsteiger oder Profis?</div>
+          <div class="faq-a">Für beides, aber unterschiedlich. Das First Sales Playbook richtet sich an Einsteiger und Gründer. Alle anderen Tools setzen Grundkenntnisse im B2B-Vertrieb voraus und sparen Profis vor allem Zeit.</div>
+        </div>
+
+        <div class="faq-item reveal reveal-d2">
+          <div class="faq-q">Wie bekomme ich das Produkt nach dem Kauf?</div>
+          <div class="faq-a">Sofort per E-Mail über Gumroad. Kein Konto nötig, kein Warten. Du lädst die Datei direkt herunter – einmalig bezahlt, dauerhaft nutzbar.</div>
+        </div>
+
+        <div class="faq-item reveal">
+          <div class="faq-q">Kann ich die Templates an mein Unternehmen anpassen?</div>
+          <div class="faq-a">Ja, vollständig. Alle Word- und Excel-Dateien sind editierbar. Du kannst Logo, Farben, Felder und Inhalte anpassen. Gelb markierte Felder zeigen dir wo du anfangen sollst.</div>
+        </div>
+
+        <div class="faq-item reveal reveal-d1">
+          <div class="faq-q">Gibt es ein Abo oder wiederkehrende Kosten?</div>
+          <div class="faq-a">Nein. Einmal kaufen, dauerhaft nutzen. Keine Cloud-Pflicht, kein Monatsabo, keine versteckten Gebühren. Die Datei gehört dir.</div>
+        </div>
+
+        <div class="faq-item reveal reveal-d2">
+          <div class="faq-q">Für welche Branchen sind die Tools geeignet?</div>
+          <div class="faq-a">Primär für B2B-Vertrieb im DACH-Raum – aus Erfahrung in LogTech, IoT-Infrastruktur und Automotive entwickelt. Die Grundprinzipien funktionieren branchenübergreifend überall dort wo Lösungsverkauf und Beziehungsmanagement eine Rolle spielen.</div>
+        </div>
+
+        <div class="faq-item reveal">
+          <div class="faq-q">Was wenn mir ein Tool nicht gefällt?</div>
+          <div class="faq-a">Schreib mir direkt: danielt.toth.85@gmail.com. Ich schaue mir jeden Fall persönlich an. Bei digitalen Downloads gilt gesetzlich kein automatisches Widerrufsrecht nach dem Download – aber ich bin kein Verein für bürokratische Antworten.</div>
+        </div>
+
+        <div class="faq-item reveal reveal-d1">
+          <div class="faq-q">Kann ich mehrere Tools als Bundle kaufen?</div>
+          <div class="faq-a">Ja – drei Bundles sind verfügbar: Neukundenmaschine (39 €), KAM Komplett-Kit (49 €) und Vertrieb von A–Z mit allen 8 Tools für 179 € statt 237 €.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- CONTACT -->
   <section class="contact" id="kontakt">
     <div class="contact-inner reveal">
@@ -1577,7 +1719,9 @@
         <li><a href="#produkte">Produkte</a></li>
         <li><a href="#ueber">Über mich</a></li>
         <li><a href="#affiliate">Affiliate</a></li>
+        <li><a href="#faq">FAQ</a></li>
         <li><a href="#kontakt">Kontakt</a></li>
+        <li><a href="#faq">FAQ</a></li>
         <li><a href="https://vertriebswerk.gumroad.com" target="_blank">Gumroad-Shop</a></li>
         <li><a href="https://vertriebswerk.shop/impressum.html">Impressum & Datenschutz</a></li>
       </ul>
