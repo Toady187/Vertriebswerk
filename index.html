@@ -831,7 +831,7 @@
 
     .bundle-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 1.25rem;
     }
 
@@ -913,7 +913,7 @@
       font-weight: 600;
     }
 
-    @media (max-width: 860px) {
+    @media (max-width: 720px) {
       .bundle-grid { grid-template-columns: 1fr; }
     }
 
@@ -1576,42 +1576,57 @@
         <div class="eyebrow">Sparpakete</div>
         <h2 class="section-h">Mehr Tools,<br><em>weniger zahlen.</em></h2>
         <p class="section-p" style="margin-bottom: 2.5rem;">
-          Die häufigsten Kombinationen – direkt als Bundle mit Rabatt.
+          Vier Bundles – direkt entlang der vier Vertriebsphasen.
+          Je vollständiger das Paket, desto größer der Rabatt.
         </p>
       </div>
-      <div class="bundle-grid">
+      <div class="bundle-grid" style="grid-template-columns: repeat(2, 1fr);">
+
         <div class="bundle-card reveal">
           <div class="bundle-label">Neukundenmaschine</div>
-          <div class="bundle-tools">Pipeline Cleanup Kit + Kaltakquise Blueprint</div>
+          <div class="bundle-tools">ICP Workshop-Kit · Kaltakquise Blueprint · E-Mail Baukasten · Pipeline Cleanup Kit</div>
           <div class="bundle-prices">
-            <span class="bundle-old">48 €</span>
-            <span class="bundle-new">39 €</span>
+            <span class="bundle-old">91 €</span>
+            <span class="bundle-new">69 €</span>
           </div>
-          <div class="bundle-save">Du sparst 9 € (–19 %)</div>
+          <div class="bundle-save">Du sparst 22 € (–24 %)</div>
           <a href="https://vertriebswerk.gumroad.com/l/crvwmu?wanted=true" target="_blank" class="btn-fill" style="width:100%;justify-content:center;margin-top:1.25rem;">Bundle kaufen →</a>
         </div>
-        <div class="bundle-card highlight reveal reveal-d1">
-          <div class="bundle-badge">Beliebt</div>
-          <div class="bundle-label">KAM Komplett-Kit</div>
-          <div class="bundle-tools">Jahresgespräch Template + Ausschreibungs-Check</div>
+
+        <div class="bundle-card reveal reveal-d1">
+          <div class="bundle-label">Gesprächsführer-Kit</div>
+          <div class="bundle-tools">Meeting-Leitfaden · Einwandbehandlung Mastersheet · Follow-up E-Mail Kit</div>
           <div class="bundle-prices">
-            <span class="bundle-old" style="color:rgba(255,255,255,0.35);">58 €</span>
-            <span class="bundle-new" style="color:#fff;">49 €</span>
+            <span class="bundle-old">72 €</span>
+            <span class="bundle-new">55 €</span>
           </div>
-          <div class="bundle-save" style="color:rgba(255,255,255,0.5);">Du sparst 9 € (–16 %)</div>
-          <a href="https://vertriebswerk.gumroad.com/l/hvtgxe?wanted=true" target="_blank" class="btn-fill" style="width:100%;justify-content:center;margin-top:1.25rem;background:var(--accent);">Bundle kaufen →</a>
+          <div class="bundle-save">Du sparst 17 € (–24 %)</div>
+          <a href="https://vertriebswerk.gumroad.com/l/hvtgxe?wanted=true" target="_blank" class="btn-fill" style="width:100%;justify-content:center;margin-top:1.25rem;">Bundle kaufen →</a>
         </div>
-        <div class="bundle-card reveal reveal-d2">
-          <div class="bundle-badge" style="background:var(--ink);">Vollpaket</div>
-          <div class="bundle-label">Vertrieb von A–Z</div>
-          <div class="bundle-tools">Alle Tools im Komplettpaket</div>
+
+        <div class="bundle-card reveal">
+          <div class="bundle-label">KAM Komplett-Kit</div>
+          <div class="bundle-tools">KAM Jahresgespräch Template · Ausschreibungs-Check</div>
           <div class="bundle-prices">
-            <span class="bundle-old">237 €</span>
-            <span class="bundle-new">179 €</span>
+            <span class="bundle-old">58 €</span>
+            <span class="bundle-new">49 €</span>
           </div>
-          <div class="bundle-save">Du sparst 58 € (–24 %)</div>
+          <div class="bundle-save">Du sparst 9 € (–16 %)</div>
           <a href="https://vertriebswerk.gumroad.com/l/ezdavr?wanted=true" target="_blank" class="btn-fill" style="width:100%;justify-content:center;margin-top:1.25rem;">Bundle kaufen →</a>
         </div>
+
+        <div class="bundle-card highlight reveal reveal-d1">
+          <div class="bundle-badge">Bestes Angebot</div>
+          <div class="bundle-label">Vertrieb von A–Z</div>
+          <div class="bundle-tools">Alle 12 Tools im Komplettpaket</div>
+          <div class="bundle-prices">
+            <span class="bundle-old" style="color:rgba(255,255,255,0.35);">318 €</span>
+            <span class="bundle-new" style="color:#fff;">229 €</span>
+          </div>
+          <div class="bundle-save" style="color:rgba(255,255,255,0.5);">Du sparst 89 € (–28 %)</div>
+          <a href="https://vertriebswerk.gumroad.com/l/ezdavr?wanted=true" target="_blank" class="btn-fill" style="width:100%;justify-content:center;margin-top:1.25rem;background:var(--accent);">Bundle kaufen →</a>
+        </div>
+
       </div>
     </div>
   </section>
