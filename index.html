@@ -53,10 +53,10 @@
       {"@type":"ListItem","position":6,"name":"Investor Readiness Check","url":"https://vertriebswerk.gumroad.com/l/investor-readiness-check-startup","description":"Selbstbewertung und Pitch-Vorbereitung für Investor-Gespräche"},
       {"@type":"ListItem","position":7,"name":"Vertriebscontrolling Dashboard","url":"https://vertriebswerk.gumroad.com/l/vertriebscontrolling-dashboard-b2b","description":"DB-Rechnung, CAC, Pipeline und Forecast in einem Dashboard"},
       {"@type":"ListItem","position":8,"name":"Follow-up E-Mail Kit","url":"https://vertriebswerk.gumroad.com/l/follow-up-email-kit-b2b","description":"15 Follow-up-Vorlagen fuer 5 Vertriebssituationen: Ghosting, Hinhaltetaktik, Preisdruck und mehr"},
-      {"@type":"ListItem","position":9,"name":"Einwandbehandlung Mastersheet","url":"https://vertriebswerk.gumroad.com/l/einwandbehandlung-mastersheet-b2b","description":"25 B2B-Einwaende mit je 3 Antworten, Quick Reference Card und Erfolgs-Tracker"},
-      {"@type":"ListItem","position":10,"name":"E-Mail Baukasten Kaltakquise","url":"https://vertriebswerk.gumroad.com/l/email-baukasten-kaltakquise-b2b","description":"10 Vorlagen fuer 5 Sequenzstufen, 30 Betreffzeilen, vollstaendige Kaltakquise-Sequenz"},
-      {"@type":"ListItem","position":11,"name":"ICP Workshop-Kit","url":"https://vertriebswerk.gumroad.com/l/icp-workshop-kit-b2b","description":"Idealkundenprofil in 5 Schritten definieren: Branchenfilter, Schmerzpunkte, Scoring und Stueckbrief"},
-      {"@type":"ListItem","position":12,"name":"Meeting-Leitfaden Erstgespraech","url":"https://vertriebswerk.gumroad.com/l/meeting-leitfaden-erstgespraech-b2b","description":"7-Phasen Gespraechsleitfaden mit 30+ Fragen-Vorlagen und verbindlichem Gesprachsabschluss"}
+      {"@type":"ListItem","position":9,"name":"Einwandbehandlung Mastersheet","url":"https://vertriebswerk.gumroad.com/l/isriuf","description":"25 B2B-Einwaende mit je 3 Antworten, Quick Reference Card und Erfolgs-Tracker"},
+      {"@type":"ListItem","position":10,"name":"E-Mail Baukasten Kaltakquise","url":"https://vertriebswerk.gumroad.com/l/gydjb","description":"10 Vorlagen fuer 5 Sequenzstufen, 30 Betreffzeilen, vollstaendige Kaltakquise-Sequenz"},
+      {"@type":"ListItem","position":11,"name":"ICP Workshop-Kit","url":"https://vertriebswerk.gumroad.com/l/nvwjca","description":"Idealkundenprofil in 5 Schritten definieren: Branchenfilter, Schmerzpunkte, Scoring und Stueckbrief"},
+      {"@type":"ListItem","position":12,"name":"Meeting-Leitfaden Erstgespraech","url":"https://vertriebswerk.gumroad.com/l/hbdgdx","description":"7-Phasen Gespraechsleitfaden mit 30+ Fragen-Vorlagen und verbindlichem Gesprachsabschluss"}
     ]
   }
   </script>
@@ -1107,6 +1107,57 @@
       body { padding-bottom: 90px; }
     }
 
+
+    .lm-direct-hint {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.5);
+      margin-top: 0.5rem;
+      text-align: center;
+    }
+
+
+    /* ── FAQ ACCORDION ── */
+    .faq-accordion .faq-q {
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      user-select: none;
+    }
+
+    .faq-icon {
+      font-size: 1.4rem;
+      color: var(--accent);
+      font-weight: 300;
+      line-height: 1;
+      flex-shrink: 0;
+      transition: transform 0.25s;
+    }
+
+    .faq-accordion.faq-open .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-accordion .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, margin-top 0.3s ease;
+      margin-top: 0;
+    }
+
+    .faq-accordion.faq-open .faq-a {
+      max-height: 300px;
+      margin-top: 0.75rem;
+    }
+
+    @media (min-width: 769px) {
+      /* Desktop: alle aufgeklappt */
+      .faq-accordion .faq-a { max-height: none; margin-top: 0.75rem; }
+      .faq-icon { display: none; }
+      .faq-accordion .faq-q { cursor: default; }
+    }
+
     /* ── LEAD MAGNET BANNER ── */
     .lm-banner {
       background: var(--ink);
@@ -1249,6 +1300,79 @@
       .products-top { flex-direction: column; align-items: flex-start; }
     }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Funktionieren die Tools mit Salesforce, HubSpot oder anderen CRMs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja – alle Tools sind systemunabhängig konzipiert. Sie laufen in Excel und Word, nicht im CRM. Du überträgst die Ergebnisse in dein System. Das funktioniert mit Salesforce, HubSpot, Pipedrive oder einer einfachen Tabelle."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Für wen sind die Tools gedacht – Einsteiger oder Profis?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Für beides, aber unterschiedlich. Das First Sales Playbook richtet sich an Einsteiger und Gründer. Alle anderen Tools setzen Grundkenntnisse im B2B-Vertrieb voraus und sparen Profis vor allem Zeit."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wie bekomme ich das Produkt nach dem Kauf?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sofort per E-Mail über Gumroad. Kein Konto nötig, kein Warten. Du lädst die Datei direkt herunter – einmalig bezahlt, dauerhaft nutzbar."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kann ich die Templates an mein Unternehmen anpassen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja, vollständig. Alle Word- und Excel-Dateien sind editierbar. Du kannst Logo, Farben, Felder und Inhalte anpassen. Gelb markierte Felder zeigen dir wo du anfangen sollst."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Gibt es ein Abo oder wiederkehrende Kosten?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nein. Einmal kaufen, dauerhaft nutzen. Keine Cloud-Pflicht, kein Monatsabo, keine versteckten Gebühren. Die Datei gehört dir."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Für welche Branchen sind die Tools geeignet?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Primär für B2B-Vertrieb im DACH-Raum – aus Erfahrung in LogTech, IoT-Infrastruktur und Automotive entwickelt. Die Grundprinzipien funktionieren branchenübergreifend überall dort wo Lösungsverkauf und Beziehungsmanagement eine Rolle spielen."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Was wenn mir ein Tool nicht gefällt?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Schreib direkt an danielt.toth.85@gmail.com. Jeder Fall wird persönlich angeschaut."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kann ich mehrere Tools als Bundle kaufen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja – vier Bundles sind verfügbar: Neukundenmaschine (69 €), Gesprächsführer-Kit (55 €), KAM Komplett-Kit (49 €) und Vertrieb von A–Z mit allen 12 Tools für 229 € statt 318 €."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -1331,9 +1455,13 @@
         <div class="lm-title">6 Fehler die deinen B2B-Vertrieb bremsen – und wie du sie vermeidest</div>
         <div class="lm-sub">Aus 10+ Jahren Vertriebspraxis. Direkt, ungeschönt, sofort anwendbar.</div>
       </div>
-      <a href="https://vertriebswerk.gumroad.com/l/b2b-vertrieb-fehler?wanted=true" target="_blank" class="lm-btn">
-        Kostenlos herunterladen →
+      <a href="data:application/pdf;base64,JVBERi0xLjQKJZOMi54gUmVwb3J0TGFiIEdlbmVyYXRlZCBQREYgZG9jdW1lbnQgKG9wZW5zb3VyY2UpCjEgMCBvYmoKPDwKL0YxIDIgMCBSIC9GMiAzIDAgUiAvRjMgNSAwIFIKPj4KZW5kb2JqCjIgMCBvYmoKPDwKL0Jhc2VGb250IC9IZWx2ZXRpY2EgL0VuY29kaW5nIC9XaW5BbnNpRW5jb2RpbmcgL05hbWUgL0YxIC9TdWJ0eXBlIC9UeXBlMSAvVHlwZSAvRm9udAo+PgplbmRvYmoKMyAwIG9iago8PAovQmFzZUZvbnQgL0hlbHZldGljYS1Cb2xkIC9FbmNvZGluZyAvV2luQW5zaUVuY29kaW5nIC9OYW1lIC9GMiAvU3VidHlwZSAvVHlwZTEgL1R5cGUgL0ZvbnQKPj4KZW5kb2JqCjQgMCBvYmoKPDwKL0NvbnRlbnRzIDEzIDAgUiAvTWVkaWFCb3ggWyAwIDAgNTk1LjI3NTYgODQxLjg4OTggXSAvUGFyZW50IDEyIDAgUiAvUmVzb3VyY2VzIDw8Ci9FeHRHU3RhdGUgPDwKL2dSTHMwIDw8Ci9jYSAuMDcKPj4gL2dSTHMxIDw8Ci9jYSAxCj4+Cj4+IC9Gb250IDEgMCBSIC9Qcm9jU2V0IFsgL1BERiAvVGV4dCAvSW1hZ2VCIC9JbWFnZUMgL0ltYWdlSSBdCj4+IC9Sb3RhdGUgMCAvVHJhbnMgPDwKCj4+IAogIC9UeXBlIC9QYWdlCj4+CmVuZG9iago1IDAgb2JqCjw8Ci9CYXNlRm9udCAvSGVsdmV0aWNhLU9ibGlxdWUgL0VuY29kaW5nIC9XaW5BbnNpRW5jb2RpbmcgL05hbWUgL0YzIC9TdWJ0eXBlIC9UeXBlMSAvVHlwZSAvRm9udAo+PgplbmRvYmoKNiAwIG9iago8PAovQ29udGVudHMgMTQgMCBSIC9NZWRpYUJveCBbIDAgMCA1OTUuMjc1NiA4NDEuODg5OCBdIC9QYXJlbnQgMTIgMCBSIC9SZXNvdXJjZXMgPDwKL0ZvbnQgMSAwIFIgL1Byb2NTZXQgWyAvUERGIC9UZXh0IC9JbWFnZUIgL0ltYWdlQyAvSW1hZ2VJIF0KPj4gL1JvdGF0ZSAwIC9UcmFucyA8PAoKPj4gCiAgL1R5cGUgL1BhZ2UKPj4KZW5kb2JqCjcgMCBvYmoKPDwKL0NvbnRlbnRzIDE1IDAgUiAvTWVkaWFCb3ggWyAwIDAgNTk1LjI3NTYgODQxLjg4OTggXSAvUGFyZW50IDEyIDAgUiAvUmVzb3VyY2VzIDw8Ci9Gb250IDEgMCBSIC9Qcm9jU2V0IFsgL1BERiAvVGV4dCAvSW1hZ2VCIC9JbWFnZUMgL0ltYWdlSSBdCj4+IC9Sb3RhdGUgMCAvVHJhbnMgPDwKCj4+IAogIC9UeXBlIC9QYWdlCj4+CmVuZG9iago4IDAgb2JqCjw8Ci9Db250ZW50cyAxNiAwIFIgL01lZGlhQm94IFsgMCAwIDU5NS4yNzU2IDg0MS44ODk4IF0gL1BhcmVudCAxMiAwIFIgL1Jlc291cmNlcyA8PAovRm9udCAxIDAgUiAvUHJvY1NldCBbIC9QREYgL1RleHQgL0ltYWdlQiAvSW1hZ2VDIC9JbWFnZUkgXQo+PiAvUm90YXRlIDAgL1RyYW5zIDw8Cgo+PiAKICAvVHlwZSAvUGFnZQo+PgplbmRvYmoKOSAwIG9iago8PAovQ29udGVudHMgMTcgMCBSIC9NZWRpYUJveCBbIDAgMCA1OTUuMjc1NiA4NDEuODg5OCBdIC9QYXJlbnQgMTIgMCBSIC9SZXNvdXJjZXMgPDwKL0ZvbnQgMSAwIFIgL1Byb2NTZXQgWyAvUERGIC9UZXh0IC9JbWFnZUIgL0ltYWdlQyAvSW1hZ2VJIF0KPj4gL1JvdGF0ZSAwIC9UcmFucyA8PAoKPj4gCiAgL1R5cGUgL1BhZ2UKPj4KZW5kb2JqCjEwIDAgb2JqCjw8Ci9QYWdlTW9kZSAvVXNlTm9uZSAvUGFnZXMgMTIgMCBSIC9UeXBlIC9DYXRhbG9nCj4+CmVuZG9iagoxMSAwIG9iago8PAovQXV0aG9yIChEYW5pZWwgVG90aCBcMjA1IFZlcnRyaWVic3dlcmspIC9DcmVhdGlvbkRhdGUgKEQ6MjAyNjAzMzAxMTM3MjErMDAnMDAnKSAvQ3JlYXRvciAoXCh1bnNwZWNpZmllZFwpKSAvS2V5d29yZHMgKCkgL01vZERhdGUgKEQ6MjAyNjAzMzAxMTM3MjErMDAnMDAnKSAvUHJvZHVjZXIgKFJlcG9ydExhYiBQREYgTGlicmFyeSAtIFwob3BlbnNvdXJjZVwpKSAKICAvU3ViamVjdCAoQjJCIFZlcnRyaWViIERBQ0gpIC9UaXRsZSAoNiBGZWhsZXIgZGllIGRlaW5lbiBWZXJ0cmllYiBicmVtc2VuKSAvVHJhcHBlZCAvRmFsc2UKPj4KZW5kb2JqCjEyIDAgb2JqCjw8Ci9Db3VudCA1IC9LaWRzIFsgNCAwIFIgNiAwIFIgNyAwIFIgOCAwIFIgOSAwIFIgXSAvVHlwZSAvUGFnZXMKPj4KZW5kb2JqCjEzIDAgb2JqCjw8Ci9GaWx0ZXIgWyAvQVNDSUk4NURlY29kZSAvRmxhdGVEZWNvZGUgXSAvTGVuZ3RoIDE2MTcKPj4Kc3RyZWFtCkdhdD1rOTY4aVclIlJnRSdmYFg5WkppTmFddUBEPUVVPmBnVW8nXUMwOWlnVj1dJi1qO0s0JXVeMCFSYlVtVCk8YSglYUQjaU5VMVlxaCJFSXFcZSlJL3BjWl9YIlpGLiJnVXNXI3UvLVtrTSJqcnJlIjBkTU4xQS5cVDM1S0xJJkQnR1MvJVlLXlcoJC5EZScmWDQrRykoNyVQP05gYmkoKCNqJk44bSJfXmFRKCw2Y09yMVJkLF9RJ3BOR0xhaDo0Zj5bcUZTbztfbCUqYUBxNHJkKUhqKCs5clg+WUdqLzs0KjJsWjo8a1xjVy11RldKUUxkTlFTcitYJyxdY0tqWko5UnB0ayZLMjQ0SE1udTsuLDQrbGtXaykpJTBncHBDVkFRVlhPQWNTQEBgVHVmWDY/RSdvTzlQPE1kQmddJEleTTEpWzc1VGRBdGMhVjBcREJfYSo8SUhJXEM2JTNYO2pKZGpGLyhrVz5RcF9cWGFAQ2crSSVUSSk7KGdyLlNMKT09PjBucFpVYT4mRGhAJlBmNylJVEt1TClPSHUwbnBUU2tWN2Y1QC1CPiI8bDV1TjIwa2k1QSFlJWw0OFwlMURMUGZFWVViPmdkLyYuRyotckxWJy06JUpPV1w9U0o7K0spTT9cXl4kSidibk9ccF5XT2U/Pm5dWUs6aFglb01xLD0zPVVoTihTJTtnZk9LXCs8IW9rK1RKZEJrbHI2cEwwVVVGa1BBTlJYb0hPM1sxVFtkR0hBbSlVTlpWOTE7Z3UrcHNjL2AhQFx1SCU2dVNoQ2syJF1BKig8ZmBMVSlEdVJDVV1YbXQ8cUpsZjBebSMmdTBVamBZZjxeQ1MrMShkZk8wSk8kUTdsTGVRQSFqPDZAJ0VbNkxhLldPZC9nXlwqSClcSyIhWVtDXVUkVE5aQ3BfWWlfL2c+MipuMVJiSmZHZlYwaW5dLEkoOWEjWmE7OC9SMlwlXWRHZjh0MiU5J0pVUDU/XHMyZ1kjZzNiKHRpNU9iJFRzMyU3PCxeRlZyWTtoT0kxWFwiRFUxMyU2UDwkWzIoKl41LCJPLSdrI0wvNEYiQWVPcW1gNCdTa08jSGgkNF1tUVA4Nj9DIycxais/PlwzMVRCYDstMVEybGpHMmNfcUIyWC1DXiVAZFRecTpJPzAwR0AqJ25sPiwrc2doQ1UxSjsvMmhmUTViIjY6bl0qS0FvLUxqI2peZS88PGRkWGEqbC0lPmpuMS0wSkdDV11AKl5cSmZcMDtMVTBXZ1UqSTtYNVgvUGJWcU02cmRkUkRsb1kwWDM2ZjJIbGg/RC0tMTIuOFRGQkQrOHRgUVlgWl5GOycuMHNBP0J0YlhGITwlUGE8V100KUpmTE4zIl9QOTVmKlpPa1EwOmNRU0dWIU5bMWZWRllcVDVYPiIjTVNYRzoxYz5pO3Ekc3A3NVcqWVxsXDxGO1prZDxBOU1WMSljT3ElTXQzZ2lMXyMtb2opbihmP1NXUmErJGdvQzdrSnBVUHFGYkMyMTZOXiJOcGEpMWBGKjtzOlFlL1JfbGxGVCZtSDpDJm07Ik41cVxCYlVfREkjV1k2X1gzL109UlNjRT1HWC9qclQ/XDUsP0MlJHNxN1ZYWWVrRTFMKD1ZW3FOV24oJjwxVExsZEdkcmVQUz4jbnVwaUkrUEI4XTcrKykpP19MTm5GV25UO29jSmxOSCNALT5DMnRSV3BnNzM5R0NUaS1yTW0kQVVUcl1GTDFFPWJYX0BTRUVaTlVfLmQxYWxXU1cqOG4jISk9UHJHUWx1PV4qTGxfTkEoUSc0PCkobGwtKClScCMuMSNZZ1NaNi83Xiw9VU0nMCRfRT0pQjswNC1KPTxmTVVhTjVucTElbyVSWVtnWXA9KGdEbGUsRFEsJF8nX0BNPUFBWyc3JW9HQ1dHM1ZMIThQUSdAZ2VkLylSIi1dVT0wYEpbI01EbmxRLWZMMkNII1BbUiFpRSI1NW9nMSE4MlhdRkxnLTB0RS5JckAqWipvVSh1S2hZJlxcU0AyR1ZMMWIvYk5idSIpRStRO3BxXGoqbm04IUI4Wlloc10tXi8+I2hgTmthOSYzYERUOCdELVBmYElVK1BxJjMmIm06NVJZNlZNPlFlSl5edC9nPSEub1wkVDYhN3B+PmVuZHN0cmVhbQplbmRvYmoKMTQgMCBvYmoKPDwKL0ZpbHRlciBbIC9BU0NJSTg1RGVjb2RlIC9GbGF0ZURlY29kZSBdIC9MZW5ndGggMjAzMgo+PgpzdHJlYW0KR2F0bTtnTiklLCY6Ti8zbHMmOChOIlkoKTFTJThUZHVOSF1AUylQbDNlIWJSODdLTXEhZzZGJD9mKHRCNnNvJC1lJklNJTY8SVhpbStKXXE6J1EvbHAlcD9iKUdUSmonMkRmWkZAIlxrKC82RzFRayJRUihjUTlXJz8lQ2pcVjxJRnBdZ0k1O1RoPzVBJ1ldWyhtW2gnRF9wQSslW2ZNJTRQUikyOFFyYkswXDcpU2BGMSxmXVtRJWdOYzpXQ0YzW0ouWmI9RVFRIlBcUkFvJCNyYFwzJmsvL3RLSls1Wj4mLzxhPDc8I0cqT10nXnUtNDNWZTBSTzMuRy9KcTooQj5KOCUnOSg3b0RNQCpgM0hQbV1cZDY7dEhrdChLRS07dCQ7N2hyW2o1PXFqPmxALkBta2ZIIj8xL2BITE5BazpDXlZ1blE+X1I7LFwpVWBuPGRvTVFJQ25LNURkQFxyWGg2cWAvKU1qSURNSiZaMXRobiRgQW1EVmM4QS1qPUsxXFs6XTRhZ1UlITA8VC0vPj89WzMvZSlKciMvT2FgS2lgLWNpaCRXVT9AV19DSTElLlE+I09fTzlrZGJBclM2NmdScEthPDFXMCJyRT0nVUFYU1ZiTXVANjFwRkcqcE8mKE1uSy9KTiJNZkElKUs/b1A1M3NobzZVQ2tGOFdZbTU+LicyVFlHYEU2XjkoOmQ2Z0pJI0FrTUkkR0g/bVlrSiFRLlwrNTZaJEA1OzpoYUlvazc9dC4oWC8wQDArbkFeT150cT5pYS11aV9ga2pQRy1IbjFlNixyamZVZj5pJkhuMTwtMjs1RiVJSl9YXyFhRktqOlRbSCsuNXNXK20nKk9zWFYjYCs/TSpIKyw4MkY8WGRAcm5JalZINyN0JFcwYERjallFRkRBZ25ELDEyS209Om84OjhxJUJbcD01Y0phSjliPDAwJTo8I2lARy0wM0YmT1JyNyFlXFpLMmVwJWQ+TzYqaEsyOSgkOjMiZjB1WUVrQjsmcy4jVFh1TVdnc0slaylaIyYzVFJXaSFGSFhHaXAhR1c8clpkM1pRLHQvLlJGTUouZitxL1pNSFwpSnFBbVVSTnM4R3RHJUJFUTNNTDg4MmMjPVBpJWtVRktOdC9zXEVuXVQ/UWJkakU6W2ZHNkAmKUdGdXBGJzw1Lzs6JkBALjQmRSZRZFEuMEpRMkRtTnJrOSUxVVk2Y2BKXlpTKkBTK2lHKFo7IykiQUgxI3FqTmZaQGxTQmQ7YnVDXSRNTTpcIypgOUskZS5fXmgkRDRZYDgsUXF1bV4rJC9DJi1dUWkjVGNaamxxZ0pQdGciLV4wbFktK3U7OHAxYFZcNzpzOVFyaUNcQ0RkUD8iPTJAVkxnZiRFXyklc3JcZ1JGYXFURD9IajMnVms1SmstdTYvKzJgQipuSGwlIUVScF1BKWdiK1EwR1hqVFMxOVQwOycqcT4sQiVbMD8iPnMoWFFHYDNkK2dWX0xCYlVSIWc4VUNYX2pNRFBPcGI9dEpcR1VFZHNobyprXjVAJl0iJj9ZKGw9PiNuWzxxLWJaN3BpJE5OKUAoIW9VbWR1ckRVckMjQyxWOTE9KDBrKlNmak40XEpXbDE9J08sKSE+aWVTRTNjMDY1UTU8WkNgb2lEUmFKPl1wdT5pZDtBWl5PciowXiZWPnFhWjJmXUJYYjhsdTAsXTJrQ2JmIlQuRHVHZVBEPyEjRi9db2QvSToxLjVdLFtcYFFdVG05LlpURCYxOiIuZXMkc01QZ0w1QT5VLEFUIWs6TEouPzguR20sUEVaYC0qaltMLFspYV5JSz1gTjE1UVEiRSkmSFlna1Yyb1RbKTUzU3E1Q05KO1VFYSZrPFY1ImdNJC9yTyM0TEteJXI8UHVHNVpBP3E/TmMmIkAzJWpEXyE/bi0qK2pNa3FNLVdiMVdkRXBlLzBMZkRlUW03TERaWkJGT1A+QU1XLTBQXjtqaFEnXXJpJUAvVzdlPysnczVFIypCXDInaEpoYDJVazwmayZYUFpYWktidWhWRWpYa1VNSzZhKUluajtAOlBBb0EtVUQyXV81YUspWFwlIUwzQ1w0MSE0cSJBSnRYIj1ocmRXSjF1WmNEXiRHVU40KTVdIVs0RmpaIlNpa2pFSXBZcSY8UGUyW00pRmgxPlttXT4kT1cvaG1ablVXMFJic0Y0NjsvbTVoIiFDaGNgQVIzZFpZY1MqPEVPLXJdImNTPGZPbV4tXE5DKTQ7OlUva3FbUjxQYHFsdF1sUTZVKmdBTihGOEB0Z1deMictVSs9WnBbJ3VXJF9RVDooRW1OJipXbTwnQVQ/c0IvNU5ZWkhESzsoNypoVGlRWURiUy1mPks5XEtWWi9RbjFqOzxAZjIvLlZjLGdkNXI6JzcqQTRqbWw7KSJcQDBVVygoclNuPVFocHNAJipYU2xvbUhXUW8xNXF0c0ZIPWhNKCpSMy44T1lpOSRsYz8oQ1kiYEtCPERwdWVlTDxKYXI3KSsiNC5YbjQsbWorKm1dIlcqRU1ndGZGWGsvZjxdLSM/NFMiOzlyMUkoam4zPV9KKDAqczk7b2BOOGRlbVhAMStXJl0sPyRVQVhKYyYzZW9LZ2JhdDRScCVMcFpDOVFRKkYnaCIxbFdGbV5eJWYhM0NmR1IyVDRkLjZhMFRxayFoRVlmS2pgMlJJJChMdTlTN2ZxcGUiKVN+PmVuZHN0cmVhbQplbmRvYmoKMTUgMCBvYmoKPDwKL0ZpbHRlciBbIC9BU0NJSTg1RGVjb2RlIC9GbGF0ZURlY29kZSBdIC9MZW5ndGggMjM5OQo+PgpzdHJlYW0KR2IiLyY/JEZhZyZxLyowVyZNIycnIThsNG5qWHRPJjQtRy4pcWE5NVYmZCYsYHFvMUg5NEpJSElWdVEoYD9GYzEzSlpeMUpIWFprWS0sP1lsVzFEYDApZzFqcE8sVlQ1LEVhOUhLPWxZPycjamArXGdrQEJSOTxrT2xOdUxSZWwpaUVMPTZqM0leKzo9XExrQFdqIkwrSUUtUUxLVkMjPHIkNy5LYUlHNUxnbFNuPWBAal9WJyk+XG9AQG5ZIk09JStEVDAxZnFHdG5wSDs+VFsvbF46UConPHU9VW4hPStpQDBFV05rRGJcJEBHbGlVJ2NYZUxdInFBMmBEMk1qMWJJdGVfZTsuUT9dRT5ZKyVQQCxVLHRTN0xnbXE4XW07SVFlJkJqbi9rL3BPVUtjRylWIj0tP0FocHNyKEpSLUNvRztrJWslNigvM2doKERMYWBdZmZBRD5ENSUqP0k6KFlFUl1HbGUnLGFRN0YrYT05SyZROU5XXiktNnItLFpGSis1OW9zUGUsNzdjSEpjQ1EiLS1RSDVrM20vXFdYXmU5LDI1RT5LbW9WUmBldGRsLT87TTVQRnByOkVAa0k0KTxgRTo1MGpOZi1jbTNNRDVbXS5RalNDKmBVOjgsTml0JTlqSWNvbisoZC1BX2hfKTsnYnM1JklPYm9qNzNKSipXNEwuODJuOzlgb2JrQkVJNFRiXjNSY0leIT49W0JEW1QvYVpoOkhbZDBPMmo/aGJtRltvdFNhXm5aLCVnViVRam5kJilhJjljI0pdUzNsb1heXi1pRTpqMz0nNy9DalY4MW4zT2VdcjpubVRSKydmdWQ4SmFRT19SVGA8TlZePjQ/YCpDaGQ8QEQlZW1RUCItaS1TQ3JiSXM9X2hgXjItNXQnL1FNKGJnIUVWMiVESCYnV1xQJTkkIXQhaFMzRFA0QCMhbl0kVWBqWCgwTENOaDs+dEFsRys4SjIiX09KcmoqIWwzJCZpO0U0Wyo5JkhZPjU0ZC8uX2woTVpkRj5eaUYsSkw0QTdiVF0wNyRNbV0oXXJZclRyUGFLOyVzOzJAYSYyWUkrXEslTEYyYz05Jl4jZjA5J2VeW1QuY0NNYURraTFPT0NIMik3XCtXaWYrbm00NS9qYUgsNkMpVHRhblNrKFo6OHQnUEcwVDhyMDkzJSpnQChbV2JLTHEqUVM2Ni1cVS4lTiI5akllQCczYHBnZWtkZl5xTGlWR19rSTtWRTJxby9WQi01a0wkbDgubG05Z1dXLEQxRDVlWDtZSWo4L0xvYmgmTjV0ND06QHE1Y0NtWydZYkJJdSYuPDAxYzBRN1AxPyohNTVoPj4xYiFCaUdRckYnMik6PVErZVsoQ1MpNFljQysrM2RoUS4uciFFM1YlUC45b1Q/dCpaITMtc0Ewck1CW0FFRmwrOVFcMV5aclonMyplJDVaRDdzJ18vI2gsJVdvYGw8ZnI4czJEVGJpNEQvPVM9KjdaT2FfYzxORClLTi5yVFhDSFVIJio2a2IzPiJUWUNKaSp1ImZbWGI7RXNRYFciI1BwdWVAcjs8blBtJWlhUS8uPWVUIypNcipgXzkqUGJIViNUPjdHX2NRQmVgKV9GY2koSlNdLSpCNFMvY2VIa1tFU19cb0RJaklvMVNgbDBmX290Oy0uSkJtXkxUcm9sQCkzPTklbksham5IOztKImFpQ1RBLyZXQWYvUU9xVSRMIzBwQj5yUG0zUk9mayldbkFkUVM4NkUpLDk8Yy0nSSQ5cjwlJlNqakFTKyYrKVduUW5KYi8sZDFvJmFXPzBTZj9AKD1eLnNvRU8qWWQjMktHSzMhOSUwMUgvVDouJk0hOHIwP21cXWotSUEnO1NIRituXG1fJ3BpYytAS3EqZyJ1UmJuPCJwMDdcLyM7ci84QUohIlorKWpwU2BuVVYqOnA1XSdwXCZcakVJXUFXK14+U2Y1MmlaQ0xCKEZELHFHSVBGY3AsZj8mJU85aSxmVUsnZTMzUWNmUWlATykqIy9hJz44V1s4ZlgvPUc2KSFrJSE+LTQ6XWUtLDptISFlYUE1NklGWlAncW1UMFMkNDhKb3VtczFcbD9WVD9pIUdfPz82SFtVWThtakU/JyFbSysvZWlGK0xxZ1suPGwpXSY+XjddN0dkRzBMIUkmTSFRSSxMaVhCI1xJOCJtUzJfOlFzJ0M4Xk9PTkdGaydMPyMzc0cyJF1kW1RmRWc8IVtZbTcpUicrQ000dSo5clhxPTdibWoxaWhWOEltLDBKYCNSTGs+WUYoWyk/YGdQN0BaXG8sJ0MoMF1lR04tW3NbO1A0WEtySi9QLStIQ05HNGJBXkhRWiZ0aCs7Wms1a2tTPWBkWFBFMmYnREkvVy1Cam05NVQ0bS9VJGxCNEhWV19IaG1sNVo0LmZhZkkiNmRoO15zU2tbLmZ0bFp0QFMrUEpGSyFnVik4WlZebXBASj40MUU8XGpgPlRNMjFyJF9HTm5DalIpZlhbMyRNV1RrTT9tT108MD9GJihaJTVUOEdTNz5QV2UwMTNhVyVnRnBAV0xjQ043SnRTZEhgMVJyOEdaQWREPTg8Uz1ANictYUdfWlg3MFQ1ZiRTI0dfIkc3QjY0TWMoI0hhTls0b0wrOmw7ISJbLmJUP2pEZWltJiViJEs5JytMWD9zW3JDXmRyKSVAZ2olMSJaLC1MWnVKRCwwIXRYaj9AKDRhVGs/MmZvJGg+Q2QyUmIjZ0RUUig8OCEyO1JUaylRQXRDIkMyN0tTPCNcZD5WRyFEai1fKSxwWDs9VmA9LztOXlQxN0ghOlg7Kj1BWiluLV9qbF0iTWkiUzFpJGhSK2g7VTtzM01PRUdzUTYxZD5sVCY4YTRCNyE4aEt0aFkvR1Q2LW9vSl5vLkFrR0RBTSlmZG5RPXF0UFxYSkpPKlhFIlFtZUptKkwpWFRMRT5kQik4M1BjUVY3PVZdPVRmXCpiLGAjVVlOOzA7QVMxVSQhJyY+W1pTLG9BP05CPz9BXjhXIWBwZ1VwTlhtYTNzc0hdSDQpayo0P2ZgIU9QdCoyPSJuZiheViMrNS85KzI2XiNyLiVcTHFpJiw0TCElaFxHJEJwYyFlWVphLGQnIiFRWCZPc2RgSiliPl4rcGQwamBfLlF0JUdJZmdPU01MNHVmZFkxOTBUNGNkbmojXXAhQ09TUzNXfj5lbmRzdHJlYW0KZW5kb2JqCjE2IDAgb2JqCjw8Ci9GaWx0ZXIgWyAvQVNDSUk4NURlY29kZSAvRmxhdGVEZWNvZGUgXSAvTGVuZ3RoIDIzNDEKPj4Kc3RyZWFtCkdiIi8nOFRXV1UnPjxeNW9UPE0nNkVpLFdVZFUsPUE2RFByPi06S14xKmhXIzZuQWBOMFEkZ2NuK0QyMitcUE1tOSZgYyM7P15KX110QVhIckV0T1dyKWlnaTFhVkZKbC9yRzQvPVhZI1o8WTtEbkhUdGs6XTw9Li9DT3RvUmdkSmEiNEpYOE5fQ3RvV0U+WyRmR3A/Z0BATS4iP0s7dUlpOylHJUwqKGA9OTgwMjs6RkFXaWZvXiZZVEMoUW9tPWAxb11cJS4qTD8hcW5xIUVNTlI4JjdrRUczYFAvZCFHKiVwJldpKUMjTW5hKV1pXzJIW1RYPiNWLVYpYnBzbTMyUEtMP29UMzYlSmxocUtBZV04VVs4OlM1JFxTR3JAZik6cToxI0AjP1NCZT5BPjRUcmJ1ZzQpVms9UWBfU0dqOFw6Ji0uImtrTlo5OSFhNztjWWk5aE9PaCRUZzBiZjZAMTIwJVBxYyo7dHAwK1dzNkxYcVRLU0lqZ1doOitiNVBcVTldMz1pPj9UMlI2RiZDNzI4cEteSzY8LSEiVEstXTcmSTo+Y21FUDhWKTdXTVc8bnAkTWJDX2VzZktaTkcuZy06JyJJY2BtbzFfSyVUUk9jMnEpOjwxPWw/cmFmYjBNTDZraUBrTkc9SCgkYi9ESVBKLE9aLytCNl5zUzNbSF9sWVNvUnQsRz5eLjU7UjQ4ayYlIytoVUtfa249JydKVlMxZktoSjE2T1hga2FJbjRyaVgwSls4OCoxbVxPLTYpPD5tXih1ZG5iS1ZFa1xTLDZHJm5BQytCW1tGJEo6S0MsT18wMjdKRz5VUm4tUU1PXF0mVnBJLjg7QUdWVm5wY0pNMk10TktmWDdsIlRDQTVnQiMnJSk6OGIyKj9eOGVJQjg8dG5iOF84NWdhdEcmcyN0ZTFNTjU0L1Q6b11iOzUtPldEYDdhLT1LWU1xXlBWI2ZiT09GXF1gMzJBX3FnU0VtTDlzLSliPG1uXFo8KigyMWo0QyknbClrZVlSRzZiZEI1a3A9IV9eNm1uPUw9Tj9oP0hLaWpRRGg7a21sVGVoPGJgKjhYSFdHZUknRSxTYik0K2ZgZVFBVnRtXGgkRjBLZHUhLiUoWXU1KVAtSUhvLF43VFRXQlZWLj9ZIl5YKShlVUdvIS9HJTZFWkghOjElcC9kZkUmRj91Klc8M1gjPkF0LCxiTTZwNWhKU24oOGBaXlFRUzxNKiI1R0QlKlFJcD5BJ21oP0dwXFVVT1IycHNkNz82PXBiWkYkSWUzbmgwTCxab1lVZURvYD1XcThUUnUqOzRRSG0tUm5FNGhbaTVvY2tjWDpSMCFJS08jV0tsTUw5YlAsTS1XRFBfRF02QkpRQi4nbFE9LTk/cVxdQypBVE50Yzg3WHQ4YkRUTC1HOlRQL0w4dVFXblUwZXRAaUZwdVROO0RRKmJydEQjXHJlIitfTkxzb1A+Xy8kMjdEKiIvSSMpTF1ULmtROEA2NGlqdVw8YGtMWWBqJEk5S0JKUVEhQGQkLy5PM3JgW0AvI1JOLy9LVWA0OURfZl5wYj4lOiNdXFFYI3MrVy9EYWkxQW9DaktCK2tfcFtZUF9NKj90U1VJLDhPXDRGZjZqRTJcJVovczMoUjloWC1TPVZBJG5gNVBAP1BudUIhT3JTTk1EUFhJQjFrX2IlXT11cl5eb2NEIi89W1NdM05nX0VHSEpPaixTQFNMO2lkL0FyKSQ4WFVGLTdgMixpWWlCJWlRMDojVipGRlskbyZkRVVAVj9VblRlcyUlYlNvYHE4PkAhRTRvbGpDTEdOJlZoNUM7MWhlNF86dV8tVU1WKzsiJGxUZjpeXVk3LGJSSlRpaXFXWU8tW0hYQF8kPyNsXnEmaGxdT24+JWEtc1FiVmBBanEyTkxPdHNHa3FrWyxQQ2NtOyQuR0MnRDYiaCEsbWhjMyg3RyNMST5lcCMnQCxURlwsLy1oQ0hwcnM8IWFmckBqMS1SKy5RO1hYZzUySmdXVTVwSjM+Yyx0K0JbOzNTbSJbbS9zc2Yxal9HOVBPNzFQaVc9b0w8VkdTYjE7aU5cXFEsMFU6WVlPZyNOXG9ASmcnQFRcRmxXWzNhOD9ISzgpPWJTN3FeYy0nV2leUmVDbTtVKS4yUW9QOEY/bSwoR1A+cUJXQSokZzUzMjIxUipCaCZVNDppVXBEZS9tJFtuLllTKGIzRTpbSy0tcS8mRmN0ZUZOP0pTb0s7PE4tWUM1P3QlWDFILktcOGVdJnRbPm9UcGVnUi4/L1UwKTBCJEJPLGFsbVdUP146bm49RTMnc2JnblVLXEZKNGs1Oi1UI2BSJy4/Mk1NbjQ1QS8xRj5zWmlJLUwlYTpKQDU8QUEmLUYqKnNURT8yZiZhZ21bUF1RW2E/UTRURm5GY1gkSENRRSIrLSssKXBQajtiJ1ZXWzFVSz8hVlptZlVjQSVLYVlwJigzJzY4M2ozJ2lYamk1Qzw+YE8lO1s5Ij5xdV9oYEVJKjw7TiRtUSYqZ2Q0YU8hJyRaPU1AbkhjKWxoMk81KDpgJDBcb1gtUEhRRDNeaVJRV3Ikb29LK2c3WmJTRV06LTY9OklzZEUzY29tcmdVRi5Zc1FPSSVOb1NHMmcsUjlWR0d1OEA+ZWQlI0NPRTJnIWkqMkJgOzwyZjhrP1haUkU/bzpLMyxgY2FCcy4walQqX1khMzdESFkuXEpTOyY5SCY4YW4/KEYuaiZPWXI8LDVbZV8+dClsS08qXGBTODxxPDxUZDdqbSxNNl1HK0pfRUQ+Pm1mLWsubVZYYzgwWS9pUmknZE48NU8qKipiQm5uTFljcSlZYVdicjB1V19MNkcrJDdZRCp1J1UscjEjLEAqdFpFVVpXSSc3VEoudDgkQ21GbFVEWGAyQVtgM0pWa2E1aDgrbF9BOklNcTpNIyU4YVlBcSgtIzVDMjNHVWRnaCklS1o/PUFiXVdHPGIhQVNSMTBcRFsuaXRxUS1fb0RkI0xVRldGJyhaNDNZPkt1KD9vNScqbyZoXyFyM1Y7SGhGXSlSSmsoSmJnNS9mVURKMkJmaWM6UnROUksxOzNEb0ZGYmtAOlptMURzbTZdU2JzUTM0YTBwfj5lbmRzdHJlYW0KZW5kb2JqCjE3IDAgb2JqCjw8Ci9GaWx0ZXIgWyAvQVNDSUk4NURlY29kZSAvRmxhdGVEZWNvZGUgXSAvTGVuZ3RoIDIxNTUKPj4Kc3RyZWFtCkdhdD0rYWA/RSImQUBya3FQXjMrS0UvaSovcjtgUydAMnUkVW1cMlNxKko1Z2AvJz5nYEQ2NnBvLDprJWEmWlppLm4nSE9eNCtuImpQWDdyXkdkJVhgS0dcW1BVJHRxRGI0XTtDJio8bGJFRy5kS1FPalw8JFw5QyIzMmRfLCJHKmRRKCpzV0xJNFE8amxoNi1hOmcmbUh1XklqTFJ0OT8xaiZXbk0kUTNZQm8tb1JgPXBFJEkyK2spMDtXWERjalRsIWhISGQpJjBAO1ZGYG4oSWNsVCJaWFloOi5bND0rLWA8Ilk7MmklZzswQUlcR0FPX2xlWmhcV2oyN2x0PFMnQmgoPnE4LF5vJygyZ2JENGNAVkg1UkJjRTlAVTUjSyhXMCc5TCRNcVAjc0JfX2xiXlVOSlEtT00idTcqPSFKLkZPP1JIQygtaC82IiQmbTslNDxNZ1hOQkNWTCxqLC9pdEJdOS85VTBqYytRUS0tU01nbVBIIyc9NF8sOXQ6cWZbYjE8YUk0alFwUCxeLWxbJWM7ajJwYGtROW9lLC5ZJjpbbVxrajJVP2I+PkNjXTNcVTMhX3UjSEVJcmNAWDJlTF9CY040NF06ZWg6YzA0IUtWTWNvJEExVC9AS1xNcz1qXUNAXUs2SWxxOU4/QjFYX3U4Qz9YWUU4ZGJvUyxbVTMoUHJmV0lmXUNcLyRbXXEyPzRFUW82W0BuaGA2ajchZ3Vsck9SKUErYC81U0RaRThwWVJTMC1NSy5mbnJNaU1UXUlVLFc2X11jbj51LCVXP3U5RzllXmopaW5LRUxkZWhGYG5ZI1dWSz9PSV0qJ2ZUZyRtVj5NVW5dcCg0WFIyajYmLzhpZ20ubFNAPkRgblZBVSVcTmlWXmEuODxZSFlab04/QDIkQGdMXl1NcGdaXm0vLTFCOEs5RS4hRD0vMEhfOS1QbFkrcFlLQSNCXEhMTSgxb2VeKktgSGckY1RaJyRLUF83WW4kVj9yLUknMCFzKXE3UyNEWmtLRVMoZTFAUlR0LlREYkcuRD9dMjs1WVwyRzdLIStbdVBXP0VtPFtKUDxOPWhNQmZnJkFOU1kpQjI6JFFMcWxoWD9FcVcqJyVlUWVZSWNdYWk4OW05JHA8ZCVRWTosXUpjPVxWX3FGUGk8OjgnakF0T3JdPWUlSnRxIWdrI1clTkZIQlAtSFMyWSM+PXEtTEUkXys+PyxaXHJIbUdfcjlwNiMoJFhEPSdsLGdKLlFZbTc+biFVN1NLOF09M1osYVJJViVWI1BZcV1PVkJWJWBRIyEzLFxsTkRgb0BuK2VNa2MoSicnVmoxbE9wMWZVUFxtT11kLHVBPVFEMmdyLl8nTiI8IVsmInRANT4jcEJEbWBuMkQ9am5rcTNbNWZcZ18vR2ojRDpwJEVuRiZRZEdCaTFeLTA5R2xaJC9DVDlJXTIyLS9EamE5SFs9LGBQVEsuKSguS003OSs7aUwzYlJKZi1ZdTRUWlI8PV1uVSowUnV0LmIjIUxpVi8/VlhQSThNODRwcHMiSi4kJGdmQjNQbSlDK1hQQUE1dWwhI2IkYk5pLEFeP3BuLHNzR1JwMFw9bDw6WyxxdW4mXiJBZWUqLUs6NkAqWWU0V1wwNS5GcypoV0tiX0ZYMihBXnBab05dL11cOkVBaFpGNF5bJk8rKFpSUyM1QnJ0VVszTihgSjNTN1UnUjJiMlktKl9OVkk8cmFoSTk0aE0qQiVrdGNyKSg5a1JpJUBNMEQrWFQ2KToqT2tdVDAxT05rK0pldG0/XV4iOCc5OjorSVVuWShkQTR0TDM/ZzZWSGdLdF5oUlhVc2BKaENZbmBHQnVbKz8xK01ZITlIQSNbK2o0ZU43TUBQUTs/NnJGb1hwQURHYXNcVFplWiRbJ0MlVmtYa2VWMWdBZU9yS1VSNC1MMEA0ImVgI1xXXmA0OypYMkIyWy1EZjg6X15HYmdnbDpgOSFGR2FibSguQ3IkQiIyUzZPTFI7PD0sMEAmX0JBdCkuO21FOzU4YVZJZT8zKCIzWTJwP19lblVeI29UbFhKbUAjNW5GLC83Qko7I1k6aV47S0NdcyMwRFcobEowaGEyNGdKR0ZldUE8WSFISWhVLHI3KkxBL0FqNSY0RV9JM08iRzliZUlQTC0/ODE/SWVgRSJUS2FNUSNSM2E6NEJzb3FgbHIyNiVccm9cLzxAOVxOM11PKWFHPToqanNmJjFHMW5ZIkA8WU51YkFpKDNeYmlHIj8ia1tSM0FqLlJUUDdScyYmXXEqIj4mTlkla1ZQcylELilESz5FVEw5Nz1uYElrNSZTRyFyXz9uKilSXSItZyxJTGgsPz9DL2VWOTxMImguSkFDZ24vUSptQiQxR14vISQpMHQhdF1IYk4oPScoQjglLCpxcHBfJzkwTC84ZE1YNUBaRSpSQHRJV000KSpFLV1ZZT9JM0AyXiddJFJtUig8QD5sXWYrWDlxNC5oVzJoVVZBMz1uKlBZNzRBXEQ8YWloM3NoKFRMRWopQC89O2wwX049NS9sLT5OUkM7alg7XyM1U2g9REFCU0RcdWRKSDc+aHEtKmVrMzJRNV0jJTcrOyExJEEmWy1mWSozRzJmOjZabjwxRCg8XkMlRjUjbWtpbzU6QC1vMG46WT9udU5JLzInJD0mMFtOYS4lPUBnQi9zbHFmOzNPaXFeQmNAM1RUb1woMSIqLFRzamQnN1UuJl8lQytOYCRWT0k/XUMhSylAKyZsTj5eakVSVSwzLDk0MjVfO25kRlAqPychNHBKXjY0XyYvJDlUJmJ1Z1wvVEJwTUJfVUQpXiU/YF9JK2w1QWRcYzhdPURkTj1uOVFnRWkoWnJXXFs3SGxFfj5lbmRzdHJlYW0KZW5kb2JqCnhyZWYKMCAxOAowMDAwMDAwMDAwIDY1NTM1IGYgCjAwMDAwMDAwNjEgMDAwMDAgbiAKMDAwMDAwMDExMiAwMDAwMCBuIAowMDAwMDAwMjE5IDAwMDAwIG4gCjAwMDAwMDAzMzEgMDAwMDAgbiAKMDAwMDAwMDU5MyAwMDAwMCBuIAowMDAwMDAwNzA4IDAwMDAwIG4gCjAwMDAwMDA5MTMgMDAwMDAgbiAKMDAwMDAwMTExOCAwMDAwMCBuIAowMDAwMDAxMzIzIDAwMDAwIG4gCjAwMDAwMDE1MjggMDAwMDAgbiAKMDAwMDAwMTU5OCAwMDAwMCBuIAowMDAwMDAxOTIxIDAwMDAwIG4gCjAwMDAwMDIwMDUgMDAwMDAgbiAKMDAwMDAwMzcxNCAwMDAwMCBuIAowMDAwMDA1ODM4IDAwMDAwIG4gCjAwMDAwMDgzMjkgMDAwMDAgbiAKMDAwMDAxMDc2MiAwMDAwMCBuIAp0cmFpbGVyCjw8Ci9JRCAKWzwyMmVmNWJkZjNmNGI5NTYyOTY3NmFlZTc1MjRiZWE0ZD48MjJlZjViZGYzZjRiOTU2Mjk2NzZhZWU3NTI0YmVhNGQ+XQolIFJlcG9ydExhYiBnZW5lcmF0ZWQgUERGIGRvY3VtZW50IC0tIGRpZ2VzdCAob3BlbnNvdXJjZSkKCi9JbmZvIDExIDAgUgovUm9vdCAxMCAwIFIKL1NpemUgMTgKPj4Kc3RhcnR4cmVmCjEzMDA5CiUlRU9GCg==" 
+         download="Vertriebswerk-6-Fehler-B2B-Vertrieb.pdf"
+         class="lm-btn"
+         onclick="this.style.opacity='0.7';setTimeout(()=>this.style.opacity='1',2000)">
+        ↓ Sofort herunterladen (PDF, gratis)
       </a>
+      <div class="lm-direct-hint">Direktdownload – keine Anmeldung, keine Kreditkarte</div>
     </div>
   </div>
 
@@ -1383,7 +1511,7 @@
           </ul>
           <div class="pcard-foot">
             <div><div class="pcard-price">24 €</div><div class="pcard-fmt">Excel (.xlsx)</div></div>
-            <a href="https://vertriebswerk.gumroad.com/l/icp-workshop-kit-b2b?wanted=true" target="_blank" class="pcard-btn">Kaufen →</a>
+            <a href="https://vertriebswerk.gumroad.com/l/nvwjca?wanted=true" target="_blank" class="pcard-btn">Kaufen →</a>
           </div>
         </div>
 
@@ -1415,7 +1543,7 @@
           </ul>
           <div class="pcard-foot">
             <div><div class="pcard-price">19 €</div><div class="pcard-fmt">Word (.docx)</div></div>
-            <a href="https://vertriebswerk.gumroad.com/l/email-baukasten-kaltakquise-b2b?wanted=true" target="_blank" class="pcard-btn">Kaufen →</a>
+            <a href="https://vertriebswerk.gumroad.com/l/gydjb?wanted=true" target="_blank" class="pcard-btn">Kaufen →</a>
           </div>
         </div>
 
@@ -1459,7 +1587,7 @@
           </ul>
           <div class="pcard-foot">
             <div><div class="pcard-price">19 €</div><div class="pcard-fmt">Word (.docx)</div></div>
-            <a href="https://vertriebswerk.gumroad.com/l/meeting-leitfaden-erstgespraech-b2b?wanted=true" target="_blank" class="pcard-btn">Kaufen →</a>
+            <a href="https://vertriebswerk.gumroad.com/l/hbdgdx?wanted=true" target="_blank" class="pcard-btn">Kaufen →</a>
           </div>
         </div>
 
@@ -1475,7 +1603,7 @@
           </ul>
           <div class="pcard-foot">
             <div><div class="pcard-price">19 €</div><div class="pcard-fmt">Excel (.xlsx)</div></div>
-            <a href="https://vertriebswerk.gumroad.com/l/einwandbehandlung-mastersheet-b2b?wanted=true" target="_blank" class="pcard-btn">Kaufen →</a>
+            <a href="https://vertriebswerk.gumroad.com/l/isriuf?wanted=true" target="_blank" class="pcard-btn">Kaufen →</a>
           </div>
         </div>
 
@@ -1863,43 +1991,46 @@
       </div>
       <div class="faq-grid">
 
-        <div class="faq-item reveal">
-          <div class="faq-q">Funktionieren die Tools mit Salesforce, HubSpot oder anderen CRMs?</div>
+        <div class="faq-item reveal faq-accordion">
+          <div class="faq-q" onclick="this.parentElement.classList.toggle('faq-open')">
+            Funktionieren die Tools mit Salesforce, HubSpot oder anderen CRMs?
+            <span class="faq-icon">+</span>
+          </div>
           <div class="faq-a">Ja – alle Tools sind systemunabhängig konzipiert. Sie laufen in Excel und Word, nicht im CRM. Du überträgst die Ergebnisse in dein System. Das funktioniert mit Salesforce, HubSpot, Pipedrive, oder einer einfachen Tabelle.</div>
         </div>
 
-        <div class="faq-item reveal reveal-d1">
-          <div class="faq-q">Für wen sind die Tools gedacht – Einsteiger oder Profis?</div>
+        <div class="faq-item reveal reveal-d1 faq-accordion">
+          <div class="faq-q" onclick="this.parentElement.classList.toggle(\'faq-open\')">Für wen sind die Tools gedacht – Einsteiger oder Profis?<span class="faq-icon">+</span></div>
           <div class="faq-a">Für beides, aber unterschiedlich. Das First Sales Playbook richtet sich an Einsteiger und Gründer. Alle anderen Tools setzen Grundkenntnisse im B2B-Vertrieb voraus und sparen Profis vor allem Zeit.</div>
         </div>
 
-        <div class="faq-item reveal reveal-d2">
-          <div class="faq-q">Wie bekomme ich das Produkt nach dem Kauf?</div>
+        <div class="faq-item reveal reveal-d2 faq-accordion">
+          <div class="faq-q" onclick="this.parentElement.classList.toggle(\'faq-open\')">Wie bekomme ich das Produkt nach dem Kauf?<span class="faq-icon">+</span></div>
           <div class="faq-a">Sofort per E-Mail über Gumroad. Kein Konto nötig, kein Warten. Du lädst die Datei direkt herunter – einmalig bezahlt, dauerhaft nutzbar.</div>
         </div>
 
-        <div class="faq-item reveal">
-          <div class="faq-q">Kann ich die Templates an mein Unternehmen anpassen?</div>
+        <div class="faq-item reveal faq-accordion">
+          <div class="faq-q" onclick="this.parentElement.classList.toggle(\'faq-open\')">Kann ich die Templates an mein Unternehmen anpassen?<span class="faq-icon">+</span></div>
           <div class="faq-a">Ja, vollständig. Alle Word- und Excel-Dateien sind editierbar. Du kannst Logo, Farben, Felder und Inhalte anpassen. Gelb markierte Felder zeigen dir wo du anfangen sollst.</div>
         </div>
 
-        <div class="faq-item reveal reveal-d1">
-          <div class="faq-q">Gibt es ein Abo oder wiederkehrende Kosten?</div>
+        <div class="faq-item reveal reveal-d1 faq-accordion">
+          <div class="faq-q" onclick="this.parentElement.classList.toggle(\'faq-open\')">Gibt es ein Abo oder wiederkehrende Kosten?<span class="faq-icon">+</span></div>
           <div class="faq-a">Nein. Einmal kaufen, dauerhaft nutzen. Keine Cloud-Pflicht, kein Monatsabo, keine versteckten Gebühren. Die Datei gehört dir.</div>
         </div>
 
-        <div class="faq-item reveal reveal-d2">
-          <div class="faq-q">Für welche Branchen sind die Tools geeignet?</div>
+        <div class="faq-item reveal reveal-d2 faq-accordion">
+          <div class="faq-q" onclick="this.parentElement.classList.toggle(\'faq-open\')">Für welche Branchen sind die Tools geeignet?<span class="faq-icon">+</span></div>
           <div class="faq-a">Primär für B2B-Vertrieb im DACH-Raum – aus Erfahrung in LogTech, IoT-Infrastruktur und Automotive entwickelt. Die Grundprinzipien funktionieren branchenübergreifend überall dort wo Lösungsverkauf und Beziehungsmanagement eine Rolle spielen.</div>
         </div>
 
-        <div class="faq-item reveal">
-          <div class="faq-q">Was wenn mir ein Tool nicht gefällt?</div>
+        <div class="faq-item reveal faq-accordion">
+          <div class="faq-q" onclick="this.parentElement.classList.toggle(\'faq-open\')">Was wenn mir ein Tool nicht gefällt?<span class="faq-icon">+</span></div>
           <div class="faq-a">Schreib mir direkt: danielt.toth.85@gmail.com. Ich schaue mir jeden Fall persönlich an. Bei digitalen Downloads gilt gesetzlich kein automatisches Widerrufsrecht nach dem Download – aber ich bin kein Verein für bürokratische Antworten.</div>
         </div>
 
-        <div class="faq-item reveal reveal-d1">
-          <div class="faq-q">Kann ich mehrere Tools als Bundle kaufen?</div>
+        <div class="faq-item reveal reveal-d1 faq-accordion">
+          <div class="faq-q" onclick="this.parentElement.classList.toggle(\'faq-open\')">Kann ich mehrere Tools als Bundle kaufen?<span class="faq-icon">+</span></div>
           <div class="faq-a">Ja – drei Bundles sind verfügbar: Neukundenmaschine (39 €), KAM Komplett-Kit (49 €) und Vertrieb von A–Z mit allen 8 Tools für 179 € statt 237 €.</div>
         </div>
 
