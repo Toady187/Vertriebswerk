@@ -19,7 +19,10 @@
     {"@type":"Question","name":"Funktionieren die Tools mit Salesforce oder HubSpot?","acceptedAnswer":{"@type":"Answer","text":"Ja. Die Tools sind CRM-agnostisch und enthalten Tagging-Guides für Salesforce, HubSpot und Pipedrive."}},
     {"@type":"Question","name":"Wie viel Zeit spare ich gegenüber Eigenbau?","acceptedAnswer":{"@type":"Answer","text":"Erfahrungsgemäß 8–20 Stunden pro Tool. Strukturentwicklung, Tests und Formatierung sind bereits erledigt."}},
     {"@type":"Question","name":"Sind die Tools auf den DACH-Markt ausgerichtet?","acceptedAnswer":{"@type":"Answer","text":"Ja, 100%. Deutsch, DACH-spezifische B2B-Strukturen, keine übersetzten US-Templates."}},
-    {"@type":"Question","name":"Gibt es eine Rechnung mit MwSt.?","acceptedAnswer":{"@type":"Answer","text":"Ja. Gumroad stellt automatisch eine MwSt.-konforme Rechnung aus. EU-Unternehmen können ihre USt-ID angeben."}}
+    {"@type":"Question","name":"Gibt es eine Rechnung mit MwSt.?","acceptedAnswer":{"@type":"Answer","text":"Ja. Gumroad stellt automatisch eine MwSt.-konforme Rechnung aus. EU-Unternehmen können ihre USt-ID angeben."}},
+    {"@type":"Question","name":"Funktionieren die Tools auf dem Mac?","acceptedAnswer":{"@type":"Answer","text":"Ja. Alle Excel-Dateien laufen mit Microsoft 365 für Mac. Alternativ funktionieren alle Dateien mit LibreOffice."}},
+    {"@type":"Question","name":"Brauche ich VBA- oder Excel-Kenntnisse?","acceptedAnswer":{"@type":"Answer","text":"Nein. Alle Tools sind ohne Makros gebaut. Wer eine Zelle ausfüllen kann, kann die Tools sofort nutzen."}},
+    {"@type":"Question","name":"Kann ich die Vorlagen an mein CI anpassen?","acceptedAnswer":{"@type":"Answer","text":"Ja. Farben, Logos und Formatierungen sind für Einzelnutzer vollständig anpassbar."}}
   ]}
   </script>
   <style>
@@ -339,6 +342,71 @@
     .footer-links a:hover { color: #fff; }
     .footer-copy { color: rgba(255,255,255,0.3); font-size: 0.75rem; }
 
+    /* ── SOCIAL PROOF STRIP ─────────────────────────────────── */
+    #branchen-strip {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 18px 20px;
+    }
+    .branchen-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: center;
+      flex-wrap: wrap; gap: 8px 28px;
+    }
+    .branchen-label {
+      font-size: 0.72rem; font-weight: bold; text-transform: uppercase;
+      letter-spacing: 0.08em; color: var(--muted); white-space: nowrap;
+    }
+    .branchen-divider { color: var(--border); font-size: 1.1rem; }
+    .branchen-tag {
+      font-size: 0.8rem; color: var(--navy); font-weight: 600;
+      padding: 4px 14px; background: var(--light);
+      border: 1px solid var(--border); border-radius: 20px; white-space: nowrap;
+    }
+
+    /* ── TOOL PREVIEW ────────────────────────────────────────── */
+    #tool-preview {
+      background: var(--navy);
+      padding: 64px 20px;
+      overflow: hidden;
+    }
+    #tool-preview h2 { color: #fff; text-align: center; font-size: 1.8rem; margin-bottom: 8px; }
+    #tool-preview .sub { color: rgba(255,255,255,0.5); text-align: center; margin-bottom: 40px; font-size: 0.95rem; }
+    .preview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .preview-item {
+      border-radius: 10px; overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: transform 0.25s, box-shadow 0.25s;
+      cursor: pointer;
+    }
+    .preview-item:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+    }
+    .preview-item img {
+      width: 100%; display: block;
+      object-fit: cover;
+    }
+    .preview-caption {
+      background: rgba(255,255,255,0.05);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 12px 16px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .preview-caption span { color: rgba(255,255,255,0.7); font-size: 0.82rem; font-weight: 600; }
+    .preview-caption a {
+      font-size: 0.72rem; color: var(--green); text-decoration: none;
+      font-weight: bold; white-space: nowrap;
+    }
+    .preview-caption a:hover { color: #00d4a8; }
+    @media (max-width: 800px) {
+      .preview-grid { grid-template-columns: 1fr; }
+    }
+
     /* ── STICKY CTA ─────────────────────────────────────────── */
     #sticky-cta {
       position: fixed; bottom: 20px; left: 50%;
@@ -405,6 +473,20 @@
     </div>
   </div>
 </header>
+
+<!-- BRANCHEN SOCIAL PROOF STRIP -->
+<div id="branchen-strip">
+  <div class="branchen-inner">
+    <span class="branchen-label">Genutzt in Branchen wie</span>
+    <span class="branchen-divider">·</span>
+    <span class="branchen-tag">Automotive</span>
+    <span class="branchen-tag">LogTech</span>
+    <span class="branchen-tag">IoT / Industrie 4.0</span>
+    <span class="branchen-tag">Mittelstand DACH</span>
+    <span class="branchen-tag">B2B SaaS</span>
+    <span class="branchen-tag">Spedition &amp; Logistik</span>
+  </div>
+</div>
 
 <!-- FREEBIE -->
 <section id="freebie">
@@ -484,6 +566,47 @@
       <div class="pain-item"><div class="pain-num">04</div><h3>KAM ohne Vorbereitung</h3><p>Das Jahresgespr&auml;ch kommt &mdash; der strukturierte Leitfaden fehlt.</p></div>
       <div class="pain-item"><div class="pain-num">05</div><h3>Controlling im Blindflug</h3><p>CAC, LTV, Forecast &mdash; Zahlen die gesch&auml;tzt werden statt strukturiert gemessen.</p></div>
       <div class="pain-item"><div class="pain-num">06</div><h3>Follow-up ohne Strategie</h3><p>Nach dem Erstgespr&auml;ch: Irgendwie nachhaken. Ohne Framework, ohne Timing.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOL PREVIEW -->
+<section id="tool-preview">
+  <div class="container">
+    <h2>Einblick: So sehen die Tools aus.</h2>
+    <p class="sub">Keine Blackbox &mdash; du siehst genau, womit du arbeitest.</p>
+    <div class="preview-grid">
+
+      <div class="preview-item">
+        <img src="preview_icp.png"
+             alt="ICP Workshop-Kit Screenshot – Schmerzpunkte-Matrix Excel"
+             loading="lazy">
+        <div class="preview-caption">
+          <span>ICP Workshop-Kit</span>
+          <a href="https://vertriebswerk.gumroad.com/l/nvwjca?wanted=true" target="_blank">Tool ansehen &rarr;</a>
+        </div>
+      </div>
+
+      <div class="preview-item">
+        <img src="preview_meeting.png"
+             alt="Meeting-Leitfaden Erstgespräch Screenshot – 7-Phasen-Struktur Word"
+             loading="lazy">
+        <div class="preview-caption">
+          <span>Meeting-Leitfaden</span>
+          <a href="https://vertriebswerk.gumroad.com/l/hbdgdx?wanted=true" target="_blank">Tool ansehen &rarr;</a>
+        </div>
+      </div>
+
+      <div class="preview-item">
+        <img src="preview_einwand.png"
+             alt="B2B Pipeline Cleanup Kit Screenshot – Opportunity Tracker Excel"
+             loading="lazy">
+        <div class="preview-caption">
+          <span>B2B Pipeline Cleanup Kit</span>
+          <a href="https://vertriebswerk.gumroad.com/l/b2b-pipeline-cleanup-kit?wanted=true" target="_blank">Tool ansehen &rarr;</a>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -822,11 +945,24 @@
         <div class="faq-answer">Ja. Gumroad stellt automatisch eine MwSt.-konforme Rechnung aus. EU-Unternehmen k&ouml;nnen ihre Umsatzsteuer-ID beim Kauf angeben (Reverse Charge). Bei Fragen: <a href="mailto:danielt.toth.85@gmail.com">danielt.toth.85@gmail.com</a></div>
       </div>
 
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">Funktionieren die Tools auf dem Mac?<span class="faq-icon">+</span></div>
+        <div class="faq-answer">Ja. Alle Excel-Dateien laufen mit Microsoft 365 f&uuml;r Mac ohne Einschr&auml;nkungen. Word-Dokumente funktionieren ebenfalls. Wer kein Office hat: LibreOffice Calc und Writer sind kostenlose Alternativen und &ouml;ffnen alle Dateien problemlos.</div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">Brauche ich VBA- oder Excel-Kenntnisse?<span class="faq-icon">+</span></div>
+        <div class="faq-answer">Nein. Alle Tools sind ohne Makros oder VBA gebaut &mdash; nur Formeln, Tabellen und Struktur. Wer eine Zelle ausf&uuml;llen kann, kann die Tools sofort nutzen. Fortgeschrittene k&ouml;nnen Formeln und Felder nat&uuml;rlich anpassen.</div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">Kann ich die Vorlagen an mein eigenes CI anpassen?<span class="faq-icon">+</span></div>
+        <div class="faq-answer">Ja. Farben, Logos und Formatierungen sind f&uuml;r Einzelnutzer vollst&auml;ndig anpassbar. Die Lizenz gilt f&uuml;r den pers&ouml;nlichen Gebrauch &mdash; Weitergabe oder Weiterverkauf der Originaldateien ist nicht gestattet.</div>
+      </div>
+
     </div>
   </div>
 </section>
-
-<!-- AFFILIATE -->
 <section class="aff-section">
   <div class="container">
     <span class="aff-num">40%</span>
