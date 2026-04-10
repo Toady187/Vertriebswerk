@@ -3,1027 +3,1106 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vertriebswerk – 12 B2B-Vertriebstools für KAMs im DACH-Raum</title>
-  <meta name="description" content="12 praxiserprobte B2B-Vertriebstools für KAMs und Vertriebsteams im DACH-Raum. Kaltakquise, Pipeline, KAM-Jahresgespräch, Controlling. Einmalzahlung ab 19 Euro.">
+  <title>Vertriebswerk – B2B-Vertriebstools für KAMs im DACH-Raum | Excel &amp; Word</title>
+  <meta name="description" content="12 praxiserprobte B2B-Vertriebstools aus 10+ Jahren KAM-Praxis. Ausschreibungs-Check, Kaltakquise, Controlling-Dashboard, Meeting-Leitfaden. DSGVO-sicher, 100% Offline. DACH-Mittelstand.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://vertriebswerk.shop">
-  <meta property="og:title" content="Vertriebswerk – 12 B2B-Vertriebstools aus der Praxis">
-  <meta property="og:description" content="12 praxiserprobte Tools für KAMs. Einmalzahlung ab 19 Euro.">
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Vertriebswerk – B2B-Vertriebstools aus der Praxis">
+  <meta property="og:description" content="12 praxiserprobte Tools für KAMs im DACH-Raum. Einmalzahlung. Single, Team & Enterprise-Lizenz.">
   <meta property="og:url" content="https://vertriebswerk.shop">
   <meta property="og:image" content="https://vertriebswerk.shop/og-image.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="google-site-verification" content="google2e2e5d364f822384">
+
+  <!-- Gumroad -->
+  <script src="https://gumroad.com/js/gumroad.js"></script>
+
+  <!-- Schema.org -->
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-    {"@type":"Question","name":"Sind die Tools sofort nach Kauf verfügbar?","acceptedAnswer":{"@type":"Answer","text":"Ja. Direkt nach der Zahlung via Gumroad erhältst du den Download-Link zu deinen Excel- oder Word-Dateien."}},
-    {"@type":"Question","name":"Benötige ich spezielle Software?","acceptedAnswer":{"@type":"Answer","text":"Nein. Alle Tools basieren auf Microsoft Excel oder Word. Keine Installation, keine Cloud."}},
-    {"@type":"Question","name":"Funktionieren die Tools mit Salesforce oder HubSpot?","acceptedAnswer":{"@type":"Answer","text":"Ja. Die Tools sind CRM-agnostisch und enthalten Tagging-Guides für Salesforce, HubSpot und Pipedrive."}},
-    {"@type":"Question","name":"Wie viel Zeit spare ich gegenüber Eigenbau?","acceptedAnswer":{"@type":"Answer","text":"Erfahrungsgemäß 8–20 Stunden pro Tool. Strukturentwicklung, Tests und Formatierung sind bereits erledigt."}},
-    {"@type":"Question","name":"Sind die Tools auf den DACH-Markt ausgerichtet?","acceptedAnswer":{"@type":"Answer","text":"Ja, 100%. Deutsch, DACH-spezifische B2B-Strukturen, keine übersetzten US-Templates."}},
-    {"@type":"Question","name":"Gibt es eine Rechnung mit MwSt.?","acceptedAnswer":{"@type":"Answer","text":"Ja. Gumroad stellt automatisch eine MwSt.-konforme Rechnung aus. EU-Unternehmen können ihre USt-ID angeben."}},
-    {"@type":"Question","name":"Funktionieren die Tools auf dem Mac?","acceptedAnswer":{"@type":"Answer","text":"Ja. Alle Excel-Dateien laufen mit Microsoft 365 für Mac. Alternativ funktionieren alle Dateien mit LibreOffice."}},
-    {"@type":"Question","name":"Brauche ich VBA- oder Excel-Kenntnisse?","acceptedAnswer":{"@type":"Answer","text":"Nein. Alle Tools sind ohne Makros gebaut. Wer eine Zelle ausfüllen kann, kann die Tools sofort nutzen."}},
-    {"@type":"Question","name":"Kann ich die Vorlagen an mein CI anpassen?","acceptedAnswer":{"@type":"Answer","text":"Ja. Farben, Logos und Formatierungen sind für Einzelnutzer vollständig anpassbar."}}
+    {"@type":"Question","name":"Was bedeutet Single / Team / Enterprise-Lizenz?","acceptedAnswer":{"@type":"Answer","text":"Single: 1 Nutzer. Team: bis 10 Nutzer im selben Unternehmen. Enterprise: unbegrenzte Nutzer an einem Standort – volle Rechtssicherheit, keine laufenden Kosten."}},
+    {"@type":"Question","name":"Sind die Tools DSGVO-sicher?","acceptedAnswer":{"@type":"Answer","text":"Ja. Alle Tools laufen 100% offline in Excel oder Word. Keine Daten werden an Cloud-Server gesendet, keine IT-Freigabe erforderlich."}},
+    {"@type":"Question","name":"Funktionieren die Tools mit Salesforce oder HubSpot?","acceptedAnswer":{"@type":"Answer","text":"Die Tools sind CRM-agnostisch und enthalten Tagging-Guides für Salesforce, HubSpot und Pipedrive."}},
+    {"@type":"Question","name":"Wie schnell sind die Tools einsatzbereit?","acceptedAnswer":{"@type":"Answer","text":"Sofort. Direkt nach dem Kauf via Gumroad erhältst du den Download-Link. Kein Setup, keine Registrierung."}}
   ]}
   </script>
-  <style>
-    /* ── VARIABLEN ─────────────────────────────────────────── */
-    :root {
-      --navy:  #1B2A4A;
-      --navym: #253a63;
-      --green: #00a884;
-      --greenw:#008f70;
-      --red:   #C0392B;
-      --li:    #0077b5;
-      --light: #f8f9fa;
-      --white: #ffffff;
-      --text:  #333333;
-      --muted: #666666;
-      --border:#e0e4ea;
-    }
 
-    /* ── RESET ─────────────────────────────────────────────── */
+  <style>
+    /* ─── RESET & VARIABLEN ─────────────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; font-size: 16px; }
 
+    :root {
+      --navy:   #1B2A4A;
+      --navym:  #253a63;
+      --green:  #00a884;
+      --greenw: #008f70;
+      --red:    #C0392B;
+      --li:     #0077b5;
+      --light:  #f8f9fa;
+      --white:  #ffffff;
+      --text:   #2c2c2c;
+      --muted:  #5a6270;
+      --border: #dde2ea;
+    }
+
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
       background: var(--light);
       color: var(--text);
       line-height: 1.65;
       overflow-x: hidden;
     }
 
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 22px; }
 
-    /* ── BUTTONS ───────────────────────────────────────────── */
-    .btn {
+    /* ─── TYPOGRAFIE ────────────────────────────────────────────────────── */
+    .eyebrow {
       display: inline-block;
-      padding: 14px 28px;
-      border-radius: 8px;
-      font-weight: bold;
-      text-decoration: none;
-      transition: background 0.2s, transform 0.15s;
-      cursor: pointer;
+      font-size: .7rem; font-weight: 700;
+      letter-spacing: .14em; text-transform: uppercase;
+      color: var(--green); margin-bottom: 10px;
+    }
+    .section-h {
+      font-size: clamp(1.75rem, 3.5vw, 2.4rem);
+      color: var(--navy); line-height: 1.2; margin-bottom: 14px;
+    }
+    .section-p { font-size: 1rem; color: var(--muted); max-width: 580px; line-height: 1.75; }
+
+    /* ─── BUTTONS ───────────────────────────────────────────────────────── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 26px; border-radius: 8px; font-weight: 700;
+      font-size: .92rem; text-decoration: none; cursor: pointer;
+      transition: background .18s, transform .14s; border: none;
     }
     .btn:hover { transform: translateY(-2px); }
     .btn-navy  { background: var(--navy);  color: #fff; }
-    .btn-navy:hover  { background: var(--navym); color: #fff; }
+    .btn-navy:hover  { background: var(--navym); }
     .btn-green { background: var(--green); color: #fff; }
-    .btn-green:hover { background: var(--greenw); color: #fff; }
-    .btn-li    { background: var(--li);   color: #fff; }
-    .btn-li:hover    { background: #005f94; color: #fff; }
+    .btn-green:hover { background: var(--greenw); }
+    .btn-outline {
+      background: transparent; color: rgba(255,255,255,.85);
+      border: 1.5px solid rgba(255,255,255,.3);
+    }
+    .btn-outline:hover { border-color: rgba(255,255,255,.7); color: #fff; }
+    .btn-li { background: var(--li); color: #fff; }
+    .btn-li:hover { background: #005f94; }
 
-    /* ── NAV ───────────────────────────────────────────────── */
-    nav {
-      position: sticky; top: 0; z-index: 200;
+    /* ─── NAV ───────────────────────────────────────────────────────────── */
+    .nav {
+      position: sticky; top: 0; z-index: 300;
       background: var(--navy);
-      padding: 0 20px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
     }
     .nav-inner {
-      max-width: 1100px; margin: 0 auto;
+      max-width: 1140px; margin: 0 auto; padding: 0 22px;
       display: flex; align-items: center;
       justify-content: space-between; height: 58px; gap: 16px;
     }
-    .nav-brand { color: #fff; font-size: 1.1rem; font-weight: bold; text-decoration: none; }
-    .nav-brand span { color: var(--green); }
-    .nav-links { display: flex; align-items: center; gap: 20px; list-style: none; }
-    .nav-links a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.88rem; transition: color 0.2s; }
+    .nav-brand { color: #fff; font-size: 1.1rem; font-weight: 700; text-decoration: none; }
+    .nav-brand em { font-style: normal; color: var(--green); }
+    .nav-links { display: flex; align-items: center; gap: 22px; list-style: none; }
+    .nav-links a { color: rgba(255,255,255,.72); text-decoration: none; font-size: .85rem; font-weight: 500; transition: color .18s; }
     .nav-links a:hover { color: #fff; }
-    .nav-shop { background: var(--green); color: #fff !important; padding: 7px 15px; border-radius: 6px; font-weight: bold !important; font-size: 0.82rem !important; }
-    .nav-shop:hover { background: var(--greenw) !important; }
+    .nav-cta { background: var(--green) !important; color: #fff !important; padding: 7px 16px !important; border-radius: 6px !important; font-weight: 700 !important; font-size: .82rem !important; }
+    .nav-cta:hover { background: var(--greenw) !important; }
 
-    /* ── HERO ──────────────────────────────────────────────── */
-    header {
-      background: var(--navy);
-      padding: 88px 20px 72px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
+    /* ─── HERO ──────────────────────────────────────────────────────────── */
+    .hero {
+      background: var(--navy); padding: 92px 22px 76px;
+      text-align: center; position: relative; overflow: hidden;
     }
-    header::before {
-      content: '';
-      position: absolute; inset: 0;
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
       background-image:
-        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-      background-size: 40px 40px;
-      pointer-events: none;
+        linear-gradient(rgba(255,255,255,.028) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.028) 1px, transparent 1px);
+      background-size: 40px 40px; pointer-events: none;
     }
-    header .container { position: relative; }
-    header h1 {
-      color: #fff;
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      margin-bottom: 16px;
-      line-height: 1.2;
+    .hero .container { position: relative; }
+    .hero h1 {
+      color: #fff; font-size: clamp(2rem, 5.5vw, 3.4rem);
+      line-height: 1.15; margin-bottom: 18px;
     }
-    header h1 em { font-style: italic; color: var(--green); }
-    header p { font-size: 1.1rem; color: rgba(255,255,255,0.7); max-width: 640px; margin: 0 auto 32px; }
-    .hero-badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; margin-top: 28px; font-size: 0.82rem; color: rgba(255,255,255,0.55); }
-    .hero-badges span::before { content: "✓  "; color: var(--green); font-weight: bold; }
+    .hero h1 em { font-style: italic; color: var(--green); }
+    .hero-sub { font-size: 1.08rem; color: rgba(255,255,255,.68); max-width: 660px; margin: 0 auto 34px; line-height: 1.8; }
+    .hero-actions { display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; margin-bottom: 22px; }
+    .hero-dsgvo {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12);
+      border-radius: 8px; padding: 8px 16px;
+      color: rgba(255,255,255,.65); font-size: .8rem;
+    }
+    .hero-dsgvo img { width: 34px; height: 34px; border-radius: 4px; object-fit: contain; }
+    .hero-trust { display: flex; flex-wrap: wrap; justify-content: center; gap: 18px; margin-top: 18px; font-size: .8rem; color: rgba(255,255,255,.5); }
+    .hero-trust span::before { content: "✓  "; color: var(--green); font-weight: 700; }
 
-    /* ── FREEBIE ───────────────────────────────────────────── */
-    #freebie {
-      background: var(--white);
-      border-top: 3px solid var(--green);
-      padding: 60px 20px;
-    }
-    #freebie .freebie-inner {
+    /* ─── HERO-PRODUKTE (4 TOP-TOOLS) ──────────────────────────────────── */
+    .hero-products { background: var(--white); padding: 80px 22px; }
+    .hero-products .section-header { text-align: center; margin-bottom: 56px; }
+    .hero-products .section-header .section-p { margin: 0 auto; }
+
+    .hero-grid {
       display: grid;
-      grid-template-columns: 1fr 340px;
-      gap: 48px; align-items: center;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
     }
-    #freebie h2 { color: var(--navy); font-size: 1.8rem; margin-bottom: 12px; }
-    #freebie p  { color: var(--text); font-size: 0.97rem; line-height: 1.8; margin-bottom: 20px; }
-    #freebie ul { list-style: none; margin-bottom: 28px; }
-    #freebie ul li {
-      color: var(--text); font-size: 0.88rem;
-      padding: 6px 0 6px 20px; position: relative; border-bottom: 1px solid #f0f0f0;
-    }
-    #freebie ul li:last-child { border-bottom: none; }
-    #freebie ul li::before { content: "→"; position: absolute; left: 0; color: var(--navy); font-weight: bold; }
-    #freebie .freebie-note { font-size: 0.75rem; color: #999; margin-top: 10px; display: block; }
-    .freebie-card {
-      background: var(--navy); border-radius: 12px; padding: 28px 24px;
-      text-align: center;
-    }
-    .freebie-card-title { color: #fff; font-size: 1.05rem; font-weight: bold; margin-bottom: 8px; line-height: 1.4; }
-    .freebie-card-by { color: rgba(255,255,255,0.5); font-size: 0.75rem; margin-bottom: 18px; }
-    .freebie-card ol { text-align: left; list-style: none; counter-reset: fc; margin-bottom: 20px; }
-    .freebie-card ol li {
-      color: rgba(255,255,255,0.75); font-size: 0.82rem;
-      padding: 7px 0 7px 26px; position: relative;
-      border-bottom: 1px solid rgba(255,255,255,0.07);
-      counter-increment: fc;
-    }
-    .freebie-card ol li:last-child { border-bottom: none; }
-    .freebie-card ol li::before { content: counter(fc,decimal-leading-zero); position: absolute; left: 0; top: 8px; color: var(--green); font-weight: bold; font-size: 0.72rem; }
 
-    /* ── FOUNDER ───────────────────────────────────────────── */
-    .founder-section { background: var(--light); padding: 64px 20px; border-top: 1px solid var(--border); }
-    .founder {
-      display: flex; align-items: center;
-      gap: 48px; flex-wrap: wrap;
+    /* Hero Card */
+    .hcard {
+      background: var(--light); border: 1px solid var(--border);
+      border-radius: 14px; overflow: hidden;
+      display: flex; flex-direction: column;
+      transition: box-shadow .25s, transform .25s;
     }
+    .hcard:hover { box-shadow: 0 18px 52px rgba(0,0,0,.12); transform: translateY(-4px); }
+
+    /* Screenshot */
+    .hcard-screenshot {
+      position: relative; cursor: zoom-in;
+      height: 210px; overflow: hidden; background: #edf1f7;
+    }
+    .hcard-screenshot img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: top left;
+      display: block; transition: transform .32s;
+    }
+    .hcard-screenshot:hover img { transform: scale(1.05); }
+    .hcard-zoom {
+      position: absolute; inset: 0;
+      background: rgba(27,42,74,.45);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; transition: opacity .22s;
+      color: #fff; font-size: .88rem; font-weight: 600;
+    }
+    .hcard-screenshot:hover .hcard-zoom { opacity: 1; }
+
+    /* Card body */
+    .hcard-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
+    .hcard-badge {
+      display: inline-block;
+      background: rgba(0,168,132,.12); color: #007a60;
+      border: 1px solid rgba(0,168,132,.28);
+      font-size: .66rem; font-weight: 700;
+      letter-spacing: .08em; text-transform: uppercase;
+      padding: 3px 10px; border-radius: 20px; margin-bottom: 10px;
+    }
+    .hcard-title { color: var(--navy); font-size: 1.12rem; font-weight: 700; margin-bottom: 6px; }
+    .hcard-copy  { color: var(--muted); font-size: .88rem; line-height: 1.7; margin-bottom: 14px; }
+
+    /* Preview toggle */
+    .preview-toggle {
+      background: none; border: 1px solid var(--border);
+      color: var(--navy); padding: 6px 14px; border-radius: 6px;
+      font-size: .76rem; font-weight: 600; cursor: pointer;
+      transition: background .15s; margin-bottom: 12px;
+      display: inline-flex; align-items: center; gap: 5px;
+    }
+    .preview-toggle:hover { background: #eef2f7; }
+    .preview-list {
+      list-style: none; margin-bottom: 14px;
+      background: #f0f4f9; border-radius: 8px;
+      padding: 12px 14px; animation: fadeIn .2s ease;
+    }
+    .preview-list li { font-size: .8rem; color: var(--text); padding: 3px 0 3px 16px; position: relative; line-height: 1.5; }
+    .preview-list li::before { content: "✓"; position: absolute; left: 0; color: var(--green); font-weight: 700; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
+
+    /* Tiered pricing */
+    .pricing-tiers { display: flex; gap: 8px; margin-bottom: 16px; }
+    .tier {
+      flex: 1; border: 2px solid var(--border); border-radius: 8px;
+      padding: 10px 6px; text-align: center; cursor: pointer;
+      transition: border-color .18s, background .18s;
+      user-select: none;
+    }
+    .tier:hover { border-color: var(--navy); }
+    .tier.active { border-color: var(--navy); background: rgba(27,42,74,.06); }
+    .tier-label { display: block; font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin-bottom: 3px; }
+    .tier-price { display: block; font-size: 1.08rem; font-weight: 700; color: var(--navy); margin-bottom: 2px; }
+    .tier-users { display: block; font-size: .64rem; color: var(--muted); }
+
+    /* Checkout */
+    .hcard-checkout { border-top: 1px solid var(--border); padding-top: 16px; margin-top: auto; }
+    .buy-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      width: 100%; background: var(--navy); color: #fff;
+      padding: 12px; border-radius: 8px;
+      font-size: .9rem; font-weight: 700; text-decoration: none;
+      transition: background .18s; margin-bottom: 10px;
+    }
+    .buy-btn:hover { background: var(--green); }
+    .buy-meta { display: flex; align-items: center; gap: 8px; font-size: .72rem; color: var(--muted); margin-bottom: 6px; }
+    .buy-meta img { width: 32px; height: 32px; border-radius: 4px; object-fit: contain; flex-shrink: 0; }
+    .price-note { font-size: .66rem; color: #aaa; }
+
+    /* ─── FOUNDER ───────────────────────────────────────────────────────── */
+    .founder-section { background: var(--light); padding: 72px 22px; border-top: 1px solid var(--border); }
+    .founder-inner { display: flex; align-items: center; gap: 52px; flex-wrap: wrap; }
     .founder-img-wrap { position: relative; flex-shrink: 0; }
     .founder-img {
-      width: 220px; height: 260px;
-      object-fit: cover; object-position: center top;
-      border-radius: 12px;
-      box-shadow: 0 12px 40px rgba(27,42,74,0.16);
-      display: block;
+      width: 220px; height: 260px; object-fit: cover; object-position: center top;
+      border-radius: 12px; display: block;
+      box-shadow: 0 14px 44px rgba(27,42,74,.16);
     }
-    .founder-tag {
+    .founder-badge {
       position: absolute; bottom: -12px; left: 50%;
       transform: translateX(-50%);
       background: var(--navy); color: #fff;
-      font-size: 0.7rem; font-weight: bold; white-space: nowrap;
+      font-size: .7rem; font-weight: 700; white-space: nowrap;
       padding: 5px 14px; border-radius: 20px;
     }
-    .founder-tag span { color: var(--green); }
+    .founder-badge em { font-style: normal; color: var(--green); }
     .founder-text { flex: 1; min-width: 280px; }
-    .founder-text h2 { color: var(--navy); font-size: 1.6rem; margin-bottom: 10px; }
-    .founder-text p  { color: var(--muted); font-size: 0.95rem; line-height: 1.8; margin-bottom: 20px; }
+    .founder-text h2 { color: var(--navy); font-size: 1.65rem; margin-bottom: 10px; }
+    .founder-text p  { color: var(--muted); font-size: .95rem; line-height: 1.8; margin-bottom: 18px; }
     .founder-ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; }
-    .founder-creds { display: flex; gap: 16px; flex-wrap: wrap; }
-    .cred { font-size: 0.78rem; color: var(--muted); font-weight: 500; }
+    .creds { display: flex; gap: 16px; flex-wrap: wrap; }
+    .cred { font-size: .78rem; color: var(--muted); font-weight: 500; }
     .cred::before { content: "✦  "; color: var(--red); }
 
-    /* ── PAIN ──────────────────────────────────────────────── */
-    .pain-section { background: var(--navy); padding: 64px 20px; }
-    .pain-section h2 { color: #fff; text-align: center; font-size: 1.8rem; margin-bottom: 12px; }
-    .pain-section .sub { color: rgba(255,255,255,0.55); text-align: center; margin-bottom: 40px; }
-    .pain-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
-    .pain-item { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.09); border-radius: 10px; padding: 22px; }
-    .pain-num { font-size: 1.6rem; font-weight: bold; color: var(--red); margin-bottom: 8px; }
-    .pain-item h3 { font-size: 0.95rem; color: #fff; margin-bottom: 7px; }
-    .pain-item p  { font-size: 0.84rem; color: rgba(255,255,255,0.5); line-height: 1.6; }
-
-    /* ── PRODUKTE ──────────────────────────────────────────── */
-    .produkte-section { background: var(--light); padding: 64px 20px; }
-    .produkte-section > .container > h2 { color: var(--navy); text-align: center; font-size: 2rem; margin-bottom: 8px; }
-    .produkte-section > .container > p  { color: var(--muted); text-align: center; margin-bottom: 48px; }
+    /* ─── ALLE 12 TOOLS ─────────────────────────────────────────────────── */
+    .all-tools { background: var(--white); padding: 80px 22px; }
+    .all-tools .section-header { text-align: center; margin-bottom: 52px; }
+    .all-tools .section-header .section-p { margin: 0 auto; }
 
     .cat-head { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 2px solid var(--border); }
-    .cat-num  { font-size: 1.7rem; font-weight: bold; color: var(--red); min-width: 34px; }
-    .cat-lbl  { font-size: 0.7rem; font-weight: bold; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 2px; }
-    .cat-title { font-size: 1.15rem; font-weight: bold; color: var(--navy); }
+    .cat-num  { font-size: 1.7rem; font-weight: 700; color: var(--red); min-width: 32px; }
+    .cat-lbl  { font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin-bottom: 1px; }
+    .cat-title { font-size: 1.12rem; font-weight: 700; color: var(--navy); }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-      gap: 22px;
-      margin-bottom: 48px;
-    }
+    .tool-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(258px, 1fr)); gap: 20px; margin-bottom: 52px; }
 
-    .card {
-      background: var(--white); padding: 24px;
-      border-radius: 10px; border: 1px solid var(--border);
+    .tcard {
+      background: var(--light); border: 1px solid var(--border);
+      border-radius: 10px; padding: 22px;
       display: flex; flex-direction: column;
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: box-shadow .2s, transform .2s;
     }
-    .card:hover { transform: translateY(-5px); box-shadow: 0 12px 36px rgba(0,0,0,0.1); }
-
-    .card-pills { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 12px; }
-    .pill {
-      font-size: 0.66rem; font-weight: bold; padding: 3px 9px;
-      border-radius: 20px; white-space: nowrap;
-    }
-    .pill-g { background: rgba(34,197,94,0.1); color: #15803d; border: 1px solid rgba(34,197,94,0.2); }
-    .pill-b { background: rgba(59,130,246,0.08); color: #1d4ed8; border: 1px solid rgba(59,130,246,0.15); }
-
-    .card h3 { color: var(--navy); font-size: 1.02rem; margin-bottom: 5px; }
-    .card-sub { font-size: 0.8rem; color: var(--muted); margin-bottom: 8px; line-height: 1.5; }
-    .card-roi {
-      font-size: 0.75rem; font-weight: bold; color: var(--green);
-      background: rgba(0,168,132,0.08); border: 1px solid rgba(0,168,132,0.2);
-      border-radius: 5px; padding: 4px 9px; margin-bottom: 12px; display: inline-block;
-    }
-    .card-feats { list-style: none; margin-bottom: 16px; flex: 1; }
-    .card-feats li { font-size: 0.8rem; color: var(--text); padding: 3px 0 3px 14px; position: relative; line-height: 1.5; }
-    .card-feats li::before { content: "→"; position: absolute; left: 0; color: var(--red); font-size: 0.72rem; }
-
-    .card-foot {
-      display: flex; align-items: center; justify-content: space-between; gap: 10px;
-      padding-top: 14px; border-top: 1px solid var(--border); margin-top: auto;
-    }
-    .card-price { font-size: 1.25rem; font-weight: bold; color: var(--navy); white-space: nowrap; }
-    .card-fmt   { font-size: 0.7rem; color: var(--muted); }
-    .card-btn {
+    .tcard:hover { box-shadow: 0 10px 30px rgba(0,0,0,.09); transform: translateY(-3px); }
+    .tcard-pills { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 10px; }
+    .pill { font-size: .65rem; font-weight: 700; padding: 3px 9px; border-radius: 20px; white-space: nowrap; }
+    .pill-g { background: rgba(34,197,94,.1); color: #15803d; border: 1px solid rgba(34,197,94,.2); }
+    .pill-b { background: rgba(59,130,246,.08); color: #1d4ed8; border: 1px solid rgba(59,130,246,.15); }
+    .tcard h3 { color: var(--navy); font-size: .98rem; margin-bottom: 4px; }
+    .tcard-sub { font-size: .78rem; color: var(--muted); margin-bottom: 8px; line-height: 1.5; }
+    .tcard-feats { list-style: none; margin-bottom: 14px; flex: 1; }
+    .tcard-feats li { font-size: .78rem; color: var(--text); padding: 3px 0 3px 14px; position: relative; line-height: 1.5; }
+    .tcard-feats li::before { content: "→"; position: absolute; left: 0; color: var(--red); font-size: .7rem; }
+    .tcard-foot { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding-top: 12px; border-top: 1px solid var(--border); margin-top: auto; }
+    .tcard-price { font-size: 1.2rem; font-weight: 700; color: var(--navy); white-space: nowrap; }
+    .tcard-fmt   { font-size: .68rem; color: var(--muted); }
+    .tcard-cta {
       background: var(--navy); color: #fff;
-      padding: 8px 15px; border-radius: 7px; font-size: 0.8rem; font-weight: bold;
-      text-decoration: none; white-space: nowrap; transition: background 0.2s;
-      display: inline-flex; align-items: center; min-height: 36px;
+      padding: 8px 14px; border-radius: 7px; font-size: .78rem; font-weight: 700;
+      text-decoration: none; white-space: nowrap; transition: background .18s;
     }
-    .card-btn:hover { background: var(--green); }
-    .card-trust { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border); }
-    .card-trust span { font-size: 0.66rem; color: var(--muted); }
-    .card-trust span::before { content: "✓  "; color: var(--green); font-weight: bold; }
+    .tcard-cta:hover { background: var(--green); }
 
-    /* ── BUNDLES ───────────────────────────────────────────── */
-    .bundles-section { background: var(--white); padding: 64px 20px; }
-    .bundles-section h2 { color: var(--navy); text-align: center; font-size: 2rem; margin-bottom: 8px; }
-    .bundles-section .sub { color: var(--muted); text-align: center; margin-bottom: 48px; }
+    /* ─── BUNDLES ───────────────────────────────────────────────────────── */
+    .bundles-section { background: var(--light); padding: 80px 22px; }
+    .bundles-section .section-header { text-align: center; margin-bottom: 52px; }
+    .bundles-section .section-header .section-p { margin: 0 auto; }
     .bundle-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 22px; }
-
     .bcard {
-      background: var(--light); border: 1px solid var(--border); border-radius: 12px;
-      padding: 28px; position: relative; transition: transform 0.2s, box-shadow 0.2s;
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 12px; padding: 28px; position: relative;
+      transition: box-shadow .22s, transform .22s;
     }
-    .bcard:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(0,0,0,0.08); }
-    .bcard.featured { background: var(--navy); border-color: var(--navy); }
-    .b-disc { position: absolute; top: 14px; right: 14px; background: var(--red); color: #fff; font-size: 0.7rem; font-weight: bold; padding: 3px 9px; border-radius: 20px; }
-    .b-name { font-size: 1.12rem; font-weight: bold; color: var(--navy); margin-bottom: 7px; }
-    .bcard.featured .b-name { color: #fff; }
-    .b-tools { font-size: 0.8rem; color: var(--muted); margin-bottom: 14px; line-height: 1.6; }
-    .bcard.featured .b-tools { color: rgba(255,255,255,0.6); }
-    .b-pricing { display: flex; align-items: baseline; gap: 10px; margin-bottom: 18px; flex-wrap: nowrap; }
-    .b-now { font-size: 1.6rem; font-weight: bold; color: var(--navy); white-space: nowrap; }
-    .bcard.featured .b-now { color: #fff; }
-    .b-old { font-size: 0.88rem; color: var(--muted); text-decoration: line-through; white-space: nowrap; }
-    .bcard.featured .b-old { color: rgba(255,255,255,0.45); }
-    .b-btn {
-      display: inline-flex; align-items: center; gap: 6px;
-      background: var(--green); color: #fff;
-      padding: 10px 20px; border-radius: 8px; font-size: 0.86rem; font-weight: bold;
-      text-decoration: none; transition: background 0.2s;
-    }
+    .bcard:hover { box-shadow: 0 12px 36px rgba(0,0,0,.1); transform: translateY(-3px); }
+    .bcard.feat { background: var(--navy); border-color: var(--navy); }
+    .b-disc { position: absolute; top: 14px; right: 14px; background: var(--red); color: #fff; font-size: .69rem; font-weight: 700; padding: 3px 9px; border-radius: 20px; }
+    .b-name { font-size: 1.08rem; font-weight: 700; color: var(--navy); margin-bottom: 7px; }
+    .bcard.feat .b-name { color: #fff; }
+    .b-tools { font-size: .79rem; color: var(--muted); margin-bottom: 14px; line-height: 1.6; }
+    .bcard.feat .b-tools { color: rgba(255,255,255,.58); }
+    .b-price { display: flex; align-items: baseline; gap: 10px; margin-bottom: 18px; flex-wrap: nowrap; }
+    .b-now { font-size: 1.6rem; font-weight: 700; color: var(--navy); white-space: nowrap; }
+    .bcard.feat .b-now { color: #fff; }
+    .b-old { font-size: .86rem; color: var(--muted); text-decoration: line-through; white-space: nowrap; }
+    .bcard.feat .b-old { color: rgba(255,255,255,.44); }
+    .b-btn { display: inline-flex; align-items: center; background: var(--green); color: #fff; padding: 10px 20px; border-radius: 8px; font-size: .85rem; font-weight: 700; text-decoration: none; transition: background .18s; }
     .b-btn:hover { background: var(--greenw); }
 
-    /* ── FAQ ───────────────────────────────────────────────── */
-    .faq-section { background: var(--light); padding: 64px 20px; }
-    .faq-section h2 { color: var(--navy); text-align: center; font-size: 2rem; margin-bottom: 40px; }
+    /* ─── ENTERPRISE ────────────────────────────────────────────────────── */
+    .enterprise { background: var(--navy); padding: 72px 22px; }
+    .enterprise-inner { display: grid; grid-template-columns: 1fr 360px; gap: 52px; align-items: center; }
+    .enterprise h2 { color: #fff; font-size: 1.8rem; margin-bottom: 14px; }
+    .enterprise p  { color: rgba(255,255,255,.68); line-height: 1.8; margin-bottom: 20px; font-size: .95rem; }
+    .enterprise-list { list-style: none; margin-bottom: 28px; }
+    .enterprise-list li { color: rgba(255,255,255,.78); font-size: .88rem; padding: 8px 0 8px 22px; position: relative; border-bottom: 1px solid rgba(255,255,255,.07); }
+    .enterprise-list li:last-child { border-bottom: none; }
+    .enterprise-list li::before { content: "✓"; position: absolute; left: 0; color: var(--green); font-weight: 700; }
+    .enterprise-card { background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.15); border-radius: 12px; padding: 32px; text-align: center; }
+    .e-price { font-size: 3rem; font-weight: 700; color: var(--green); display: block; margin-bottom: 4px; }
+    .e-label { color: rgba(255,255,255,.56); font-size: .86rem; display: block; margin-bottom: 20px; }
+    .e-feats { list-style: none; text-align: left; margin-bottom: 22px; }
+    .e-feats li { color: rgba(255,255,255,.72); font-size: .84rem; padding: 6px 0 6px 20px; position: relative; }
+    .e-feats li::before { content: "✔"; position: absolute; left: 0; color: var(--green); }
+
+    /* ─── FAQ ───────────────────────────────────────────────────────────── */
+    .faq-section { background: var(--white); padding: 72px 22px; }
+    .faq-section .section-header { text-align: center; margin-bottom: 48px; }
     .faq-wrap { max-width: 740px; margin: 0 auto; }
-    .faq-item { background: var(--white); margin-bottom: 10px; border-radius: 8px; overflow: hidden; border: 1px solid var(--border); }
-    .faq-question {
-      padding: 18px 22px; cursor: pointer; font-weight: bold;
-      display: flex; justify-content: space-between; align-items: center;
-      background: #fdfdfd; color: var(--navy); font-size: 0.93rem; transition: background 0.15s;
-    }
-    .faq-question:hover { background: #f5f7fa; }
-    .faq-icon { color: var(--red); font-size: 1.2rem; flex-shrink: 0; transition: transform 0.25s; }
+    .faq-item { background: var(--light); margin-bottom: 10px; border-radius: 8px; overflow: hidden; border: 1px solid var(--border); }
+    .faq-q { padding: 17px 22px; cursor: pointer; font-weight: 700; display: flex; justify-content: space-between; align-items: center; background: #fafbfc; color: var(--navy); font-size: .92rem; transition: background .15s; }
+    .faq-q:hover { background: #f0f4f9; }
+    .faq-icon { color: var(--red); font-size: 1.1rem; flex-shrink: 0; transition: transform .22s; }
     .faq-item.open .faq-icon { transform: rotate(45deg); }
-    .faq-answer {
-      padding: 0 22px; max-height: 0; overflow: hidden;
-      transition: max-height 0.3s ease, padding 0.3s ease;
-      color: var(--muted); font-size: 0.9rem; line-height: 1.75; background: var(--white);
-    }
-    .faq-item.open .faq-answer { max-height: 280px; padding: 18px 22px; border-top: 1px solid var(--border); }
+    .faq-a { padding: 0 22px; max-height: 0; overflow: hidden; transition: max-height .3s ease, padding .3s ease; color: var(--muted); font-size: .88rem; line-height: 1.78; background: var(--white); }
+    .faq-item.open .faq-a { max-height: 300px; padding: 16px 22px; border-top: 1px solid var(--border); }
 
-    /* ── AFFILIATE ─────────────────────────────────────────── */
-    .aff-section { background: var(--navy); padding: 60px 20px; text-align: center; }
-    .aff-num { font-size: 4rem; font-weight: bold; color: var(--green); display: block; margin-bottom: 6px; }
-    .aff-section h2 { color: #fff; font-size: 1.8rem; margin-bottom: 12px; }
-    .aff-section p  { color: rgba(255,255,255,0.6); max-width: 520px; margin: 0 auto 28px; }
+    /* ─── LEAD MAGNET ───────────────────────────────────────────────────── */
+    .lead-magnet {
+      background: linear-gradient(135deg, var(--navy) 0%, #2a3f6b 100%);
+      padding: 80px 22px;
+    }
+    .lead-magnet-inner { display: grid; grid-template-columns: 1fr 340px; gap: 52px; align-items: center; }
+    .lm-eyebrow { display: inline-block; background: rgba(0,168,132,.25); color: var(--green); font-size: .7rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; padding: 4px 12px; border-radius: 4px; margin-bottom: 14px; }
+    .lead-magnet h2 { color: #fff; font-size: clamp(1.5rem, 3vw, 2.1rem); line-height: 1.25; margin-bottom: 14px; }
+    .lead-magnet h2 em { font-style: italic; color: var(--green); }
+    .lead-magnet p { color: rgba(255,255,255,.68); font-size: .96rem; line-height: 1.8; margin-bottom: 28px; }
+    .lm-btn-wrap { display: flex; flex-direction: column; gap: 10px; }
+    .btn-lm {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--green); color: #fff;
+      padding: 15px 28px; border-radius: 8px; font-weight: 700; font-size: .97rem;
+      text-decoration: none; transition: background .18s, transform .14s;
+      align-self: flex-start;
+    }
+    .btn-lm:hover { background: var(--greenw); transform: translateY(-2px); }
+    .lm-trust { font-size: .78rem; color: rgba(255,255,255,.5); display: flex; align-items: center; gap: 8px; }
+    .lm-trust::before { content: "🔒"; }
+    .lm-card {
+      background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.14);
+      border-radius: 12px; padding: 28px 24px;
+    }
+    .lm-card-title { color: #fff; font-size: 1rem; font-weight: 700; margin-bottom: 6px; line-height: 1.4; }
+    .lm-card-sub   { color: rgba(255,255,255,.48); font-size: .74rem; margin-bottom: 18px; }
+    .lm-card ol { list-style: none; counter-reset: lmc; }
+    .lm-card ol li { counter-increment: lmc; position: relative; padding: 7px 0 7px 26px; color: rgba(255,255,255,.72); font-size: .82rem; border-bottom: 1px solid rgba(255,255,255,.07); }
+    .lm-card ol li:last-child { border-bottom: none; }
+    .lm-card ol li::before { content: counter(lmc, decimal-leading-zero); position: absolute; left: 0; top: 8px; color: var(--green); font-weight: 700; font-size: .7rem; }
 
-    /* ── KONTAKT ───────────────────────────────────────────── */
-    .kontakt-section { background: var(--white); padding: 56px 20px; text-align: center; }
-    .kontakt-section h2 { color: var(--navy); font-size: 1.8rem; margin-bottom: 10px; }
-    .kontakt-section p  { color: var(--muted); margin-bottom: 20px; }
-    .kontakt-guarantee {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(0,168,132,0.08); border: 1px solid rgba(0,168,132,0.25);
-      border-radius: 8px; padding: 9px 18px; margin-bottom: 22px;
-      font-size: 0.86rem; font-weight: bold; color: #007a60;
-    }
-    .mail-link {
-      display: inline-flex; align-items: center; gap: 6px;
-      font-size: 1rem; font-weight: bold; color: var(--navy);
-      text-decoration: none; border-bottom: 2px solid var(--red); padding-bottom: 2px;
-    }
+    /* ─── AFFILIATE ─────────────────────────────────────────────────────── */
+    .aff { background: var(--light); padding: 64px 22px; text-align: center; border-top: 1px solid var(--border); }
+    .aff-num { font-size: 4rem; font-weight: 700; color: var(--green); display: block; margin-bottom: 6px; }
+    .aff h2 { color: var(--navy); font-size: 1.8rem; margin-bottom: 10px; }
+    .aff p  { color: var(--muted); max-width: 520px; margin: 0 auto 26px; }
+
+    /* ─── KONTAKT ───────────────────────────────────────────────────────── */
+    .kontakt { background: var(--white); padding: 60px 22px; text-align: center; }
+    .kontakt h2 { color: var(--navy); font-size: 1.8rem; margin-bottom: 10px; }
+    .kontakt p  { color: var(--muted); margin-bottom: 18px; }
+    .kontakt-guarantee { display: inline-flex; align-items: center; gap: 8px; background: rgba(0,168,132,.08); border: 1px solid rgba(0,168,132,.24); border-radius: 8px; padding: 9px 18px; margin-bottom: 22px; font-size: .84rem; font-weight: 600; color: #007a60; }
+    .mail-link { display: inline-flex; align-items: center; gap: 6px; font-size: 1rem; font-weight: 700; color: var(--navy); text-decoration: none; border-bottom: 2px solid var(--red); padding-bottom: 2px; }
     .mail-link:hover { color: var(--red); }
 
-    /* ── FOOTER ─────────────────────────────────────────────── */
-    footer { background: var(--navy); padding: 36px 20px; }
-    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
-    .footer-brand { color: rgba(255,255,255,0.7); font-weight: bold; font-size: 1rem; }
-    .footer-brand span { color: var(--green); }
-    .footer-links { display: flex; gap: 20px; list-style: none; flex-wrap: wrap; }
-    .footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.8rem; transition: color 0.2s; }
-    .footer-links a:hover { color: #fff; }
-    .footer-copy { color: rgba(255,255,255,0.3); font-size: 0.75rem; }
+    /* ─── FOOTER ────────────────────────────────────────────────────────── */
+    footer { background: var(--navy); padding: 36px 22px; }
+    .footer-inner { max-width: 1140px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+    .footer-brand { color: rgba(255,255,255,.7); font-weight: 700; font-size: 1rem; }
+    .footer-brand em { font-style: normal; color: var(--green); }
+    .footer-nav { display: flex; gap: 20px; list-style: none; flex-wrap: wrap; }
+    .footer-nav a { color: rgba(255,255,255,.5); text-decoration: none; font-size: .79rem; transition: color .18s; }
+    .footer-nav a:hover { color: #fff; }
+    .footer-copy { color: rgba(255,255,255,.3); font-size: .74rem; }
 
-    /* ── SOCIAL PROOF STRIP ─────────────────────────────────── */
-    #branchen-strip {
-      background: var(--white);
-      border-bottom: 1px solid var(--border);
-      padding: 18px 20px;
-    }
-    .branchen-inner {
-      max-width: 1100px; margin: 0 auto;
-      display: flex; align-items: center; justify-content: center;
-      flex-wrap: wrap; gap: 8px 28px;
-    }
-    .branchen-label {
-      font-size: 0.72rem; font-weight: bold; text-transform: uppercase;
-      letter-spacing: 0.08em; color: var(--muted); white-space: nowrap;
-    }
-    .branchen-divider { color: var(--border); font-size: 1.1rem; }
-    .branchen-tag {
-      font-size: 0.8rem; color: var(--navy); font-weight: 600;
-      padding: 4px 14px; background: var(--light);
-      border: 1px solid var(--border); border-radius: 20px; white-space: nowrap;
-    }
+    /* ─── STICKY CTA ────────────────────────────────────────────────────── */
+    #sticky-cta { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: var(--green); color: #fff; padding: 13px 28px; border-radius: 50px; text-decoration: none; font-weight: 700; box-shadow: 0 8px 24px rgba(0,168,132,.35); z-index: 1000; display: none; font-size: .92rem; white-space: nowrap; }
 
-    /* ── TOOL PREVIEW ────────────────────────────────────────── */
-    #tool-preview {
-      background: var(--navy);
-      padding: 64px 20px;
-      overflow: hidden;
-    }
-    #tool-preview h2 { color: #fff; text-align: center; font-size: 1.8rem; margin-bottom: 8px; }
-    #tool-preview .sub { color: rgba(255,255,255,0.5); text-align: center; margin-bottom: 40px; font-size: 0.95rem; }
-    .preview-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-    .preview-item {
-      border-radius: 10px; overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.1);
-      transition: transform 0.25s, box-shadow 0.25s;
-      cursor: pointer;
-    }
-    .preview-item:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 16px 48px rgba(0,0,0,0.4);
-    }
-    .preview-item img {
-      width: 100%; display: block;
-      object-fit: cover;
-    }
-    .preview-caption {
-      background: rgba(255,255,255,0.05);
-      border-top: 1px solid rgba(255,255,255,0.08);
-      padding: 12px 16px;
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    .preview-caption span { color: rgba(255,255,255,0.7); font-size: 0.82rem; font-weight: 600; }
-    .preview-caption a {
-      font-size: 0.72rem; color: var(--green); text-decoration: none;
-      font-weight: bold; white-space: nowrap;
-    }
-    .preview-caption a:hover { color: #00d4a8; }
-    @media (max-width: 800px) {
-      .preview-grid { grid-template-columns: 1fr; }
-    }
+    /* ─── LIGHTBOX ──────────────────────────────────────────────────────── */
+    #lightbox { display: none; position: fixed; inset: 0; z-index: 9999; background: rgba(0,0,0,.88); align-items: center; justify-content: center; padding: 20px; cursor: zoom-out; }
+    #lightbox.open { display: flex; }
+    .lb-inner { position: relative; max-width: 92vw; max-height: 92vh; }
+    #lb-img { max-width: 100%; max-height: 90vh; border-radius: 8px; box-shadow: 0 28px 72px rgba(0,0,0,.6); display: block; cursor: default; }
+    #lb-cap { color: rgba(255,255,255,.7); font-size: .8rem; text-align: center; margin-top: 10px; }
+    .lb-close { position: absolute; top: -14px; right: -14px; background: #fff; border: none; border-radius: 50%; width: 34px; height: 34px; font-size: .95rem; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 14px rgba(0,0,0,.3); }
 
-    /* ── STICKY CTA ─────────────────────────────────────────── */
-    #sticky-cta {
-      position: fixed; bottom: 20px; left: 50%;
-      transform: translateX(-50%);
-      background: var(--green); color: #fff;
-      padding: 13px 28px; border-radius: 50px;
-      text-decoration: none; font-weight: bold;
-      box-shadow: 0 8px 24px rgba(0,168,132,0.35);
-      z-index: 1000; display: none; font-size: 0.93rem;
-      white-space: nowrap;
-    }
-
-    /* ── RESPONSIVE ─────────────────────────────────────────── */
+    /* ─── RESPONSIVE ────────────────────────────────────────────────────── */
     @media (max-width: 960px) {
-      #freebie .freebie-inner { grid-template-columns: 1fr; }
-      .freebie-card { display: none; }
-      .founder { flex-direction: column; text-align: center; }
+      .hero-grid { grid-template-columns: 1fr; }
+      .enterprise-inner { grid-template-columns: 1fr; }
+      .lead-magnet-inner { grid-template-columns: 1fr; }
+      .lm-card { display: none; }
+      .founder-inner { flex-direction: column; text-align: center; }
       .founder-img { width: 160px; height: 190px; margin: 0 auto; }
-      .founder-tag { left: 50%; }
+      .founder-badge { left: 50%; }
       .founder-ctas { justify-content: center; }
-      .founder-creds { justify-content: center; }
-      .pain-grid { grid-template-columns: 1fr 1fr; }
+      .creds { justify-content: center; }
       .bundle-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 640px) {
-      nav .nav-links { display: none; }
-      header { padding: 64px 20px 52px; }
-      header h1 { font-size: 1.9rem; }
-      .pain-grid { grid-template-columns: 1fr; }
-      .grid { grid-template-columns: 1fr; }
-      footer .footer-inner { flex-direction: column; text-align: center; }
+      .nav .nav-links { display: none; }
+      .hero { padding: 64px 22px 52px; }
+      .hero h1 { font-size: 1.95rem; }
+      .tool-grid { grid-template-columns: 1fr; }
+      .footer-inner { flex-direction: column; text-align: center; }
       #sticky-cta { display: block; }
+      .pricing-tiers { flex-direction: column; }
     }
   </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
+<!-- ═══ NAV ═══════════════════════════════════════════════════════════════ -->
+<nav class="nav">
   <div class="nav-inner">
-    <a href="#start" class="nav-brand">Vertriebs<span>werk</span></a>
+    <a href="#start" class="nav-brand">Vertriebs<em>werk</em></a>
     <ul class="nav-links">
-      <li><a href="#freebie">Gratis-Guide</a></li>
-      <li><a href="#produkte">Produkte</a></li>
+      <li><a href="#top-tools">Top-Tools</a></li>
+      <li><a href="#alle-tools">Alle 12</a></li>
       <li><a href="#bundles">Bundles</a></li>
+      <li><a href="#enterprise">Enterprise</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#kontakt">Kontakt</a></li>
-      <li><a href="https://vertriebswerk.gumroad.com" target="_blank" class="nav-shop">Zum Shop &rarr;</a></li>
+      <li><a href="https://vertriebswerk.gumroad.com" target="_blank" rel="noopener" class="nav-cta">Zum Shop →</a></li>
     </ul>
   </div>
 </nav>
 
-<!-- HERO -->
-<header id="start">
+<!-- ═══ HERO ═══════════════════════════════════════════════════════════════ -->
+<header class="hero" id="start">
   <div class="container">
-    <h1>Tools f&uuml;r Macher im <em>B2B-Vertrieb.</em></h1>
-    <p>12 praxiserprobte Werkzeuge f&uuml;r KAMs und Vertriebsteams im DACH-Raum. Kein kritischer Moment ohne Vorbereitung &mdash; ohne Abonnement.</p>
-    <a href="#produkte" class="btn btn-green" style="font-size:1rem; padding:15px 32px;">Alle 12 Tools entdecken &rarr;</a>
-    <div class="hero-badges">
+    <h1>Tools für Macher im <em>B2B-Vertrieb.</em></h1>
+    <p class="hero-sub">
+      12 praxiserprobte Werkzeuge für KAMs und Vertriebsteams im DACH-Raum —
+      entwickelt aus 10+ Jahren Vertriebsalltag in Logistik, IoT und Automotive.
+      Branchenunabhängig. 100% Offline. Ohne Abo.
+    </p>
+    <div class="hero-actions">
+      <a href="#top-tools" class="btn btn-green" style="padding:15px 32px;font-size:1rem">Top-Tools ansehen →</a>
+      <div class="hero-dsgvo">
+        <img src="dsgvo-siegel.jpg" alt="DSGVO-sicher: 100% Offline Excel/Word Tool, keine Datenübertragung">
+        DSGVO-sicher · 100% Offline · Keine IT-Freigabe
+      </div>
+    </div>
+    <div class="hero-trust">
       <span>Einmalzahlung</span>
       <span>Sofort-Download</span>
       <span>Auf Deutsch</span>
       <span>Kein Abo</span>
+      <span>Excel &amp; Word</span>
+      <span>DACH-Mittelstand</span>
     </div>
   </div>
 </header>
 
-<!-- BRANCHEN SOCIAL PROOF STRIP -->
-<div id="branchen-strip">
-  <div class="branchen-inner">
-    <span class="branchen-label">Genutzt in Branchen wie</span>
-    <span class="branchen-divider">·</span>
-    <span class="branchen-tag">Automotive</span>
-    <span class="branchen-tag">LogTech</span>
-    <span class="branchen-tag">IoT / Industrie 4.0</span>
-    <span class="branchen-tag">Mittelstand DACH</span>
-    <span class="branchen-tag">B2B SaaS</span>
-    <span class="branchen-tag">Spedition &amp; Logistik</span>
-  </div>
-</div>
-
-<!-- FREEBIE -->
-<section id="freebie">
-  <div class="container">
-    <div class="freebie-inner">
-      <div>
-        <div style="display:inline-block;background:#e6f7f3;color:#007a60;border:1px solid #b3e6d9;font-size:0.7rem;font-weight:bold;letter-spacing:0.1em;text-transform:uppercase;padding:4px 12px;border-radius:4px;margin-bottom:14px">100% kostenlos &mdash; Sofortiger Zugang</div>
-        <h2>Dein kostenloser Praxis-Guide</h2>
-        <p><strong style="color:#1B2A4A">6 Fehler, die deinen B2B-Vertrieb bremsen.</strong></p>
-        <p>Erfahre, warum deine Pipeline stagniert und wie du die 6 h&auml;ufigsten Fallen im Key Account Management vermeidest. Direkt aus 10+ Jahren Praxis &mdash; kein Berater-Speak.</p>
-        <ul>
-          <li>Warum dein ICP-Prozess Deals kostet, bevor du redest</li>
-          <li>Der Pipeline-Fehler, der jeden Forecast unbrauchbar macht</li>
-          <li>KAM-Jahresgespr&auml;ch ohne Vorbereitung: was wirklich passiert</li>
-          <li>Follow-up Timing: der stille Killer deiner Abschlussquote</li>
-          <li>Ausschreibungen: wann du &ldquo;Nein&rdquo; sagen musst</li>
-          <li>Controlling ohne Struktur &mdash; warum Bauchgef&uuml;hl l&uuml;gt</li>
-        </ul>
-        <a href="https://vertriebswerk.gumroad.com/l/b2b-vertrieb-fehler" target="_blank" class="btn btn-navy">Guide kostenlos anfordern &rarr;</a>
-        <span class="freebie-note">&#10003; Sofortiger Zugang &nbsp;&middot;&nbsp; &#10003; Kein Abo &nbsp;&middot;&nbsp; &#10003; 100% kostenlos</span>
-      </div>
-      <div class="freebie-card">
-        <div class="freebie-card-title">&bdquo;6 Fehler, die deinen B2B-Vertrieb bremsen&ldquo;</div>
-        <div class="freebie-card-by">Von Daniel Toth &middot; 10+ Jahre B2B-Praxis</div>
-        <ol>
-          <li>Der ICP-Fehler</li>
-          <li>Pipeline-Leichen</li>
-          <li>KAM ohne Vorbereitung</li>
-          <li>Follow-up Timing</li>
-          <li>Falsche Ausschreibungen</li>
-          <li>Blindflug-Controlling</li>
-        </ol>
-        <a href="https://vertriebswerk.gumroad.com/l/b2b-vertrieb-fehler" target="_blank" class="btn btn-green" style="width:100%;justify-content:center">Kostenlos sichern &rarr;</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOUNDER -->
+<!-- ═══ FOUNDER ════════════════════════════════════════════════════════════ -->
 <section class="founder-section" id="founder">
   <div class="container">
-    <div class="founder">
+    <div class="founder-inner">
       <div class="founder-img-wrap">
-        <img src="bewerbungsbildneu.jpg" width="220" height="260"
-             alt="Daniel Toth – Gründer Vertriebswerk, B2B-Vertriebsexperte"
+        <img src="bewerbungsbildneu.jpg"
+             width="220" height="260"
+             alt="Daniel Toth – Gründer Vertriebswerk, 10+ Jahre B2B-Vertrieb KAM Logistik IoT"
              class="founder-img">
-        <div class="founder-tag">&#10003; Field Tested &middot; <span>10+ Jahre Praxis</span></div>
+        <div class="founder-badge">✓ Field Tested · <em>10+ Jahre Praxis</em></div>
       </div>
       <div class="founder-text">
+        <span class="eyebrow">Wer steckt dahinter?</span>
         <h2>Hi, ich bin Daniel.</h2>
-        <p>Nach &uuml;ber 10 Jahren im B2B-Vertrieb (LogTech, Automotive, IoT) habe ich eines gelernt: Struktur schl&auml;gt Talent. Ich habe diese Tools entwickelt, um meinen eigenen Alltag effizienter zu machen &mdash; f&uuml;r KAMs, die liefern m&uuml;ssen.</p>
-        <p>Kaufmann f&uuml;r Speditions- und Logistikdienstleistungen, B.A. Business Administration. Lebt und arbeitet in Mainz.</p>
+        <p>
+          Nach über 10 Jahren im B2B-Vertrieb — Innendienst, Key Account Management,
+          LogTech, IoT, Automotive — habe ich eines gelernt: Struktur schlägt Talent.
+          Ich habe diese Tools gebaut, weil ich sie selbst gebraucht hätte.
+        </p>
+        <p>
+          Kaufmann für Speditions- und Logistikdienstleistungen · B.A. Business Administration · Mainz
+        </p>
         <div class="founder-ctas">
-          <a href="https://www.linkedin.com/in/daniel-toth-a7117712a" target="_blank" class="btn btn-li">&#128100; LinkedIn &rarr;</a>
-          <a href="#produkte" class="btn btn-navy">Alle Tools ansehen &rarr;</a>
+          <a href="https://www.linkedin.com/in/daniel-toth-a7117712a" target="_blank" rel="noopener" class="btn btn-li">👤 LinkedIn →</a>
+          <a href="#top-tools" class="btn btn-navy">Alle Tools ansehen →</a>
         </div>
-        <div class="founder-creds">
-          <span class="cred">Kaufm. Spediteur &amp; Logistik</span>
-          <span class="cred">B.A. Business Administration</span>
-          <span class="cred">LogTech &middot; IoT &middot; Automotive</span>
-          <span class="cred">Mainz, Deutschland</span>
+        <div class="creds">
+          <span class="cred">LogTech · IoT · Automotive</span>
+          <span class="cred">B2B DACH-Mittelstand</span>
+          <span class="cred">KAM &amp; Innendienst</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PAIN POINTS -->
-<section class="pain-section">
+<!-- ═══ TOP 4 HERO-PRODUKTE ════════════════════════════════════════════════ -->
+<section class="hero-products" id="top-tools">
   <div class="container">
-    <h2>Ohne Struktur bleibt der Vertrieb Kopfsache.</h2>
-    <p class="sub">Jeder KAM kennt das Gef&uuml;hl: der n&auml;chste Termin kommt, das System fehlt.</p>
-    <div class="pain-grid">
-      <div class="pain-item"><div class="pain-num">01</div><h3>Kein klarer ICP-Prozess</h3><p>Stakeholder-Mapping im Kopf statt auf Papier &mdash; jeder Akquise-Anruf startet von vorn.</p></div>
-      <div class="pain-item"><div class="pain-num">02</div><h3>Pipeline voller Leichen</h3><p>Deals aus Q1 stehen noch im CRM. Der Sales-Cycle ist klar, die Priorisierung nicht.</p></div>
-      <div class="pain-item"><div class="pain-num">03</div><h3>Kaltakquise ohne System</h3><p>Kein Sequenz-Template, kein Einwand-Framework &mdash; jede Woche dieselbe Improvisation.</p></div>
-      <div class="pain-item"><div class="pain-num">04</div><h3>KAM ohne Vorbereitung</h3><p>Das Jahresgespr&auml;ch kommt &mdash; der strukturierte Leitfaden fehlt.</p></div>
-      <div class="pain-item"><div class="pain-num">05</div><h3>Controlling im Blindflug</h3><p>CAC, LTV, Forecast &mdash; Zahlen die gesch&auml;tzt werden statt strukturiert gemessen.</p></div>
-      <div class="pain-item"><div class="pain-num">06</div><h3>Follow-up ohne Strategie</h3><p>Nach dem Erstgespr&auml;ch: Irgendwie nachhaken. Ohne Framework, ohne Timing.</p></div>
+    <div class="section-header">
+      <span class="eyebrow">Die 4 meistgenutzten Tools</span>
+      <h2 class="section-h">Praxis-Tools mit Screenshot-Vorschau</h2>
+      <p class="section-p">Mit Lizenz-Staffelung für Single-, Team- und Enterprise-Nutzung. Inkl. DSGVO-konformer Offline-Nutzung.</p>
     </div>
+
+    <div class="hero-grid">
+
+      <!-- ── Ausschreibungs-Check ── -->
+      <div class="hcard">
+        <div class="hcard-screenshot"
+             onclick="openLightbox('Ausschreibungscheck.png', 'B2B Ausschreibungs-Check Excel Vorlage – 16 GO/NO-GO Kriterien')">
+          <img src="Ausschreibungscheck.png"
+               alt="B2B Ausschreibungs-Check Excel Vorlage – 16 GO/NO-GO Bewertungskriterien für Tender im Mittelstand"
+               loading="lazy">
+          <div class="hcard-zoom">🔍 Vergrößern</div>
+        </div>
+        <div class="hcard-body">
+          <div class="hcard-badge">GO / NO-GO · 16 Kriterien</div>
+          <div class="hcard-title">Millionen-Entscheidungen ohne Bauchschmerzen.</div>
+          <p class="hcard-copy">Bewerte Tender in 15 Min. nach 16 harten GO/NO-GO Kriterien. Inkl. Preiskalkulation und Risiko-Analyse.</p>
+
+          <button class="preview-toggle" onclick="togglePreview('prev-aus')">📋 Inhalt-Vorschau</button>
+          <ul class="preview-list" id="prev-aus" style="display:none">
+            <li>16 Bewertungskriterien in 4 Kategorien</li>
+            <li>Automatische GO/NO-GO Empfehlung</li>
+            <li>Preiskalkulation &amp; Deckungsbeitrag</li>
+            <li>Wettbewerbs- &amp; Risikobewertung</li>
+            <li>Post-Mortem Vorlage für verlorene Deals</li>
+          </ul>
+
+          <div class="pricing-tiers">
+            <div class="tier active" onclick="setTier(this,'aus',39)">
+              <span class="tier-label">Single</span>
+              <span class="tier-price">39 €</span>
+              <span class="tier-users">1 Nutzer</span>
+            </div>
+            <div class="tier" onclick="setTier(this,'aus',149)">
+              <span class="tier-label">Team</span>
+              <span class="tier-price">149 €</span>
+              <span class="tier-users">bis 10 Nutzer</span>
+            </div>
+            <div class="tier" onclick="setTier(this,'aus',349)">
+              <span class="tier-label">Enterprise</span>
+              <span class="tier-price">349 €</span>
+              <span class="tier-users">unbegrenzt</span>
+            </div>
+          </div>
+
+          <div class="hcard-checkout">
+            <a href="https://vertriebswerk.gumroad.com/l/ausschreibungs-check-b2b-mittelstand?wanted=true"
+               class="gumroad-button buy-btn" target="_blank" rel="noopener" id="btn-aus">
+              Tool sichern – <span id="price-aus">39 €</span>
+            </a>
+            <div class="buy-meta">
+              <img src="dsgvo-siegel.jpg" alt="DSGVO-sicher Offline Excel Tool">
+              DSGVO-sicher · 100% Offline · Keine Cloud
+            </div>
+            <div class="price-note">Preise inkl. MwSt. · Rechtssichere B2B-Lizenz · Sicherer Checkout via Gumroad</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── E-Mail Baukasten ── -->
+      <div class="hcard">
+        <div class="hcard-screenshot"
+             onclick="openLightbox('kaltakquise.png', 'B2B E-Mail Baukasten Kaltakquise Word Vorlage – 10 psychologisch optimierte Vorlagen')">
+          <img src="kaltakquise.png"
+               alt="B2B E-Mail Baukasten Kaltakquise Word Vorlage – 10 Vorlagen für 5 Sequenz-Stufen, DSGVO-konform"
+               loading="lazy">
+          <div class="hcard-zoom">🔍 Vergrößern</div>
+        </div>
+        <div class="hcard-body">
+          <div class="hcard-badge">10 Vorlagen · DSGVO-konform</div>
+          <div class="hcard-title">Schluss mit der Stille im Postfach.</div>
+          <p class="hcard-copy">10 psychologisch optimierte Vorlagen für echte Antworten statt Spam. Fokus auf Relevanz und Respekt.</p>
+
+          <button class="preview-toggle" onclick="togglePreview('prev-mail')">📋 Inhalt-Vorschau</button>
+          <ul class="preview-list" id="prev-mail" style="display:none">
+            <li>10 Vorlagen für 5 Sequenz-Stufen</li>
+            <li>30 getestete Betreffzeilen</li>
+            <li>Psychologische Hebel je Stufe erklärt</li>
+            <li>DSGVO-konformes Regelwerk</li>
+            <li>7 goldene Regeln der B2B-Kaltakquise-Mail</li>
+          </ul>
+
+          <div class="pricing-tiers">
+            <div class="tier active" onclick="setTier(this,'mail',19)">
+              <span class="tier-label">Single</span>
+              <span class="tier-price">19 €</span>
+              <span class="tier-users">1 Nutzer</span>
+            </div>
+            <div class="tier" onclick="setTier(this,'mail',79)">
+              <span class="tier-label">Team</span>
+              <span class="tier-price">79 €</span>
+              <span class="tier-users">bis 10 Nutzer</span>
+            </div>
+            <div class="tier" onclick="setTier(this,'mail',199)">
+              <span class="tier-label">Enterprise</span>
+              <span class="tier-price">199 €</span>
+              <span class="tier-users">unbegrenzt</span>
+            </div>
+          </div>
+
+          <div class="hcard-checkout">
+            <a href="https://vertriebswerk.gumroad.com/l/gydjb?wanted=true"
+               class="gumroad-button buy-btn" target="_blank" rel="noopener" id="btn-mail">
+              Tool sichern – <span id="price-mail">19 €</span>
+            </a>
+            <div class="buy-meta">
+              <img src="dsgvo-siegel.jpg" alt="DSGVO-sicher Offline Word Tool">
+              DSGVO-sicher · 100% Offline · Keine Cloud
+            </div>
+            <div class="price-note">Preise inkl. MwSt. · Rechtssichere B2B-Lizenz · Sicherer Checkout via Gumroad</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Vertriebscontrolling ── -->
+      <div class="hcard">
+        <div class="hcard-screenshot"
+             onclick="openLightbox('vertriebscontrolling.png', 'B2B Vertriebscontrolling Dashboard Excel – CAC, LTV, Forecast und Deckungsbeitrag')">
+          <img src="vertriebscontrolling.png"
+               alt="B2B Vertriebscontrolling Dashboard Excel Vorlage – Umsatz IST/PLAN, CAC, LTV, Forecast für DACH-Mittelstand"
+               loading="lazy">
+          <div class="hcard-zoom">🔍 Vergrößern</div>
+        </div>
+        <div class="hcard-body">
+          <div class="hcard-badge">CAC · LTV · Forecast</div>
+          <div class="hcard-title">Dein Cockpit für profitable Sales-Performance.</div>
+          <p class="hcard-copy">Wer nicht misst, kann nicht steuern. CAC, Forecast und Deckungsbeitrag in einem einzigen Excel-Sheet.</p>
+
+          <button class="preview-toggle" onclick="togglePreview('prev-ctrl')">📋 Inhalt-Vorschau</button>
+          <ul class="preview-list" id="prev-ctrl" style="display:none">
+            <li>Umsatz IST/PLAN Monats- &amp; Quartalsvergleich</li>
+            <li>CAC, LTV &amp; Payback-Periode automatisch berechnet</li>
+            <li>Ampel-System für Zielerreichung</li>
+            <li>Drill-Down nach Region, Produkt &amp; Kanal</li>
+            <li>Forecast-Szenario (Best/Base/Worst)</li>
+          </ul>
+
+          <div class="pricing-tiers">
+            <div class="tier active" onclick="setTier(this,'ctrl',39)">
+              <span class="tier-label">Single</span>
+              <span class="tier-price">39 €</span>
+              <span class="tier-users">1 Nutzer</span>
+            </div>
+            <div class="tier" onclick="setTier(this,'ctrl',149)">
+              <span class="tier-label">Team</span>
+              <span class="tier-price">149 €</span>
+              <span class="tier-users">bis 10 Nutzer</span>
+            </div>
+            <div class="tier" onclick="setTier(this,'ctrl',349)">
+              <span class="tier-label">Enterprise</span>
+              <span class="tier-price">349 €</span>
+              <span class="tier-users">unbegrenzt</span>
+            </div>
+          </div>
+
+          <div class="hcard-checkout">
+            <a href="https://vertriebswerk.gumroad.com/l/vertriebscontrolling-dashboard-b2b?wanted=true"
+               class="gumroad-button buy-btn" target="_blank" rel="noopener" id="btn-ctrl">
+              Tool sichern – <span id="price-ctrl">39 €</span>
+            </a>
+            <div class="buy-meta">
+              <img src="dsgvo-siegel.jpg" alt="DSGVO-sicher Offline Excel Tool">
+              DSGVO-sicher · 100% Offline · Keine Cloud
+            </div>
+            <div class="price-note">Preise inkl. MwSt. · Rechtssichere B2B-Lizenz · Sicherer Checkout via Gumroad</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Meeting-Leitfaden ── -->
+      <div class="hcard">
+        <div class="hcard-screenshot"
+             onclick="openLightbox('meetingleitfaden.png', 'B2B Meeting-Leitfaden Erstgespräch Word Vorlage – 7 Phasen, SPIN & MEDDIC')">
+          <img src="meetingleitfaden.png"
+               alt="B2B Meeting-Leitfaden Erstgespräch Word Vorlage – 7 Phasen, 30+ Qualifizierungsfragen, SPIN MEDDIC Methode"
+               loading="lazy">
+          <div class="hcard-zoom">🔍 Vergrößern</div>
+        </div>
+        <div class="hcard-body">
+          <div class="hcard-badge">7 Phasen · 30+ Fragen</div>
+          <div class="hcard-title">Vom Smalltalk zum verbindlichen Abschluss.</div>
+          <p class="hcard-copy">Führe Gespräche, statt nur zu reagieren. 7 Phasen und die richtigen Fragen zur Schmerz-Qualifizierung.</p>
+
+          <button class="preview-toggle" onclick="togglePreview('prev-meet')">📋 Inhalt-Vorschau</button>
+          <ul class="preview-list" id="prev-meet" style="display:none">
+            <li>7-Phasen-Gesprächsstruktur mit Zeitplanung</li>
+            <li>30+ SPIN &amp; MEDDIC Qualifizierungsfragen</li>
+            <li>Eröffnungs- &amp; Abschlussfragen je Kontext</li>
+            <li>Checkliste für verbindlichen nächsten Schritt</li>
+            <li>Notizfelder direkt im Dokument</li>
+          </ul>
+
+          <div class="pricing-tiers">
+            <div class="tier active" onclick="setTier(this,'meet',19)">
+              <span class="tier-label">Single</span>
+              <span class="tier-price">19 €</span>
+              <span class="tier-users">1 Nutzer</span>
+            </div>
+            <div class="tier" onclick="setTier(this,'meet',79)">
+              <span class="tier-label">Team</span>
+              <span class="tier-price">79 €</span>
+              <span class="tier-users">bis 10 Nutzer</span>
+            </div>
+            <div class="tier" onclick="setTier(this,'meet',199)">
+              <span class="tier-label">Enterprise</span>
+              <span class="tier-price">199 €</span>
+              <span class="tier-users">unbegrenzt</span>
+            </div>
+          </div>
+
+          <div class="hcard-checkout">
+            <a href="https://vertriebswerk.gumroad.com/l/hbdgdx?wanted=true"
+               class="gumroad-button buy-btn" target="_blank" rel="noopener" id="btn-meet">
+              Tool sichern – <span id="price-meet">19 €</span>
+            </a>
+            <div class="buy-meta">
+              <img src="dsgvo-siegel.jpg" alt="DSGVO-sicher Offline Word Tool">
+              DSGVO-sicher · 100% Offline · Keine Cloud
+            </div>
+            <div class="price-note">Preise inkl. MwSt. · Rechtssichere B2B-Lizenz · Sicherer Checkout via Gumroad</div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /hero-grid -->
   </div>
 </section>
 
-<!-- TOOL PREVIEW -->
-<section id="tool-preview">
+<!-- ═══ ALLE 12 TOOLS ══════════════════════════════════════════════════════ -->
+<section class="all-tools" id="alle-tools">
   <div class="container">
-    <h2>Einblick: So sehen die Tools aus.</h2>
-    <p class="sub">Keine Blackbox &mdash; du siehst genau, womit du arbeitest.</p>
-    <div class="preview-grid">
-
-      <div class="preview-item">
-        <img src="preview_icp.png"
-             alt="ICP Workshop-Kit Screenshot – Schmerzpunkte-Matrix Excel"
-             loading="lazy">
-        <div class="preview-caption">
-          <span>ICP Workshop-Kit</span>
-          <a href="https://vertriebswerk.gumroad.com/l/nvwjca?wanted=true" target="_blank">Tool ansehen &rarr;</a>
-        </div>
-      </div>
-
-      <div class="preview-item">
-        <img src="preview_meeting.png"
-             alt="Meeting-Leitfaden Erstgespräch Screenshot – 7-Phasen-Struktur Word"
-             loading="lazy">
-        <div class="preview-caption">
-          <span>Meeting-Leitfaden</span>
-          <a href="https://vertriebswerk.gumroad.com/l/hbdgdx?wanted=true" target="_blank">Tool ansehen &rarr;</a>
-        </div>
-      </div>
-
-      <div class="preview-item">
-        <img src="preview_einwand.png"
-             alt="B2B Pipeline Cleanup Kit Screenshot – Opportunity Tracker Excel"
-             loading="lazy">
-        <div class="preview-caption">
-          <span>B2B Pipeline Cleanup Kit</span>
-          <a href="https://vertriebswerk.gumroad.com/l/b2b-pipeline-cleanup-kit?wanted=true" target="_blank">Tool ansehen &rarr;</a>
-        </div>
-      </div>
-
+    <div class="section-header">
+      <span class="eyebrow">Das komplette Portfolio</span>
+      <h2 class="section-h">Alle 12 Werkzeuge</h2>
+      <p class="section-p">Einzellizenzen ab 19 € · Bundles mit bis zu 28% Ersparnis · Alle Preise inkl. MwSt.</p>
     </div>
-  </div>
-</section>
 
-<!-- PRODUKTE -->
-<section class="produkte-section" id="produkte">
-  <div class="container">
-    <h2>Die 12 Werkzeuge</h2>
-    <p>Alle kritischen Phasen des B2B-Vertriebs &mdash; sofort einsetzbar, kein Overhead.</p>
-
-    <!-- Kategorie 01 -->
+    <!-- 01 Neukundengewinnung -->
     <div class="cat-head">
       <div class="cat-num">01</div>
       <div><div class="cat-lbl">Kategorie</div><div class="cat-title">Neukundengewinnung</div></div>
     </div>
-    <div class="grid">
-
-      <div class="card">
-        <div class="card-pills"><span class="pill pill-g">ICP-Scoring</span><span class="pill pill-b">Excel &middot; 5 Sheets</span></div>
+    <div class="tool-grid">
+      <div class="tcard">
+        <div class="tcard-pills"><span class="pill pill-g">ICP-Scoring</span><span class="pill pill-b">Excel · 5 Sheets</span></div>
         <h3>ICP Workshop-Kit</h3>
-        <div class="card-sub">Branchenfilter &middot; Stakeholder-Mapping &middot; Scoring-Matrix</div>
-        <div class="card-roi">&#9201; ICP-Analyse: 30 statt 180 Min.</div>
-        <ul class="card-feats">
-          <li>12 Branchen bewerten &amp; priorisieren</li>
-          <li>Stakeholder-Mapping nach Entscheidungsebene</li>
-          <li>ICP-Scoring nach 6 gewichteten Kriterien</li>
-          <li>Fertiger ICP-Steckbrief zum Ausdrucken</li>
-        </ul>
-        <div class="card-foot">
-          <div><div class="card-price">24 &euro;</div><div class="card-fmt">Excel (.xlsx)</div></div>
-          <a href="https://vertriebswerk.gumroad.com/l/nvwjca?wanted=true" target="_blank" class="card-btn">Tool sichern &rarr;</a>
-        </div>
-        <div class="card-trust"><span>Excel/Word kompatibel</span><span>Sofort-Download</span></div>
+        <div class="tcard-sub">Stakeholder-Mapping · Scoring-Matrix · ICP-Steckbrief</div>
+        <ul class="tcard-feats"><li>12 Branchen bewerten &amp; priorisieren</li><li>ICP-Scoring nach 6 Kriterien</li><li>Fertiger ICP-Steckbrief</li></ul>
+        <div class="tcard-foot"><div><div class="tcard-price">24 €</div><div class="tcard-fmt">Excel (.xlsx)</div></div><a href="https://vertriebswerk.gumroad.com/l/nvwjca?wanted=true" class="gumroad-button tcard-cta" target="_blank" rel="noopener">Sichern →</a></div>
       </div>
-
-      <div class="card">
-        <div class="card-pills"><span class="pill pill-g">E-Mail-Sequenz</span><span class="pill pill-b">Word + Excel</span></div>
+      <div class="tcard">
+        <div class="tcard-pills"><span class="pill pill-g">E-Mail-Sequenz</span><span class="pill pill-b">Word + Excel</span></div>
         <h3>Kaltakquise Blueprint</h3>
-        <div class="card-sub">5-Stufen-Sequenz &middot; Telefonskript &middot; DSGVO-Check</div>
-        <div class="card-roi">&#9201; Akquise-Vorbereitung: 20 statt 90 Min.</div>
-        <ul class="card-feats">
-          <li>E-Mail-Sequenz in 5 Stufen</li>
-          <li>Telefonskript f&uuml;r den DACH-Markt</li>
-          <li>Einwandbehandlung f&uuml;r 5 Situationen</li>
-          <li>Aktivit&auml;ten-Tracker f&uuml;r den Sales-Cycle</li>
-        </ul>
-        <div class="card-foot">
-          <div><div class="card-price">29 &euro;</div><div class="card-fmt">Word + Excel</div></div>
-          <a href="https://vertriebswerk.gumroad.com/l/kaltakquise-blueprint-b2b?wanted=true" target="_blank" class="card-btn">Tool sichern &rarr;</a>
-        </div>
-        <div class="card-trust"><span>Excel/Word kompatibel</span><span>Sofort-Download</span></div>
+        <div class="tcard-sub">5-Stufen-Sequenz · Telefonskript · DSGVO-Check</div>
+        <ul class="tcard-feats"><li>E-Mail-Sequenz in 5 Stufen</li><li>Telefonskript DACH-Markt</li><li>Einwandbehandlung 5 Situationen</li></ul>
+        <div class="tcard-foot"><div><div class="tcard-price">29 €</div><div class="tcard-fmt">Word + Excel</div></div><a href="https://vertriebswerk.gumroad.com/l/kaltakquise-blueprint-b2b?wanted=true" class="gumroad-button tcard-cta" target="_blank" rel="noopener">Sichern →</a></div>
       </div>
-
-      <div class="card">
-        <div class="card-pills"><span class="pill pill-g">10 Vorlagen</span><span class="pill pill-b">Word (.docx)</span></div>
+      <div class="tcard">
+        <div class="tcard-pills"><span class="pill pill-g">10 Vorlagen</span><span class="pill pill-b">Word (.docx)</span></div>
         <h3>E-Mail Baukasten Kaltakquise</h3>
-        <div class="card-sub">10 Vorlagen &middot; 30 Betreffzeilen &middot; 5-Stufen-Sequenz</div>
-        <div class="card-roi">&#9201; Mail-Entwurf: 5 statt 45 Min.</div>
-        <ul class="card-feats">
-          <li>10 Kaltakquise-Vorlagen f&uuml;r B2B-Entscheider</li>
-          <li>30 getestete Betreffzeilen zum Kopieren</li>
-          <li>Psychologische Hebel je Sequenz-Stufe</li>
-          <li>7 goldene Regeln der B2B-Kaltakquise-Mail</li>
-        </ul>
-        <div class="card-foot">
-          <div><div class="card-price">19 &euro;</div><div class="card-fmt">Word (.docx)</div></div>
-          <a href="https://vertriebswerk.gumroad.com/l/gydjb?wanted=true" target="_blank" class="card-btn">Tool sichern &rarr;</a>
-        </div>
-        <div class="card-trust"><span>Excel/Word kompatibel</span><span>Sofort-Download</span></div>
+        <div class="tcard-sub">10 Vorlagen · 30 Betreffzeilen · Sequenz-Framework</div>
+        <ul class="tcard-feats"><li>10 Kaltakquise-Vorlagen B2B</li><li>30 getestete Betreffzeilen</li><li>Psychologische Hebel je Stufe</li></ul>
+        <div class="tcard-foot"><div><div class="tcard-price">19 €</div><div class="tcard-fmt">Word (.docx)</div></div><a href="https://vertriebswerk.gumroad.com/l/gydjb?wanted=true" class="gumroad-button tcard-cta" target="_blank" rel="noopener">Sichern →</a></div>
       </div>
-
-      <div class="card">
-        <div class="card-pills"><span class="pill pill-g">CRM-READY</span><span class="pill pill-b">Excel &middot; 6 Tabs</span></div>
+      <div class="tcard">
+        <div class="tcard-pills"><span class="pill pill-g">CRM-READY</span><span class="pill pill-b">Excel · 6 Tabs</span></div>
         <h3>B2B Pipeline Cleanup Kit</h3>
-        <div class="card-sub">Opportunity-Scoring &middot; CRM-Tagging &middot; Forecast</div>
-        <div class="card-roi">&#9201; Pipeline-Bereinigung: 30 statt 180 Min.</div>
-        <ul class="card-feats">
-          <li>16 Qualit&auml;tskriterien pro Opportunity</li>
-          <li>Ampel-System: Gr&uuml;n / Gelb / Rot</li>
-          <li>CRM-Tagging-Guide f&uuml;r Salesforce &amp; HubSpot</li>
-          <li>Forecast-Bereinigung in 30 Minuten</li>
-        </ul>
-        <div class="card-foot">
-          <div><div class="card-price">19 &euro;</div><div class="card-fmt">Excel (.xlsx)</div></div>
-          <a href="https://vertriebswerk.gumroad.com/l/b2b-pipeline-cleanup-kit?wanted=true" target="_blank" class="card-btn">Tool sichern &rarr;</a>
-        </div>
-        <div class="card-trust"><span>Excel/Word kompatibel</span><span>Sofort-Download</span></div>
+        <div class="tcard-sub">Opportunity-Scoring · CRM-Tagging · Forecast</div>
+        <ul class="tcard-feats"><li>16 Qualitätskriterien pro Deal</li><li>Ampel-System Grün/Gelb/Rot</li><li>Tagging-Guide Salesforce &amp; HubSpot</li></ul>
+        <div class="tcard-foot"><div><div class="tcard-price">19 €</div><div class="tcard-fmt">Excel (.xlsx)</div></div><a href="https://vertriebswerk.gumroad.com/l/b2b-pipeline-cleanup-kit?wanted=true" class="gumroad-button tcard-cta" target="_blank" rel="noopener">Sichern →</a></div>
       </div>
-
     </div>
 
-    <!-- Kategorie 02 -->
+    <!-- 02 Gesprächsführung -->
     <div class="cat-head">
       <div class="cat-num">02</div>
-      <div><div class="cat-lbl">Kategorie</div><div class="cat-title">Gespr&auml;chsf&uuml;hrung &amp; Abschluss</div></div>
+      <div><div class="cat-lbl">Kategorie</div><div class="cat-title">Gesprächsführung &amp; Abschluss</div></div>
     </div>
-    <div class="grid">
-
-      <div class="card">
-        <div class="card-pills"><span class="pill pill-g">30+ Fragen</span><span class="pill pill-b">Word (.docx)</span></div>
-        <h3>Meeting-Leitfaden Erstgespr&auml;ch</h3>
-        <div class="card-sub">7-Phasen-Struktur &middot; SPIN &amp; MEDDIC &middot; Verbindlichkeit</div>
-        <div class="card-roi">&#9201; Gespr&auml;chsvorbereitung: 15 statt 90 Min.</div>
-        <ul class="card-feats">
-          <li>7-Phasen-Gespr&auml;chsstruktur mit Zeitplanung</li>
-          <li>30+ Qualifizierungsfragen</li>
-          <li>Checkliste f&uuml;r verbindlichen n&auml;chsten Schritt</li>
-          <li>Notizfelder direkt im Dokument</li>
-        </ul>
-        <div class="card-foot">
-          <div><div class="card-price">19 &euro;</div><div class="card-fmt">Word (.docx)</div></div>
-          <a href="https://vertriebswerk.gumroad.com/l/hbdgdx?wanted=true" target="_blank" class="card-btn">Tool sichern &rarr;</a>
-        </div>
-        <div class="card-trust"><span>Excel/Word kompatibel</span><span>Sofort-Download</span></div>
+    <div class="tool-grid">
+      <div class="tcard">
+        <div class="tcard-pills"><span class="pill pill-g">30+ Fragen</span><span class="pill pill-b">Word (.docx)</span></div>
+        <h3>Meeting-Leitfaden Erstgespräch</h3>
+        <div class="tcard-sub">7-Phasen-Struktur · SPIN &amp; MEDDIC · Verbindlichkeit</div>
+        <ul class="tcard-feats"><li>7-Phasen-Struktur mit Zeitplanung</li><li>30+ Qualifizierungsfragen</li><li>Checkliste verbindlicher Schritt</li></ul>
+        <div class="tcard-foot"><div><div class="tcard-price">19 €</div><div class="tcard-fmt">Word (.docx)</div></div><a href="https://vertriebswerk.gumroad.com/l/hbdgdx?wanted=true" class="gumroad-button tcard-cta" target="_blank" rel="noopener">Sichern →</a></div>
       </div>
-
-      <div class="card">
-        <div class="card-pills"><span class="pill pill-g">25 Einw&auml;nde</span><span class="pill pill-b">Excel (.xlsx)</span></div>
+      <div class="tcard">
+        <div class="tcard-pills"><span class="pill pill-g">25 Einwände</span><span class="pill pill-b">Excel (.xlsx)</span></div>
         <h3>Einwandbehandlung Mastersheet</h3>
-        <div class="card-sub">25 Einw&auml;nde &middot; 75 Antworten &middot; DACH-Fokus</div>
-        <div class="card-roi">&#9201; Einwand-Reaktion: sofort statt improvisiert</div>
-        <ul class="card-feats">
-          <li>25 h&auml;ufigste B2B-Einw&auml;nde im DACH-Markt</li>
-          <li>Je 3 Varianten (direkt / weich / Gegenfrage)</li>
-          <li>Psychologische Einordnung je Einwand-Typ</li>
-          <li>Druckfertiges Referenz-Sheet</li>
-        </ul>
-        <div class="card-foot">
-          <div><div class="card-price">19 &euro;</div><div class="card-fmt">Excel (.xlsx)</div></div>
-          <a href="https://vertriebswerk.gumroad.com/l/isriuf?wanted=true" target="_blank" class="card-btn">Tool sichern &rarr;</a>
-        </div>
-        <div class="card-trust"><span>Excel/Word kompatibel</span><span>Sofort-Download</span></div>
+        <div class="tcard-sub">25 Einwände · 75 Antworten · DACH-Fokus</div>
+        <ul class="tcard-feats"><li>25 häufigste B2B-Einwände DACH</li><li>Je 3 Varianten pro Einwand</li><li>Druckfertiges Referenz-Sheet</li></ul>
+        <div class="tcard-foot"><div><div class="tcard-price">19 €</div><div class="tcard-fmt">Excel (.xlsx)</div></div><a href="https://vertriebswerk.gumroad.com/l/isriuf?wanted=true" class="gumroad-button tcard-cta" target="_blank" rel="noopener">Sichern →</a></div>
       </div>
-
-      <div class="card">
-        <div class="card-pills"><span class="pill pill-g">15 Vorlagen</span><span class="pill pill-b">Word (.docx)</span></div>
+      <div class="tcard">
+        <div class="tcard-pills"><span class="pill pill-g">15 Vorlagen</span><span class="pill pill-b">Word (.docx)</span></div>
         <h3>Follow-up E-Mail Kit</h3>
-        <div class="card-sub">5 Szenarien &middot; 15 Vorlagen &middot; Timing-Guide</div>
-        <div class="card-roi">&#9201; Follow-up-Mail: 5 statt 30 Min.</div>
-        <ul class="card-feats">
-          <li>15 Vorlagen f&uuml;r 5 Follow-up-Szenarien</li>
-          <li>Nach Demo, Angebot, Stille uvm.</li>
-          <li>Psychologische Timing-Empfehlungen</li>
-          <li>Wann nachhaken, wann loslassen</li>
-        </ul>
-        <div class="card-foot">
-          <div><div class="card-price">34 &euro;</div><div class="card-fmt">Word (.docx)</div></div>
-          <a href="https://vertriebswerk.gumroad.com/l/follow-up-email-kit-b2b?wanted=true" target="_blank" class="card-btn">Tool sichern &rarr;</a>
-        </div>
-        <div class="card-trust"><span>Excel/Word kompatibel</span><span>Sofort-Download</span></div>
+        <div class="tcard-sub">5 Szenarien · 15 Vorlagen · Timing-Guide</div>
+        <ul class="tcard-feats"><li>15 Vorlagen für 5 Szenarien</li><li>Nach Demo, Angebot, Stille</li><li>Psychologische Timing-Empfehlungen</li></ul>
+        <div class="tcard-foot"><div><div class="tcard-price">34 €</div><div class="tcard-fmt">Word (.docx)</div></div><a href="https://vertriebswerk.gumroad.com/l/follow-up-email-kit-b2b?wanted=true" class="gumroad-button tcard-cta" target="_blank" rel="noopener">Sichern →</a></div>
       </div>
-
     </div>
 
-    <!-- Kategorie 03 -->
+    <!-- 03 KAM -->
     <div class="cat-head">
       <div class="cat-num">03</div>
       <div><div class="cat-lbl">Kategorie</div><div class="cat-title">Key Account Management</div></div>
     </div>
-    <div class="grid">
-
-      <div class="card">
-        <div class="card-pills"><span class="pill pill-g">STRATEGIE</span><span class="pill pill-b">Word (.docx)</span></div>
-        <h3>KAM Jahresgespr&auml;ch Template</h3>
-        <div class="card-sub">Vorbereitung &middot; Leitfaden &middot; Ma&szlig;nahmenplan &middot; Ampel-Check</div>
-        <div class="card-roi">&#9201; KAM-Vorbereitung: 15 statt 120 Min.</div>
-        <ul class="card-feats">
-          <li>Strukturierte Vorbereitung auf C-Level</li>
-          <li>Jahresr&uuml;ckblick + Zielvereinbarung</li>
-          <li>Ampel-Check f&uuml;r Account-Gesundheit</li>
-          <li>CRM-ready Ma&szlig;nahmenplan</li>
-        </ul>
-        <div class="card-foot">
-          <div><div class="card-price">19 &euro;</div><div class="card-fmt">Word (.docx)</div></div>
-          <a href="https://vertriebswerk.gumroad.com/l/kam-jahresgespraech-template?wanted=true" target="_blank" class="card-btn">Tool sichern &rarr;</a>
-        </div>
-        <div class="card-trust"><span>Excel/Word kompatibel</span><span>Sofort-Download</span></div>
+    <div class="tool-grid">
+      <div class="tcard">
+        <div class="tcard-pills"><span class="pill pill-g">STRATEGIE</span><span class="pill pill-b">Word (.docx)</span></div>
+        <h3>KAM Jahresgespräch Template</h3>
+        <div class="tcard-sub">Vorbereitung · Leitfaden · Ampel-Check</div>
+        <ul class="tcard-feats"><li>Vorbereitung auf C-Level</li><li>Jahresrückblick + Zielvereinbarung</li><li>CRM-ready Maßnahmenplan</li></ul>
+        <div class="tcard-foot"><div><div class="tcard-price">19 €</div><div class="tcard-fmt">Word (.docx)</div></div><a href="https://vertriebswerk.gumroad.com/l/kam-jahresgespraech-template?wanted=true" class="gumroad-button tcard-cta" target="_blank" rel="noopener">Sichern →</a></div>
       </div>
-
-      <div class="card">
-        <div class="card-pills"><span class="pill pill-g">GO/NO-GO</span><span class="pill pill-b">Excel (.xlsx)</span></div>
+      <div class="tcard">
+        <div class="tcard-pills"><span class="pill pill-g">GO/NO-GO</span><span class="pill pill-b">Excel (.xlsx)</span></div>
         <h3>Ausschreibungs-Check</h3>
-        <div class="card-sub">16 Pr&uuml;fpunkte &middot; Chancen-Bewertung &middot; Post-Mortem</div>
-        <div class="card-roi">&#9201; Ausschreibungs-Check: 20 statt 120 Min.</div>
-        <ul class="card-feats">
-          <li>16-Punkte-Checkliste vor Angebotsabgabe</li>
-          <li>Quantitative Chancen-Bewertung (GO/NO-GO)</li>
-          <li>Deckungsbeitrag &amp; Preisuntergrenze</li>
-          <li>Post-Mortem f&uuml;r verlorene Ausschreibungen</li>
-        </ul>
-        <div class="card-foot">
-          <div><div class="card-price">39 &euro;</div><div class="card-fmt">Excel (.xlsx)</div></div>
-          <a href="https://vertriebswerk.gumroad.com/l/ausschreibungs-check-b2b-mittelstand?wanted=true" target="_blank" class="card-btn">Tool sichern &rarr;</a>
-        </div>
-        <div class="card-trust"><span>Excel/Word kompatibel</span><span>Sofort-Download</span></div>
+        <div class="tcard-sub">16 Prüfpunkte · Chancen-Bewertung · Post-Mortem</div>
+        <ul class="tcard-feats"><li>16-Punkte-Checkliste vor Abgabe</li><li>Quantitative Chancen-Bewertung</li><li>Deckungsbeitrag &amp; Preisuntergrenze</li></ul>
+        <div class="tcard-foot"><div><div class="tcard-price">39 €</div><div class="tcard-fmt">Excel (.xlsx)</div></div><a href="https://vertriebswerk.gumroad.com/l/ausschreibungs-check-b2b-mittelstand?wanted=true" class="gumroad-button tcard-cta" target="_blank" rel="noopener">Sichern →</a></div>
       </div>
-
     </div>
 
-    <!-- Kategorie 04 -->
+    <!-- 04 Steuerung -->
     <div class="cat-head">
       <div class="cat-num">04</div>
       <div><div class="cat-lbl">Kategorie</div><div class="cat-title">Steuerung &amp; Wachstum</div></div>
     </div>
-    <div class="grid">
-
-      <div class="card">
-        <div class="card-pills"><span class="pill pill-g">CAC + LTV</span><span class="pill pill-b">Excel (.xlsx)</span></div>
+    <div class="tool-grid">
+      <div class="tcard">
+        <div class="tcard-pills"><span class="pill pill-g">CAC + LTV</span><span class="pill pill-b">Excel (.xlsx)</span></div>
         <h3>Vertriebscontrolling Dashboard</h3>
-        <div class="card-sub">DB-Rechnung &middot; CAC &amp; LTV &middot; Forecast &middot; Ampel</div>
-        <div class="card-roi">&#9201; Controlling-Report: 45 statt 240 Min.</div>
-        <ul class="card-feats">
-          <li>Deckungsbeitrag-Kalkulation pro Deal</li>
-          <li>CAC, LTV, Payback automatisch berechnet</li>
-          <li>Ampel-Forecast f&uuml;r Quartals-Reviews</li>
-          <li>Drill-Down nach Region, Produkt, Kanal</li>
-        </ul>
-        <div class="card-foot">
-          <div><div class="card-price">39 &euro;</div><div class="card-fmt">Excel (.xlsx)</div></div>
-          <a href="https://vertriebswerk.gumroad.com/l/vertriebscontrolling-dashboard-b2b?wanted=true" target="_blank" class="card-btn">Tool sichern &rarr;</a>
-        </div>
-        <div class="card-trust"><span>Excel/Word kompatibel</span><span>Sofort-Download</span></div>
+        <div class="tcard-sub">Umsatz IST/PLAN · CAC &amp; LTV · Forecast · Ampel</div>
+        <ul class="tcard-feats"><li>Monats- &amp; Quartalsvergleich IST/PLAN</li><li>CAC, LTV, Payback automatisch</li><li>Ampel-Forecast Quartals-Reviews</li></ul>
+        <div class="tcard-foot"><div><div class="tcard-price">39 €</div><div class="tcard-fmt">Excel (.xlsx)</div></div><a href="https://vertriebswerk.gumroad.com/l/vertriebscontrolling-dashboard-b2b?wanted=true" class="gumroad-button tcard-cta" target="_blank" rel="noopener">Sichern →</a></div>
       </div>
-
-      <div class="card">
-        <div class="card-pills"><span class="pill pill-g">Von Null aufbauen</span><span class="pill pill-b">Word + Excel</span></div>
+      <div class="tcard">
+        <div class="tcard-pills"><span class="pill pill-g">Von Null aufbauen</span><span class="pill pill-b">Word + Excel</span></div>
         <h3>First Sales Playbook</h3>
-        <div class="card-sub">ICP &middot; Akquise-Prozess &middot; Pipeline-Setup &middot; 90-Tage-Plan</div>
-        <div class="card-roi">&#9201; Sales-Setup: Wochen statt Monate</div>
-        <ul class="card-feats">
-          <li>Kompletter Vertriebsaufbau f&uuml;r Gr&uuml;nder</li>
-          <li>ICP-Definition + Akquise-Prozess in einem Kit</li>
-          <li>CRM-Setup-Anleitung (Pipedrive, HubSpot)</li>
-          <li>Erste 90 Tage im Vertrieb &mdash; strukturiert</li>
-        </ul>
-        <div class="card-foot">
-          <div><div class="card-price">24 &euro;</div><div class="card-fmt">Word + Excel</div></div>
-          <a href="https://vertriebswerk.gumroad.com/l/first-sales-playbook-b2b?wanted=true" target="_blank" class="card-btn">Tool sichern &rarr;</a>
-        </div>
-        <div class="card-trust"><span>Excel/Word kompatibel</span><span>Sofort-Download</span></div>
+        <div class="tcard-sub">ICP · Akquise · Pipeline-Setup · 90-Tage-Plan</div>
+        <ul class="tcard-feats"><li>Kompletter Vertriebsaufbau</li><li>CRM-Setup-Anleitung</li><li>Erste 90 Tage strukturiert</li></ul>
+        <div class="tcard-foot"><div><div class="tcard-price">24 €</div><div class="tcard-fmt">Word + Excel</div></div><a href="https://vertriebswerk.gumroad.com/l/first-sales-playbook-b2b?wanted=true" class="gumroad-button tcard-cta" target="_blank" rel="noopener">Sichern →</a></div>
       </div>
-
-      <div class="card">
-        <div class="card-pills"><span class="pill pill-g">80+ Punkte</span><span class="pill pill-b">Word + Excel</span></div>
+      <div class="tcard">
+        <div class="tcard-pills"><span class="pill pill-g">80+ Punkte</span><span class="pill pill-b">Word + Excel</span></div>
         <h3>Investor Readiness Check</h3>
-        <div class="card-sub">80+ Pr&uuml;fpunkte &middot; 8 Bereiche &middot; Score-Ampel &middot; Aktionsplan</div>
-        <div class="card-roi">&#9201; Fundraising-Vorbereitung: 1 Tag statt 2 Wochen</div>
-        <ul class="card-feats">
-          <li>80+ Pr&uuml;fpunkte in 8 Bereichen</li>
-          <li>Score-Ampel: wie investor-ready bist du?</li>
-          <li>Priorit&auml;rer Aktionsplan f&uuml;r 60 Tage</li>
-          <li>Vor Fundraising-Gespr&auml;chen einsetzen</li>
-        </ul>
-        <div class="card-foot">
-          <div><div class="card-price">34 &euro;</div><div class="card-fmt">Word + Excel</div></div>
-          <a href="https://vertriebswerk.gumroad.com/l/investor-readiness-check-startup?wanted=true" target="_blank" class="card-btn">Tool sichern &rarr;</a>
-        </div>
-        <div class="card-trust"><span>Excel/Word kompatibel</span><span>Sofort-Download</span></div>
+        <div class="tcard-sub">80+ Prüfpunkte · 8 Bereiche · Score-Ampel</div>
+        <ul class="tcard-feats"><li>Score-Ampel: wie investor-ready?</li><li>Aktionsplan 60 Tage</li><li>Vor Fundraising einsetzen</li></ul>
+        <div class="tcard-foot"><div><div class="tcard-price">34 €</div><div class="tcard-fmt">Word + Excel</div></div><a href="https://vertriebswerk.gumroad.com/l/investor-readiness-check-startup?wanted=true" class="gumroad-button tcard-cta" target="_blank" rel="noopener">Sichern →</a></div>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- BUNDLES -->
+<!-- ═══ BUNDLES ════════════════════════════════════════════════════════════ -->
 <section class="bundles-section" id="bundles">
   <div class="container">
-    <h2>Mehr Struktur. Weniger Preis.</h2>
-    <p class="sub">Vier Bundles mit 16&ndash;28% Ersparnis gegen&uuml;ber Einzelkauf.</p>
+    <div class="section-header">
+      <span class="eyebrow">Pakete</span>
+      <h2 class="section-h">Mehr Struktur. Weniger Preis.</h2>
+      <p class="section-p" style="margin:0 auto">16–28% Ersparnis gegenüber Einzelkauf. Alle Preise inkl. MwSt.</p>
+    </div>
     <div class="bundle-grid">
-      <div class="bcard">
-        <div class="b-disc">&ndash;24%</div>
-        <div class="b-name">Neukundenmaschine</div>
-        <div class="b-tools">ICP Workshop-Kit + Kaltakquise Blueprint + E-Mail Baukasten + Pipeline Cleanup Kit</div>
-        <div class="b-pricing"><div class="b-now">69 &euro;</div><div class="b-old">statt 91 &euro;</div></div>
-        <a href="https://vertriebswerk.gumroad.com/l/yeizia?wanted=true" target="_blank" class="b-btn">Bundle sichern &rarr;</a>
+      <div class="bcard"><div class="b-disc">–24%</div><div class="b-name">Neukundenmaschine</div><div class="b-tools">ICP Workshop-Kit + Kaltakquise Blueprint + E-Mail Baukasten + Pipeline Cleanup Kit</div><div class="b-price"><div class="b-now">69 €</div><div class="b-old">statt 91 €</div></div><a href="https://vertriebswerk.gumroad.com/l/yeizia?wanted=true" class="gumroad-button b-btn" target="_blank" rel="noopener">Bundle sichern →</a></div>
+      <div class="bcard"><div class="b-disc">–24%</div><div class="b-name">Gesprächsführer-Kit</div><div class="b-tools">Meeting-Leitfaden + Einwandbehandlung Mastersheet + Follow-up E-Mail Kit</div><div class="b-price"><div class="b-now">55 €</div><div class="b-old">statt 72 €</div></div><a href="https://vertriebswerk.gumroad.com/l/sqlozm?wanted=true" class="gumroad-button b-btn" target="_blank" rel="noopener">Bundle sichern →</a></div>
+      <div class="bcard"><div class="b-disc">–16%</div><div class="b-name">KAM Komplett-Kit</div><div class="b-tools">KAM Jahresgespräch Template + Ausschreibungs-Check</div><div class="b-price"><div class="b-now">49 €</div><div class="b-old">statt 58 €</div></div><a href="https://vertriebswerk.gumroad.com/l/dhioxz?wanted=true" class="gumroad-button b-btn" target="_blank" rel="noopener">Bundle sichern →</a></div>
+      <div class="bcard feat"><div class="b-disc">–28%</div><div class="b-name">Vertrieb von A–Z</div><div class="b-tools">Alle 12 Tools in einem Paket — vom ICP-Workshop bis zum Investor Readiness Check</div><div class="b-price"><div class="b-now">229 €</div><div class="b-old">statt 318 €</div></div><a href="https://vertriebswerk.gumroad.com/l/hzbgtn?wanted=true" class="gumroad-button b-btn" target="_blank" rel="noopener">Komplett-Paket →</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ENTERPRISE ═════════════════════════════════════════════════════════ -->
+<section class="enterprise" id="enterprise">
+  <div class="container">
+    <div class="enterprise-inner">
+      <div>
+        <span class="eyebrow">Site-Lizenz &amp; Enterprise</span>
+        <h2>Volle Rechtssicherheit für dein Unternehmen.</h2>
+        <p>Mit der Enterprise-Lizenz nutzen alle Mitarbeitenden an einem Standort die Tools legal und unbegrenzt — ohne monatliche Kosten, ohne Software-Abo, ohne Cloud-Abhängigkeit. DSGVO-konform durch 100% Offline-Nutzung.</p>
+        <ul class="enterprise-list">
+          <li>Einmalzahlung — kein Abo, keine jährliche Verlängerung</li>
+          <li>Unbegrenzte Nutzer am Standort / im Unternehmen</li>
+          <li>100% DSGVO-konform: Offline, keine Datenübertragung</li>
+          <li>Keine IT-Freigabe oder Cloud-Anbindung erforderlich</li>
+          <li>Individuelle Rechnung für die Buchhaltung</li>
+          <li>Corporate Branding-Anpassung auf Anfrage</li>
+        </ul>
+        <a href="mailto:danielt.toth.85@gmail.com?subject=Enterprise-Anfrage%20Vertriebswerk" class="btn btn-green">Enterprise-Anfrage stellen →</a>
       </div>
-      <div class="bcard">
-        <div class="b-disc">&ndash;24%</div>
-        <div class="b-name">Gespr&auml;chsf&uuml;hrer-Kit</div>
-        <div class="b-tools">Meeting-Leitfaden + Einwandbehandlung Mastersheet + Follow-up E-Mail Kit</div>
-        <div class="b-pricing"><div class="b-now">55 &euro;</div><div class="b-old">statt 72 &euro;</div></div>
-        <a href="https://vertriebswerk.gumroad.com/l/sqlozm?wanted=true" target="_blank" class="b-btn">Bundle sichern &rarr;</a>
-      </div>
-      <div class="bcard">
-        <div class="b-disc">&ndash;16%</div>
-        <div class="b-name">KAM Komplett-Kit</div>
-        <div class="b-tools">KAM Jahresgespr&auml;ch Template + Ausschreibungs-Check</div>
-        <div class="b-pricing"><div class="b-now">49 &euro;</div><div class="b-old">statt 58 &euro;</div></div>
-        <a href="https://vertriebswerk.gumroad.com/l/dhioxz?wanted=true" target="_blank" class="b-btn">Bundle sichern &rarr;</a>
-      </div>
-      <div class="bcard featured">
-        <div class="b-disc">&ndash;28%</div>
-        <div class="b-name">Vertrieb von A&ndash;Z</div>
-        <div class="b-tools">Alle 12 Tools in einem Paket &mdash; vom ICP-Workshop bis zum Investor Readiness Check</div>
-        <div class="b-pricing"><div class="b-now">229 &euro;</div><div class="b-old">statt 318 &euro;</div></div>
-        <a href="https://vertriebswerk.gumroad.com/l/hzbgtn?wanted=true" target="_blank" class="b-btn">Komplett-Paket sichern &rarr;</a>
+      <div class="enterprise-card">
+        <span class="e-price">349 €</span>
+        <span class="e-label">Enterprise-Lizenz · Einmalzahlung · pro Tool</span>
+        <ul class="e-feats">
+          <li>Unbegrenzte Nutzer (ein Standort)</li>
+          <li>Alle zukünftigen Updates inklusive</li>
+          <li>Prioritäts-Support per E-Mail</li>
+          <li>Optional: Corporate Branding</li>
+          <li>Sofort-Download nach Zahlung</li>
+          <li>Individuelle Rechnung auf Anfrage</li>
+        </ul>
+        <a href="mailto:danielt.toth.85@gmail.com?subject=Enterprise-Anfrage%20Vertriebswerk" class="btn btn-green" style="width:100%;justify-content:center">Jetzt anfragen →</a>
+        <div style="font-size:.7rem;color:rgba(255,255,255,.38);margin-top:10px">Preise inkl. MwSt. · Rechtssichere B2B-Lizenz</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FAQ -->
+<!-- ═══ FAQ ════════════════════════════════════════════════════════════════ -->
 <section class="faq-section" id="faq">
   <div class="container">
-    <h2>H&auml;ufige Fragen</h2>
+    <div class="section-header">
+      <span class="eyebrow">Häufige Fragen</span>
+      <h2 class="section-h">Einwände? Hier beantwortet.</h2>
+    </div>
     <div class="faq-wrap">
-
-      <div class="faq-item open" onclick="toggleFaq(this)">
-        <div class="faq-question">Sind die Tools sofort nach Kauf verf&uuml;gbar?<span class="faq-icon">+</span></div>
-        <div class="faq-answer">Ja. Direkt nach der Zahlung via Gumroad erh&auml;ltst du den Download-Link zu deinen Excel- oder Word-Dateien. Kein Warten, kein Setup.</div>
-      </div>
-
-      <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-question">Ben&ouml;tige ich spezielle Software?<span class="faq-icon">+</span></div>
-        <div class="faq-answer">Nein. Alle Tools basieren auf Microsoft Excel oder Word. Keine Installation, keine Cloud-Abh&auml;ngigkeit. Funktioniert ab Office 2016 und mit LibreOffice.</div>
-      </div>
-
-      <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-question">Funktionieren die Tools mit Salesforce oder HubSpot?<span class="faq-icon">+</span></div>
-        <div class="faq-answer">Ja. Die Tools sind CRM-agnostisch &mdash; sie arbeiten als strukturierte Vorarbeit und Nachbereitung zu jedem CRM. Pipeline Cleanup Kit und KAM-Template enthalten spezifische Tagging-Guides f&uuml;r Salesforce, HubSpot und Pipedrive.</div>
-      </div>
-
-      <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-question">Wie viel Zeit spare ich gegen&uuml;ber Eigenbau?<span class="faq-icon">+</span></div>
-        <div class="faq-answer">Erfahrungsgem&auml;&szlig; 8&ndash;20 Stunden pro Tool. Strukturentwicklung, Iterationen, Formatierung, Testen &mdash; das ist die Arbeit die bereits getan wurde. Beim &bdquo;Vertrieb von A&ndash;Z&ldquo;-Bundle sind das rechnerisch &uuml;ber 100 Stunden.</div>
-      </div>
-
-      <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-question">Sind die Tools auf den DACH-Markt ausgerichtet?<span class="faq-icon">+</span></div>
-        <div class="faq-answer">Ja &mdash; 100%. Alle Tools auf Deutsch, DACH-spezifische B2B-Strukturen (Mittelstand, mehrstufiger Entscheidungsprozess). Keine &uuml;bersetzten US-Templates.</div>
-      </div>
-
-      <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-question">Gibt es eine Rechnung mit ausgewiesener MwSt.?<span class="faq-icon">+</span></div>
-        <div class="faq-answer">Ja. Gumroad stellt automatisch eine MwSt.-konforme Rechnung aus. EU-Unternehmen k&ouml;nnen ihre Umsatzsteuer-ID beim Kauf angeben (Reverse Charge). Bei Fragen: <a href="mailto:danielt.toth.85@gmail.com">danielt.toth.85@gmail.com</a></div>
-      </div>
-
-      <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-question">Funktionieren die Tools auf dem Mac?<span class="faq-icon">+</span></div>
-        <div class="faq-answer">Ja. Alle Excel-Dateien laufen mit Microsoft 365 f&uuml;r Mac ohne Einschr&auml;nkungen. Word-Dokumente funktionieren ebenfalls. Wer kein Office hat: LibreOffice Calc und Writer sind kostenlose Alternativen und &ouml;ffnen alle Dateien problemlos.</div>
-      </div>
-
-      <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-question">Brauche ich VBA- oder Excel-Kenntnisse?<span class="faq-icon">+</span></div>
-        <div class="faq-answer">Nein. Alle Tools sind ohne Makros oder VBA gebaut &mdash; nur Formeln, Tabellen und Struktur. Wer eine Zelle ausf&uuml;llen kann, kann die Tools sofort nutzen. Fortgeschrittene k&ouml;nnen Formeln und Felder nat&uuml;rlich anpassen.</div>
-      </div>
-
-      <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-question">Kann ich die Vorlagen an mein eigenes CI anpassen?<span class="faq-icon">+</span></div>
-        <div class="faq-answer">Ja. Farben, Logos und Formatierungen sind f&uuml;r Einzelnutzer vollst&auml;ndig anpassbar. Die Lizenz gilt f&uuml;r den pers&ouml;nlichen Gebrauch &mdash; Weitergabe oder Weiterverkauf der Originaldateien ist nicht gestattet.</div>
-      </div>
-
+      <div class="faq-item open" onclick="toggleFaq(this)"><div class="faq-q">Was bedeutet Single / Team / Enterprise-Lizenz? <span class="faq-icon">+</span></div><div class="faq-a"><strong>Single (1 Nutzer):</strong> Persönliche Nutzung auf eigenen Geräten. <strong>Team (bis 10 Nutzer):</strong> Lizenz für ein Team, z.B. das gesamte Sales-Team. <strong>Enterprise (unbegrenzt):</strong> Site-Lizenz für einen Unternehmensstandort — volle Rechtssicherheit, keine laufenden Kosten.</div></div>
+      <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">Sind die Tools wirklich DSGVO-sicher? <span class="faq-icon">+</span></div><div class="faq-a">Ja. Alle Tools laufen 100% offline in Excel oder Word. Es werden keine Daten an Cloud-Server gesendet, keine Nutzungstelemetrie erfasst, kein Internet benötigt. Ideal für Branchen mit sensiblen Kundendaten (Pharma, Finance, Industrie).</div></div>
+      <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">Sind die Tools sofort nach Kauf verfügbar? <span class="faq-icon">+</span></div><div class="faq-a">Ja. Direkt nach der Zahlung via Gumroad erhältst du den Download-Link. Kein Warten, kein Setup, keine Registrierung erforderlich.</div></div>
+      <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">Funktionieren die Tools mit Salesforce oder HubSpot? <span class="faq-icon">+</span></div><div class="faq-a">Ja. Die Tools sind CRM-agnostisch und ergänzen jedes CRM als strukturierte Vor- und Nachbereitung. Pipeline Cleanup Kit und KAM-Template enthalten spezifische Tagging-Guides für Salesforce, HubSpot und Pipedrive.</div></div>
+      <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">Wie viel Zeit spare ich gegenüber Eigenbau? <span class="faq-icon">+</span></div><div class="faq-a">Erfahrungsgemäß 8–20 Stunden pro Tool. Beim "Vertrieb von A–Z"-Bundle sind das rechnerisch über 100 Stunden ersparte Eigenentwicklungszeit.</div></div>
+      <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">Gibt es eine Rechnung mit ausgewiesener MwSt.? <span class="faq-icon">+</span></div><div class="faq-a">Ja. Gumroad stellt automatisch eine MwSt.-konforme Rechnung aus. EU-Unternehmen können ihre Umsatzsteuer-ID beim Kauf angeben (Reverse Charge). Bei Enterprise-Anfragen: individuelle Rechnung auf Anfrage.</div></div>
     </div>
   </div>
 </section>
-<section class="aff-section">
+
+<!-- ═══ LEAD MAGNET (Direktdownload) ═══════════════════════════════════════ -->
+<section class="lead-magnet" id="gratis">
+  <div class="container">
+    <div class="lead-magnet-inner">
+      <div>
+        <span class="lm-eyebrow">100% kostenlos · Kein E-Mail-Gate · Kein Opt-in</span>
+        <h2>Bist du Vertriebler<br>oder nur <em>beschäftigt?</em></h2>
+        <p>In meinem Praxis-Guide decke ich die 6 kritischsten Fehler auf, die Key Account Manager Zeit und Provision kosten. 100% Praxis, 0% Marketing-Bla. Entwickelt aus 10+ Jahren B2B-Vertrieb im DACH-Mittelstand.</p>
+        <div class="lm-btn-wrap">
+          <a href="downloads/Vertriebswerk_Haeufige_Fehler.pdf"
+             download="Vertriebswerk_6_Haeufige_Fehler_KAM.pdf"
+             class="btn-lm">
+            📥 Gratis-Guide herunterladen (PDF)
+          </a>
+          <div class="lm-trust">Transparenz-Garantie: Direkter Download ohne E-Mail-Abfrage oder Anmeldung.</div>
+        </div>
+      </div>
+      <div class="lm-card">
+        <div class="lm-card-title">„6 Fehler, die deinen B2B-Vertrieb bremsen"</div>
+        <div class="lm-card-sub">Von Daniel Toth · 10+ Jahre B2B-Praxis</div>
+        <ol>
+          <li>Der ICP-Fehler vor jedem Anruf</li>
+          <li>Pipeline-Leichen im CRM</li>
+          <li>KAM-Gespräch ohne Vorbereitung</li>
+          <li>Follow-up Timing: zu früh oder zu spät</li>
+          <li>Ausschreibungen ohne GO/NO-GO Check</li>
+          <li>Controlling im Blindflug</li>
+        </ol>
+        <a href="downloads/Vertriebswerk_Haeufige_Fehler.pdf"
+           download="Vertriebswerk_6_Haeufige_Fehler_KAM.pdf"
+           class="btn btn-green" style="width:100%;justify-content:center;margin-top:4px">
+          PDF herunterladen →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ AFFILIATE ══════════════════════════════════════════════════════════ -->
+<section class="aff">
   <div class="container">
     <span class="aff-num">40%</span>
     <h2>Empfehlen. Verdienen.</h2>
-    <p>40% Provision auf jeden Verkauf &mdash; automatisch &uuml;ber Gumroad, ohne Vertrag. F&uuml;r Trainer, Coaches und Vertriebsprofis mit Netzwerk.</p>
-    <a href="mailto:danielt.toth.85@gmail.com?subject=Affiliate-Anfrage%20Vertriebswerk" class="btn btn-green">Anfrage stellen &rarr;</a>
+    <p>40% Provision auf jeden Verkauf — automatisch über Gumroad, ohne Vertrag. Für Trainer, Coaches und Vertriebsprofis mit Netzwerk.</p>
+    <a href="mailto:danielt.toth.85@gmail.com?subject=Affiliate-Anfrage%20Vertriebswerk" class="btn btn-navy">Affiliate-Anfrage stellen →</a>
   </div>
 </section>
 
-<!-- KONTAKT -->
-<section class="kontakt-section" id="kontakt">
+<!-- ═══ KONTAKT ════════════════════════════════════════════════════════════ -->
+<section class="kontakt" id="kontakt">
   <div class="container">
     <h2>Fragen? Einfach schreiben.</h2>
-    <p>F&uuml;r Produktfragen, Affiliate-Anfragen oder individuelle W&uuml;nsche.</p>
-    <div class="kontakt-guarantee">&#9200; Pers&ouml;nliche Antwortgarantie innerhalb von 24h</div>
+    <p>Für Produktfragen, Enterprise-Lizenzen, individuelle Anpassungen oder Affiliate-Anfragen.</p>
+    <div class="kontakt-guarantee">⏰ Persönliche Antwortgarantie innerhalb von 24h</div>
     <br>
-    <a href="mailto:danielt.toth.85@gmail.com" class="mail-link">danielt.toth.85@gmail.com &rarr;</a>
+    <a href="mailto:danielt.toth.85@gmail.com" class="mail-link">danielt.toth.85@gmail.com →</a>
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ═══ FOOTER ════════════════════════════════════════════════════════════ -->
 <footer>
   <div class="footer-inner">
-    <div class="footer-brand">Vertriebs<span>werk</span></div>
-    <ul class="footer-links">
-      <li><a href="#produkte">Produkte</a></li>
+    <div class="footer-brand">Vertriebs<em>werk</em></div>
+    <ul class="footer-nav">
+      <li><a href="#top-tools">Top-Tools</a></li>
+      <li><a href="#alle-tools">Alle 12</a></li>
       <li><a href="#bundles">Bundles</a></li>
+      <li><a href="#enterprise">Enterprise</a></li>
       <li><a href="#faq">FAQ</a></li>
+      <li><a href="#gratis">Gratis-Guide</a></li>
       <li><a href="#kontakt">Kontakt</a></li>
-      <li><a href="https://vertriebswerk.gumroad.com" target="_blank">Shop</a></li>
-      <li><a href="https://www.linkedin.com/in/daniel-toth-a7117712a" target="_blank">LinkedIn</a></li>
+      <li><a href="https://vertriebswerk.gumroad.com" target="_blank" rel="noopener">Shop</a></li>
+      <li><a href="https://www.linkedin.com/in/daniel-toth-a7117712a" target="_blank" rel="noopener">LinkedIn</a></li>
       <li><a href="https://vertriebswerk.shop/impressum.html">Impressum &amp; Datenschutz</a></li>
     </ul>
-    <div class="footer-copy">&copy; 2026 Vertriebswerk &middot; Daniel Toth &middot; Mainz</div>
+    <div class="footer-copy">© 2026 Vertriebswerk · Daniel Toth · Mainz</div>
   </div>
 </footer>
 
-<!-- STICKY CTA -->
-<a href="#produkte" id="sticky-cta">Alle 12 Tools ansehen &rarr;</a>
+<!-- ═══ STICKY CTA ════════════════════════════════════════════════════════ -->
+<a href="#top-tools" id="sticky-cta">Alle 12 Tools ansehen →</a>
 
-<script src="https://gumroad.com/js/gumroad.js"></script>
+<!-- ═══ LIGHTBOX ══════════════════════════════════════════════════════════ -->
+<div id="lightbox" onclick="closeLightbox()">
+  <div class="lb-inner" onclick="event.stopPropagation()">
+    <button class="lb-close" onclick="closeLightbox()">✕</button>
+    <img id="lb-img" src="" alt="">
+    <div id="lb-cap"></div>
+  </div>
+</div>
+
+<!-- ═══ JAVASCRIPT ════════════════════════════════════════════════════════ -->
 <script>
-  // FAQ Accordion
+  // ── FAQ ────────────────────────────────────────────────────────────────
   function toggleFaq(el) {
     var wasOpen = el.classList.contains('open');
     document.querySelectorAll('.faq-item.open').forEach(function(item) {
       item.classList.remove('open');
     });
-    if (!wasOpen) {
-      el.classList.add('open');
-    }
+    if (!wasOpen) el.classList.add('open');
   }
 
-  // Sticky CTA
+  // ── STICKY CTA ─────────────────────────────────────────────────────────
   window.addEventListener('scroll', function() {
     var cta = document.getElementById('sticky-cta');
-    if (window.scrollY > 500) {
-      cta.style.display = 'block';
-    } else {
-      cta.style.display = 'none';
-    }
+    cta.style.display = window.scrollY > 500 ? 'block' : 'none';
+  });
+
+  // ── TIERED PRICING ─────────────────────────────────────────────────────
+  function setTier(el, productId, price) {
+    var wrap = el.closest('.pricing-tiers');
+    wrap.querySelectorAll('.tier').forEach(function(t) {
+      t.classList.remove('active');
+    });
+    el.classList.add('active');
+    var priceEl = document.getElementById('price-' + productId);
+    if (priceEl) priceEl.textContent = price + ' \u20ac';
+  }
+
+  // ── PREVIEW TOGGLE ──────────────────────────────────────────────────────
+  function togglePreview(id) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    var isHidden = el.style.display === 'none' || el.style.display === '';
+    el.style.display = isHidden ? 'block' : 'none';
+  }
+
+  // ── LIGHTBOX ────────────────────────────────────────────────────────────
+  function openLightbox(src, caption) {
+    document.getElementById('lb-img').src = src;
+    document.getElementById('lb-img').alt = caption || '';
+    document.getElementById('lb-cap').textContent = caption || '';
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLightbox();
   });
 </script>
 
