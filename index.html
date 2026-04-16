@@ -123,7 +123,7 @@
     .hcard-zoom{position:absolute;inset:0;background:rgba(27,42,74,.45);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .22s;color:#fff;font-size:.88rem;font-weight:600}
     .hcard-screenshot:hover .hcard-zoom{opacity:1}
     .hcard-body{padding:24px;flex:1;display:flex;flex-direction:column}
-    .hcard-badge{display:inline-block;background:rgba(0,168,132,.12);color:#007a60;border:1px solid rgba(0,168,132,.28);font-size:.66rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 10px;border-radius:20px;margin-bottom:10px}
+    .hcard-badge{display:flex;flex-wrap:wrap;gap:4px;background:rgba(0,168,132,.12);color:#007a60;border:1px solid rgba(0,168,132,.28);font-size:.66rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 10px;border-radius:20px;margin-bottom:10px}
     h2.hcard-title{color:var(--navy);font-size:1.1rem;font-weight:700;margin-bottom:6px;line-height:1.3}
     .hcard-copy{color:var(--muted);font-size:.88rem;line-height:1.7;margin-bottom:14px}
     .preview-toggle{background:none;border:1px solid var(--border);color:var(--navy);padding:6px 14px;border-radius:6px;font-size:.76rem;font-weight:600;cursor:pointer;transition:background .15s;margin-bottom:12px;display:inline-flex;align-items:center;gap:5px}
@@ -286,6 +286,13 @@
       #sticky-cta{display:flex}
       .pricing-tiers{flex-direction:column}
     }
+  
+    /* ── EINHEITLICHE BOX-STYLES (Kontakt & Legal) ── */
+    .kontakt, .legal-box, .impressum-box, .datenschutz-box {
+      padding: 40px;
+      border-radius: 10px;
+      background: var(--white);
+    }
   </style>
 </head>
 <body>
@@ -308,7 +315,7 @@
 
 <header class="hero" id="start">
   <div class="container">
-    <h1>Tools f&uuml;r Macher im <em>B2B-Vertrieb.</em></h1>
+    <h1>Tools f&uuml;r Vertriebs-Profis im <em>B2B-Vertrieb</em></h1>
     <p class="hero-sub">12 praxiserprobte Werkzeuge f&uuml;r KAMs im DACH-Raum &mdash; entwickelt aus 10+ Jahren Vertriebsalltag. 100% Offline, DSGVO-sicher, branchenunabhängig. Einmalzahlung ab 19&nbsp;€.</p>
     <div class="hero-actions">
       <a href="#top-tools" class="btn btn-green" style="padding:15px 32px;font-size:1rem">Top-Tools ansehen &rarr;</a>
@@ -342,7 +349,7 @@
       </div>
       <div class="founder-text">
         <span class="eyebrow">Wer steckt dahinter?</span>
-        <h2>Hi, ich bin Daniel.</h2>
+        <h2>Hi, ich bin Daniel</h2>
         <p>Nach über 10 Jahren im B2B-Vertrieb — Innendienst, Key Account Management, LogTech, IoT, Automotive — habe ich eines gelernt: Struktur schlägt Talent. Ich habe diese Tools gebaut, weil ich sie selbst gebraucht hätte. Für KAMs, die Ergebnisse liefern müssen.</p>
         <p>Kaufmann für Speditions- und Logistikdienstleistungen · B.A. Business Administration · Mainz</p>
         <div class="founder-ctas">
@@ -376,7 +383,7 @@
         </div>
         <div class="hcard-body">
           <div class="hcard-badge">GO / NO-GO · 16 Kriterien</div>
-          <h2 class="hcard-title">Millionen-Entscheidungen ohne Bauchschmerzen.</h2>
+          <h2 class="hcard-title">Millionen-Entscheidungen ohne Bauchschmerzen</h2>
           <p class="hcard-copy">Bewerte Tender in 15 Min. nach 16 harten GO/NO-GO Kriterien. Inkl. Preiskalkulation und Risiko-Analyse. Strukturierte Entscheidungsgrundlage für mehr Effizienz im B2B-Vertrieb — damit du keine Ressourcen in aussichtslose Ausschreibungen investierst.</p>
           <button class="preview-toggle" onclick="togglePreview('prev-Ausschreibungscheck')">📋 Inhalt-Vorschau</button>
           <ul class="preview-list" id="prev-Ausschreibungscheck" style="display:none"><li>16 Bewertungskriterien in 4 Kategorien</li><li>Automatische GO/NO-GO Empfehlung</li><li>Preiskalkulation &amp; Deckungsbeitrag</li><li>Wettbewerbs- &amp; Risikobewertung</li><li>Post-Mortem Vorlage für verlorene Deals</li></ul>
@@ -420,7 +427,7 @@
         </div>
         <div class="hcard-body">
           <div class="hcard-badge">10 Vorlagen · DSGVO-konform</div>
-          <h2 class="hcard-title">Schluss mit der Stille im Postfach.</h2>
+          <h2 class="hcard-title">Schluss mit der Stille im Postfach</h2>
           <p class="hcard-copy">10 psychologisch optimierte Vorlagen für echte Antworten statt Spam. Steigere deine Abschlussquote durch systematische Kaltakquise im B2B-Vertrieb — mit Vorlagen, die Entscheider im DACH-Mittelstand ansprechen.</p>
           <button class="preview-toggle" onclick="togglePreview('prev-kaltakquise')">📋 Inhalt-Vorschau</button>
           <ul class="preview-list" id="prev-kaltakquise" style="display:none"><li>10 Vorlagen für 5 Sequenz-Stufen</li><li>30 getestete Betreffzeilen</li><li>Psychologische Hebel je Stufe erklärt</li><li>DSGVO-konformes Regelwerk</li></ul>
@@ -464,7 +471,7 @@
         </div>
         <div class="hcard-body">
           <div class="hcard-badge">CAC · LTV · Forecast</div>
-          <h2 class="hcard-title">Dein Cockpit für profitable Sales-Performance.</h2>
+          <h2 class="hcard-title">Dein Cockpit für profitable Sales-Performance</h2>
           <p class="hcard-copy">Wer nicht misst, kann nicht steuern. CAC, Forecast und Deckungsbeitrag in einem einzigen Excel-Sheet. Erhöhe die Effizienz deines Vertriebsteams durch datengetriebene Entscheidungen — kein Controlling-Studium erforderlich.</p>
           <button class="preview-toggle" onclick="togglePreview('prev-vertriebscontrolling')">📋 Inhalt-Vorschau</button>
           <ul class="preview-list" id="prev-vertriebscontrolling" style="display:none"><li>Umsatz IST/PLAN Monats- &amp; Quartalsvergleich</li><li>CAC, LTV &amp; Payback-Periode automatisch berechnet</li><li>Ampel-System für Zielerreichung</li><li>Drill-Down nach Region, Produkt &amp; Kanal</li></ul>
@@ -508,7 +515,7 @@
         </div>
         <div class="hcard-body">
           <div class="hcard-badge">7 Phasen · 30+ Fragen</div>
-          <h2 class="hcard-title">Vom Smalltalk zum verbindlichen Abschluss.</h2>
+          <h2 class="hcard-title">Vom Smalltalk zum verbindlichen Abschluss</h2>
           <p class="hcard-copy">Führe Gespräche, statt nur zu reagieren. 7 Phasen und die richtigen Fragen zur Schmerz-Qualifizierung. Strukturierte Gesprächsführung für höhere Abschlussquoten im B2B-Vertrieb — von der Eröffnung bis zum verbindlichen nächsten Schritt.</p>
           <button class="preview-toggle" onclick="togglePreview('prev-meetingleitfaden')">📋 Inhalt-Vorschau</button>
           <ul class="preview-list" id="prev-meetingleitfaden" style="display:none"><li>7-Phasen-Gesprächsstruktur mit Zeitplanung</li><li>30+ SPIN &amp; MEDDIC Qualifizierungsfragen</li><li>Eröffnungs- &amp; Abschlussfragen je Kontext</li><li>Checkliste verbindlicher nächster Schritt</li></ul>
@@ -705,7 +712,7 @@
   <div class="container">
     <div class="section-header">
       <span class="eyebrow">Pakete</span>
-      <h2 class="section-h">Mehr Struktur. Weniger Preis.</h2>
+      <h2 class="section-h">Mehr Struktur. Weniger Preis</h2>
       <p class="section-p" style="margin:0 auto">16–28% Ersparnis gegenüber Einzelkauf. Alle Preise inkl. MwSt.</p>
     </div>
     <div class="bundle-grid">
@@ -750,7 +757,7 @@
     <div class="enterprise-inner">
       <div>
         <span class="eyebrow">Site-Lizenz &amp; Enterprise</span>
-        <h2>Volle Rechtssicherheit für dein Unternehmen.</h2>
+        <h2>Volle Rechtssicherheit für dein Unternehmen</h2>
         <p>Mit der Enterprise-Lizenz nutzen alle Mitarbeitenden an einem Standort die Tools legal und unbegrenzt — ohne monatliche Kosten, ohne Software-Abo, ohne Cloud-Abhängigkeit. 100% DSGVO-konform durch Offline-Nutzung.</p>
         <ul class="enterprise-list">
           <li>Einmalzahlung — kein Abo, keine jährliche Verlängerung</li>
@@ -760,7 +767,7 @@
           <li>Individuelle Rechnung für die Buchhaltung</li>
           <li>Corporate Branding-Anpassung auf Anfrage</li>
         </ul>
-        <a href="mailto:danielt.toth.85@gmail.com?subject=Enterprise-Anfrage%20Vertriebswerk" class="btn btn-green">Enterprise-Anfrage stellen &rarr;</a>
+        <a href="mailto:kontakt@vertriebswerk.shop?subject=Enterprise-Anfrage%20Vertriebswerk" class="btn btn-green">Enterprise-Anfrage stellen &rarr;</a>
       </div>
       <div class="enterprise-card">
         <span class="e-price">349 &euro;</span>
@@ -773,7 +780,7 @@
           <li>Sofort-Download nach Zahlung</li>
           <li>Individuelle Rechnung auf Anfrage</li>
         </ul>
-        <a href="mailto:danielt.toth.85@gmail.com?subject=Enterprise-Anfrage%20Vertriebswerk" class="btn btn-green" style="width:100%;justify-content:center">Jetzt anfragen &rarr;</a>
+        <a href="mailto:kontakt@vertriebswerk.shop?subject=Enterprise-Anfrage%20Vertriebswerk" class="btn btn-green" style="width:100%;justify-content:center">Jetzt anfragen &rarr;</a>
         <div style="font-size:.7rem;color:rgba(255,255,255,.38);margin-top:10px">Preise inkl. MwSt. · Rechtssichere B2B-Lizenz</div>
       </div>
     </div>
@@ -784,7 +791,7 @@
   <div class="container">
     <div class="section-header">
       <span class="eyebrow">Häufige Fragen</span>
-      <h2 class="section-h">Einwände? Hier beantwortet.</h2>
+      <h2 class="section-h">Einwände? Hier beantwortet</h2>
     </div>
     <div class="faq-wrap">
       <div class="faq-item open" onclick="toggleFaq(this)"><div class="faq-q">Was bedeutet Single / Team / Enterprise-Lizenz? <span class="faq-icon">+</span></div><div class="faq-a"><strong>Single (1 Nutzer):</strong> Persönliche Nutzung. <strong>Team (bis 10 Nutzer):</strong> Lizenz für ein Team. <strong>Enterprise (unbegrenzt):</strong> Site-Lizenz für einen Standort — volle Rechtssicherheit, keine laufenden Kosten.</div></div>
@@ -802,7 +809,7 @@
     <div class="lead-magnet-inner">
       <div>
         <span class="lm-eyebrow">100% kostenlos · Kein E-Mail-Gate · Kein Opt-in</span>
-        <h2>Bist du Vertriebler<br>oder nur <em>beschäftigt?</em></h2>
+        <h2>Bist du wirklich aktiv im Vertrieb<br>oder nur <em>beschäftigt?</em></h2>
         <p>In meinem Praxis-Guide decke ich die 6 kritischsten Fehler auf, die Key Account Manager Zeit und Provision kosten. 100% Praxis, 0% Marketing-Bla. Entwickelt aus 10+ Jahren B2B-Vertrieb im DACH-Mittelstand.</p>
         <div class="lm-btn-wrap">
           <a href="downloads/Vertriebswerk_Haeufige_Fehler.pdf"
@@ -837,18 +844,18 @@
 <section class="aff">
   <div class="container">
     <span class="aff-num">40%</span>
-    <h2>Empfehlen. Verdienen.</h2>
+    <h2>Empfehlen. Verdienen</h2>
     <p>40% Provision auf jeden Verkauf — automatisch über Gumroad, ohne Vertrag. Für Trainer, Coaches und Vertriebsprofis mit Netzwerk.</p>
-    <a href="mailto:danielt.toth.85@gmail.com?subject=Affiliate-Anfrage%20Vertriebswerk" class="btn btn-navy">Affiliate-Anfrage stellen &rarr;</a>
+    <a href="mailto:kontakt@vertriebswerk.shop?subject=Affiliate-Anfrage%20Vertriebswerk" class="btn btn-navy">Affiliate-Anfrage stellen &rarr;</a>
   </div>
 </section>
 
 <section class="kontakt" id="kontakt">
   <div class="container">
-    <h2>Fragen? Einfach schreiben.</h2>
+    <h2>Fragen? Einfach schreiben</h2>
     <p>Für Produktfragen, Enterprise-Lizenzen, individuelle Anpassungen oder Affiliate-Anfragen.</p>
     <div class="kontakt-guarantee">⏰ Persönliche Antwortgarantie innerhalb von 24h</div><br>
-    <a href="mailto:danielt.toth.85@gmail.com" class="mail-link">danielt.toth.85@gmail.com &rarr;</a>
+    <a href="mailto:kontakt@vertriebswerk.shop" class="mail-link">kontakt@vertriebswerk.shop &rarr;</a>
   </div>
 </section>
 
