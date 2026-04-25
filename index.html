@@ -55,7 +55,7 @@
     body{font-family:'DM Sans',system-ui,sans-serif;background:var(--off);color:var(--text);line-height:1.65;overflow-x:hidden}
     img{display:block;max-width:100%}
     a{color:inherit;text-decoration:none}
-    .container{max-width:1160px;margin:0 auto;padding:0 24px}
+    .container{max-width:1160px;margin:0 auto;padding:0 24px;width:100%;box-sizing:border-box}
 
     /* ═══════════════════════════════════════════════
        TYPOGRAPHY HELPERS
@@ -220,7 +220,30 @@
     ═══════════════════════════════════════════════ */
     .bundle-highlight{background:var(--navy);padding:88px 24px;position:relative;overflow:hidden}
     .bundle-highlight::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 110% 50%,rgba(0,168,132,.12) 0%,transparent 60%),radial-gradient(ellipse 40% 40% at -10% 50%,rgba(0,168,132,.08) 0%,transparent 60%);pointer-events:none}
-    .bh-inner{display:grid;grid-template-columns:1fr 380px;gap:64px;align-items:center;position:relative;z-index:1}
+    /* Flexbox statt Grid — sicherer für Mobile */
+    .bh-inner{
+      display:flex;
+      flex-direction:row;
+      flex-wrap:wrap;               /* wraps automatisch auf Mobile */
+      gap:48px;
+      align-items:center;
+      position:relative;
+      z-index:1;
+      width:100%;
+      box-sizing:border-box;
+    }
+    .bh-content{
+      flex:1 1 340px;               /* wächst, schrumpft, Basis 340px */
+      min-width:0;                  /* verhindert Überlauf in Flex-Items */
+      width:100%;
+      box-sizing:border-box;
+    }
+    .bh-visual{
+      flex:1 1 340px;               /* gleiche Basis */
+      min-width:0;
+      width:100%;
+      box-sizing:border-box;
+    }
     .bh-eyebrow{display:inline-block;background:rgba(0,168,132,.2);color:var(--teal-l);font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:5px 14px;border-radius:50px;margin-bottom:20px}
     .bh-headline{font-family:'DM Serif Display',serif;font-size:clamp(2rem,4vw,3rem);color:#fff;line-height:1.12;margin-bottom:16px}
     .bh-headline em{font-style:italic;color:var(--teal)}
@@ -243,7 +266,7 @@
     .bh-discount-badge{display:inline-block;background:var(--teal);color:#fff;font-size:.72rem;font-weight:700;padding:4px 12px;border-radius:50px;margin-bottom:24px}
     .bh-buy{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;background:var(--teal);color:#fff;padding:15px 20px;border-radius:var(--r-m);font-size:.96rem;font-weight:700;transition:all .2s;min-height:52px;font-family:'DM Sans',sans-serif;box-shadow:0 6px 20px rgba(0,168,132,.45);cursor:pointer;border:none}
     .bh-buy:hover{background:var(--teal-d);transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,168,132,.55)}
-    /* Bundle Hero Bild — immer responsive */
+    /* Bundle Hero Bild — absolut sicher, kein Overflow */
     .bundle-hero-img{
       width:100%;
       max-width:100%;
@@ -252,6 +275,7 @@
       border-radius:16px;
       box-shadow:0 24px 64px rgba(0,0,0,.5);
       margin:0 auto;
+      box-sizing:border-box;
     }
     .bh-note{font-size:.72rem;color:rgba(255,255,255,.38);margin-top:14px;line-height:1.6}
 
@@ -413,7 +437,9 @@
       .creds{justify-content:center}
       .bundle-grid{grid-template-columns:1fr}
       /* Bundle-Highlight: Bild unter Text stapeln */
-      .bh-inner{grid-template-columns:1fr;gap:36px}
+      /* Bundle: wraps natürlich via flex-wrap */
+      .bh-inner{gap:32px}
+      .bh-content,.bh-visual{flex:1 1 100%}
       .bh-headline{font-size:2rem}
     }
 
@@ -421,7 +447,9 @@
     @media(max-width:768px){
       /* Kein horizontales Überlaufen */
       html,body{overflow-x:hidden;max-width:100vw}
-      *{box-sizing:border-box;max-width:100%}
+      /* box-sizing global, max-width NUR für Bilder */
+      *{box-sizing:border-box}
+      img,video,iframe,svg{max-width:100%;height:auto}
       img{max-width:100%;height:auto;display:block}
 
       /* Container */
@@ -461,25 +489,48 @@
       .tool-grid{grid-template-columns:1fr}
       .cat-num{font-size:1.5rem}
 
-      /* Bundle Highlight — kritisch für Mobile */
-      .bundle-highlight{padding:56px 16px}
+      /* Bundle Highlight — Mobile */
+      .bundle-highlight{padding:48px 16px}
       .bh-inner{
-        grid-template-columns:1fr !important;
-        gap:28px;
+        flex-direction:column;     /* Bild unter Text stapeln */
+        gap:24px;
+        width:100%;
+        overflow:hidden;
       }
-      .bh-headline{font-size:1.7rem}
-      .bh-sub{font-size:.92rem}
-      /* Bild niemals breiter als Screen */
-      .bh-inner img{
-        max-width:100% !important;
+      .bh-content{
+        flex:none;
+        width:100%;
+        min-width:0;
+        max-width:100%;
+      }
+      .bh-visual{
+        flex:none;
+        width:100%;
+        min-width:0;
+        max-width:100%;
+        overflow:hidden;
+      }
+      /* Bild niemals breiter als Viewport */
+      .bundle-hero-img{
         width:100% !important;
+        max-width:100% !important;
         height:auto !important;
         display:block !important;
         margin:0 auto !important;
+        border-radius:10px;
       }
-      .bh-actions{flex-direction:column}
-      .bh-actions .btn{width:100%;justify-content:center}
-      .bh-buy{padding:14px 16px;font-size:.88rem}
+      .bh-headline{font-size:1.7rem}
+      .bh-sub{font-size:.92rem}
+      .bh-actions{flex-direction:column;align-items:stretch}
+      .bh-actions .btn{width:100%;justify-content:center;text-align:center}
+      .bh-buy{
+        display:flex;
+        width:100%;
+        box-sizing:border-box;
+        justify-content:center;
+        padding:14px 16px;
+        font-size:.88rem;
+      }
 
       /* Regular Bundles */
       .bundles-section{padding:56px 16px}
@@ -836,7 +887,8 @@
 <section class="bundle-highlight" id="bundle-highlight">
   <div class="container">
     <div class="bh-inner">
-      <div class="reveal">
+      <!-- Inhalt: Text links -->
+      <div class="bh-content reveal">
         <span class="bh-eyebrow">Das meistgekaufte Paket</span>
         <h2 class="bh-headline">Alle 12 Tools.<br><em>Ein Preis. Sofort.</em></h2>
         <p class="bh-sub">Wer einmal eine Ausschreibung, einen KAM-Termin und eine Pipeline-Bereinigung mit Struktur gemacht hat, kommt nicht mehr ohne. Das Komplett-Paket gibt dir alle Werkzeuge auf einmal — für weniger als die Kosten eines schlechten Angebots.</p>
@@ -856,17 +908,15 @@
         </div>
         <p class="bh-savings">Statt 318&nbsp;€ Einzelkauf · Du sparst <strong>89&nbsp;€ (28&nbsp;%)</strong> · Einmalzahlung · Sofort-Download</p>
       </div>
-      <div class="reveal reveal-delay-2" style="position:relative">
+      <!-- Visual: Bild + zweiter Kauf-Button rechts/unten -->
+      <div class="bh-visual reveal reveal-delay-2">
         <img src="bundle_hero.png"
              alt="Vertriebswerk – Alle 12 B2B-Vertriebstools im Komplett-Paket Vertrieb von A–Z"
              class="bundle-hero-img"
              loading="lazy">
         <div style="margin-top:20px;text-align:center">
           <a href="https://vertriebswerk.gumroad.com/l/hzbgtn?wanted=true"
-             class="gumroad-button bh-buy" target="_blank" rel="noopener"
-             style="width:100%;justify-content:center">
-            Jetzt sichern – 229&nbsp;€ &rarr;
-          </a>
+             class="gumroad-button bh-buy" target="_blank" rel="noopener">Jetzt sichern – 229&nbsp;€ &rarr;</a>
           <p class="bh-note" style="margin-top:10px">Einmalzahlung · Sofort-Download · DSGVO-sicher · Keine Cloud</p>
         </div>
       </div>
