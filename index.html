@@ -51,7 +51,7 @@
       --r-s:6px; --r-m:12px; --r-l:20px; --r-xl:28px;
     }
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth;font-size:16px;-webkit-font-smoothing:antialiased}
+    html{scroll-behavior:smooth;font-size:16px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
     body{font-family:'DM Sans',system-ui,sans-serif;background:var(--off);color:var(--text);line-height:1.65;overflow-x:hidden}
     img{display:block;max-width:100%}
     a{color:inherit;text-decoration:none}
@@ -243,6 +243,16 @@
     .bh-discount-badge{display:inline-block;background:var(--teal);color:#fff;font-size:.72rem;font-weight:700;padding:4px 12px;border-radius:50px;margin-bottom:24px}
     .bh-buy{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;background:var(--teal);color:#fff;padding:15px 20px;border-radius:var(--r-m);font-size:.96rem;font-weight:700;transition:all .2s;min-height:52px;font-family:'DM Sans',sans-serif;box-shadow:0 6px 20px rgba(0,168,132,.45);cursor:pointer;border:none}
     .bh-buy:hover{background:var(--teal-d);transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,168,132,.55)}
+    /* Bundle Hero Bild — immer responsive */
+    .bundle-hero-img{
+      width:100%;
+      max-width:100%;
+      height:auto;
+      display:block;
+      border-radius:16px;
+      box-shadow:0 24px 64px rgba(0,0,0,.5);
+      margin:0 auto;
+    }
     .bh-note{font-size:.72rem;color:rgba(255,255,255,.38);margin-top:14px;line-height:1.6}
 
     /* ═══════════════════════════════════════════════
@@ -390,6 +400,7 @@
     /* ═══════════════════════════════════════════════
        RESPONSIVE
     ═══════════════════════════════════════════════ */
+    /* ── TABLET (≤1020px) ── */
     @media(max-width:1020px){
       .featured-grid{grid-template-columns:1fr}
       .enterprise-inner{grid-template-columns:1fr}
@@ -397,20 +408,132 @@
       .lm-card{display:none}
       .founder-inner{flex-direction:column;text-align:center}
       .founder-img{width:160px;height:192px;margin:0 auto}
-      .founder-chip{left:50%}
+      .founder-chip{left:50%;transform:translateX(-50%)}
       .founder-ctas{justify-content:center}
       .creds{justify-content:center}
       .bundle-grid{grid-template-columns:1fr}
-      .bh-inner{grid-template-columns:1fr}
+      /* Bundle-Highlight: Bild unter Text stapeln */
+      .bh-inner{grid-template-columns:1fr;gap:36px}
+      .bh-headline{font-size:2rem}
     }
-    @media(max-width:640px){
+
+    /* ── MOBILE (≤768px) ── */
+    @media(max-width:768px){
+      /* Kein horizontales Überlaufen */
+      html,body{overflow-x:hidden;max-width:100vw}
+      *{box-sizing:border-box;max-width:100%}
+      img{max-width:100%;height:auto;display:block}
+
+      /* Container */
+      .container{padding:0 16px}
+
+      /* Hero */
+      .hero{padding:60px 16px 48px}
+      .hero h1{font-size:1.85rem;letter-spacing:-.01em}
+      .hero-sub{font-size:.96rem}
+      .hero-actions{flex-direction:column;align-items:stretch}
+      .hero-actions .btn{justify-content:center;text-align:center}
+
+      /* Nav */
       .nav .nav-links{display:none}
-      .hero{padding:72px 20px 60px}
-      .hero h1{font-size:2rem}
+      .nav-inner{padding:0 16px}
+
+      /* Proof */
+      .proof-inner{gap:6px 12px}
+
+      /* Founder */
+      .founder-section{padding:56px 16px}
+      .founder-inner{flex-direction:column;text-align:center;gap:32px}
+      .founder-img{width:140px;height:168px;margin:0 auto}
+      .founder-ctas{justify-content:center}
+      .creds{justify-content:center}
+
+      /* Featured 4 Cards */
+      .featured-section{padding:56px 16px}
+      .featured-grid{grid-template-columns:1fr;gap:20px}
+      .pcard-preview{height:180px}
+      .pcard-tiers{flex-direction:column;gap:6px}
+      .pcard-body{padding:18px 18px 0}
+      .pcard-cta-wrap{padding:0 18px 18px}
+
+      /* All 12 Tools */
+      .all-tools{padding:56px 16px}
       .tool-grid{grid-template-columns:1fr}
-      .footer-inner{flex-direction:column;text-align:center}
-      #sticky-cta{display:flex}
-      .pcard-tiers{flex-direction:column}
+      .cat-num{font-size:1.5rem}
+
+      /* Bundle Highlight — kritisch für Mobile */
+      .bundle-highlight{padding:56px 16px}
+      .bh-inner{
+        grid-template-columns:1fr !important;
+        gap:28px;
+      }
+      .bh-headline{font-size:1.7rem}
+      .bh-sub{font-size:.92rem}
+      /* Bild niemals breiter als Screen */
+      .bh-inner img{
+        max-width:100% !important;
+        width:100% !important;
+        height:auto !important;
+        display:block !important;
+        margin:0 auto !important;
+      }
+      .bh-actions{flex-direction:column}
+      .bh-actions .btn{width:100%;justify-content:center}
+      .bh-buy{padding:14px 16px;font-size:.88rem}
+
+      /* Regular Bundles */
+      .bundles-section{padding:56px 16px}
+      .bundle-grid{grid-template-columns:1fr}
+      .bcard{padding:22px 18px}
+
+      /* Enterprise */
+      .enterprise{padding:56px 16px}
+      .enterprise-inner{grid-template-columns:1fr;gap:36px}
+      .e-card{padding:24px 20px}
+
+      /* FAQ */
+      .faq-section{padding:56px 16px}
+      .faq-q{font-size:.86rem;padding:14px 18px}
+      .faq-a{font-size:.85rem}
+
+      /* Lead Magnet */
+      .lead-magnet{padding:56px 16px}
+      .lead-magnet-inner{grid-template-columns:1fr}
+      .lm-card{display:none}
+      .lm-download{width:100%;justify-content:center}
+
+      /* Affiliate & Kontakt */
+      .affiliate{padding:52px 16px}
+      .kontakt{padding:52px 16px}
+      .aff-num{font-size:4rem}
+
+      /* Footer */
+      .footer-inner{flex-direction:column;text-align:center;gap:16px}
+      .footer-nav{justify-content:center}
+
+      /* Sticky CTA */
+      #sticky-cta{
+        display:flex;
+        font-size:.8rem;
+        padding:11px 20px;
+        max-width:calc(100vw - 32px);
+        white-space:normal;
+        text-align:center;
+        justify-content:center;
+      }
+
+      /* Section titles */
+      .section-title{font-size:1.6rem}
+      .bh-card{padding:22px 18px}
+    }
+
+    /* ── SMALL MOBILE (≤400px) ── */
+    @media(max-width:400px){
+      .hero h1{font-size:1.6rem}
+      .btn-lg{padding:14px 20px;font-size:.9rem}
+      .tcard-price{font-size:1.1rem}
+      .bh-price{font-size:2.8rem}
+      #sticky-cta{font-size:.75rem;padding:10px 16px}
     }
   </style>
 </head>
@@ -733,20 +856,19 @@
         </div>
         <p class="bh-savings">Statt 318&nbsp;€ Einzelkauf · Du sparst <strong>89&nbsp;€ (28&nbsp;%)</strong> · Einmalzahlung · Sofort-Download</p>
       </div>
-      <div class="bh-card reveal reveal-delay-2">
-        <div class="bh-card-label">Komplett-Paket</div>
-        <div class="bh-card-name">Vertrieb von A–Z</div>
-        <div class="bh-card-tools">Alle 12 Tools in einem Paket — vom ICP-Workshop bis zum Investor Readiness Check</div>
-        <div class="bh-price-wrap">
-          <span class="bh-price-old">statt 318&nbsp;€</span>
-          <span class="bh-price">229&nbsp;€</span>
+      <div class="reveal reveal-delay-2" style="position:relative">
+        <img src="bundle_hero.png"
+             alt="Vertriebswerk – Alle 12 B2B-Vertriebstools im Komplett-Paket Vertrieb von A–Z"
+             class="bundle-hero-img"
+             loading="lazy">
+        <div style="margin-top:20px;text-align:center">
+          <a href="https://vertriebswerk.gumroad.com/l/hzbgtn?wanted=true"
+             class="gumroad-button bh-buy" target="_blank" rel="noopener"
+             style="width:100%;justify-content:center">
+            Jetzt sichern – 229&nbsp;€ &rarr;
+          </a>
+          <p class="bh-note" style="margin-top:10px">Einmalzahlung · Sofort-Download · DSGVO-sicher · Keine Cloud</p>
         </div>
-        <span class="bh-discount-badge">–28&nbsp;% Ersparnis</span>
-        <a href="https://vertriebswerk.gumroad.com/l/hzbgtn?wanted=true"
-           class="gumroad-button bh-buy" target="_blank" rel="noopener">
-          Jetzt sichern &rarr;
-        </a>
-        <p class="bh-note">Einmalzahlung · Sofort-Download · DSGVO-sicher · 100&nbsp;% Offline · Keine Cloud</p>
       </div>
     </div>
   </div>
