@@ -5,43 +5,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, follow">
   <title>Impressum & Datenschutz – Vertriebswerk</title>
-  <!-- Fonts via Bunny.net – DSGVO-konform -->
-  <link rel="preconnect" href="https://fonts.bunny.net">
-  <link href="https://fonts.bunny.net/css?family=dm-sans:300,400,500,600|dm-serif-display:400&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --ink: #1a1f2e;
-      --ink-soft: #4a5568;
-      --accent: #b83225;
-      --sand: #f7f4ef;
-      --border: #e2ddd6;
-      --white: #ffffff;
-      --font-serif: 'DM Serif Display', serif;
-      --font-sans: 'DM Sans', sans-serif;
+      --navy:      #1B2A4A;
+      --navy-mid:  #253a63;
+      --green:     #00a884;
+      --green-d:   #008f70;
+      --light:     #f8f9fa;
+      --white:     #ffffff;
+      --text:      #333333;
+      --muted:     #666666;
+      --border:    #e0e4ea;
+      --font:      'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
     body {
-      font-family: var(--font-sans);
-      color: var(--ink);
+      font-family: var(--font);
+      color: var(--text);
       background: var(--white);
-      line-height: 1.7;
+      line-height: 1.75;
       -webkit-font-smoothing: antialiased;
     }
+
+    /* ── NAV ───────────────────────────────────────────── */
     nav {
-      background: var(--ink);
-      padding: 1.25rem 2.5rem;
+      background: var(--navy);
+      padding: 1.1rem 2.5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
     .nav-brand {
       font-weight: 700;
-      font-size: 1rem;
+      font-size: 1.05rem;
       color: var(--white);
       text-decoration: none;
-      letter-spacing: 0.02em;
+      letter-spacing: 0.01em;
     }
-    .nav-brand span { color: var(--accent); }
+    .nav-brand span { color: var(--green); }
     .nav-back {
       font-size: 0.85rem;
       color: rgba(255,255,255,0.5);
@@ -49,70 +53,117 @@
       transition: color 0.2s;
     }
     .nav-back:hover { color: var(--white); }
+
+    /* ── LAYOUT ────────────────────────────────────────── */
     .container {
-      max-width: 760px;
+      max-width: 740px;
       margin: 0 auto;
-      padding: 4rem 2.5rem 6rem;
+      padding: 3.5rem 2rem 6rem;
     }
-    h1 {
-      font-family: var(--font-serif);
-      font-size: 2.5rem;
-      color: var(--ink);
-      margin-bottom: 0.5rem;
+
+    /* ── PAGE TITLE ────────────────────────────────────── */
+    .page-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.3rem;
     }
-    .subtitle {
-      font-size: 0.9rem;
-      color: var(--ink-soft);
-      margin-bottom: 3rem;
+    .page-subtitle {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-bottom: 2.5rem;
       padding-bottom: 2rem;
       border-bottom: 1px solid var(--border);
     }
+
+    /* ── SECTION HEADINGS ──────────────────────────────── */
     h2 {
-      font-family: var(--font-sans);
-      font-size: 1.1rem;
+      font-size: 1rem;
       font-weight: 700;
-      color: var(--ink);
-      margin-top: 2.5rem;
-      margin-bottom: 0.75rem;
-      padding-left: 0.75rem;
-      border-left: 3px solid var(--accent);
+      color: var(--navy);
+      margin-top: 2.25rem;
+      margin-bottom: 0.65rem;
+      padding-left: 0.85rem;
+      border-left: 3px solid var(--green);
     }
     h3 {
-      font-size: 0.95rem;
+      font-size: 0.93rem;
       font-weight: 600;
-      color: var(--ink);
-      margin-top: 1.5rem;
-      margin-bottom: 0.5rem;
+      color: var(--navy);
+      margin-top: 1.25rem;
+      margin-bottom: 0.4rem;
     }
+
+    /* ── BODY TEXT ─────────────────────────────────────── */
     p {
-      font-size: 0.95rem;
-      color: var(--ink-soft);
-      margin-bottom: 0.75rem;
-      font-weight: 300;
+      font-size: 0.93rem;
+      color: var(--muted);
+      margin-bottom: 0.65rem;
     }
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    a { color: var(--green); text-decoration: none; }
+    a:hover { text-decoration: underline; color: var(--green-d); }
+
+    /* ── INFO BOX ──────────────────────────────────────── */
     .info-box {
-      background: var(--sand);
+      background: var(--light);
       border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1.5rem;
+      border-left: 3px solid var(--navy);
+      border-radius: 6px;
+      padding: 1.25rem 1.5rem;
       margin-bottom: 1rem;
     }
-    .info-box p { margin-bottom: 0.25rem; }
+    .info-box p {
+      margin-bottom: 0.2rem;
+      color: var(--text);
+    }
     .info-box p:last-child { margin-bottom: 0; }
+    .info-box strong { color: var(--navy); }
+
+    /* ── RIGHTS LIST ───────────────────────────────────── */
+    .rights-list {
+      list-style: none;
+      margin: 0.5rem 0 0.75rem;
+    }
+    .rights-list li {
+      font-size: 0.93rem;
+      color: var(--muted);
+      padding: 0.3rem 0 0.3rem 1.4rem;
+      position: relative;
+      border-bottom: 1px solid var(--border);
+    }
+    .rights-list li:last-child { border-bottom: none; }
+    .rights-list li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--green);
+      font-weight: 600;
+    }
+
+    /* ── DIVIDER ───────────────────────────────────────── */
     .divider {
       border: none;
       border-top: 1px solid var(--border);
       margin: 3rem 0;
     }
+
+    /* ── STAND ─────────────────────────────────────────── */
+    .stand {
+      margin-top: 2.5rem;
+      font-size: 0.8rem;
+      color: #aaa;
+    }
+
+    /* ── FOOTER ────────────────────────────────────────── */
     footer {
       text-align: center;
-      padding: 2rem;
+      padding: 1.75rem 2rem;
       font-size: 0.8rem;
-      color: var(--ink-soft);
+      color: var(--muted);
       border-top: 1px solid var(--border);
+      background: var(--light);
     }
+    footer a { color: var(--green); }
   </style>
 </head>
 <body>
@@ -124,8 +175,11 @@
 
   <div class="container">
 
-    <h1>Impressum</h1>
-    <p class="subtitle">Angaben gemäß § 5 TMG</p>
+    <!-- ═══════════════════════════════════════════════════
+         IMPRESSUM
+    ════════════════════════════════════════════════════ -->
+    <h1 class="page-title">Impressum</h1>
+    <p class="page-subtitle">Angaben gemäß § 5 TMG</p>
 
     <div class="info-box">
       <p><strong>Daniel Toth</strong></p>
@@ -145,33 +199,36 @@
 
     <h2>Hinweis zur Kleinunternehmerregelung</h2>
     <p>
-      Gemäß § 19 UStG wird keine Umsatzsteuer berechnet 
+      Gemäß § 19 UStG wird keine Umsatzsteuer berechnet
       (Kleinunternehmerregelung). Daher wird keine Umsatzsteuer-ID angegeben.
     </p>
 
     <h2>Haftung für Inhalte</h2>
     <p>
-      Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte 
-      auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. 
-      Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht 
-      verpflichtet, übermittelte oder gespeicherte fremde Informationen 
-      zu überwachen oder nach Umständen zu forschen, die auf eine 
+      Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte
+      auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich.
+      Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht
+      verpflichtet, übermittelte oder gespeicherte fremde Informationen
+      zu überwachen oder nach Umständen zu forschen, die auf eine
       rechtswidrige Tätigkeit hinweisen.
     </p>
 
     <h2>Haftung für Links</h2>
     <p>
-      Unser Angebot enthält Links zu externen Websites Dritter, auf deren 
-      Inhalte wir keinen Einfluss haben. Deshalb können wir für diese 
-      fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der 
-      verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber 
+      Unser Angebot enthält Links zu externen Websites Dritter, auf deren
+      Inhalte wir keinen Einfluss haben. Deshalb können wir für diese
+      fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der
+      verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber
       der Seiten verantwortlich.
     </p>
 
     <hr class="divider">
 
-    <h1>Datenschutzerklärung</h1>
-    <p class="subtitle">Informationen gemäß DSGVO (Art. 13, 14)</p>
+    <!-- ═══════════════════════════════════════════════════
+         DATENSCHUTZ
+    ════════════════════════════════════════════════════ -->
+    <h1 class="page-title">Datenschutzerklärung</h1>
+    <p class="page-subtitle">Informationen gemäß DSGVO (Art. 13, 14)</p>
 
     <h2>1. Verantwortlicher</h2>
     <div class="info-box">
@@ -182,98 +239,95 @@
 
     <h2>2. Hosting – GitHub Pages</h2>
     <p>
-      Diese Website wird über GitHub Pages (GitHub Inc., 88 Colin P. Kelly Jr. St., 
-      San Francisco, CA 94107, USA) gehostet. Beim Aufruf der Website werden durch 
-      GitHub automatisch Server-Logfiles gespeichert, die deine IP-Adresse, 
+      Diese Website wird über GitHub Pages (GitHub Inc., 88 Colin P. Kelly Jr. St.,
+      San Francisco, CA 94107, USA) gehostet. Beim Aufruf der Website werden durch
+      GitHub automatisch Server-Logfiles gespeichert, die deine IP-Adresse,
       den Browser-Typ, das Betriebssystem und den Zeitpunkt des Zugriffs enthalten.
     </p>
     <p>
-      GitHub hat sich durch Standardvertragsklauseln zum Datenschutz verpflichtet. 
-      Weitere Informationen: <a href="https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement" target="_blank">GitHub Datenschutzerklärung</a>
+      GitHub hat sich durch Standardvertragsklauseln zum Datenschutz verpflichtet.
+      Weitere Informationen:
+      <a href="https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement" target="_blank">
+        GitHub Datenschutzerklärung
+      </a>
     </p>
 
-    <h2>3. Schriftarten (Bunny Fonts)</h2>
+    <h2>3. Schriftarten (Systemschriften)</h2>
     <p>
-      Diese Seite verwendet Schriftarten über Bunny Fonts (Bunny Ltd., EU). 
-      Bunny Fonts ist ein datenschutzfreundlicher Ersatz für Google Fonts – 
-      die Server stehen in der EU, es werden keine IP-Adressen protokolliert 
-      und keine Daten an Dritte weitergegeben.
-    </p>
-    <p>
-      Weitere Informationen: 
-      <a href="https://fonts.bunny.net/about" target="_blank">fonts.bunny.net/about</a>
+      Diese Seite verwendet ausschließlich systemseitig verfügbare Schriften
+      (Segoe UI, Tahoma, Verdana). Es werden keine externen Schriftdienste
+      geladen und keine Daten an Dritte übertragen.
     </p>
 
     <h2>4. Google Search Console</h2>
     <p>
-      Diese Website ist bei der Google Search Console registriert. Dabei werden 
-      keine personenbezogenen Daten der Besucher erhoben oder gespeichert. 
-      Die Search Console dient ausschließlich der technischen Analyse der 
+      Diese Website ist bei der Google Search Console registriert. Dabei werden
+      keine personenbezogenen Daten der Besucher erhoben oder gespeichert.
+      Die Search Console dient ausschließlich der technischen Analyse der
       Website-Performance in der Google-Suche.
     </p>
 
     <h2>5. Externe Links zu Gumroad</h2>
     <p>
-      Kauflinks auf dieser Website führen zu Gumroad (Gumroad, Inc., 
-      85 Broad Street, New York, NY 10004, USA). Beim Kauf auf Gumroad 
-      gelten ausschließlich die Datenschutzbestimmungen von Gumroad: 
+      Kauflinks auf dieser Website führen zu Gumroad (Gumroad, Inc.,
+      85 Broad Street, New York, NY 10004, USA). Beim Kauf auf Gumroad
+      gelten ausschließlich die Datenschutzbestimmungen von Gumroad:
       <a href="https://gumroad.com/privacy" target="_blank">gumroad.com/privacy</a>
     </p>
     <p>
-      Diese Website selbst speichert keine Zahlungsdaten und verarbeitet 
+      Diese Website selbst speichert keine Zahlungsdaten und verarbeitet
       keine Kaufvorgänge direkt.
     </p>
 
     <h2>6. Keine Cookies</h2>
     <p>
-      Diese Website setzt selbst keine Cookies. Bunny Fonts setzt keine Cookies und protokolliert keine IP-Adressen.
+      Diese Website setzt keine eigenen Cookies und lädt keine externen
+      Tracking- oder Analysedienste. Es findet kein Nutzer-Tracking statt.
     </p>
 
     <h2>7. Deine Rechte</h2>
     <p>Du hast gemäß DSGVO folgende Rechte:</p>
-    <p>→ Auskunft über gespeicherte Daten (Art. 15 DSGVO)</p>
-    <p>→ Berichtigung unrichtiger Daten (Art. 16 DSGVO)</p>
-    <p>→ Löschung deiner Daten (Art. 17 DSGVO)</p>
-    <p>→ Einschränkung der Verarbeitung (Art. 18 DSGVO)</p>
-    <p>→ Widerspruch gegen die Verarbeitung (Art. 21 DSGVO)</p>
-    <p>→ Beschwerde bei der zuständigen Aufsichtsbehörde</p>
+    <ul class="rights-list">
+      <li>Auskunft über gespeicherte Daten (Art. 15 DSGVO)</li>
+      <li>Berichtigung unrichtiger Daten (Art. 16 DSGVO)</li>
+      <li>Löschung deiner Daten (Art. 17 DSGVO)</li>
+      <li>Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+      <li>Widerspruch gegen die Verarbeitung (Art. 21 DSGVO)</li>
+      <li>Beschwerde bei der zuständigen Aufsichtsbehörde</li>
+    </ul>
     <p>
-      Zuständige Aufsichtsbehörde: 
-      Der Landesbeauftragte für den Datenschutz und die 
-      Informationsfreiheit Rheinland-Pfalz, 
-      Hintere Bleiche 34, 55116 Mainz.
+      Zuständige Aufsichtsbehörde: Der Landesbeauftragte für den Datenschutz und die
+      Informationsfreiheit Rheinland-Pfalz, Hintere Bleiche 34, 55116 Mainz.
     </p>
 
     <h2>8. Kontakt bei Datenschutzfragen</h2>
     <p>
-      Bei Fragen zum Datenschutz erreichst du uns unter: 
+      Bei Fragen zum Datenschutz erreichst du uns unter:
       <a href="mailto:kontakt@vertriebswerk.shop">kontakt@vertriebswerk.shop</a>
     </p>
 
     <h2>9. Widerrufsrecht bei digitalen Produkten</h2>
     <p>
-      Bei digitalen Produkten (Downloads) erlischt das Widerrufsrecht gemäß 
-      § 356 Abs. 5 BGB, sobald der Download begonnen hat und du der 
+      Bei digitalen Produkten (Downloads) erlischt das Widerrufsrecht gemäß
+      § 356 Abs. 5 BGB, sobald der Download begonnen hat und du der
       vorzeitigen Ausführung des Vertrags ausdrücklich zugestimmt hast.
     </p>
     <p>
-      Auf der Gumroad-Checkout-Seite wirst du vor dem Kauf darüber informiert 
-      und gibst deine ausdrückliche Zustimmung. Mit dem Kauf bestätigst du, 
-      dass du weißt dass das Widerrufsrecht mit Beginn des Downloads erlischt.
+      Auf der Gumroad-Checkout-Seite wirst du vor dem Kauf darüber informiert
+      und gibst deine ausdrückliche Zustimmung. Mit dem Kauf bestätigst du,
+      dass du weißt, dass das Widerrufsrecht mit Beginn des Downloads erlischt.
     </p>
     <p>
-      Bei Fragen zu Käufen wende dich direkt an: 
+      Bei Fragen zu Käufen wende dich direkt an:
       <a href="mailto:kontakt@vertriebswerk.shop">kontakt@vertriebswerk.shop</a>
     </p>
 
-    <p style="margin-top: 2rem; font-size: 0.8rem; color: #999;">
-      Stand: April 2026
-    </p>
+    <p class="stand">Stand: Mai 2026</p>
 
   </div>
 
   <footer>
-    © 2026 Vertriebswerk · Daniel Toth · 
+    © 2026 Vertriebswerk · Daniel Toth ·
     <a href="/">vertriebswerk.shop</a>
   </footer>
 
