@@ -1140,16 +1140,7 @@
       btn.style.background='';
     } else if(tier==='Team'){
       var sub='Team-Lizenz: '+name+' (79 €)';
-      btn.href='mailto:kontakt@vertriebswerk.shop?subject='+encodeURIComponent(sub)+'&body='+encodeURIComponent('Hallo Daniel,
-
-ich interessiere mich für die Team-Lizenz von „'+name+'“ (bis 10 Nutzer).
-
-Bitte sende mir ein Angebot.
-
-Unternehmen:
-Ansprechpartner:
-E-Mail:
-');
+      btn.href='mailto:kontakt@vertriebswerk.shop?subject='+encodeURIComponent(sub)+'&body='+encodeURIComponent('Hallo Daniel,\n\nich interessiere mich für die Team-Lizenz von „'+name+'“ (bis 10 Nutzer).\n\nBitte sende mir ein Angebot.\n\nUnternehmen:\nAnsprechpartner:\nE-Mail:\n');
       btn.removeAttribute('data-overlay');
       btn.setAttribute('data-tier','team');
       if(labelEl)labelEl.textContent='Team-Lizenz anfragen';
@@ -1157,17 +1148,7 @@ E-Mail:
       btn.style.background='';
     } else if(tier==='Enterprise'){
       var sub='Enterprise-Lizenz: '+name;
-      btn.href='mailto:kontakt@vertriebswerk.shop?subject='+encodeURIComponent(sub)+'&body='+encodeURIComponent('Hallo Daniel,
-
-wir interessieren uns für eine Enterprise-Lizenz von „'+name+'“ (unbegrenzte Nutzer, ein Standort).
-
-Bitte sende uns ein Angebot mit Rechnung.
-
-Unternehmen:
-Ansprechpartner:
-E-Mail:
-Standort:
-');
+      btn.href='mailto:kontakt@vertriebswerk.shop?subject='+encodeURIComponent(sub)+'&body='+encodeURIComponent('Hallo Daniel,\n\nwir interessieren uns für eine Enterprise-Lizenz von „'+name+'“ (unbegrenzte Nutzer, ein Standort).\n\nBitte sende uns ein Angebot mit Rechnung.\n\nUnternehmen:\nAnsprechpartner:\nE-Mail:\nStandort:\n');
       btn.removeAttribute('data-overlay');
       btn.setAttribute('data-tier','enterprise');
       if(labelEl)labelEl.textContent='Enterprise anfragen';
