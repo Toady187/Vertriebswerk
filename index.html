@@ -709,8 +709,8 @@
         </div>
         <div class="pcard-cta-wrap">
           <a href="https://vertriebswerkshop.lemonsqueezy.com/checkout/buy/aa733879-3f78-47de-9455-3beb23abd083" data-overlay
-             class="lemonsqueezy-button pcard-buy" target="_blank" rel="noopener" id="btn-aus">
-            <span>Tool sichern – <span id="price-aus">39&nbsp;€</span></span>
+             class="lemonsqueezy-button pcard-buy" target="_blank" rel="noopener" data-name="Ausschreibungs-Check" data-single-url="https://vertriebswerkshop.lemonsqueezy.com/checkout/buy/aa733879-3f78-47de-9455-3beb23abd083" id="btn-aus">
+            <span id="btn-label-aus">Tool sichern</span> – <span id="price-aus">39&nbsp;€</span>
             <span class="pcard-buy-arrow">→</span>
           </a>
           <div class="pcard-meta">
@@ -746,8 +746,8 @@
         </div>
         <div class="pcard-cta-wrap">
           <a href="https://vertriebswerkshop.lemonsqueezy.com/checkout/buy/de75b5f2-eff5-4bb3-a03b-7535494fa228" data-overlay
-             class="lemonsqueezy-button pcard-buy" target="_blank" rel="noopener" id="btn-email">
-            <span>Tool sichern – <span id="price-email">19&nbsp;€</span></span>
+             class="lemonsqueezy-button pcard-buy" target="_blank" rel="noopener" data-name="E-Mail Baukasten Kaltakquise" data-single-url="https://vertriebswerkshop.lemonsqueezy.com/checkout/buy/de75b5f2-eff5-4bb3-a03b-7535494fa228" id="btn-email">
+            <span id="btn-label-email">Tool sichern</span> – <span id="price-email">19&nbsp;€</span>
             <span class="pcard-buy-arrow">→</span>
           </a>
           <div class="pcard-meta">
@@ -783,8 +783,8 @@
         </div>
         <div class="pcard-cta-wrap">
           <a href="https://vertriebswerkshop.lemonsqueezy.com/checkout/buy/e8e32b65-fd81-40f5-9bd7-0bf740d7c9d3" data-overlay
-             class="lemonsqueezy-button pcard-buy" target="_blank" rel="noopener" id="btn-ctrl">
-            <span>Tool sichern – <span id="price-ctrl">39&nbsp;€</span></span>
+             class="lemonsqueezy-button pcard-buy" target="_blank" rel="noopener" data-name="Vertriebscontrolling Dashboard" data-single-url="https://vertriebswerkshop.lemonsqueezy.com/checkout/buy/e8e32b65-fd81-40f5-9bd7-0bf740d7c9d3" id="btn-ctrl">
+            <span id="btn-label-ctrl">Tool sichern</span> – <span id="price-ctrl">39&nbsp;€</span>
             <span class="pcard-buy-arrow">→</span>
           </a>
           <div class="pcard-meta">
@@ -820,8 +820,8 @@
         </div>
         <div class="pcard-cta-wrap">
           <a href="https://vertriebswerkshop.lemonsqueezy.com/checkout/buy/2e42c441-4e05-42ef-914a-5eb3dfa71408" data-overlay
-             class="lemonsqueezy-button pcard-buy" target="_blank" rel="noopener" id="btn-meet">
-            <span>Tool sichern – <span id="price-meet">19&nbsp;€</span></span>
+             class="lemonsqueezy-button pcard-buy" target="_blank" rel="noopener" data-name="Meeting-Leitfaden Erstgespräch" data-single-url="https://vertriebswerkshop.lemonsqueezy.com/checkout/buy/2e42c441-4e05-42ef-914a-5eb3dfa71408" id="btn-meet">
+            <span id="btn-label-meet">Tool sichern</span> – <span id="price-meet">19&nbsp;€</span>
             <span class="pcard-buy-arrow">→</span>
           </a>
           <div class="pcard-meta">
@@ -1120,7 +1120,58 @@
     el.closest('.pcard-tiers').querySelectorAll('.tier').forEach(function(t){t.classList.remove('active');});
     el.classList.add('active');
     var priceEl=document.getElementById('price-'+id);
-    if(priceEl)priceEl.textContent=price+'\u00a0\u20ac';
+    if(priceEl)priceEl.textContent=price+' €';
+    var btn=document.getElementById('btn-'+id);
+    if(!btn)return;
+    var label=el.querySelector('.tier-label');
+    var tier=label?label.textContent.trim():'Single';
+    var name=btn.getAttribute('data-name')||id;
+    var singleUrl=btn.getAttribute('data-single-url')||'';
+    var labelEl=document.getElementById('btn-label-'+id);
+    var arrow=btn.querySelector('.pcard-buy-arrow');
+    if(tier==='Single'){
+      btn.href=singleUrl;
+      btn.setAttribute('data-overlay','');
+      btn.removeAttribute('data-tier');
+      if(labelEl)labelEl.textContent='Tool sichern';
+      if(arrow)arrow.textContent='→';
+      btn.style.background='';
+    } else if(tier==='Team'){
+      var sub='Team-Lizenz: '+name+' (79 €)';
+      btn.href='mailto:kontakt@vertriebswerk.shop?subject='+encodeURIComponent(sub)+'&body='+encodeURIComponent('Hallo Daniel,
+
+ich interessiere mich für die Team-Lizenz von „'+name+'“ (bis 10 Nutzer).
+
+Bitte sende mir ein Angebot.
+
+Unternehmen:
+Ansprechpartner:
+E-Mail:
+');
+      btn.removeAttribute('data-overlay');
+      btn.setAttribute('data-tier','team');
+      if(labelEl)labelEl.textContent='Team-Lizenz anfragen';
+      if(arrow)arrow.textContent='→';
+      btn.style.background='';
+    } else if(tier==='Enterprise'){
+      var sub='Enterprise-Lizenz: '+name;
+      btn.href='mailto:kontakt@vertriebswerk.shop?subject='+encodeURIComponent(sub)+'&body='+encodeURIComponent('Hallo Daniel,
+
+wir interessieren uns für eine Enterprise-Lizenz von „'+name+'“ (unbegrenzte Nutzer, ein Standort).
+
+Bitte sende uns ein Angebot mit Rechnung.
+
+Unternehmen:
+Ansprechpartner:
+E-Mail:
+Standort:
+');
+      btn.removeAttribute('data-overlay');
+      btn.setAttribute('data-tier','enterprise');
+      if(labelEl)labelEl.textContent='Enterprise anfragen';
+      if(arrow)arrow.textContent='→';
+      btn.style.background='';
+    }
   }
 
   // Feature toggle — button ref übergeben für Text-Update
