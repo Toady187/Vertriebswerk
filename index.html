@@ -84,7 +84,7 @@
       },
       {
         "@type": "Product",
-        "name": "B2B Pipeline Cleanup Kit",
+        "name": "Pipeline Cleanup Kit",
         "description": "Pipeline-Bereinigung in 30 Minuten: 16 Qualitätskriterien pro Deal, Ampel-System, Tagging-Guide für Salesforce und HubSpot.",
         "brand": {"@type": "Brand", "name": "Vertriebswerk"},
         "offers": {
@@ -226,69 +226,24 @@
        SOCIAL PROOF — CI-korrigiert
     ═══════════════════════════════════════════════ */
     .social-proof{background:#f8f9fa;padding:80px 24px;border-bottom:1px solid var(--g200)}
-    .sp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px;margin-top:52px}
-    /* Karte: weiß, feine Border, weicher Schatten — kein Beige, kein Sand */
-    .sp-card{background:#fff;border:1px solid #e0e4ea;border-radius:var(--r-l);padding:24px;position:relative;overflow:hidden;transition:box-shadow .2s,transform .2s;box-shadow:0 1px 4px rgba(27,42,74,.06),0 2px 12px rgba(27,42,74,.05)}
+    .sp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;margin-top:52px}
+    /* Karte: weiß, feine Border, weicher Schatten */
+    .sp-card{background:#fff;border:1px solid #e0e4ea;border-radius:var(--r-l);padding:24px;position:relative;overflow:hidden;transition:box-shadow .2s,transform .2s;box-shadow:0 1px 4px rgba(27,42,74,.06),0 2px 12px rgba(27,42,74,.05);display:flex;flex-direction:column}
     .sp-card:hover{box-shadow:0 4px 24px rgba(27,42,74,.11);transform:translateY(-2px)}
-    /* Dekoratives Anführungszeichen im Kartenhintergrund — kein klebendes Symbol */
+    /* Dekoratives Anführungszeichen im Kartenhintergrund */
     .sp-card::before{content:'\201C';position:absolute;top:-10px;left:14px;font-size:6.5rem;font-family:Georgia,serif;color:var(--navy);opacity:.04;line-height:1;pointer-events:none;user-select:none}
     /* Header: Sterne + Quellbadge */
     .sp-card-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
     .sp-stars{display:flex;gap:2px;color:var(--teal);font-size:.85rem}
     .sp-source{font-size:.63rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--g400);background:#f8f9fa;border:1px solid #e0e4ea;padding:3px 9px;border-radius:50px}
-    /* Zitat: Regular statt Italic — Scan-Freundlich; strategische Fettungen per HTML */
-    .sp-quote{font-size:.9rem;color:var(--text);line-height:1.75;margin-bottom:18px;font-style:normal;position:relative;z-index:1}
+    .sp-source--li{background:#e8f0fb;border-color:#c0d4f5;color:#0a66c2}
+    /* Zitat */
+    .sp-quote{font-size:.9rem;color:var(--text);line-height:1.75;margin-bottom:18px;font-style:normal;position:relative;z-index:1;flex:1}
     .sp-quote strong{color:var(--navy);font-weight:700}
     .sp-author{display:flex;align-items:center;gap:12px;padding-top:14px;border-top:1px solid #e0e4ea;margin-top:auto}
     .sp-avatar{width:40px;height:40px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:700;color:#fff;flex-shrink:0}
     .sp-name{font-size:.84rem;font-weight:700;color:var(--navy)}
     .sp-role{font-size:.72rem;color:var(--g400);margin-top:1px}
-
-    /* ═══════════════════════════════════════════════
-       LINKEDIN DM — Social Proof Card (Stefan B.)
-    ═══════════════════════════════════════════════ */
-    .li-proof-section{background:#f0f2f5;padding:64px 24px;border-top:1px solid var(--g200);border-bottom:1px solid var(--g200)}
-    .li-proof-wrap{max-width:640px;margin:0 auto;text-align:center}
-    .li-proof-eyebrow{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#888;margin-bottom:1.25rem}
-    .li-window{background:#fff;border-radius:10px;border:1px solid #dce0e4;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.10);text-align:left}
-    .li-topbar{background:#004182;padding:9px 14px;display:flex;align-items:center;gap:9px}
-    .li-topbar-logo{width:22px;height:22px;background:#fff;border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#0a66c2;font-family:Georgia,serif;flex-shrink:0;line-height:1}
-    .li-topbar-title{font-size:12px;color:rgba(255,255,255,.8);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
-    .li-body{display:flex;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
-    .li-sidebar{width:200px;flex-shrink:0;border-right:1px solid #e8e8e8;background:#fff;padding:10px 0}
-    .li-sidebar-search{margin:0 10px 8px;background:#f3f2ef;border-radius:4px;padding:6px 10px;font-size:11px;color:#999}
-    .li-conv{padding:8px 10px;display:flex;gap:9px;align-items:flex-start;background:#eef3fb;border-left:3px solid #0a66c2}
-    .li-conv-other{padding:8px 10px;display:flex;gap:9px;align-items:flex-start}
-    .li-av{width:36px;height:36px;border-radius:50%;background:#1B2A4A;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff;flex-shrink:0}
-    .li-av-sm{width:32px;height:32px;font-size:10px;background:#5f5e5a}
-    .li-conv-meta{flex:1;min-width:0}
-    .li-conv-name{font-size:12px;font-weight:600;color:#000000de;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-    .li-conv-name-muted{color:#777}
-    .li-conv-preview{font-size:11px;color:#777;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1px}
-    .li-chat{flex:1;display:flex;flex-direction:column;background:#f3f2ef}
-    .li-chat-header{background:#fff;border-bottom:1px solid #e8e8e8;padding:10px 14px;display:flex;align-items:center;gap:10px}
-    .li-chat-name{font-size:14px;font-weight:600;color:#000000de}
-    .li-chat-sub{font-size:11px;color:#777;margin-top:1px}
-    .li-redact-blur{display:inline-block;background:#ccc;border-radius:3px;height:9px;width:80px;vertical-align:middle;filter:blur(3px);margin-left:3px}
-    .li-messages{padding:14px;display:flex;flex-direction:column;gap:8px}
-    .li-msg-date{text-align:center;font-size:10px;color:#999;margin-bottom:2px}
-    .li-msg-row{display:flex;gap:8px;align-items:flex-end}
-    .li-bubble{max-width:82%;padding:10px 13px;border-radius:14px 14px 14px 3px;font-size:13.5px;line-height:1.55;color:#000000de;background:#fff;border:1.5px solid #0a66c2}
-    .li-redact{display:inline-block;background:#111;border-radius:2px;height:12px;width:70px;vertical-align:middle;user-select:none}
-    .li-bubble-meta{font-size:10px;color:#999;margin-top:5px;display:flex;align-items:center;gap:4px}
-    .li-seen{color:#0a66c2}
-    .li-input-row{background:#fff;border-top:1px solid #e8e8e8;padding:9px 14px;display:flex;align-items:center;gap:8px}
-    .li-input-fake{flex:1;background:#f3f2ef;border-radius:20px;padding:7px 14px;font-size:12px;color:#aaa;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
-    .li-footer{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:14px;flex-wrap:wrap}
-    .li-footer-sender{display:flex;align-items:center;gap:8px}
-    .li-footer-name{font-size:12.5px;font-weight:600;color:var(--navy)}
-    .li-footer-role{font-size:11px;color:#666;margin-top:1px}
-    .li-footer-note{font-size:10.5px;color:#aaa;border-left:1px solid #ddd;padding-left:14px;line-height:1.6}
-    @media(max-width:600px){
-      .li-sidebar{display:none}
-      .li-footer{flex-direction:column;align-items:flex-start}
-      .li-footer-note{border-left:none;padding-left:0;border-top:1px solid #eee;padding-top:8px}
-    }
 
     /* ═══════════════════════════════════════════════
        PIPELINE DEMO — Live Mockup Conversion Block
@@ -1153,7 +1108,7 @@
       <div class="sp-card reveal">
         <div class="sp-card-head">
           <div class="sp-stars">★★★★★</div>
-          <span class="sp-source">LinkedIn</span>
+          <span class="sp-source sp-source--li">LinkedIn</span>
         </div>
         <p class="sp-quote">Endlich mal was, das nicht nach 08/15-Berater-Template aussieht. Den Ausschreibungs-Check hab ich direkt vor dem nächsten Tender eingesetzt — <strong>GO/NO-GO Entscheidung in 20 Minuten statt 2 Stunden</strong> Bauchgefühl-Diskussion im Team.</p>
         <div class="sp-author">
@@ -1168,7 +1123,7 @@
       <div class="sp-card reveal reveal-delay-1">
         <div class="sp-card-head">
           <div class="sp-stars">★★★★★</div>
-          <span class="sp-source">LinkedIn</span>
+          <span class="sp-source sp-source--li">LinkedIn</span>
         </div>
         <p class="sp-quote">Der CFO Deal Closer hat mir im letzten Kundentermin <strong>buchstäblich den Abschluss gerettet.</strong> CFO wollte Zahlen sehen — ich hab den Laptop aufgeklappt, Regler verschoben, <strong>ROI live berechnet.</strong> Er hat genickt und unterschrieben.</p>
         <div class="sp-author">
@@ -1183,14 +1138,30 @@
       <div class="sp-card reveal reveal-delay-2">
         <div class="sp-card-head">
           <div class="sp-stars">★★★★★</div>
-          <span class="sp-source">Direktnachricht</span>
+          <span class="sp-source sp-source--li">LinkedIn</span>
         </div>
-        <p class="sp-quote">Ich war skeptisch, ob ein 19-€-Tool wirklich was taugt. Pipeline Cleanup Kit hat in der ersten Nutzung <strong>8 Deals rausgefiltert, die ich seit Monaten mit mir rumgeschleppt hab.</strong> Forecast war auf einmal realistisch.</p>
+        <p class="sp-quote">Das Einwandbehandlung Mastersheet hab ich erst skeptisch überflogen — dann ausgedruckt und ins nächste Kundengespräch mitgenommen. <strong>Drei Einwände, drei Antworten, ein unterschriebenes Angebot.</strong> Hätte ich das vor zwei Jahren gehabt.</p>
+        <div class="sp-author">
+          <div class="sp-avatar">CW</div>
+          <div>
+            <div class="sp-name">C. W.</div>
+            <div class="sp-role">Account Executive, Industrie-SaaS · NRW</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stefan B. — LinkedIn DM -->
+      <div class="sp-card reveal reveal-delay-3">
+        <div class="sp-card-head">
+          <div class="sp-stars">★★★★★</div>
+          <span class="sp-source sp-source--li">LinkedIn DM</span>
+        </div>
+        <p class="sp-quote">Der CFO Deal Closer hat uns allein im letzten Quartal <strong>zwei Abschlüsse gerettet,</strong> die fast an der Rechtsabteilung gescheitert wären. Bestes Tool auf dem Markt.</p>
         <div class="sp-author">
           <div class="sp-avatar">SB</div>
           <div>
-            <div class="sp-name">S. B.</div>
-            <div class="sp-role">Vertriebsleiter, B2B SaaS · Rhein-Main</div>
+            <div class="sp-name">Stefan B.</div>
+            <div class="sp-role">Head of Sales · DACH-Region · Unaufgeforderte Direktnachricht</div>
           </div>
         </div>
       </div>
@@ -1198,8 +1169,6 @@
     </div>
   </div>
 </section>
-
-<!-- ── FOUNDER ───────────────────────────────────────────── -->
 <section class="founder-section" id="founder">
   <div class="container">
     <div class="founder-inner">
@@ -1279,8 +1248,7 @@
             <span class="pcard-buy-arrow">→</span>
           </a>
           <div class="pcard-meta">
-            <span>🔒 DSGVO-sicher</span><span class="pcard-meta-dot"></span>
-            <span>100&nbsp;% Offline</span><span class="pcard-meta-dot"></span>
+            <span>Einmalzahlung</span><span class="pcard-meta-dot"></span>
             <span>Sofort-Download</span>
           </div>
         </div>
@@ -1326,8 +1294,7 @@
             <span class="pcard-buy-arrow">→</span>
           </a>
           <div class="pcard-meta">
-            <span>🔒 DSGVO-sicher</span><span class="pcard-meta-dot"></span>
-            <span>100&nbsp;% Offline</span><span class="pcard-meta-dot"></span>
+            <span>Einmalzahlung</span><span class="pcard-meta-dot"></span>
             <span>Sofort-Download</span>
           </div>
         </div>
@@ -1373,8 +1340,7 @@
             <span class="pcard-buy-arrow">→</span>
           </a>
           <div class="pcard-meta">
-            <span>🔒 DSGVO-sicher</span><span class="pcard-meta-dot"></span>
-            <span>100&nbsp;% Offline</span><span class="pcard-meta-dot"></span>
+            <span>Einmalzahlung</span><span class="pcard-meta-dot"></span>
             <span>Sofort-Download</span>
           </div>
         </div>
@@ -1420,8 +1386,7 @@
             <span class="pcard-buy-arrow">→</span>
           </a>
           <div class="pcard-meta">
-            <span>🔒 DSGVO-sicher</span><span class="pcard-meta-dot"></span>
-            <span>100&nbsp;% Offline</span><span class="pcard-meta-dot"></span>
+            <span>Einmalzahlung</span><span class="pcard-meta-dot"></span>
             <span>Sofort-Download</span>
           </div>
         </div>
@@ -1446,7 +1411,7 @@
         <div class="tcard"><div class="tcard-pills"><span class="pill pill-teal">ICP-Scoring</span><span class="pill pill-blue">Excel · 5 Sheets</span></div><h3>ICP Workshop-Kit</h3><div class="tcard-sub">Branchenfilter · Stakeholder-Mapping · Scoring-Matrix</div><ul class="tcard-feats"><li>12 Branchen bewerten &amp; priorisieren</li><li>ICP-Scoring nach 6 Kriterien</li><li>Fertiger ICP-Steckbrief</li></ul><div class="tcard-foot"><div><div class="tcard-price">24&nbsp;€</div><div class="tcard-fmt">Excel (.xlsx)</div></div><a href="https://vertriebswerkshop.lemonsqueezy.com/checkout/buy/95d33ee3-cd0b-4978-afe3-2b2a53ff9433" data-overlay class="lemonsqueezy-button tcard-cta" target="_blank" rel="noopener">Sichern &rarr;</a><a href="mailto:kontakt@vertriebswerk.shop?subject=Team-Lizenz%3A%20ICP%20Workshop-Kit&body=Hallo%20Daniel%2C%0A%0Aich%20interessiere%20mich%20f%C3%BCr%20die%20Team-Lizenz%20von%20%E2%80%9EICP%20Workshop-Kit%22%20%28bis%2010%20Nutzer%29.%0A%0ABitte%20sende%20mir%20ein%20Angebot.%0A%0AUnternehmen%3A%0AAnsprechpartner%3A%0AE-Mail%3A%0A" class="tcard-inquiry">Team / Enterprise anfragen</a></div></div>
         <div class="tcard"><div class="tcard-pills"><span class="pill pill-teal">E-Mail-Sequenz</span><span class="pill pill-blue">Word + Excel</span></div><h3>Kaltakquise Blueprint</h3><div class="tcard-sub">5-Stufen-Sequenz · Telefonskript · DSGVO-Check</div><ul class="tcard-feats"><li>E-Mail-Sequenz in 5 Stufen</li><li>Telefonskript DACH-Markt</li><li>Einwandbehandlung 5 Situationen</li></ul><div class="tcard-foot"><div><div class="tcard-price">29&nbsp;€</div><div class="tcard-fmt">Word + Excel</div></div><a href="https://vertriebswerkshop.lemonsqueezy.com/checkout/buy/502ae5e8-d491-4ffb-af83-c26f1a83dff8" data-overlay class="lemonsqueezy-button tcard-cta" target="_blank" rel="noopener">Sichern &rarr;</a><a href="mailto:kontakt@vertriebswerk.shop?subject=Team-Lizenz%3A%20Kaltakquise%20Blueprint&body=Hallo%20Daniel%2C%0A%0Aich%20interessiere%20mich%20f%C3%BCr%20die%20Team-Lizenz%20von%20%E2%80%9EKaltakquise%20Blueprint%22%20%28bis%2010%20Nutzer%29.%0A%0ABitte%20sende%20mir%20ein%20Angebot.%0A%0AUnternehmen%3A%0AAnsprechpartner%3A%0AE-Mail%3A%0A" class="tcard-inquiry">Team / Enterprise anfragen</a></div></div>
         <div class="tcard"><div class="tcard-pills"><span class="pill pill-teal">10 Vorlagen</span><span class="pill pill-blue">Word (.docx)</span></div><h3>E-Mail Baukasten Kaltakquise</h3><div class="tcard-sub">10 Vorlagen · 30 Betreffzeilen · Sequenz-Framework</div><ul class="tcard-feats"><li>10 Kaltakquise-Vorlagen B2B</li><li>30 getestete Betreffzeilen</li><li>Psychologische Hebel je Stufe</li></ul><div class="tcard-foot"><div><div class="tcard-price">19&nbsp;€</div><div class="tcard-fmt">Word (.docx)</div></div><a href="https://vertriebswerkshop.lemonsqueezy.com/checkout/buy/fb8628b1-3983-43da-a9dc-4fde1883a01f" data-overlay class="lemonsqueezy-button tcard-cta" target="_blank" rel="noopener">Sichern &rarr;</a><a href="mailto:kontakt@vertriebswerk.shop?subject=Team-Lizenz%3A%20E-Mail%20Baukasten%20Kaltakquise&body=Hallo%20Daniel%2C%0A%0Aich%20interessiere%20mich%20f%C3%BCr%20die%20Team-Lizenz%20von%20%E2%80%9EE-Mail%20Baukasten%20Kaltakquise%22%20%28bis%2010%20Nutzer%29.%0A%0ABitte%20sende%20mir%20ein%20Angebot.%0A%0AUnternehmen%3A%0AAnsprechpartner%3A%0AE-Mail%3A%0A" class="tcard-inquiry">Team / Enterprise anfragen</a></div></div>
-        <div class="tcard"><div class="tcard-pills"><span class="pill pill-teal">CRM-READY</span><span class="pill pill-blue">Excel · 6 Tabs</span></div><h3>B2B Pipeline Cleanup Kit</h3><div class="tcard-sub">Opportunity-Scoring · CRM-Tagging · Forecast</div><ul class="tcard-feats"><li>16 Qualitätskriterien pro Deal</li><li>Ampel-System Grün/Gelb/Rot</li><li>Tagging-Guide Salesforce &amp; HubSpot</li></ul><div class="tcard-foot"><div><div class="tcard-price">19&nbsp;€</div><div class="tcard-fmt">Excel (.xlsx)</div></div><a href="https://vertriebswerkshop.lemonsqueezy.com/checkout/buy/56581817-aff0-413f-9e29-991b9c4b4388" data-overlay class="lemonsqueezy-button tcard-cta" target="_blank" rel="noopener">Sichern &rarr;</a><a href="mailto:kontakt@vertriebswerk.shop?subject=Team-Lizenz%3A%20B2B%20Pipeline%20Cleanup%20Kit&body=Hallo%20Daniel%2C%0A%0Aich%20interessiere%20mich%20f%C3%BCr%20die%20Team-Lizenz%20von%20%E2%80%9EB2B%20Pipeline%20Cleanup%20Kit%22%20%28bis%2010%20Nutzer%29.%0A%0ABitte%20sende%20mir%20ein%20Angebot.%0A%0AUnternehmen%3A%0AAnsprechpartner%3A%0AE-Mail%3A%0A" class="tcard-inquiry">Team / Enterprise anfragen</a></div></div>
+        <div class="tcard"><div class="tcard-pills"><span class="pill pill-teal">CRM-READY</span><span class="pill pill-blue">Excel · 6 Tabs</span></div><h3>Pipeline Cleanup Kit</h3><div class="tcard-sub">Opportunity-Scoring · CRM-Tagging · Forecast</div><ul class="tcard-feats"><li>16 Qualitätskriterien pro Deal</li><li>Ampel-System Grün/Gelb/Rot</li><li>Tagging-Guide Salesforce &amp; HubSpot</li></ul><div class="tcard-foot"><div><div class="tcard-price">19&nbsp;€</div><div class="tcard-fmt">Excel (.xlsx)</div></div><a href="https://vertriebswerkshop.lemonsqueezy.com/checkout/buy/56581817-aff0-413f-9e29-991b9c4b4388" data-overlay class="lemonsqueezy-button tcard-cta" target="_blank" rel="noopener">Sichern &rarr;</a><a href="mailto:kontakt@vertriebswerk.shop?subject=Team-Lizenz%3A%20Pipeline%20Cleanup%20Kit&body=Hallo%20Daniel%2C%0A%0Aich%20interessiere%20mich%20f%C3%BCr%20die%20Team-Lizenz%20von%20%E2%80%9EPipeline%20Cleanup%20Kit%22%20%28bis%2010%20Nutzer%29.%0A%0ABitte%20sende%20mir%20ein%20Angebot.%0A%0AUnternehmen%3A%0AAnsprechpartner%3A%0AE-Mail%3A%0A" class="tcard-inquiry">Team / Enterprise anfragen</a></div></div>
       </div>
     </div>
 
@@ -1487,7 +1452,7 @@
 
       <!-- TEXT + CTA -->
       <div class="demo-text reveal">
-        <span class="eyebrow">Live-Vorschau · B2B Pipeline Cleanup Kit</span>
+        <span class="eyebrow">Live-Vorschau · Pipeline Cleanup Kit</span>
         <h2 class="demo-headline">So sieht deine Pipeline aus,<br><em>wenn sie aufgeräumt ist.</em></h2>
         <p class="demo-desc">Kein Screenshots-Marketing. Das ist die echte Logik des Tools — Ampel-System, 16-Kriterien-Scoring, Deal-Status auf einen Blick. Gebaut für den Moment vor dem Quartalsabschluss.</p>
         <ul class="demo-bullets">
@@ -1515,12 +1480,12 @@
             <span class="dc-dot dc-r"></span>
             <span class="dc-dot dc-y"></span>
             <span class="dc-dot dc-g"></span>
-            <span class="dc-url">Pipeline_Cleanup_Q3_2026.xlsx</span>
+            <span class="dc-url">Pipeline_Cleanup_Q2_2026.xlsx</span>
           </div>
           <!-- Sheet header -->
           <div class="dm-header">
-            <span class="dm-header-title">B2B Pipeline Cleanup Kit</span>
-            <span class="dm-badge">Q3 · 2026</span>
+            <span class="dm-header-title">Pipeline Cleanup Kit</span>
+            <span class="dm-badge">Q2 · 2026</span>
           </div>
           <!-- Ampel summary -->
           <div class="dm-summary">
@@ -1605,15 +1570,25 @@
       <div class="pcard-body">
         <span class="pcard-cat">Web-App · White-Label · Offline</span>
         <h3 class="pcard-title">Der ROI-Beweis, bevor der Einkauf „zu teuer" sagen kann</h3>
-        <p class="pcard-desc">Du sitzt im C-Level-Termin und der CFO will Zahlen — keine Folien. Mit dieser App verschiebst du sechs Regler und der Business Case rechnet sich live vor seinen Augen: ROI, Netto-Wertbeitrag, Amortisation. Mit deinem Firmennamen und dem Namen des Kunden im Dokument.</p>
-        <button class="pcard-toggle" onclick="togglePreview(this,'f-cfo')">📋 Inhalt-Vorschau</button>
-        <ul class="pcard-features" id="f-cfo" style="display:none">
-          <li>White-Label: Dein Unternehmen + Kundenname erscheinen live im Dashboard, im Text und im Druck-Header</li>
-          <li>CFO-Argumentations-Generator: fertiger Fließtext fürs Angebotsdeck, per Klick in Word/PowerPoint kopiert</li>
-          <li>Druck-Funktion: ein Klick erzeugt ein einseitiges A4-Management-Summary als PDF</li>
-          <li>1 HTML-Datei, kein Server, kein Tracking — startet offline auf gehärteten Corporate-Laptops</li>
-          <li>Quelloffen (HTML5 + Vanilla JS): deine IT kann jede Zeile prüfen</li>
+        <!-- TOP 3: always visible -->
+        <ul class="pcard-top3" aria-label="Die drei wichtigsten Features">
+          <li>Sechs Regler — Business Case rechnet sich live vor dem CFO</li>
+          <li>White-Label: dein Firmenname + Kundenname im Dashboard und Druck-Header</li>
+          <li>Druckt einseitiges A4-Management-Summary — kein Foliendeck nötig</li>
         </ul>
+        <!-- DEEP DIVE -->
+        <button
+          class="pcard-deepdive-toggle"
+          aria-expanded="false"
+          aria-controls="dd-cfo"
+          onclick="toggleDeepDive(this,'dd-cfo')"
+        ><i class="dd-icon">+</i>&nbsp;2 weitere Inhalte anzeigen</button>
+        <div class="pcard-deepdive" id="dd-cfo" role="region">
+          <ul>
+            <li>CFO-Argumentations-Generator: fertiger Fließtext per Klick in Word/PowerPoint</li>
+            <li>1 HTML-Datei, kein Server, kein Tracking — startet offline auf gehärteten Corporate-Laptops</li>
+          </ul>
+        </div>
       </div>
       <div class="pcard-cta-wrap">
         <a href="https://vertriebswerkshop.lemonsqueezy.com/checkout/buy/7352d650-646d-4c8c-b4ae-82685ff36a20" data-overlay class="lemonsqueezy-button pcard-buy" target="_blank" rel="noopener">
@@ -1621,9 +1596,8 @@
           <span class="pcard-buy-arrow">→</span>
         </a>
         <div class="pcard-meta">
-          <span>🔒 DSGVO-sicher</span><span class="pcard-meta-dot"></span>
-          <span>100&nbsp;% Offline</span><span class="pcard-meta-dot"></span>
-          <span>Einmalzahlung · Sofort-Download</span>
+          <span>Einmalzahlung</span><span class="pcard-meta-dot"></span>
+          <span>Sofort-Download</span>
         </div>
         <a href="mailto:kontakt@vertriebswerk.shop?subject=Team-Lizenz%3A%20CFO%20Deal%20Closer" class="tcard-inquiry">Team / Enterprise anfragen</a>
       </div>
@@ -1631,98 +1605,6 @@
   </div>
 </section>
 
-<!-- ── LINKEDIN DM SOCIAL PROOF — Stefan B. ─────────────── -->
-<section class="li-proof-section">
-  <div class="li-proof-wrap reveal">
-    <span class="li-proof-eyebrow">Kundenfeedback · LinkedIn Direktnachricht</span>
-
-    <div class="li-window">
-      <!-- Topbar -->
-      <div class="li-topbar">
-        <div class="li-topbar-logo">in</div>
-        <span class="li-topbar-title">Messaging</span>
-      </div>
-
-      <!-- Body -->
-      <div class="li-body">
-
-        <!-- Sidebar — Desktop -->
-        <div class="li-sidebar">
-          <div class="li-sidebar-search">Suchen …</div>
-          <div class="li-conv">
-            <div class="li-av">SB</div>
-            <div class="li-conv-meta">
-              <div class="li-conv-name">Stefan B.</div>
-              <div class="li-conv-preview">Der CFO Deal Closer hat…</div>
-            </div>
-          </div>
-          <div class="li-conv-other">
-            <div class="li-av li-av-sm">MK</div>
-            <div class="li-conv-meta">
-              <div class="li-conv-name li-conv-name-muted">M. Kellner</div>
-              <div class="li-conv-preview">Super, danke für die…</div>
-            </div>
-          </div>
-          <div class="li-conv-other">
-            <div class="li-av li-av-sm" style="background:#3c3489">TH</div>
-            <div class="li-conv-meta">
-              <div class="li-conv-name li-conv-name-muted">T. Hausmann</div>
-              <div class="li-conv-preview">Können wir Freitag kurz…</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Chat-Bereich -->
-        <div class="li-chat">
-          <div class="li-chat-header">
-            <div class="li-av" style="width:38px;height:38px;font-size:13px">SB</div>
-            <div>
-              <div class="li-chat-name">Stefan B.</div>
-              <div class="li-chat-sub">Head of Sales ·&nbsp;<span class="li-redact-blur"></span></div>
-            </div>
-          </div>
-
-          <div class="li-messages">
-            <time class="li-msg-date" datetime="2026-06-23T09:14">Heute, 09:14 Uhr</time>
-            <div class="li-msg-row">
-              <div class="li-av" style="width:28px;height:28px;font-size:10px;flex-shrink:0">SB</div>
-              <div>
-                <div class="li-bubble">
-                  Der CFO Deal Closer hat uns allein im letzten Quartal zwei Abschlüsse gerettet, die fast an der Rechtsabteilung von <span class="li-redact"></span> gescheitert wären. Bestes Tool auf dem Markt.
-                </div>
-                <div class="li-bubble-meta">
-                  09:14 &nbsp;<span class="li-seen">✓✓</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="li-input-row">
-            <div class="li-input-fake">Nachricht schreiben …</div>
-            <span style="color:#0a66c2;font-size:18px">&#10148;</span>
-          </div>
-        </div>
-
-      </div><!-- /.li-body -->
-    </div><!-- /.li-window -->
-
-    <!-- Attribution -->
-    <div class="li-footer">
-      <div class="li-footer-sender">
-        <div class="li-av">SB</div>
-        <div>
-          <div class="li-footer-name">Stefan B.</div>
-          <div class="li-footer-role">Head of Sales · DACH-Region</div>
-        </div>
-      </div>
-      <div class="li-footer-note">
-        Unaufgeforderte Direktnachricht<br>
-        Name &amp; Arbeitgeber anonymisiert
-      </div>
-    </div>
-
-  </div>
-</section>
 
 <!-- ── VAULT BUNDLE — Lifetime-Freeze Conversion-Block ───── -->
 <section class="vault-section" id="bundle-highlight">
@@ -1762,9 +1644,9 @@
         <span class="vault-tool-tag">Controlling Dashboard</span>
         <span class="vault-tool-tag">First Sales Playbook</span>
         <span class="vault-tool-tag">Investor Readiness Check</span>
-        <span class="vault-tool-tag">KI-Pipeline-Auditor</span>
-        <span class="vault-tool-tag">C-Level Einwand-Simulator</span>
         <span class="vault-tool-tag" style="color:var(--teal-l);border-color:rgba(0,168,132,.3)">CFO Deal Closer (49&nbsp;€ Einzelwert)</span>
+        <span class="vault-tool-tag" style="color:rgba(255,255,255,.35);border-color:rgba(255,255,255,.08);font-style:italic">+ KI-Prompt: KI-Pipeline-Auditor</span>
+        <span class="vault-tool-tag" style="color:rgba(255,255,255,.35);border-color:rgba(255,255,255,.08);font-style:italic">+ KI-Prompt: C-Level Einwand-Simulator</span>
       </div>
     </div>
 
