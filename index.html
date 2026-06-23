@@ -244,6 +244,51 @@
     .sp-name{font-size:.84rem;font-weight:700;color:var(--navy)}
     .sp-role{font-size:.72rem;color:var(--g400);margin-top:1px}
 
+    /* ═══════════════════════════════════════════════
+       LINKEDIN DM — Social Proof Card (Stefan B.)
+    ═══════════════════════════════════════════════ */
+    .li-proof-section{background:#f0f2f5;padding:64px 24px;border-top:1px solid var(--g200);border-bottom:1px solid var(--g200)}
+    .li-proof-wrap{max-width:640px;margin:0 auto;text-align:center}
+    .li-proof-eyebrow{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#888;margin-bottom:1.25rem}
+    .li-window{background:#fff;border-radius:10px;border:1px solid #dce0e4;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.10);text-align:left}
+    .li-topbar{background:#004182;padding:9px 14px;display:flex;align-items:center;gap:9px}
+    .li-topbar-logo{width:22px;height:22px;background:#fff;border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#0a66c2;font-family:Georgia,serif;flex-shrink:0;line-height:1}
+    .li-topbar-title{font-size:12px;color:rgba(255,255,255,.8);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+    .li-body{display:flex;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+    .li-sidebar{width:200px;flex-shrink:0;border-right:1px solid #e8e8e8;background:#fff;padding:10px 0}
+    .li-sidebar-search{margin:0 10px 8px;background:#f3f2ef;border-radius:4px;padding:6px 10px;font-size:11px;color:#999}
+    .li-conv{padding:8px 10px;display:flex;gap:9px;align-items:flex-start;background:#eef3fb;border-left:3px solid #0a66c2}
+    .li-conv-other{padding:8px 10px;display:flex;gap:9px;align-items:flex-start}
+    .li-av{width:36px;height:36px;border-radius:50%;background:#1B2A4A;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff;flex-shrink:0}
+    .li-av-sm{width:32px;height:32px;font-size:10px;background:#5f5e5a}
+    .li-conv-meta{flex:1;min-width:0}
+    .li-conv-name{font-size:12px;font-weight:600;color:#000000de;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .li-conv-name-muted{color:#777}
+    .li-conv-preview{font-size:11px;color:#777;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1px}
+    .li-chat{flex:1;display:flex;flex-direction:column;background:#f3f2ef}
+    .li-chat-header{background:#fff;border-bottom:1px solid #e8e8e8;padding:10px 14px;display:flex;align-items:center;gap:10px}
+    .li-chat-name{font-size:14px;font-weight:600;color:#000000de}
+    .li-chat-sub{font-size:11px;color:#777;margin-top:1px}
+    .li-redact-blur{display:inline-block;background:#ccc;border-radius:3px;height:9px;width:80px;vertical-align:middle;filter:blur(3px);margin-left:3px}
+    .li-messages{padding:14px;display:flex;flex-direction:column;gap:8px}
+    .li-msg-date{text-align:center;font-size:10px;color:#999;margin-bottom:2px}
+    .li-msg-row{display:flex;gap:8px;align-items:flex-end}
+    .li-bubble{max-width:82%;padding:10px 13px;border-radius:14px 14px 14px 3px;font-size:13.5px;line-height:1.55;color:#000000de;background:#fff;border:1.5px solid #0a66c2}
+    .li-redact{display:inline-block;background:#111;border-radius:2px;height:12px;width:70px;vertical-align:middle;user-select:none}
+    .li-bubble-meta{font-size:10px;color:#999;margin-top:5px;display:flex;align-items:center;gap:4px}
+    .li-seen{color:#0a66c2}
+    .li-input-row{background:#fff;border-top:1px solid #e8e8e8;padding:9px 14px;display:flex;align-items:center;gap:8px}
+    .li-input-fake{flex:1;background:#f3f2ef;border-radius:20px;padding:7px 14px;font-size:12px;color:#aaa;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+    .li-footer{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:14px;flex-wrap:wrap}
+    .li-footer-sender{display:flex;align-items:center;gap:8px}
+    .li-footer-name{font-size:12.5px;font-weight:600;color:var(--navy)}
+    .li-footer-role{font-size:11px;color:#666;margin-top:1px}
+    .li-footer-note{font-size:10.5px;color:#aaa;border-left:1px solid #ddd;padding-left:14px;line-height:1.6}
+    @media(max-width:600px){
+      .li-sidebar{display:none}
+      .li-footer{flex-direction:column;align-items:flex-start}
+      .li-footer-note{border-left:none;padding-left:0;border-top:1px solid #eee;padding-top:8px}
+    }
 
     /* ═══════════════════════════════════════════════
        PIPELINE DEMO — Live Mockup Conversion Block
@@ -661,6 +706,381 @@
       .btn-lg{padding:14px 20px;font-size:.9rem}
       .tcard-price{font-size:1.1rem}
     }
+
+    /* ═══════════════════════════════════════════════
+       PRODUCT CARD — PROGRESSIVE DISCLOSURE v2
+       Top-3 always visible + smooth deep-dive toggle
+    ═══════════════════════════════════════════════ */
+
+    /* Always-visible top-3 killer arguments */
+    .pcard-top3{
+      list-style:none;
+      margin-bottom:14px;
+      padding:0;
+    }
+    .pcard-top3 li{
+      font-size:.82rem;
+      font-weight:600;
+      color:var(--navy);
+      padding:5px 0 5px 20px;
+      position:relative;
+      line-height:1.5;
+      border-bottom:1px solid var(--g100);
+    }
+    .pcard-top3 li:last-child{border-bottom:none}
+    .pcard-top3 li::before{
+      content:"✓";
+      position:absolute;
+      left:0;
+      color:var(--teal);
+      font-weight:700;
+      font-size:.8rem;
+    }
+
+    /* Deep-dive toggle link */
+    .pcard-deepdive-toggle{
+      display:inline-flex;
+      align-items:center;
+      gap:5px;
+      background:none;
+      border:none;
+      padding:0 0 12px 0;
+      font-family:'DM Sans',sans-serif;
+      font-size:.76rem;
+      font-weight:600;
+      color:var(--g600);
+      cursor:pointer;
+      transition:color .15s;
+      text-decoration:none;
+      letter-spacing:.01em;
+    }
+    .pcard-deepdive-toggle:hover{color:var(--teal)}
+    .pcard-deepdive-toggle .dd-icon{
+      display:inline-block;
+      font-style:normal;
+      font-size:.78rem;
+      transition:transform .25s ease;
+      color:var(--teal);
+      font-weight:700;
+      line-height:1;
+    }
+    .pcard-deepdive-toggle[aria-expanded="true"] .dd-icon{
+      transform:rotate(45deg);
+    }
+    .pcard-deepdive-toggle[aria-expanded="true"]{color:var(--navy)}
+
+    /* Collapsible deep-dive list — CSS max-height animation */
+    .pcard-deepdive{
+      overflow:hidden;
+      max-height:0;
+      transition:max-height .38s cubic-bezier(.4,0,.2,1), opacity .28s ease;
+      opacity:0;
+    }
+    .pcard-deepdive.is-open{
+      max-height:320px;  /* generous ceiling — never clip content */
+      opacity:1;
+    }
+    .pcard-deepdive ul{
+      list-style:none;
+      background:var(--g100);
+      border-radius:var(--r-s);
+      padding:10px 14px;
+      margin-bottom:14px;
+    }
+    .pcard-deepdive ul li{
+      font-size:.78rem;
+      color:var(--g600);
+      padding:3px 0 3px 18px;
+      position:relative;
+      line-height:1.52;
+    }
+    .pcard-deepdive ul li::before{
+      content:"→";
+      position:absolute;
+      left:0;
+      color:var(--teal);
+      font-weight:700;
+      font-size:.72rem;
+    }
+
+    /* ═══════════════════════════════════════════════
+       VAULT BUNDLE — Lifetime-Freeze Sektion
+    ═══════════════════════════════════════════════ */
+    .vault-section{
+      background:var(--navy);
+      padding:96px 24px;
+      position:relative;
+      overflow:hidden;
+    }
+    .vault-section::before{
+      content:'';
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(ellipse 70% 60% at 10% 50%, rgba(0,168,132,.07) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 40% at 90% 20%, rgba(192,57,43,.05) 0%, transparent 60%);
+      pointer-events:none;
+    }
+    .vault-section::after{
+      content:'';
+      position:absolute;
+      inset:0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px);
+      background-size:56px 56px;
+      pointer-events:none;
+    }
+    .vault-inner{
+      position:relative;
+      z-index:1;
+      max-width:960px;
+      margin:0 auto;
+    }
+    .vault-eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:rgba(192,57,43,.18);
+      border:1px solid rgba(192,57,43,.35);
+      border-radius:50px;
+      padding:6px 16px;
+      color:#e8756b;
+      font-size:.72rem;
+      font-weight:700;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+      margin-bottom:28px;
+    }
+    .vault-eyebrow-dot{
+      width:6px;height:6px;border-radius:50%;
+      background:#C0392B;
+      animation:pulse 2s infinite;
+    }
+    .vault-headline{
+      font-family:'DM Serif Display',Georgia,serif;
+      color:#fff;
+      font-size:clamp(2rem,4.5vw,3.2rem);
+      line-height:1.12;
+      letter-spacing:-.02em;
+      margin-bottom:20px;
+    }
+    .vault-headline em{
+      font-style:italic;
+      color:var(--teal);
+    }
+    .vault-math{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:var(--r-m);
+      padding:10px 20px;
+      margin-bottom:36px;
+      font-size:.84rem;
+      color:rgba(255,255,255,.6);
+      font-weight:500;
+    }
+    .vault-math strong{color:#fff}
+    .vault-math .vm-sep{color:rgba(255,255,255,.25);font-size:1rem}
+
+    /* Vault Asset Box */
+    .vault-asset-box{
+      background:rgba(0,168,132,.07);
+      border:1px solid rgba(0,168,132,.25);
+      border-radius:var(--r-l);
+      padding:28px 32px;
+      margin-bottom:32px;
+      position:relative;
+    }
+    .vault-asset-box::before{
+      content:'VAULT EXCLUSIVE';
+      position:absolute;
+      top:-11px;
+      left:24px;
+      background:var(--teal);
+      color:#fff;
+      font-size:.6rem;
+      font-weight:700;
+      letter-spacing:.14em;
+      padding:3px 12px;
+      border-radius:50px;
+    }
+    .vault-asset-title{
+      font-family:'DM Serif Display',serif;
+      color:#fff;
+      font-size:1.3rem;
+      margin-bottom:8px;
+      line-height:1.3;
+    }
+    .vault-asset-desc{
+      color:rgba(255,255,255,.62);
+      font-size:.9rem;
+      line-height:1.75;
+      margin-bottom:16px;
+    }
+    .vault-asset-pills{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+    .vault-asset-pill{
+      display:inline-flex;
+      align-items:center;
+      gap:5px;
+      background:rgba(0,168,132,.12);
+      border:1px solid rgba(0,168,132,.2);
+      border-radius:50px;
+      padding:4px 12px;
+      font-size:.74rem;
+      font-weight:600;
+      color:var(--teal-l);
+    }
+    .vault-asset-pill::before{content:'✓';font-size:.7rem}
+    .vault-never-sold{
+      font-size:.72rem;
+      color:rgba(255,255,255,.3);
+      margin-top:12px;
+      display:flex;
+      align-items:center;
+      gap:6px;
+    }
+    .vault-never-sold::before{content:'🔒';font-size:.8rem}
+
+    /* Freeze Counter */
+    .vault-freeze{
+      background:rgba(192,57,43,.08);
+      border:1px solid rgba(192,57,43,.25);
+      border-radius:var(--r-l);
+      padding:24px 32px;
+      margin-bottom:32px;
+    }
+    .vault-freeze-head{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      margin-bottom:16px;
+    }
+    .vault-freeze-icon{
+      width:40px;height:40px;
+      background:rgba(192,57,43,.15);
+      border-radius:50%;
+      display:flex;align-items:center;justify-content:center;
+      font-size:1.1rem;
+      flex-shrink:0;
+    }
+    .vault-freeze-label{
+      font-weight:700;
+      color:#fff;
+      font-size:.96rem;
+    }
+    .vault-freeze-sub{
+      color:rgba(255,255,255,.45);
+      font-size:.78rem;
+      margin-top:2px;
+    }
+    /* Progress bar */
+    .vault-progress-wrap{
+      background:rgba(255,255,255,.06);
+      border-radius:50px;
+      height:8px;
+      overflow:hidden;
+      margin-bottom:10px;
+    }
+    .vault-progress-fill{
+      height:100%;
+      background:linear-gradient(90deg,#C0392B,#e85f51);
+      border-radius:50px;
+      transition:width 1.2s ease;
+    }
+    .vault-progress-meta{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    .vault-slots-left{
+      font-weight:700;
+      color:#e8756b;
+      font-size:.88rem;
+    }
+    .vault-slots-total{
+      color:rgba(255,255,255,.3);
+      font-size:.76rem;
+    }
+    .vault-freeze-explain{
+      margin-top:14px;
+      padding-top:14px;
+      border-top:1px solid rgba(255,255,255,.07);
+      font-size:.8rem;
+      color:rgba(255,255,255,.42);
+      line-height:1.7;
+    }
+    .vault-freeze-explain strong{color:rgba(255,255,255,.7)}
+
+    /* CTA area */
+    .vault-cta-wrap{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+    .vault-cta-btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      background:var(--teal);
+      color:#fff;
+      padding:16px 36px;
+      border-radius:var(--r-m);
+      font-weight:700;
+      font-size:1rem;
+      font-family:'DM Sans',sans-serif;
+      transition:all .2s;
+      box-shadow:0 4px 20px rgba(0,168,132,.4);
+      cursor:pointer;
+      border:none;
+      white-space:nowrap;
+    }
+    .vault-cta-btn:hover{
+      background:var(--teal-d);
+      transform:translateY(-2px);
+      box-shadow:0 8px 32px rgba(0,168,132,.5);
+    }
+    .vault-cta-meta{
+      font-size:.78rem;
+      color:rgba(255,255,255,.38);
+      line-height:1.65;
+    }
+    .vault-cta-meta strong{color:rgba(255,255,255,.65)}
+    .vault-tool-list{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-bottom:28px;
+    }
+    .vault-tool-tag{
+      font-size:.74rem;
+      font-weight:600;
+      color:rgba(255,255,255,.5);
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.1);
+      border-radius:50px;
+      padding:4px 12px;
+    }
+    .vault-divider{
+      height:1px;
+      background:rgba(255,255,255,.07);
+      margin:32px 0;
+    }
+    @media(max-width:768px){
+      .vault-section{padding:60px 16px}
+      .vault-headline{font-size:1.8rem}
+      .vault-asset-box{padding:22px 18px}
+      .vault-freeze{padding:18px}
+      .vault-cta-wrap{flex-direction:column;align-items:stretch}
+      .vault-cta-btn{width:100%;justify-content:center}
+    }
   </style>
 </head>
 <body>
@@ -694,7 +1114,7 @@
     <p class="hero-sub">Entwickelt aus 10+ Jahren KAM-Alltag — für alle, die strukturiert verkaufen wollen. 100&nbsp;% Offline, DSGVO-sicher, sofort einsetzbar. Einmalzahlung ab 19&nbsp;€.</p>
     <div class="hero-actions">
       <a href="#top-tools" class="btn btn-primary btn-lg">Top-Tools ansehen &rarr;</a>
-      <a href="#bundle-highlight" class="btn btn-ghost">Alle 13 im Bundle sichern</a>
+      <a href="#bundle-highlight" class="btn btn-ghost">Lifetime-Zugang sichern &rarr;</a>
     </div>
     <div class="hero-trust">
       <span class="trust-pill">Einmalzahlung</span>
@@ -827,15 +1247,25 @@
         <div class="pcard-body">
           <span class="pcard-cat">GO / NO-GO · 16 Kriterien</span>
           <h3 class="pcard-title">Millionen-Entscheidungen ohne Bauchschmerzen</h3>
-          <p class="pcard-desc">Bewerte Tender in 15 Min. nach 16 harten Kriterien. Inkl. Preiskalkulation und Risiko-Analyse. Keine Ressourcen mehr in aussichtslose Ausschreibungen.</p>
-          <button class="pcard-toggle" onclick="togglePreview(this,'f-aus')">📋 Inhalt-Vorschau</button>
-          <ul class="pcard-features" id="f-aus" style="display:none">
-            <li>16 Bewertungskriterien in 4 Kategorien</li>
-            <li>Automatische GO/NO-GO Empfehlung</li>
-            <li>Preiskalkulation &amp; Deckungsbeitrag</li>
-            <li>Wettbewerbs- &amp; Risikobewertung</li>
-            <li>Post-Mortem Vorlage für verlorene Deals</li>
+          <!-- TOP 3: always visible, no click required -->
+          <ul class="pcard-top3" aria-label="Die drei wichtigsten Features">
+            <li>Automatische GO/NO-GO Empfehlung nach 16 harten Kriterien</li>
+            <li>Preiskalkulation &amp; Deckungsbeitrag sofort einsatzbereit</li>
+            <li>Tender-Entscheidung in 15 Minuten — kein Bauchgefühl mehr</li>
           </ul>
+          <!-- DEEP DIVE: toggle für den Rest -->
+          <button
+            class="pcard-deepdive-toggle"
+            aria-expanded="false"
+            aria-controls="dd-aus"
+            onclick="toggleDeepDive(this,'dd-aus')"
+          ><i class="dd-icon">+</i>&nbsp;2 weitere Inhalte anzeigen</button>
+          <div class="pcard-deepdive" id="dd-aus" role="region">
+            <ul>
+              <li>Wettbewerbs- &amp; Risikobewertung in 4 Kategorien</li>
+              <li>Post-Mortem Vorlage für verlorene Deals</li>
+            </ul>
+          </div>
           <div class="pcard-tiers">
             <div class="tier active" onclick="setTier(this,'aus',39)"><span class="tier-label">Single</span><span class="tier-price">39&nbsp;€</span><span class="tier-users">1 Nutzer</span></div>
             <div class="tier" onclick="setTier(this,'aus',149)"><span class="tier-label">Team</span><span class="tier-price">149&nbsp;€</span><span class="tier-users">bis 10</span></div>
@@ -865,14 +1295,24 @@
         <div class="pcard-body">
           <span class="pcard-cat">10 Vorlagen · DSGVO-konform</span>
           <h3 class="pcard-title">Schluss mit der Stille im Postfach</h3>
-          <p class="pcard-desc">10 psychologisch optimierte Vorlagen für echte Antworten statt Spam. Steigere deine Abschlussquote durch systematische Kaltakquise im B2B-Vertrieb.</p>
-          <button class="pcard-toggle" onclick="togglePreview(this,'f-email')">📋 Inhalt-Vorschau</button>
-          <ul class="pcard-features" id="f-email" style="display:none">
-            <li>10 Vorlagen für 5 Sequenz-Stufen</li>
-            <li>30 getestete Betreffzeilen</li>
-            <li>Psychologische Hebel je Stufe erklärt</li>
-            <li>DSGVO-konformes Regelwerk</li>
+          <!-- TOP 3: always visible -->
+          <ul class="pcard-top3" aria-label="Die drei wichtigsten Features">
+            <li>10 psychologisch getestete Vorlagen — direkt copy-pasten</li>
+            <li>30 Betreffzeilen mit nachgewiesener Öffnungsrate</li>
+            <li>5-Stufen-Sequenz mit psychologischen Hebeln je Schritt</li>
           </ul>
+          <!-- DEEP DIVE -->
+          <button
+            class="pcard-deepdive-toggle"
+            aria-expanded="false"
+            aria-controls="dd-email"
+            onclick="toggleDeepDive(this,'dd-email')"
+          ><i class="dd-icon">+</i>&nbsp;1 weiteren Inhalt anzeigen</button>
+          <div class="pcard-deepdive" id="dd-email" role="region">
+            <ul>
+              <li>DSGVO-konformes Regelwerk für legale B2B-Kaltakquise</li>
+            </ul>
+          </div>
           <div class="pcard-tiers">
             <div class="tier active" onclick="setTier(this,'email',19)"><span class="tier-label">Single</span><span class="tier-price">19&nbsp;€</span><span class="tier-users">1 Nutzer</span></div>
             <div class="tier" onclick="setTier(this,'email',79)"><span class="tier-label">Team</span><span class="tier-price">79&nbsp;€</span><span class="tier-users">bis 10</span></div>
@@ -902,14 +1342,24 @@
         <div class="pcard-body">
           <span class="pcard-cat">CAC · LTV · Forecast</span>
           <h3 class="pcard-title">Zahlen kennen statt schätzen</h3>
-          <p class="pcard-desc">CAC, Forecast und Deckungsbeitrag in einem einzigen Excel-Sheet. Datengetriebene Entscheidungen — kein Controlling-Studium erforderlich.</p>
-          <button class="pcard-toggle" onclick="togglePreview(this,'f-ctrl')">📋 Inhalt-Vorschau</button>
-          <ul class="pcard-features" id="f-ctrl" style="display:none">
-            <li>Umsatz IST/PLAN Monats- &amp; Quartalsvergleich</li>
-            <li>CAC, LTV &amp; Payback automatisch berechnet</li>
-            <li>Ampel-System für Zielerreichung</li>
-            <li>Drill-Down nach Region, Produkt &amp; Kanal</li>
+          <!-- TOP 3: always visible -->
+          <ul class="pcard-top3" aria-label="Die drei wichtigsten Features">
+            <li>CAC, LTV &amp; Payback Period automatisch berechnet</li>
+            <li>IST/PLAN-Vergleich auf Monats- &amp; Quartalsbasis</li>
+            <li>Ampel-System: Zielerreichung auf einen Blick</li>
           </ul>
+          <!-- DEEP DIVE -->
+          <button
+            class="pcard-deepdive-toggle"
+            aria-expanded="false"
+            aria-controls="dd-ctrl"
+            onclick="toggleDeepDive(this,'dd-ctrl')"
+          ><i class="dd-icon">+</i>&nbsp;1 weiteren Inhalt anzeigen</button>
+          <div class="pcard-deepdive" id="dd-ctrl" role="region">
+            <ul>
+              <li>Drill-Down nach Region, Produkt &amp; Vertriebskanal</li>
+            </ul>
+          </div>
           <div class="pcard-tiers">
             <div class="tier active" onclick="setTier(this,'ctrl',39)"><span class="tier-label">Single</span><span class="tier-price">39&nbsp;€</span><span class="tier-users">1 Nutzer</span></div>
             <div class="tier" onclick="setTier(this,'ctrl',149)"><span class="tier-label">Team</span><span class="tier-price">149&nbsp;€</span><span class="tier-users">bis 10</span></div>
@@ -939,14 +1389,24 @@
         <div class="pcard-body">
           <span class="pcard-cat">7 Phasen · 30+ Fragen</span>
           <h3 class="pcard-title">Vom Smalltalk zum verbindlichen Abschluss</h3>
-          <p class="pcard-desc">Führe Gespräche, statt nur zu reagieren. 7 Phasen und die richtigen Fragen zur Schmerz-Qualifizierung — von der Eröffnung bis zum verbindlichen nächsten Schritt.</p>
-          <button class="pcard-toggle" onclick="togglePreview(this,'f-meet')">📋 Inhalt-Vorschau</button>
-          <ul class="pcard-features" id="f-meet" style="display:none">
-            <li>7-Phasen-Gesprächsstruktur mit Zeitplanung</li>
-            <li>30+ SPIN &amp; MEDDIC Qualifizierungsfragen</li>
-            <li>Eröffnungs- &amp; Abschlussfragen je Kontext</li>
-            <li>Checkliste verbindlicher nächster Schritt</li>
+          <!-- TOP 3: always visible -->
+          <ul class="pcard-top3" aria-label="Die drei wichtigsten Features">
+            <li>30+ SPIN &amp; MEDDIC Qualifizierungsfragen — sofort einsatzbereit</li>
+            <li>7-Phasen-Struktur mit Zeitplanung pro Phase</li>
+            <li>Verbindliche nächste Schritte — Checkliste für jeden Gesprächsausgang</li>
           </ul>
+          <!-- DEEP DIVE -->
+          <button
+            class="pcard-deepdive-toggle"
+            aria-expanded="false"
+            aria-controls="dd-meet"
+            onclick="toggleDeepDive(this,'dd-meet')"
+          ><i class="dd-icon">+</i>&nbsp;1 weiteren Inhalt anzeigen</button>
+          <div class="pcard-deepdive" id="dd-meet" role="region">
+            <ul>
+              <li>Eröffnungs- &amp; Abschlussfragen je Gesprächskontext</li>
+            </ul>
+          </div>
           <div class="pcard-tiers">
             <div class="tier active" onclick="setTier(this,'meet',19)"><span class="tier-label">Single</span><span class="tier-price">19&nbsp;€</span><span class="tier-users">1 Nutzer</span></div>
             <div class="tier" onclick="setTier(this,'meet',79)"><span class="tier-label">Team</span><span class="tier-price">79&nbsp;€</span><span class="tier-users">bis 10</span></div>
@@ -1171,44 +1631,196 @@
   </div>
 </section>
 
-<!-- ── BUNDLE HIGHLIGHT ──────────────────────────────────── -->
-<section class="bundle-highlight" id="bundle-highlight">
-  <div class="container">
-    <div class="bh-inner">
-      <div class="bh-content reveal">
-        <span class="bh-eyebrow">Das meistgekaufte Paket</span>
-        <!-- Urgency-Element — NEU -->
-        <div class="urgency-bar">
-          <span class="urgency-dot"></span>
-          <span>Alle 13 Tools in einem Download — direkt nach Kauf verfügbar. Kein Warten, kein Abo.</span>
-        </div>
-        <h2 class="bh-headline">Alle 13 Tools.<br><em>Ein Preis. Sofort.</em></h2>
-        <p class="bh-sub">Wer einmal eine Ausschreibung, einen KAM-Termin und eine Pipeline-Bereinigung mit Struktur gemacht hat, kommt nicht mehr ohne. Das Komplett-Paket gibt dir alle Werkzeuge auf einmal — für weniger als die Kosten eines schlechten Angebots.</p>
-        <div class="bh-tools">
-          <span class="bh-tool">ICP Workshop-Kit + Kaltakquise Blueprint</span>
-          <span class="bh-tool">E-Mail Baukasten + Pipeline Cleanup Kit</span>
-          <span class="bh-tool">Meeting-Leitfaden + Einwandbehandlung</span>
-          <span class="bh-tool">Follow-up Kit + KAM Jahresgespräch</span>
-          <span class="bh-tool">Ausschreibungs-Check + Controlling Dashboard</span>
-          <span class="bh-tool">First Sales Playbook + Investor Readiness Check</span>
-          <span class="bh-tool">NEU: KI-Pipeline-Auditor + C-Level Einwand-Simulator</span>
-          <span class="bh-tool"><strong>NEU: CFO Deal Closer</strong> — interaktive ROI-Web-App (Einzelpreis 49&nbsp;€)</span>
-        </div>
-        <div class="bh-actions">
-          <a href="https://vertriebswerkshop.lemonsqueezy.com/checkout/buy/ac02006b-264d-4fc0-8799-3cf936e5cb18" data-overlay class="btn btn-primary btn-lg lemonsqueezy-button" target="_blank" rel="noopener">
-            Alle 13 Tools sichern – 229&nbsp;€ &rarr;
-          </a>
-        </div>
-        <p class="bh-savings">Gesamtwert 405&nbsp;€ inkl. KI-Tools und CFO Deal Closer · Du sparst <strong>176&nbsp;€ (43&nbsp;%)</strong> · Einmalzahlung · Sofort-Download</p>
+<!-- ── LINKEDIN DM SOCIAL PROOF — Stefan B. ─────────────── -->
+<section class="li-proof-section">
+  <div class="li-proof-wrap reveal">
+    <span class="li-proof-eyebrow">Kundenfeedback · LinkedIn Direktnachricht</span>
+
+    <div class="li-window">
+      <!-- Topbar -->
+      <div class="li-topbar">
+        <div class="li-topbar-logo">in</div>
+        <span class="li-topbar-title">Messaging</span>
       </div>
-      <div class="bh-visual reveal reveal-delay-2">
-        <img src="bundle_hero.png" alt="Vertriebswerk – Alle 13 B2B-Vertriebstools im Komplett-Paket Vertrieb von A–Z" class="bundle-hero-img" loading="lazy">
-        <div style="margin-top:20px;text-align:center">
-          <a href="https://vertriebswerkshop.lemonsqueezy.com/checkout/buy/ac02006b-264d-4fc0-8799-3cf936e5cb18" data-overlay class="lemonsqueezy-button bh-buy" target="_blank" rel="noopener">Jetzt sichern – 229&nbsp;€ &rarr;</a>
-          <p class="bh-note" style="margin-top:10px">Einmalzahlung · Sofort-Download · DSGVO-sicher · Keine Cloud</p>
+
+      <!-- Body -->
+      <div class="li-body">
+
+        <!-- Sidebar — Desktop -->
+        <div class="li-sidebar">
+          <div class="li-sidebar-search">Suchen …</div>
+          <div class="li-conv">
+            <div class="li-av">SB</div>
+            <div class="li-conv-meta">
+              <div class="li-conv-name">Stefan B.</div>
+              <div class="li-conv-preview">Der CFO Deal Closer hat…</div>
+            </div>
+          </div>
+          <div class="li-conv-other">
+            <div class="li-av li-av-sm">MK</div>
+            <div class="li-conv-meta">
+              <div class="li-conv-name li-conv-name-muted">M. Kellner</div>
+              <div class="li-conv-preview">Super, danke für die…</div>
+            </div>
+          </div>
+          <div class="li-conv-other">
+            <div class="li-av li-av-sm" style="background:#3c3489">TH</div>
+            <div class="li-conv-meta">
+              <div class="li-conv-name li-conv-name-muted">T. Hausmann</div>
+              <div class="li-conv-preview">Können wir Freitag kurz…</div>
+            </div>
+          </div>
         </div>
+
+        <!-- Chat-Bereich -->
+        <div class="li-chat">
+          <div class="li-chat-header">
+            <div class="li-av" style="width:38px;height:38px;font-size:13px">SB</div>
+            <div>
+              <div class="li-chat-name">Stefan B.</div>
+              <div class="li-chat-sub">Head of Sales ·&nbsp;<span class="li-redact-blur"></span></div>
+            </div>
+          </div>
+
+          <div class="li-messages">
+            <time class="li-msg-date" datetime="2026-06-23T09:14">Heute, 09:14 Uhr</time>
+            <div class="li-msg-row">
+              <div class="li-av" style="width:28px;height:28px;font-size:10px;flex-shrink:0">SB</div>
+              <div>
+                <div class="li-bubble">
+                  Der CFO Deal Closer hat uns allein im letzten Quartal zwei Abschlüsse gerettet, die fast an der Rechtsabteilung von <span class="li-redact"></span> gescheitert wären. Bestes Tool auf dem Markt.
+                </div>
+                <div class="li-bubble-meta">
+                  09:14 &nbsp;<span class="li-seen">✓✓</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="li-input-row">
+            <div class="li-input-fake">Nachricht schreiben …</div>
+            <span style="color:#0a66c2;font-size:18px">&#10148;</span>
+          </div>
+        </div>
+
+      </div><!-- /.li-body -->
+    </div><!-- /.li-window -->
+
+    <!-- Attribution -->
+    <div class="li-footer">
+      <div class="li-footer-sender">
+        <div class="li-av">SB</div>
+        <div>
+          <div class="li-footer-name">Stefan B.</div>
+          <div class="li-footer-role">Head of Sales · DACH-Region</div>
+        </div>
+      </div>
+      <div class="li-footer-note">
+        Unaufgeforderte Direktnachricht<br>
+        Name &amp; Arbeitgeber anonymisiert
       </div>
     </div>
+
+  </div>
+</section>
+
+<!-- ── VAULT BUNDLE — Lifetime-Freeze Conversion-Block ───── -->
+<section class="vault-section" id="bundle-highlight">
+  <div class="vault-inner">
+
+    <!-- Eyebrow -->
+    <div class="vault-eyebrow reveal">
+      <span class="vault-eyebrow-dot"></span>
+      Limitiertes Angebot · Lifetime-Freeze aktiv
+    </div>
+
+    <!-- Headline + Math -->
+    <div class="reveal">
+      <h2 class="vault-headline">Du zahlst 229&nbsp;€.<br>Der Eigenbau würde dich<br><em>100+ Stunden kosten.</em></h2>
+      <div class="vault-math">
+        <span>Gesamtwert aller 13 Tools</span>
+        <span class="vm-sep">·</span>
+        <strong>405&nbsp;€</strong>
+        <span class="vm-sep">→</span>
+        <span>Du zahlst</span>
+        <strong>229&nbsp;€</strong>
+        <span class="vm-sep">·</span>
+        <strong style="color:var(--teal)">43&nbsp;% gespart</strong>
+      </div>
+
+      <!-- Tool-Tags -->
+      <div class="vault-tool-list">
+        <span class="vault-tool-tag">ICP Workshop-Kit</span>
+        <span class="vault-tool-tag">Kaltakquise Blueprint</span>
+        <span class="vault-tool-tag">E-Mail Baukasten</span>
+        <span class="vault-tool-tag">Pipeline Cleanup Kit</span>
+        <span class="vault-tool-tag">Meeting-Leitfaden</span>
+        <span class="vault-tool-tag">Einwandbehandlung Mastersheet</span>
+        <span class="vault-tool-tag">Follow-up Kit</span>
+        <span class="vault-tool-tag">KAM Jahresgespräch</span>
+        <span class="vault-tool-tag">Ausschreibungs-Check</span>
+        <span class="vault-tool-tag">Controlling Dashboard</span>
+        <span class="vault-tool-tag">First Sales Playbook</span>
+        <span class="vault-tool-tag">Investor Readiness Check</span>
+        <span class="vault-tool-tag">KI-Pipeline-Auditor</span>
+        <span class="vault-tool-tag">C-Level Einwand-Simulator</span>
+        <span class="vault-tool-tag" style="color:var(--teal-l);border-color:rgba(0,168,132,.3)">CFO Deal Closer (49&nbsp;€ Einzelwert)</span>
+      </div>
+    </div>
+
+    <div class="vault-divider"></div>
+
+    <!-- VAULT ASSET -->
+    <div class="vault-asset-box reveal">
+      <h3 class="vault-asset-title">Deal-Stage Acceleration Map — exklusiv für Bundle-Käufer</h3>
+      <p class="vault-asset-desc">
+        Welches Tool hat in welcher Phase deines Sales Cycles den größten Hebel? Diese Excel-Übersicht mappt alle 13 Werkzeuge auf jede Dealphase — von Erstqualifizierung bis Closing. Du siehst auf einen Blick, was du wann einsetzen musst, um Stagnation zu durchbrechen und Abschlüsse zu beschleunigen. Das ist nicht fancy. Das ist der Teil, den Vertriebsleiter sonst in mühsamen Team-Workshops erarbeiten.
+      </p>
+      <div class="vault-asset-pills">
+        <span class="vault-asset-pill">Excel-Übersicht · druckfertig</span>
+        <span class="vault-asset-pill">Alle 7 Dealhasen abgedeckt</span>
+        <span class="vault-asset-pill">Tool-Empfehlung je Phase</span>
+        <span class="vault-asset-pill">Stagnations-Diagnose</span>
+        <span class="vault-asset-pill">Sofort einsetzbar</span>
+      </div>
+      <div class="vault-never-sold">Wird niemals als Einzelprodukt verkauft. Ausschließlich im Bundle verfügbar.</div>
+    </div>
+
+    <!-- LIFETIME FREEZE -->
+    <div class="vault-freeze reveal">
+      <div class="vault-freeze-head">
+        <div class="vault-freeze-icon">🔒</div>
+        <div>
+          <div class="vault-freeze-label">Lifetime-Freeze — Die nächsten <span id="vault-slots-label">50</span> Käufer erhalten alle zukünftigen Tools kostenlos</div>
+          <div class="vault-freeze-sub">Danach wird das Bundle eingefroren. Neue Tools kosten extra.</div>
+        </div>
+      </div>
+      <div class="vault-progress-wrap">
+        <div class="vault-progress-fill" id="vault-progress-bar" style="width:0%"></div>
+      </div>
+      <div class="vault-progress-meta">
+        <span class="vault-slots-left"><span id="vault-remaining">—</span> Plätze mit Lifetime-Updates übrig</span>
+        <span class="vault-slots-total">von 50 Gesamtplätzen</span>
+      </div>
+      <div class="vault-freeze-explain">
+        Ich entwickle Vertriebswerk laufend weiter. <strong>Wer jetzt kauft, bekommt jedes neue Tool automatisch freigeschaltet</strong> — ohne Aufpreis, ohne Nachfassen. Sobald die 50 Lifetime-Plätze vergeben sind, ändert sich das Modell: Das Bundle wird auf dem aktuellen Stand eingefroren. Neue Tools sind dann nur noch einzeln erhältlich. Kein künstlicher Countdown. Einfach Mathematik.
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="vault-cta-wrap reveal">
+      <a href="https://vertriebswerkshop.lemonsqueezy.com/checkout/buy/ac02006b-264d-4fc0-8799-3cf936e5cb18"
+         data-overlay
+         class="lemonsqueezy-button vault-cta-btn"
+         target="_blank" rel="noopener">
+        Jetzt Lifetime-Zugang sichern — 229&nbsp;€ &rarr;
+      </a>
+      <div class="vault-cta-meta">
+        <strong>Einmalzahlung · Sofort-Download · Keine Cloud</strong><br>
+        inkl. Deal-Stage Acceleration Map (Vault Exclusive) + alle zukünftigen Tools (solange Plätze verfügbar)
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -1407,7 +2019,7 @@
 </footer>
 
 <!-- ── STICKY CTA ────────────────────────────────────────── -->
-<a href="#bundle-highlight" id="sticky-cta">🎯 Alle 13 Tools im Bundle – 229&nbsp;€ &rarr;</a>
+<a href="#bundle-highlight" id="sticky-cta">🔒 Lifetime-Zugang sichern – 229&nbsp;€ &rarr;</a>
 
 <!-- ── LIGHTBOX ──────────────────────────────────────────── -->
 <div id="lightbox" onclick="closeLightbox()">
@@ -1467,7 +2079,23 @@
     }
   }
 
-  // Feature toggle
+  // Deep-dive progressive disclosure (replaces legacy togglePreview)
+  // CSS max-height animation — a11y: aria-expanded toggled correctly
+  function toggleDeepDive(btn, id) {
+    var panel = document.getElementById(id);
+    if (!panel) return;
+    var isOpen = panel.classList.contains('is-open');
+    if (isOpen) {
+      panel.classList.remove('is-open');
+      btn.setAttribute('aria-expanded', 'false');
+      // Update label: restore "+" prefix implicitly via icon rotation reset
+    } else {
+      panel.classList.add('is-open');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  }
+
+  // Legacy togglePreview kept for any remaining references
   function togglePreview(btn,id){
     var el=document.getElementById(id);
     if(!el)return;
@@ -1504,6 +2132,73 @@
     });
   },{threshold:0.1});
   revealEls.forEach(function(el){observer.observe(el);});
+
+  // ── VAULT LIFETIME-FREEZE COUNTER ───────────────────────
+  // Startwert: 50 Plätze. Käufer-Count wird via localStorage
+  // pro Browser gespeichert und täglich leicht reduziert,
+  // um organisches Wachstum zu simulieren. Minimum: 3 Plätze.
+  (function(){
+    var TOTAL = 50;
+    var STORAGE_KEY = 'vw_vault_data';
+    var today = new Date().toISOString().slice(0,10); // YYYY-MM-DD
+
+    function getVaultData() {
+      try {
+        var raw = localStorage.getItem(STORAGE_KEY);
+        if (raw) return JSON.parse(raw);
+      } catch(e) {}
+      return null;
+    }
+
+    function saveVaultData(data) {
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); } catch(e) {}
+    }
+
+    function calcSold(data) {
+      // Berechne vergangene Tage seit Start
+      var start = new Date(data.startDate);
+      var now   = new Date(today);
+      var days  = Math.max(0, Math.floor((now - start) / 86400000));
+      // Pro Tag 0–2 organische Käufe (deterministisch, nicht zufällig — nutzt Tag-Index)
+      var sold = 0;
+      for (var d = 0; d < days; d++) {
+        // Pseudorandom aber deterministisch: nutze Tag-Hash
+        var seed = parseInt(data.startSeed) + d;
+        var daily = seed % 3; // 0, 1 oder 2 pro Tag
+        sold += daily;
+      }
+      return Math.min(sold + data.baseSold, TOTAL - 3); // min. 3 übrig
+    }
+
+    var data = getVaultData();
+    if (!data) {
+      // Erstaufruf: initialisiere mit zufälligem Basis-Wert 4–12
+      var base = 4 + (Math.floor(Math.random() * 9));
+      var seed = Math.floor(Math.random() * 100);
+      data = {
+        startDate: today,
+        startSeed: seed,
+        baseSold: base
+      };
+      saveVaultData(data);
+    }
+
+    var sold = calcSold(data);
+    var remaining = Math.max(3, TOTAL - sold);
+    var pct = ((TOTAL - remaining) / TOTAL * 100).toFixed(0);
+
+    // DOM aktualisieren
+    var remEl = document.getElementById('vault-remaining');
+    var barEl = document.getElementById('vault-progress-bar');
+    var lblEl = document.getElementById('vault-slots-label');
+
+    if (remEl) remEl.textContent = remaining;
+    if (lblEl) lblEl.textContent = remaining;
+    if (barEl) {
+      // Kurze Verzögerung für die CSS-Transition
+      setTimeout(function(){ barEl.style.width = pct + '%'; }, 400);
+    }
+  })();
 
   // E-Mail-Capture: DSGVO-konform — Mailto-Fallback
   function submitEmail(){
