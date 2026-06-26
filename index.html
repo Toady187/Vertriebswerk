@@ -1120,6 +1120,34 @@
       .vault-cta-btn{width:100%;justify-content:center}
     }
   </style>
+
+<!-- Brevo Embedded Form — Stylesheet -->
+<link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
+<style>
+  /* Brevo form — CI-Overrides für Vertriebswerk */
+  .sib-form { background-color: transparent !important; padding: 0 !important; text-align: left !important; }
+  #sib-form-container { max-width: 100% !important; }
+  #sib-container { background-color: rgba(255,255,255,0.08) !important; border: 1px solid rgba(255,255,255,0.18) !important; border-radius: 12px !important; max-width: 100% !important; direction: ltr; }
+  .sib-form-block { padding: 4px 0 !important; }
+  /* Headline "Newsletter" ausblenden — eigene Überschrift vorhanden */
+  .sib-form-block:first-child p,
+  .sib-form-block p[style*="32px"] { display: none !important; }
+  /* Subtext-Block ausblenden */
+  .sib-form-block p[style*="Melde dich"] { display: none !important; }
+  .entry__label { font-family: 'DM Sans', sans-serif !important; font-size: 0.8rem !important; font-weight: 600 !important; color: rgba(255,255,255,0.8) !important; }
+  .entry__specification { display: none !important; }
+  #sib-container input.input { background: rgba(255,255,255,0.12) !important; border: 1px solid rgba(255,255,255,0.25) !important; border-radius: 6px !important; color: #fff !important; font-family: 'DM Sans', sans-serif !important; font-size: 0.88rem !important; padding: 10px 14px !important; width: 100% !important; box-sizing: border-box !important; }
+  #sib-container input.input::placeholder,
+  #sib-container input:-ms-input-placeholder { color: rgba(255,255,255,0.4) !important; }
+  #sib-container input.input:focus { border-color: #00a884 !important; outline: none !important; }
+  .sib-form-block__button { background: #00a884 !important; font-family: 'DM Sans', sans-serif !important; font-size: 0.88rem !important; font-weight: 700 !important; border-radius: 6px !important; padding: 10px 20px !important; width: 100% !important; margin-top: 8px !important; cursor: pointer !important; border: none !important; color: #fff !important; }
+  .sib-form-block__button:hover { background: #008f6f !important; }
+  .sib-form-message-panel { border-radius: 6px !important; max-width: 100% !important; margin-bottom: 8px !important; }
+  #error-message { background-color: rgba(255,77,77,0.15) !important; border-color: rgba(255,77,77,0.4) !important; }
+  #error-message .sib-form-message-panel__inner-text { color: #ffaaaa !important; }
+  #success-message { background-color: rgba(0,168,132,0.15) !important; border-color: rgba(0,168,132,0.35) !important; }
+  #success-message .sib-form-message-panel__inner-text { color: #00d4a8 !important; }
+</style>
 </head>
 <body>
 
@@ -1308,7 +1336,7 @@
 
       <!-- Ausschreibungs-Check -->
       <div class="pcard reveal">
-        <div class="pcard-preview" onclick="openLightbox('ausschreibung.png','Ausschreibungs-Check – Vertriebswerk')">
+        <div class="pcard-preview" onclick="openLightbox('ausschreibung.png','Ausschreibungs-Check – Vertriebswerk','https://vertriebswerkshop.lemonsqueezy.com/checkout/buy/b80c491b-0aa6-42b9-b40d-44959ab2b09c')">
           <img src="ausschreibung.png" alt="Excel-Vorlage Ausschreibungs-Check – GO/NO-GO Entscheidung, Kalkulation und Angebotsvorbereitung für B2B-Vertriebler" loading="lazy">
           <div class="pcard-preview-overlay">🔍 Vorschau vergrößern</div>
         </div>
@@ -1355,7 +1383,7 @@
 
       <!-- E-Mail Baukasten -->
       <div class="pcard reveal reveal-delay-1">
-        <div class="pcard-preview" onclick="openLightbox('email_baukasten.png','E-Mail Baukasten Kaltakquise – Vertriebswerk')">
+        <div class="pcard-preview" onclick="openLightbox('email_baukasten.png','E-Mail Baukasten Kaltakquise – Vertriebswerk','https://vertriebswerkshop.lemonsqueezy.com/checkout/buy/fb8628b1-3983-43da-a9dc-4fde1883a01f')">
           <img src="email_baukasten.png" alt="Word-Vorlage E-Mail Baukasten Kaltakquise – 10 B2B-E-Mail-Vorlagen mit Betreffzeilen und Sequenz-Framework" loading="lazy">
           <div class="pcard-preview-overlay">🔍 Vorschau vergrößern</div>
         </div>
@@ -1401,7 +1429,7 @@
 
       <!-- Controlling Dashboard -->
       <div class="pcard reveal">
-        <div class="pcard-preview" onclick="openLightbox('controlling.png','Vertriebscontrolling Dashboard – Vertriebswerk')">
+        <div class="pcard-preview" onclick="openLightbox('controlling.png','Vertriebscontrolling Dashboard – Vertriebswerk','https://vertriebswerkshop.lemonsqueezy.com/checkout/buy/4c3dabc3-3d51-4900-86af-229c279e1f7a')">
           <img src="controlling.png" alt="Excel-Dashboard Vertriebscontrolling – IST/PLAN-Vergleich, CAC, LTV und Forecast für B2B-Vertriebsteams" loading="lazy">
           <div class="pcard-preview-overlay">🔍 Vorschau vergrößern</div>
         </div>
@@ -1447,7 +1475,7 @@
 
       <!-- Meeting-Leitfaden -->
       <div class="pcard reveal reveal-delay-1">
-        <div class="pcard-preview" onclick="openLightbox('meeting.png','Meeting-Leitfaden Erstgespräch – Vertriebswerk')">
+        <div class="pcard-preview" onclick="openLightbox('meeting.png','Meeting-Leitfaden Erstgespräch – Vertriebswerk','https://vertriebswerkshop.lemonsqueezy.com/checkout/buy/be4490e9-c05b-4d04-b5d7-ff1fb4ded9b3')">
           <img src="meeting.png" alt="Word-Vorlage Meeting-Leitfaden Erstgespräch – 7-Phasen-Struktur mit SPIN- und MEDDIC-Qualifizierungsfragen für B2B" loading="lazy">
           <div class="pcard-preview-overlay">🔍 Vorschau vergrößern</div>
         </div>
@@ -1662,7 +1690,7 @@
       <p class="section-sub" style="margin:0 auto">ROI live im Kundengespräch berechnen — White-Label, 100&nbsp;% offline, läuft auf jedem gesperrten Konzern-Laptop.</p>
     </div>
     <div class="pcard reveal" style="max-width:740px;margin:0 auto;border:2px solid var(--navy)">
-      <div class="pcard-preview" onclick="openLightbox('roi-rechner-preview.png','CFO Deal Closer – Interaktiver ROI-Rechner für Key Account Manager')">
+      <div class="pcard-preview" onclick="openLightbox('roi-rechner-preview.png','CFO Deal Closer – Interaktiver ROI-Rechner für Key Account Manager','https://vertriebswerkshop.lemonsqueezy.com/checkout/buy/7352d650-646d-4c8c-b4ae-82685ff36a20')">
         <img src="roi-rechner-preview.png" alt="CFO Deal Closer – Interaktive ROI-Rechner Web-App für Key Account Manager: Live-Dashboard mit ROI-Siegel, Amortisationszeit und CFO-Argumentationstext" loading="lazy">
         <div class="pcard-preview-overlay">🔍 Vorschau vergrößern</div>
       </div>
@@ -1919,23 +1947,49 @@
         <h2>Bist du wirklich aktiv im Vertrieb<br>oder nur <em>beschäftigt?</em></h2>
         <p>In meinem Praxis-Guide decke ich die 6 kritischsten Fehler auf, die Key Account Manager jeden Monat Provision kosten — und wie du sie in einer Woche behebst. 100&nbsp;% Praxis, 0&nbsp;% Marketing-Bla. Aus 10+ Jahren B2B-Vertrieb im DACH-Mittelstand.</p>
 
-        <!-- E-Mail-Capture: freiwillig, DSGVO-konform -->
-        <div class="lm-capture">
-          <span class="lm-capture-label">Lieber mit E-Mail-Benachrichtigung bei neuen Tools &amp; Updates?</span>
-          <div id="lm-success" class="lm-success">✓ Danke! Du bekommst eine Bestätigungsmail. Jetzt kannst du den Guide direkt herunterladen.</div>
-          <div id="lm-form">
-            <div class="lm-capture-row">
-              <input type="email" class="lm-capture-input" id="lm-email" placeholder="deine@email.de" autocomplete="email">
-              <button class="lm-capture-btn" onclick="submitEmail()">Eintragen &amp; informiert bleiben</button>
+        <!-- E-Mail-Capture: Brevo Embedded Form — DSGVO-konform mit Double Opt-in -->
+        <div class="lm-capture" style="padding:0;background:none;border:none;">
+          <span class="lm-capture-label" style="display:block;margin-bottom:12px;">Lieber mit E-Mail-Benachrichtigung bei neuen Tools &amp; Updates?</span>
+          <div id="sib-form-container" class="sib-form-container">
+            <div id="error-message" class="sib-form-message-panel" style="font-family:'DM Sans',sans-serif;font-size:14px;text-align:left;color:#ffaaaa;background-color:rgba(255,77,77,0.15);border-color:rgba(255,77,77,0.4);border-radius:6px;max-width:100%;">
+              <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+                <span class="sib-form-message-panel__inner-text">Deine Anmeldung konnte nicht gespeichert werden. Bitte versuche es erneut.</span>
+              </div>
             </div>
-            <div class="lm-consent">
-              <input type="checkbox" id="lm-consent-check">
-              <label for="lm-consent-check" class="lm-consent-text">
-                Ich bin einverstanden, dass Vertriebswerk meine E-Mail-Adresse speichert und mich gelegentlich über neue Tools informiert. Abmeldung jederzeit möglich. Kein Spam, kein Weiterverkauf.
-                <a href="/impressum.html" target="_blank">Datenschutz</a>
-              </label>
+            <div id="success-message" class="sib-form-message-panel" style="font-family:'DM Sans',sans-serif;font-size:14px;text-align:left;color:#00d4a8;background-color:rgba(0,168,132,0.15);border-color:rgba(0,168,132,0.35);border-radius:6px;max-width:100%;">
+              <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+                <span class="sib-form-message-panel__inner-text">✓ Danke! Du bekommst eine Bestätigungsmail. Jetzt kannst du den Guide direkt herunterladen.</span>
+              </div>
+            </div>
+            <div id="sib-container" class="sib-container--large sib-container--vertical" style="text-align:center;direction:ltr">
+              <form id="sib-form" method="POST" action="https://1ae54c94.sibforms.com/serve/MUIFAHVSP994X8WeCVvEA0wjYWNoJjVkLvNEaDTj2etzAVdLXJ0tD1_ehae5jSgNqiJZX4m3PmrVlqnINv3UVs4RfQHxgtr6J4v2keOV8HXD6gQ_DpwJRpG0lBNTppYYxvlPIr5O6fBZydUI_z4ujtytZdimniPZ6JrIM49Wi3I4BpIkxoocO7Wbuwy3BgxTAHS60SyIXGbjTz9E2Q==" data-type="subscription">
+                <div style="padding:6px 0;">
+                  <div class="sib-input sib-form-block">
+                    <div class="form__entry entry_block">
+                      <div class="form__label-row">
+                        <label class="entry__label" for="EMAIL" data-required="*">E-Mail-Adresse</label>
+                        <div class="entry__field">
+                          <input class="input" type="text" id="EMAIL" name="EMAIL" autocomplete="off" value="" placeholder="deine@email.de" data-required="true" required />
+                        </div>
+                      </div>
+                      <label class="entry__error entry__error--primary" style="font-family:'DM Sans',sans-serif;font-size:13px;color:#ffaaaa;"></label>
+                    </div>
+                  </div>
+                </div>
+                <div style="padding:4px 0 8px;">
+                  <div class="sib-form-block">
+                    <button class="sib-form-block__button sib-form-block__button-with-loader" form="sib-form" type="submit">
+                      <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512"><path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z"/></svg>
+                      Eintragen &amp; informiert bleiben
+                    </button>
+                  </div>
+                </div>
+                <input type="text" name="email_address_check" value="" class="input--hidden">
+                <input type="hidden" name="locale" value="de">
+              </form>
             </div>
           </div>
+          <p style="font-size:0.7rem;color:rgba(255,255,255,0.35);margin-top:10px;line-height:1.5;">Double Opt-in · Kein Spam · Abmeldung jederzeit · <a href="/impressum.html" target="_blank" style="color:rgba(255,255,255,0.45);">Datenschutz</a></p>
         </div>
 
         <div class="lm-or">oder direkt ohne E-Mail</div>
@@ -2006,8 +2060,15 @@
 <div id="lightbox" onclick="closeLightbox()">
   <div class="lb-inner" onclick="event.stopPropagation()">
     <button class="lb-close" onclick="closeLightbox()">✕</button>
-    <img id="lb-img" src="" alt="Produkt-Vorschau Vertriebswerk B2B-Tool" aria-hidden="true" style="max-width:100%;max-height:88vh;width:auto;height:auto">
-    <div id="lb-cap"></div>
+    <img id="lb-img" src="" alt="Produkt-Vorschau Vertriebswerk B2B-Tool" aria-hidden="true" style="max-width:100%;max-height:80vh;width:auto;height:auto">
+    <div id="lb-cap" style="margin-top:10px;"></div>
+    <div style="margin-top:14px;text-align:center;">
+      <a id="lb-buy-btn" href="#" class="lemonsqueezy-button" target="_blank" rel="noopener"
+         style="display:inline-block;background:#00a884;color:#fff;font-family:'DM Sans',sans-serif;font-size:0.88rem;font-weight:700;padding:11px 28px;border-radius:6px;text-decoration:none;transition:background .2s;"
+         onmouseover="this.style.background='#008f6f'" onmouseout="this.style.background='#00a884'">
+        Tool sichern →
+      </a>
+    </div>
   </div>
 </div>
 
@@ -2086,12 +2147,17 @@
   }
 
   // Lightbox
-  function openLightbox(src,caption){
+  function openLightbox(src,caption,buyUrl){
     var img=document.getElementById('lb-img');
     var cap=document.getElementById('lb-cap');
     var lb=document.getElementById('lightbox');
+    var btn=document.getElementById('lb-buy-btn');
     if(img){img.src=src;img.alt=caption||'';}
     if(cap)cap.textContent=caption||'';
+    if(btn){
+      if(buyUrl){btn.href=buyUrl;btn.style.display='inline-block';}
+      else{btn.style.display='none';}
+    }
     if(lb)lb.classList.add('open');
     document.body.style.overflow='hidden';
   }
@@ -2115,11 +2181,9 @@
   revealEls.forEach(function(el){observer.observe(el);});
 
   // ── VAULT LIFETIME-FREEZE COUNTER ───────────────────────
-  // Statischer Wert — nach echten Käufen manuell aktualisieren.
-  // SOLD = Anzahl tatsächlicher Bundle-Verkäufe (in Lemon Squeezy prüfen).
   (function(){
     var TOTAL = 50;
-    var SOLD = 0; // <-- HIER nach Verkäufen manuell aktualisieren
+    var SOLD = 0;
     var remaining = Math.max(0, TOTAL - SOLD);
     var pct = Math.round((TOTAL - remaining) / TOTAL * 100);
 
@@ -2134,67 +2198,22 @@
     }
   })();
 
-  // E-Mail-Capture: Brevo API — DSGVO-konform mit Double Opt-in
-  async function submitEmail(){
-    var emailEl = document.getElementById('lm-email');
-    var consentEl = document.getElementById('lm-consent-check');
-    var btnEl = document.querySelector('.lm-capture-btn');
-    var email = emailEl ? emailEl.value.trim() : '';
-    var consent = consentEl ? consentEl.checked : false;
-
-    if(!email || !email.includes('@') || !email.includes('.')) {
-      alert('Bitte gib eine gültige E-Mail-Adresse ein.');
-      return;
-    }
-    if(!consent) {
-      alert('Bitte bestätige dein Einverständnis, um fortzufahren.');
-      return;
-    }
-
-    if(btnEl) { btnEl.disabled = true; btnEl.textContent = 'Wird eingetragen …'; }
-
-    try {
-      var res = await fetch('https://api.brevo.com/v3/contacts', {
-        method: 'POST',
-        headers: {
-          'accept': 'application/json',
-          'api-key': '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',
-          'content-type': 'application/json'
-        },
-        body: JSON.stringify({
-          email: email,
-          listIds: [2],
-          updateEnabled: true,
-          attributes: {
-            OPT_IN: true,
-            OPT_IN_DATE: new Date().toISOString().split('T')[0]
-          }
-        })
-      });
-
-      if(res.ok || res.status === 204 || res.status === 201) {
-        document.getElementById('lm-form').style.display = 'none';
-        document.getElementById('lm-success').style.display = 'block';
-      } else if(res.status === 400) {
-        // Kontakt existiert bereits — trotzdem Erfolg zeigen
-        var body = await res.json().catch(function(){ return {}; });
-        if(body && body.code === 'duplicate_parameter') {
-          document.getElementById('lm-form').style.display = 'none';
-          document.getElementById('lm-success').style.display = 'block';
-        } else {
-          if(btnEl) { btnEl.disabled = false; btnEl.textContent = 'Eintragen & informiert bleiben'; }
-          alert('Eintrag leider nicht möglich. Bitte schreib mir direkt: kontakt@vertriebswerk.shop');
-        }
-      } else {
-        if(btnEl) { btnEl.disabled = false; btnEl.textContent = 'Eintragen & informiert bleiben'; }
-        alert('Eintrag leider nicht möglich. Bitte schreib mir direkt: kontakt@vertriebswerk.shop');
-      }
-    } catch(err) {
-      if(btnEl) { btnEl.disabled = false; btnEl.textContent = 'Eintragen & informiert bleiben'; }
-      alert('Verbindungsfehler. Bitte direkt schreiben: kontakt@vertriebswerk.shop');
-    }
-  }
+  // E-Mail-Capture: wird jetzt über Brevo Embedded Form abgewickelt (kein API-Key im Frontend)
 </script>
+
+<!-- Brevo Embedded Form — Script -->
+<script>
+  window.REQUIRED_CODE_ERROR_MESSAGE = 'Wähle bitte einen Ländervorwahl aus.';
+  window.LOCALE = 'de';
+  window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "Die eingegebenen Informationen sind nicht gültig. Bitte überprüfe das Feldformat und versuche es erneut.";
+  window.REQUIRED_ERROR_MESSAGE = "Dieses Feld darf nicht leer sein.";
+  window.GENERIC_INVALID_MESSAGE = "Die eingegebenen Informationen sind nicht gültig. Bitte überprüfe das Feldformat und versuche es erneut.";
+  window.INVALID_DATE = "Bitte gib ein gültiges Datum ein";
+  window.REQUIRED_MULTISELECT_MESSAGE = 'Wähle bitte mindestens eine Option aus';
+  window.translation = { common: { selectedList: '{quantity} Liste ausgewählt', selectedLists: '{quantity} Listen ausgewählt', selectedOption: '{quantity} ausgewählt', selectedOptions: '{quantity} ausgewählt' } };
+  var AUTOHIDE = Boolean(0);
+</script>
+<script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
 
 </body>
 </html>
