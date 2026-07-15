@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com https://sibforms.com https://app.lemonsqueezy.com; style-src 'self' 'unsafe-inline' https://fonts.bunny.net https://sibforms.com; font-src 'self' https://fonts.bunny.net; img-src 'self' data: https://sibforms.com; connect-src 'self' https://sibforms.com https://app.lemonsqueezy.com https://*.lemonsqueezy.com https://static.cloudflareinsights.com https://cloudflareinsights.com; frame-src https://app.lemonsqueezy.com https://*.lemonsqueezy.com; form-action 'self' https://sibforms.com https://*.sibforms.com; base-uri 'self'; object-src 'none'">
   <title>Vertriebswerk – B2B-Vertriebstools für KAMs im DACH-Raum | Excel &amp; Word</title>
   <meta name="description" content="B2B-Vertriebstools für KAMs im DACH-Raum: CFO Deal Closer ROI-Web-App, Ausschreibungs-Check, Kaltakquise, Pipeline-Audit, KI-Tools. 100% offline, DSGVO-sicher. Ab 19 €.">
   <meta name="robots" content="index, follow">
@@ -24,15 +25,9 @@
   <meta name="google-site-verification" content="google2e2e5d364f822384">
   <script src="https://app.lemonsqueezy.com/js/lemon.js" defer></script>
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-102DFNYRB5"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-102DFNYRB5');
-  </script>
-
+  <!-- Cloudflare Web Analytics -->
+  <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ef6fb56d1b2944d1a149405677f43068"}'></script>
+  <!-- End Cloudflare Web Analytics -->
 
   <!-- ── STRUCTURED DATA ──────────────────────────────────── -->
   <script type="application/ld+json">
@@ -262,8 +257,6 @@
     .btn-navy:hover{background:var(--navy-m);transform:translateY(-2px)}
     .btn-ghost{background:rgba(255,255,255,.1);color:rgba(255,255,255,.9);border:1.5px solid rgba(255,255,255,.25);backdrop-filter:blur(8px)}
     .btn-ghost:hover{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.5)}
-    .btn-outline-teal{background:transparent;color:var(--teal);border:1.5px solid var(--teal);font-size:.82rem;padding:8px 18px;min-height:38px}
-    .btn-outline-teal:hover{background:var(--teal);color:#fff}
     .btn-li{background:#0077b5;color:#fff}
     .btn-li:hover{background:#005f94;transform:translateY(-2px)}
     .btn-lg{padding:16px 36px;font-size:1rem}
@@ -280,6 +273,11 @@
     .nav-links a:hover{color:#fff;background:rgba(255,255,255,.08)}
     .nav-shop{background:var(--teal)!important;color:#fff!important;font-weight:700!important;border-radius:var(--r-s)!important;padding:8px 18px!important}
     .nav-shop:hover{background:var(--teal-d)!important}
+    .nav-toggle{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:36px;height:36px;background:none;border:none;padding:0;cursor:pointer;flex-shrink:0}
+    .nav-toggle-bar{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:transform .25s ease,opacity .25s ease}
+    .nav.nav-open .nav-toggle-bar:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .nav.nav-open .nav-toggle-bar:nth-child(2){opacity:0}
+    .nav.nav-open .nav-toggle-bar:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
     /* ═══════════════════════════════════════════════
        HERO
@@ -438,9 +436,6 @@
     .pcard-desc{color:var(--g600);font-size:.88rem;line-height:1.72;margin-bottom:16px}
     .pcard-toggle{background:none;border:1px solid var(--g200);color:var(--g600);padding:7px 14px;border-radius:var(--r-s);font-size:.76rem;font-weight:500;cursor:pointer;transition:all .15s;margin-bottom:14px;font-family:'DM Sans',sans-serif;display:inline-flex;align-items:center;gap:5px}
     .pcard-toggle:hover{border-color:var(--g400);color:var(--navy)}
-    .pcard-features{list-style:none;margin-bottom:16px;background:var(--g100);border-radius:var(--r-s);padding:12px 16px}
-    .pcard-features li{font-size:.8rem;color:var(--text);padding:4px 0 4px 18px;position:relative;line-height:1.5}
-    .pcard-features li::before{content:"✓";position:absolute;left:0;color:var(--teal);font-weight:700}
     .pcard-tiers{display:flex;gap:8px;margin-bottom:20px}
     .tier{flex:1;border:2px solid var(--g200);border-radius:var(--r-m);padding:10px 8px;text-align:center;cursor:pointer;transition:all .2s;user-select:none}
     .tier:hover{border-color:var(--navy)}
@@ -589,17 +584,12 @@
     .lm-capture-input:focus{border-color:var(--teal)}
     .lm-capture-btn{background:var(--teal);color:#fff;border:none;border-radius:var(--r-s);padding:10px 20px;font-size:.88rem;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;white-space:nowrap;transition:background .2s}
     .lm-capture-btn:hover{background:var(--teal-d)}
-    .lm-consent{display:flex;align-items:flex-start;gap:9px;margin-top:12px}
-    .lm-consent input[type=checkbox]{width:15px;height:15px;margin-top:2px;flex-shrink:0;accent-color:var(--teal);cursor:pointer}
-    .lm-consent-text{font-size:.72rem;color:rgba(255,255,255,.45);line-height:1.5}
-    .lm-consent-text a{color:rgba(255,255,255,.6);text-decoration:underline}
     .lm-or{text-align:center;font-size:.75rem;color:rgba(255,255,255,.35);margin:14px 0 10px;position:relative}
     .lm-or::before,.lm-or::after{content:'';position:absolute;top:50%;width:38%;height:1px;background:rgba(255,255,255,.12)}
     .lm-or::before{left:0}.lm-or::after{right:0}
     .lm-download{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.12);color:rgba(255,255,255,.75);padding:12px 24px;border-radius:var(--r-m);font-weight:600;font-size:.9rem;transition:all .2s;font-family:'DM Sans',sans-serif;border:1px solid rgba(255,255,255,.2)}
     .lm-download:hover{background:rgba(255,255,255,.2);color:#fff}
     .lm-note{font-size:.72rem;color:rgba(255,255,255,.35);margin-top:10px;display:flex;align-items:center;gap:5px}
-    .lm-success{display:none;background:rgba(0,168,132,.15);border:1px solid rgba(0,168,132,.35);border-radius:var(--r-m);padding:14px 18px;color:var(--teal-l);font-size:.88rem;margin-bottom:14px}
     .lm-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:var(--r-l);padding:28px;backdrop-filter:blur(8px)}
     .lm-card-title{color:#fff;font-weight:700;font-size:1rem;margin-bottom:5px;line-height:1.4}
     .lm-card-by{color:rgba(255,255,255,.45);font-size:.74rem;margin-bottom:18px}
@@ -694,7 +684,10 @@
       .hero-sub{font-size:.96rem}
       .hero-actions{flex-direction:column;align-items:stretch}
       .hero-actions .btn{justify-content:center;text-align:center}
-      .nav .nav-links{display:none}
+      .nav-toggle{display:flex}
+      .nav .nav-links{display:none;position:absolute;top:60px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:rgba(27,42,74,.98);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08);padding:8px 16px 16px;max-height:calc(100vh - 60px);overflow-y:auto}
+      .nav.nav-open .nav-links{display:flex}
+      .nav-links a{padding:12px 10px;width:100%}
       .nav-inner{padding:0 16px}
       .proof-inner{gap:6px 12px}
       .founder-section{padding:56px 16px}
@@ -1028,34 +1021,6 @@
       font-size:.78rem;
       margin-top:2px;
     }
-    /* Progress bar */
-    .vault-progress-wrap{
-      background:rgba(255,255,255,.06);
-      border-radius:50px;
-      height:8px;
-      overflow:hidden;
-      margin-bottom:10px;
-    }
-    .vault-progress-fill{
-      height:100%;
-      background:linear-gradient(90deg,#C0392B,#e85f51);
-      border-radius:50px;
-      transition:width 1.2s ease;
-    }
-    .vault-progress-meta{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-    }
-    .vault-slots-left{
-      font-weight:700;
-      color:#e8756b;
-      font-size:.88rem;
-    }
-    .vault-slots-total{
-      color:rgba(255,255,255,.3);
-      font-size:.76rem;
-    }
     .vault-freeze-explain{
       margin-top:14px;
       padding-top:14px;
@@ -1162,10 +1127,10 @@
 <body>
 
 <!-- ── NAV ─────────────────────────────────────────────── -->
-<nav class="nav">
+<nav class="nav" id="nav">
   <div class="nav-inner">
     <a href="#start" class="nav-brand">Vertriebs<em>werk</em></a>
-    <ul class="nav-links">
+    <ul class="nav-links" id="nav-links">
       <li><a href="#top-tools">Top-Tools</a></li>
       <li><a href="#alle-tools">Alle 13</a></li>
       <li><a href="#cfo-deal-closer">ROI-App</a></li>
@@ -1176,6 +1141,11 @@
       <li><a href="#kontakt">Kontakt</a></li>
       <li><a href="https://vertriebswerkshop.lemonsqueezy.com" target="_blank" rel="noopener" class="nav-shop">Zum Shop &rarr;</a></li>
     </ul>
+    <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav-links" onclick="toggleNav()">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
   </div>
 </nav>
 
@@ -1346,7 +1316,7 @@
 
       <!-- Ausschreibungs-Check -->
       <div class="pcard reveal">
-        <div class="pcard-preview" onclick="openLightbox('ausschreibung.webp','Ausschreibungs-Check – Vertriebswerk','https://vertriebswerkshop.lemonsqueezy.com/checkout/buy/b80c491b-0aa6-42b9-b40d-44959ab2b09c')">
+        <div class="pcard-preview" tabindex="0" role="button" onclick="openLightbox('ausschreibung.webp','Ausschreibungs-Check – Vertriebswerk','https://vertriebswerkshop.lemonsqueezy.com/checkout/buy/b80c491b-0aa6-42b9-b40d-44959ab2b09c')">
           <img src="ausschreibung.webp" alt="Excel-Vorlage Ausschreibungs-Check – GO/NO-GO Entscheidung, Kalkulation und Angebotsvorbereitung für B2B-Vertriebler" loading="lazy">
           <div class="pcard-preview-overlay">🔍 Vorschau vergrößern</div>
         </div>
@@ -1373,9 +1343,9 @@
             </ul>
           </div>
           <div class="pcard-tiers">
-            <div class="tier active" onclick="setTier(this,'aus',39)"><span class="tier-label">Single</span><span class="tier-price">39&nbsp;€</span><span class="tier-users">1 Nutzer</span></div>
-            <div class="tier" onclick="setTier(this,'aus',149)"><span class="tier-label">Team</span><span class="tier-price">149&nbsp;€</span><span class="tier-users">bis 10</span></div>
-            <div class="tier" onclick="setTier(this,'aus',349)"><span class="tier-label">Enterprise</span><span class="tier-price">349&nbsp;€</span><span class="tier-users">unbegrenzt</span></div>
+            <div class="tier active" tabindex="0" role="button" onclick="setTier(this,'aus',39)"><span class="tier-label">Single</span><span class="tier-price">39&nbsp;€</span><span class="tier-users">1 Nutzer</span></div>
+            <div class="tier" tabindex="0" role="button" onclick="setTier(this,'aus',149)"><span class="tier-label">Team</span><span class="tier-price">149&nbsp;€</span><span class="tier-users">bis 10</span></div>
+            <div class="tier" tabindex="0" role="button" onclick="setTier(this,'aus',349)"><span class="tier-label">Enterprise</span><span class="tier-price">349&nbsp;€</span><span class="tier-users">unbegrenzt</span></div>
           </div>
         </div>
         <div class="pcard-cta-wrap">
@@ -1393,7 +1363,7 @@
 
       <!-- E-Mail Baukasten -->
       <div class="pcard reveal reveal-delay-1">
-        <div class="pcard-preview" onclick="openLightbox('email_baukasten.webp','E-Mail Baukasten Kaltakquise – Vertriebswerk','https://vertriebswerkshop.lemonsqueezy.com/checkout/buy/fb8628b1-3983-43da-a9dc-4fde1883a01f')">
+        <div class="pcard-preview" tabindex="0" role="button" onclick="openLightbox('email_baukasten.webp','E-Mail Baukasten Kaltakquise – Vertriebswerk','https://vertriebswerkshop.lemonsqueezy.com/checkout/buy/fb8628b1-3983-43da-a9dc-4fde1883a01f')">
           <img src="email_baukasten.webp" alt="Word-Vorlage E-Mail Baukasten Kaltakquise – 10 B2B-E-Mail-Vorlagen mit Betreffzeilen und Sequenz-Framework" loading="lazy">
           <div class="pcard-preview-overlay">🔍 Vorschau vergrößern</div>
         </div>
@@ -1419,9 +1389,9 @@
             </ul>
           </div>
           <div class="pcard-tiers">
-            <div class="tier active" onclick="setTier(this,'email',19)"><span class="tier-label">Single</span><span class="tier-price">19&nbsp;€</span><span class="tier-users">1 Nutzer</span></div>
-            <div class="tier" onclick="setTier(this,'email',79)"><span class="tier-label">Team</span><span class="tier-price">79&nbsp;€</span><span class="tier-users">bis 10</span></div>
-            <div class="tier" onclick="setTier(this,'email',199)"><span class="tier-label">Enterprise</span><span class="tier-price">199&nbsp;€</span><span class="tier-users">unbegrenzt</span></div>
+            <div class="tier active" tabindex="0" role="button" onclick="setTier(this,'email',19)"><span class="tier-label">Single</span><span class="tier-price">19&nbsp;€</span><span class="tier-users">1 Nutzer</span></div>
+            <div class="tier" tabindex="0" role="button" onclick="setTier(this,'email',79)"><span class="tier-label">Team</span><span class="tier-price">79&nbsp;€</span><span class="tier-users">bis 10</span></div>
+            <div class="tier" tabindex="0" role="button" onclick="setTier(this,'email',199)"><span class="tier-label">Enterprise</span><span class="tier-price">199&nbsp;€</span><span class="tier-users">unbegrenzt</span></div>
           </div>
         </div>
         <div class="pcard-cta-wrap">
@@ -1439,7 +1409,7 @@
 
       <!-- Controlling Dashboard -->
       <div class="pcard reveal">
-        <div class="pcard-preview" onclick="openLightbox('controlling.webp','Vertriebscontrolling Dashboard – Vertriebswerk','https://vertriebswerkshop.lemonsqueezy.com/checkout/buy/4c3dabc3-3d51-4900-86af-229c279e1f7a')">
+        <div class="pcard-preview" tabindex="0" role="button" onclick="openLightbox('controlling.webp','Vertriebscontrolling Dashboard – Vertriebswerk','https://vertriebswerkshop.lemonsqueezy.com/checkout/buy/4c3dabc3-3d51-4900-86af-229c279e1f7a')">
           <img src="controlling.webp" alt="Excel-Dashboard Vertriebscontrolling – IST/PLAN-Vergleich, CAC, LTV und Forecast für B2B-Vertriebsteams" loading="lazy">
           <div class="pcard-preview-overlay">🔍 Vorschau vergrößern</div>
         </div>
@@ -1465,9 +1435,9 @@
             </ul>
           </div>
           <div class="pcard-tiers">
-            <div class="tier active" onclick="setTier(this,'ctrl',39)"><span class="tier-label">Single</span><span class="tier-price">39&nbsp;€</span><span class="tier-users">1 Nutzer</span></div>
-            <div class="tier" onclick="setTier(this,'ctrl',149)"><span class="tier-label">Team</span><span class="tier-price">149&nbsp;€</span><span class="tier-users">bis 10</span></div>
-            <div class="tier" onclick="setTier(this,'ctrl',349)"><span class="tier-label">Enterprise</span><span class="tier-price">349&nbsp;€</span><span class="tier-users">unbegrenzt</span></div>
+            <div class="tier active" tabindex="0" role="button" onclick="setTier(this,'ctrl',39)"><span class="tier-label">Single</span><span class="tier-price">39&nbsp;€</span><span class="tier-users">1 Nutzer</span></div>
+            <div class="tier" tabindex="0" role="button" onclick="setTier(this,'ctrl',149)"><span class="tier-label">Team</span><span class="tier-price">149&nbsp;€</span><span class="tier-users">bis 10</span></div>
+            <div class="tier" tabindex="0" role="button" onclick="setTier(this,'ctrl',349)"><span class="tier-label">Enterprise</span><span class="tier-price">349&nbsp;€</span><span class="tier-users">unbegrenzt</span></div>
           </div>
         </div>
         <div class="pcard-cta-wrap">
@@ -1485,7 +1455,7 @@
 
       <!-- Meeting-Leitfaden -->
       <div class="pcard reveal reveal-delay-1">
-        <div class="pcard-preview" onclick="openLightbox('meeting.webp','Meeting-Leitfaden Erstgespräch – Vertriebswerk','https://vertriebswerkshop.lemonsqueezy.com/checkout/buy/be4490e9-c05b-4d04-b5d7-ff1fb4ded9b3')">
+        <div class="pcard-preview" tabindex="0" role="button" onclick="openLightbox('meeting.webp','Meeting-Leitfaden Erstgespräch – Vertriebswerk','https://vertriebswerkshop.lemonsqueezy.com/checkout/buy/be4490e9-c05b-4d04-b5d7-ff1fb4ded9b3')">
           <img src="meeting.webp" alt="Word-Vorlage Meeting-Leitfaden Erstgespräch – 7-Phasen-Struktur mit SPIN- und MEDDIC-Qualifizierungsfragen für B2B" loading="lazy">
           <div class="pcard-preview-overlay">🔍 Vorschau vergrößern</div>
         </div>
@@ -1511,9 +1481,9 @@
             </ul>
           </div>
           <div class="pcard-tiers">
-            <div class="tier active" onclick="setTier(this,'meet',19)"><span class="tier-label">Single</span><span class="tier-price">19&nbsp;€</span><span class="tier-users">1 Nutzer</span></div>
-            <div class="tier" onclick="setTier(this,'meet',79)"><span class="tier-label">Team</span><span class="tier-price">79&nbsp;€</span><span class="tier-users">bis 10</span></div>
-            <div class="tier" onclick="setTier(this,'meet',199)"><span class="tier-label">Enterprise</span><span class="tier-price">199&nbsp;€</span><span class="tier-users">unbegrenzt</span></div>
+            <div class="tier active" tabindex="0" role="button" onclick="setTier(this,'meet',19)"><span class="tier-label">Single</span><span class="tier-price">19&nbsp;€</span><span class="tier-users">1 Nutzer</span></div>
+            <div class="tier" tabindex="0" role="button" onclick="setTier(this,'meet',79)"><span class="tier-label">Team</span><span class="tier-price">79&nbsp;€</span><span class="tier-users">bis 10</span></div>
+            <div class="tier" tabindex="0" role="button" onclick="setTier(this,'meet',199)"><span class="tier-label">Enterprise</span><span class="tier-price">199&nbsp;€</span><span class="tier-users">unbegrenzt</span></div>
           </div>
         </div>
         <div class="pcard-cta-wrap">
@@ -1700,7 +1670,7 @@
       <p class="section-sub" style="margin:0 auto">ROI live im Kundengespräch berechnen — White-Label, 100&nbsp;% offline, läuft auf jedem gesperrten Konzern-Laptop.</p>
     </div>
     <div class="pcard reveal" style="max-width:740px;margin:0 auto;border:2px solid var(--navy)">
-      <div class="pcard-preview" onclick="openLightbox('roi-rechner-preview.webp','CFO Deal Closer – Interaktiver ROI-Rechner für Key Account Manager','https://vertriebswerkshop.lemonsqueezy.com/checkout/buy/7352d650-646d-4c8c-b4ae-82685ff36a20')">
+      <div class="pcard-preview" tabindex="0" role="button" onclick="openLightbox('roi-rechner-preview.webp','CFO Deal Closer – Interaktiver ROI-Rechner für Key Account Manager','https://vertriebswerkshop.lemonsqueezy.com/checkout/buy/7352d650-646d-4c8c-b4ae-82685ff36a20')">
         <img src="roi-rechner-preview.webp" alt="CFO Deal Closer – Interaktive ROI-Rechner Web-App für Key Account Manager: Live-Dashboard mit ROI-Siegel, Amortisationszeit und CFO-Argumentationstext" loading="lazy">
         <div class="pcard-preview-overlay">🔍 Vorschau vergrößern</div>
       </div>
@@ -1810,19 +1780,12 @@
       <div class="vault-freeze-head">
         <div class="vault-freeze-icon">🔒</div>
         <div>
-          <div class="vault-freeze-label">Lifetime-Freeze — Die nächsten <span id="vault-slots-label">50</span> Käufer erhalten alle zukünftigen Tools kostenlos</div>
-          <div class="vault-freeze-sub">Danach wird das Bundle eingefroren. Neue Tools kosten extra.</div>
+          <div class="vault-freeze-label">Lifetime-Freeze — auf 50 Plätze begrenzt</div>
+          <div class="vault-freeze-sub">Käufer erhalten alle zukünftigen Tools automatisch kostenlos dazu. Danach wird das Bundle eingefroren, neue Tools kosten dann extra.</div>
         </div>
       </div>
-      <div class="vault-progress-wrap">
-        <div class="vault-progress-fill" id="vault-progress-bar" style="width:0%"></div>
-      </div>
-      <div class="vault-progress-meta">
-        <span class="vault-slots-left"><span id="vault-remaining">—</span> Plätze mit Lifetime-Updates übrig</span>
-        <span class="vault-slots-total">von 50 Gesamtplätzen</span>
-      </div>
       <div class="vault-freeze-explain">
-        Ich entwickle Vertriebswerk laufend weiter. <strong>Wer jetzt kauft, bekommt jedes neue Tool automatisch freigeschaltet</strong> — ohne Aufpreis, ohne Nachfassen. Sobald die 50 Lifetime-Plätze vergeben sind, ändert sich das Modell: Das Bundle wird auf dem aktuellen Stand eingefroren. Neue Tools sind dann nur noch einzeln erhältlich. Kein künstlicher Countdown. Einfach Mathematik.
+        Ich entwickle Vertriebswerk laufend weiter. <strong>Wer jetzt kauft, bekommt jedes neue Tool automatisch freigeschaltet</strong> — ohne Aufpreis, ohne Nachfassen. Das Kontingent ist bewusst auf 50 Plätze begrenzt, damit ich persönlichen Support und Qualität für alle Vault-Käufer halten kann — kein Live-Zähler, kein künstlicher Countdown, sondern ein festes Limit.
       </div>
     </div>
 
@@ -1937,13 +1900,13 @@
       <h2 class="section-title">Einwände? Hier beantwortet.</h2>
     </div>
     <div class="faq-wrap">
-      <div class="faq-item open" onclick="toggleFaq(this)"><div class="faq-q">Was bedeutet Single / Team / Enterprise-Lizenz? <span class="faq-icon">+</span></div><div class="faq-a"><strong>Single (1 Nutzer):</strong> Persönliche Nutzung. <strong>Team (bis 10 Nutzer):</strong> Lizenz für ein Team. <strong>Enterprise (unbegrenzt):</strong> Site-Lizenz für einen Standort — volle Rechtssicherheit, keine laufenden Kosten.</div></div>
-      <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">Sind die Tools wirklich DSGVO-sicher? <span class="faq-icon">+</span></div><div class="faq-a">Ja. Alle Excel- und Word-Tools laufen 100&nbsp;% offline. Keine Daten an Cloud-Server, keine Nutzungstelemetrie, kein Internet benötigt. Die optionalen KI-Tools sind Textdateien — was du damit in Claude oder ChatGPT eingibst, entscheidest du selbst.</div></div>
-      <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">Wie funktionieren die KI-Tools? Brauche ich ein Abo? <span class="faq-icon">+</span></div><div class="faq-a">Die KI-Tools sind strukturierte Gesprächsführungs-Prompts — kompatibel mit Claude, ChatGPT und Perplexity. Du kopierst den Prompt, fügst ihn in dein KI-Tool ein und arbeitest sofort mit einem erfahrenen Sparringspartner. Du brauchst nur einen eigenen Zugang (kostenlose Konten funktionieren, mit Limits). Kein Abo bei uns, keine Cloud, keine Registrierung.</div></div>
-      <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">Sind die Tools sofort nach Kauf verfügbar? <span class="faq-icon">+</span></div><div class="faq-a">Ja. Direkt nach der Zahlung via Lemon Squeezy erhältst du den Download-Link. Kein Warten, kein Setup, keine Registrierung.</div></div>
-      <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">Funktionieren die Tools mit Salesforce oder HubSpot? <span class="faq-icon">+</span></div><div class="faq-a">Ja. Die Tools sind CRM-agnostisch. Pipeline Cleanup Kit und KAM-Template enthalten Tagging-Guides für Salesforce, HubSpot und Pipedrive.</div></div>
-      <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">Wie viel Zeit spare ich gegenüber Eigenbau? <span class="faq-icon">+</span></div><div class="faq-a">Erfahrungsgemäß 8–20 Stunden pro Tool. Beim „Vertrieb von A–Z"-Bundle sind das rechnerisch über 100 Stunden ersparte Eigenentwicklungszeit.</div></div>
-      <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">Gibt es eine Rechnung mit ausgewiesener MwSt.? <span class="faq-icon">+</span></div><div class="faq-a">Ja. Lemon Squeezy stellt automatisch eine MwSt.-konforme Rechnung aus. EU-Unternehmen können ihre Umsatzsteuer-ID angeben (Reverse Charge). Enterprise: individuelle Rechnung auf Anfrage.</div></div>
+      <div class="faq-item open" tabindex="0" role="button" onclick="toggleFaq(this)"><div class="faq-q">Was bedeutet Single / Team / Enterprise-Lizenz? <span class="faq-icon">+</span></div><div class="faq-a"><strong>Single (1 Nutzer):</strong> Persönliche Nutzung. <strong>Team (bis 10 Nutzer):</strong> Lizenz für ein Team. <strong>Enterprise (unbegrenzt):</strong> Site-Lizenz für einen Standort — volle Rechtssicherheit, keine laufenden Kosten.</div></div>
+      <div class="faq-item" tabindex="0" role="button" onclick="toggleFaq(this)"><div class="faq-q">Sind die Tools wirklich DSGVO-sicher? <span class="faq-icon">+</span></div><div class="faq-a">Ja. Alle Excel- und Word-Tools laufen 100&nbsp;% offline. Keine Daten an Cloud-Server, keine Nutzungstelemetrie, kein Internet benötigt. Die optionalen KI-Tools sind Textdateien — was du damit in Claude oder ChatGPT eingibst, entscheidest du selbst.</div></div>
+      <div class="faq-item" tabindex="0" role="button" onclick="toggleFaq(this)"><div class="faq-q">Wie funktionieren die KI-Tools? Brauche ich ein Abo? <span class="faq-icon">+</span></div><div class="faq-a">Die KI-Tools sind strukturierte Gesprächsführungs-Prompts — kompatibel mit Claude, ChatGPT und Perplexity. Du kopierst den Prompt, fügst ihn in dein KI-Tool ein und arbeitest sofort mit einem erfahrenen Sparringspartner. Du brauchst nur einen eigenen Zugang (kostenlose Konten funktionieren, mit Limits). Kein Abo bei uns, keine Cloud, keine Registrierung.</div></div>
+      <div class="faq-item" tabindex="0" role="button" onclick="toggleFaq(this)"><div class="faq-q">Sind die Tools sofort nach Kauf verfügbar? <span class="faq-icon">+</span></div><div class="faq-a">Ja. Direkt nach der Zahlung via Lemon Squeezy erhältst du den Download-Link. Kein Warten, kein Setup, keine Registrierung.</div></div>
+      <div class="faq-item" tabindex="0" role="button" onclick="toggleFaq(this)"><div class="faq-q">Funktionieren die Tools mit Salesforce oder HubSpot? <span class="faq-icon">+</span></div><div class="faq-a">Ja. Die Tools sind CRM-agnostisch. Pipeline Cleanup Kit und KAM-Template enthalten Tagging-Guides für Salesforce, HubSpot und Pipedrive.</div></div>
+      <div class="faq-item" tabindex="0" role="button" onclick="toggleFaq(this)"><div class="faq-q">Wie viel Zeit spare ich gegenüber Eigenbau? <span class="faq-icon">+</span></div><div class="faq-a">Erfahrungsgemäß 8–20 Stunden pro Tool. Beim „Vertrieb von A–Z"-Bundle sind das rechnerisch über 100 Stunden ersparte Eigenentwicklungszeit.</div></div>
+      <div class="faq-item" tabindex="0" role="button" onclick="toggleFaq(this)"><div class="faq-q">Gibt es eine Rechnung mit ausgewiesener MwSt.? <span class="faq-icon">+</span></div><div class="faq-a">Ja. Lemon Squeezy stellt automatisch eine MwSt.-konforme Rechnung aus. EU-Unternehmen können ihre Umsatzsteuer-ID angeben (Reverse Charge). Enterprise: individuelle Rechnung auf Anfrage.</div></div>
     </div>
   </div>
 </section>
@@ -1979,7 +1942,7 @@
                       <div class="form__label-row">
                         <label class="entry__label" for="EMAIL" data-required="*">E-Mail-Adresse</label>
                         <div class="entry__field">
-                          <input class="input" type="text" id="EMAIL" name="EMAIL" autocomplete="off" value="" placeholder="deine@email.de" data-required="true" required />
+                          <input class="input" type="email" id="EMAIL" name="EMAIL" autocomplete="off" value="" placeholder="deine@email.de" data-required="true" required />
                         </div>
                       </div>
                       <label class="entry__error entry__error--primary" style="font-family:'DM Sans',sans-serif;font-size:13px;color:#ffaaaa;"></label>
@@ -1999,7 +1962,7 @@
               </form>
             </div>
           </div>
-          <p style="font-size:0.7rem;color:rgba(255,255,255,0.35);margin-top:10px;line-height:1.5;">Double Opt-in · Kein Spam · Abmeldung jederzeit · <a href="/impressum.html" target="_blank" style="color:rgba(255,255,255,0.45);">Datenschutz</a></p>
+          <p style="font-size:0.7rem;color:rgba(255,255,255,0.35);margin-top:10px;line-height:1.5;">Double Opt-in · Kein Spam · Abmeldung jederzeit · <a href="/impressum.html" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.45);">Datenschutz</a></p>
         </div>
 
         <div class="lm-or">oder direkt ohne E-Mail</div>
@@ -2083,6 +2046,33 @@
 </div>
 
 <script>
+  // Tastatur-Zugänglichkeit: Enter/Leertaste aktivieren fokussierte FAQ-, Tier- und Vorschau-Elemente wie ein Klick
+  document.addEventListener('keydown',function(e){
+    if(e.key!=='Enter'&&e.key!==' '&&e.key!=='Spacebar')return;
+    var target=e.target.closest('.faq-item, .tier, .pcard-preview');
+    if(!target)return;
+    e.preventDefault();
+    target.click();
+  });
+
+  // Mobile nav
+  function toggleNav(){
+    var nav=document.getElementById('nav');
+    var btn=document.getElementById('nav-toggle');
+    if(!nav||!btn)return;
+    var isOpen=nav.classList.toggle('nav-open');
+    btn.setAttribute('aria-expanded',isOpen?'true':'false');
+    btn.setAttribute('aria-label',isOpen?'Menü schließen':'Menü öffnen');
+  }
+  document.querySelectorAll('#nav-links a').forEach(function(a){
+    a.addEventListener('click',function(){
+      var nav=document.getElementById('nav');
+      var btn=document.getElementById('nav-toggle');
+      if(nav)nav.classList.remove('nav-open');
+      if(btn){btn.setAttribute('aria-expanded','false');btn.setAttribute('aria-label','Menü öffnen');}
+    });
+  });
+
   // FAQ
   function toggleFaq(el){
     var wasOpen=el.classList.contains('open');
@@ -2115,6 +2105,7 @@
       btn.href=singleUrl;
       btn.setAttribute('data-overlay','');
       btn.removeAttribute('data-tier');
+      btn.classList.add('lemonsqueezy-button');
       if(labelEl)labelEl.textContent='Tool sichern';
       if(arrow)arrow.textContent='→';
       btn.style.background='';
@@ -2122,17 +2113,18 @@
       var sub='Team-Lizenz: '+name;
       btn.href='mailto:kontakt@vertriebswerk.shop?subject='+encodeURIComponent(sub)+'&body='+encodeURIComponent('Hallo Daniel,\n\nich interessiere mich für die Team-Lizenz von „'+name+'" (bis 10 Nutzer).\n\nBitte sende mir ein Angebot.\n\nUnternehmen:\nAnsprechpartner:\nE-Mail:\n');
       btn.removeAttribute('data-overlay');
+      btn.classList.remove('lemonsqueezy-button');
       if(labelEl)labelEl.textContent='Team-Lizenz anfragen';
     } else if(tier==='Enterprise'){
       var sub='Enterprise-Lizenz: '+name;
       btn.href='mailto:kontakt@vertriebswerk.shop?subject='+encodeURIComponent(sub)+'&body='+encodeURIComponent('Hallo Daniel,\n\nwir interessieren uns für eine Enterprise-Lizenz von „'+name+'".\n\nUnternehmen:\nAnsprechpartner:\nE-Mail:\nStandort:\n');
       btn.removeAttribute('data-overlay');
+      btn.classList.remove('lemonsqueezy-button');
       if(labelEl)labelEl.textContent='Enterprise anfragen';
     }
   }
 
-  // Deep-dive progressive disclosure (replaces legacy togglePreview)
-  // CSS max-height animation — a11y: aria-expanded toggled correctly
+  // Deep-dive progressive disclosure — CSS max-height animation, aria-expanded toggled correctly
   function toggleDeepDive(btn, id) {
     var panel = document.getElementById(id);
     if (!panel) return;
@@ -2145,15 +2137,6 @@
       panel.classList.add('is-open');
       btn.setAttribute('aria-expanded', 'true');
     }
-  }
-
-  // Legacy togglePreview kept for any remaining references
-  function togglePreview(btn,id){
-    var el=document.getElementById(id);
-    if(!el)return;
-    var isHidden=el.style.display==='none'||el.style.display==='';
-    el.style.display=isHidden?'block':'none';
-    btn.textContent=isHidden?'▲ Vorschau schließen':'📋 Inhalt-Vorschau';
   }
 
   // Lightbox
@@ -2189,24 +2172,6 @@
     });
   },{threshold:0.1});
   revealEls.forEach(function(el){observer.observe(el);});
-
-  // ── VAULT LIFETIME-FREEZE COUNTER ───────────────────────
-  (function(){
-    var TOTAL = 50;
-    var SOLD = 0;
-    var remaining = Math.max(0, TOTAL - SOLD);
-    var pct = Math.round((TOTAL - remaining) / TOTAL * 100);
-
-    var remEl = document.getElementById('vault-remaining');
-    var barEl = document.getElementById('vault-progress-bar');
-    var lblEl = document.getElementById('vault-slots-label');
-
-    if (remEl) remEl.textContent = remaining;
-    if (lblEl) lblEl.textContent = remaining;
-    if (barEl) {
-      setTimeout(function(){ barEl.style.width = pct + '%'; }, 400);
-    }
-  })();
 
   // E-Mail-Capture: wird jetzt über Brevo Embedded Form abgewickelt (kein API-Key im Frontend)
 </script>
