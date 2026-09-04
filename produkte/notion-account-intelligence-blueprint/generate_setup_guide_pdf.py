@@ -23,6 +23,14 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 ASSETS = os.path.join(BASE_DIR, "assets")
 OUTPUT_PATH = os.path.join(BASE_DIR, "setup-guide.pdf")
 
+# Öffentlicher Notion-"Duplicate as template"-Link für die Account-Dossiers-Datenbank.
+# Kann nicht über die Notion-API gesetzt werden (Share-to-Web + "Allow duplicate as
+# template" ist ausschließlich eine manuelle UI-Aktion) — deshalb hier als einzige
+# Quelle der Wahrheit gepflegt und per Env-Var überschreibbar, statt im Fließtext
+# verstreut. Solange kein echter Link vorliegt, bleibt der Platzhalter stehen; PDF und
+# setup-guide.md MÜSSEN denselben Wert zeigen.
+NOTION_TEMPLATE_DUPLICATE_URL = os.getenv("NOTION_TEMPLATE_DUPLICATE_URL", "[[NOTION_DUPLICATE_LINK]]")
+
 # ---------------------------------------------------------------------------
 # Brand: Farben & Fonts (aus dem CSS von vertriebswerk.shop/index.html übernommen)
 # ---------------------------------------------------------------------------
@@ -236,7 +244,7 @@ story.extend(checklist([
 # --- Schritt 1 ---
 story.append(eyebrow_heading("Schritt 1", "Notion-Template duplizieren"))
 story.extend(numbered_list([
-    "Öffne den Notion-Duplizieren-Link: <font name='DMSans-Bold'>[[NOTION_DUPLICATE_LINK]]</font> "
+    f"Öffne den Notion-Duplizieren-Link: <font name='DMSans-Bold'>{NOTION_TEMPLATE_DUPLICATE_URL}</font> "
     "— du findest ihn auch in deiner Bestell-E-Mail.",
     "Klicke oben rechts auf <b>Duplicate</b> und wähle deinen Ziel-Workspace.",
     "Die Datenbank <b>„Account Dossiers“</b> liegt danach in deinem Workspace — "
