@@ -12,6 +12,11 @@ Notion-Datenbank + Automatisierungs-Blueprint für KAM/B2B-Vertriebler, die Acco
 | `pipeline.py` | Phase 2: Python-Kern-Modul, das den kompletten Datenfluss selbst ausführt (Website + News → Claude → Notion) |
 | `requirements.txt` | Python-Abhängigkeiten für `pipeline.py` |
 | `.env.example` | Vorlage für die benötigten Umgebungsvariablen |
+| `shop-produktseite.md` | Phase 3: Produktseiten-Text für vertriebswerk.shop (Problem/Lösung/Value Prop/Preis) |
+| `setup-guide.md` | Phase 3: Quelltext des Kunden-Setup-Guides ("In 10 Minuten zum ersten KI-Dossier") |
+| `generate_setup_guide_pdf.py` | Baut `setup-guide.pdf` aus `setup-guide.md`-Inhalten im Vertriebswerk-CI (Navy/Teal, DM Sans/DM Serif Display) |
+| `setup-guide.pdf` | Fertiges Kunden-PDF, wird beim Kauf mitgeliefert |
+| `assets/` | Fonts + Logo für den PDF-Build (aus vertriebswerk.shop/index.html übernommen) |
 
 ## Notion-Datenbank "Account Dossiers"
 
