@@ -1,0 +1,127 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://vertriebswerk.com/schemas/account-intelligence-blueprint.json",
+  "title": "Account Intelligence Blueprint – Webhook Payloads",
+  "description": "Zwei Schemas für den Make.com/n8n-Workflow: (1) Request an den LLM-Knoten, gebaut aus Rohdaten (Website via Jina AI Reader / Firecrawl, Google News RSS, manueller Notion-Freitext). (2) Response des LLM-Knotens, die 1:1 auf die Notion-Felder gemappt wird.",
+  "definitions": {
+    "NewsItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["title", "source", "published_at", "link"],
+      "properties": {
+        "title": { "type": "string" },
+        "source": { "type": "string", "description": "Publisher-Name aus dem RSS-Feed" },
+        "published_at": { "type": "string", "format": "date-time" },
+        "snippet": { "type": "string", "description": "Kurzbeschreibung/Teaser aus dem Feed, falls vorhanden" },
+        "link": { "type": "string", "format": "uri" }
+      }
+    },
+    "AccountEnrichmentRequest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["notion_page_id", "company_name", "domain", "raw_website_text", "raw_news_items"],
+      "properties": {
+        "notion_page_id": {
+          "type": "string",
+          "description": "ID der Ziel-Page in 'Account Dossiers', für den Rückschreibe-Schritt (Notion API PATCH)."
+        },
+        "company_name": { "type": "string" },
+        "domain": { "type": "string", "format": "uri" },
+        "raw_website_text": {
+          "type": "string",
+          "description": "Bereinigter Markdown/Text-Output von Jina AI Reader (r.jina.ai/<domain>) oder Firecrawl. Enthält typischerweise Startseite + 'Über uns'/'Karriere'-Seite."
+        },
+        "raw_news_items": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/NewsItem" },
+          "maxItems": 15,
+          "description": "Ergebnisse des Google News RSS-Feeds (Query: Firmenname), bereits deduped und nach Datum sortiert (neueste zuerst)."
+        },
+        "manual_social_insights": {
+          "type": ["string", "null"],
+          "description": "Vom Nutzer manuell in Notion eingefügter Freitext (LinkedIn-Posts o.ä.). Wird NICHT gescraped, sondern 1:1 aus dem bestehenden Notion-Feld gelesen und als Kontext mitgegeben. Kann leer/null sein."
+        },
+        "existing_pitch_notes": {
+          "type": ["string", "null"],
+          "description": "Optional: bereits vorhandener Inhalt des Pitch-Feldes, falls dies ein Re-Enrichment (nicht Erstlauf) ist, damit das LLM konsistent aktualisiert statt komplett neu erfindet."
+        }
+      }
+    },
+    "AccountEnrichmentResponse": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "branche",
+        "mitarbeiterzahl_schaetzung",
+        "key_metrics_ansprechpartner",
+        "news_trigger_events",
+        "pitch_ansatz",
+        "confidence",
+        "data_gaps"
+      ],
+      "properties": {
+        "branche": {
+          "type": "string",
+          "enum": [
+            "SaaS / Software",
+            "Industrie / Produktion",
+            "Handel / E-Commerce",
+            "Finanzdienstleistung",
+            "Logistik",
+            "Gesundheitswesen",
+            "Öffentlicher Sektor",
+            "Sonstige"
+          ]
+        },
+        "mitarbeiterzahl_schaetzung": {
+          "type": ["integer", "null"],
+          "description": "Nur setzen, wenn explizit auf der Website/in News genannt oder seriös ableitbar. Sonst null."
+        },
+        "key_metrics_ansprechpartner": {
+          "type": "string",
+          "description": "Fließtext für das Notion Rich-Text-Feld: Umsatzgrößenordnung, Standorte, genannte C-Level/Entscheider mit Rolle, Quelle in Klammern."
+        },
+        "news_trigger_events": {
+          "type": "string",
+          "description": "Fließtext, chronologisch, mit Datum und Quelle je Meldung. Nur Trigger-relevante News (Funding, Expansion, Führungswechsel, Restrukturierung, Produktlaunch, regulatorische Änderungen)."
+        },
+        "pitch_ansatz": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["budget", "authority", "need", "timing", "pain_points", "icebreaker"],
+          "properties": {
+            "budget": { "type": "string" },
+            "authority": { "type": "string" },
+            "need": { "type": "string" },
+            "timing": { "type": "string" },
+            "pain_points": {
+              "type": "array",
+              "items": { "type": "string" },
+              "minItems": 1,
+              "maxItems": 3
+            },
+            "icebreaker": {
+              "type": "string",
+              "description": "1-2 Sätze, konkret auf einen News-Trigger oder Social-Insight referenzierend, keine generische Anmache."
+            }
+          }
+        },
+        "confidence": {
+          "type": "string",
+          "enum": ["hoch", "mittel", "niedrig"],
+          "description": "Selbsteinschätzung des LLM zur Datenqualität der Quellen."
+        },
+        "data_gaps": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Liste fehlender Informationen, die der KAM manuell ergänzen sollte (z.B. 'Keine C-Level-Namen auf Website gefunden')."
+        }
+      }
+    }
+  },
+  "type": "object",
+  "oneOf": [
+    { "$ref": "#/definitions/AccountEnrichmentRequest" },
+    { "$ref": "#/definitions/AccountEnrichmentResponse" }
+  ]
+}

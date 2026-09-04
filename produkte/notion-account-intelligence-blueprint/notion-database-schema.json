@@ -1,0 +1,65 @@
+{
+  "_comment": "Notion API Property-Schema für die Datenbank 'Account Dossiers'. Direkt verwendbar im Body von POST /v1/databases (parent = Ziel-Page) oder als Referenz für manuelles Anlegen in der Notion UI.",
+  "title": [
+    { "type": "text", "text": { "content": "Account Dossiers" } }
+  ],
+  "properties": {
+    "Unternehmensname": {
+      "title": {}
+    },
+    "Domain / URL": {
+      "url": {}
+    },
+    "Branche": {
+      "select": {
+        "options": [
+          { "name": "SaaS / Software", "color": "blue" },
+          { "name": "Industrie / Produktion", "color": "brown" },
+          { "name": "Handel / E-Commerce", "color": "orange" },
+          { "name": "Finanzdienstleistung", "color": "green" },
+          { "name": "Logistik", "color": "yellow" },
+          { "name": "Gesundheitswesen", "color": "pink" },
+          { "name": "Öffentlicher Sektor", "color": "gray" },
+          { "name": "Sonstige", "color": "default" }
+        ]
+      }
+    },
+    "Mitarbeiterzahl": {
+      "number": { "format": "number" }
+    },
+    "Key Metrics & C-Level": {
+      "rich_text": {}
+    },
+    "Manuelle Social Insights (LinkedIn)": {
+      "rich_text": {}
+    },
+    "News & Trigger-Events (Auto)": {
+      "rich_text": {}
+    },
+    "Pitch-Ansatz / Icebreaker (AI)": {
+      "rich_text": {}
+    },
+    "Status": {
+      "select": {
+        "options": [
+          { "name": "Neu", "color": "gray" },
+          { "name": "In Recherche", "color": "blue" },
+          { "name": "Angereichert", "color": "green" },
+          { "name": "Kontaktiert", "color": "yellow" },
+          { "name": "Angebot", "color": "orange" },
+          { "name": "Gewonnen", "color": "green" },
+          { "name": "Verloren", "color": "red" }
+        ]
+      },
+      "_comment": "Empfohlenes Zusatzfeld (nicht in der Ursprungsanforderung), damit das Dossier in den Sales-Prozess einhängbar ist."
+    },
+    "Letzte Anreicherung": {
+      "date": {},
+      "_comment": "Wird vom Automatisierungs-Workflow bei jedem Lauf aktualisiert (Datum, kein Text) — Basis für 'nur wöchentlich neu anreichern'-Logik."
+    },
+    "Owner": {
+      "people": {},
+      "_comment": "Zuständiger KAM/Vertriebler für den Account."
+    }
+  }
+}
