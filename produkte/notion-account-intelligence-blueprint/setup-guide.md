@@ -21,7 +21,7 @@ Halte bereit:
 
 ## Schritt 1 — Notion-Template duplizieren
 
-1. Öffne den Duplizieren-Link aus deiner Bestell-E-Mail.
+1. Öffne den Notion-Duplizieren-Link: **[[NOTION_DUPLICATE_LINK]]** — du findest ihn auch in deiner Bestell-E-Mail.
 2. Klicke oben rechts auf **Duplicate** und wähle deinen Ziel-Workspace.
 3. Die Datenbank **„Account Dossiers"** liegt danach in deinem Workspace — verschiebe sie an die gewünschte Stelle (z. B. unter dein Sales-Hub).
 4. Öffne **Settings → Connections** in Notion und lege eine neue Integration an (oder nutze eine bestehende): *My Integrations → New Integration → nur „Read/Update/Insert content"-Rechte nötig.*
@@ -45,13 +45,24 @@ Wähle einen der beiden Wege. Beide führen zum selben Ergebnis.
 4. Starte lokal zum Testen: `uvicorn pipeline:app --reload`
 5. Für den produktiven Einsatz: als AWS-Lambda-Funktion deployen (Handler: `pipeline.lambda_handler`) oder auf einem eigenen Server hinter einem Reverse Proxy betreiben.
 
-### Weg B: Make.com oder n8n — ohne eigenes Hosting
+### Weg B: n8n oder Make.com — ohne eigenes Hosting
 
-1. Lege ein neues Szenario/Workflow an mit einem **Webhook-Trigger**.
-2. Füge ein **HTTP-Request-Modul** für den Website-Abruf hinzu: `GET https://r.jina.ai/{domain}`
-3. Füge ein zweites **HTTP-Request-Modul** für die News hinzu: `GET https://news.google.com/rss/search?q={firmenname}&hl=de&gl=DE&ceid=DE:de`
-4. Füge ein **LLM-Modul** (Claude oder GPT) hinzu und füge den System-Prompt aus `system-prompt.md` unverändert ein.
-5. Füge ein **Notion-Modul „Create a Database Item"** hinzu und verbinde es mit deinem Notion-Account aus Schritt 1.
+**n8n (empfohlen — Ein-Klick-Import):**
+
+1. n8n öffnen → **Workflows → Import from File** (oder Strg/Cmd+O) → `blueprint-n8n.json` aus deinem Download auswählen.
+2. n8n zeigt den kompletten Workflow fertig verdrahtet — Webhook, Website-Abruf, News-RSS, Claude-Analyse (System-Prompt ist bereits enthalten) und Notion-Rückschreibung.
+3. Trage `ANTHROPIC_API_KEY`, `NOTION_API_KEY` und `NOTION_DATABASE_ID` als Umgebungsvariablen deiner n8n-Instanz ein (**Settings → Environment Variables**) — oder ersetze die `$env...`-Ausdrücke direkt in den beiden HTTP-Request-Knoten durch n8n-Credentials.
+4. Workflow aktivieren, Webhook-URL kopieren, an deinen Trigger (Notion-Button, Scheduler o. Ä.) hängen.
+
+**Make.com:**
+
+Ein Ein-Klick-Import ist bei Make.com anders als bei n8n nicht möglich — Make-Blueprints sind an das jeweilige Konto gebunden und lassen sich nicht kontenübergreifend exportieren. Baue die 5 Module stattdessen manuell nach:
+
+1. Neues Szenario mit **Webhook-Trigger**.
+2. **HTTP-Request-Modul** für den Website-Abruf: `GET https://r.jina.ai/{domain}`
+3. Zweites **HTTP-Request-Modul** für die News: `GET https://news.google.com/rss/search?q={firmenname}&hl=de&gl=DE&ceid=DE:de`
+4. **LLM-Modul** (Claude) mit dem System-Prompt aus `system-prompt.md` unverändert eingefügt.
+5. **Notion-Modul „Create a Database Item"**, verbunden mit deinem Notion-Account aus Schritt 1.
 
 *Ausführliche Modul-für-Modul-Beschreibung inkl. Feldmapping: siehe `README.md` im Blueprint-Ordner.*
 
@@ -61,9 +72,9 @@ Wähle einen der beiden Wege. Beide führen zum selben Ergebnis.
 
 | Key | Woher | Wohin |
 |---|---|---|
-| `ANTHROPIC_API_KEY` | console.anthropic.com → API Keys → Create Key | `.env` (Python) oder Connection im LLM-Modul (Make/n8n) |
-| `NOTION_API_KEY` | Notion → My Integrations → dein Integration Token | `.env` (Python) oder Notion-Connection (Make/n8n) |
-| `NOTION_DATABASE_ID` | aus Schritt 1.6 | `.env` (Python) oder direkt im Notion-Modul auswählen |
+| `ANTHROPIC_API_KEY` | console.anthropic.com → API Keys → Create Key | `.env` (Python) · n8n Environment Variables · Connection im LLM-Modul (Make) |
+| `NOTION_API_KEY` | Notion → My Integrations → dein Integration Token | `.env` (Python) · n8n Environment Variables · Notion-Connection (Make) |
+| `NOTION_DATABASE_ID` | aus Schritt 1.6 | `.env` (Python) · n8n Environment Variables · direkt im Notion-Modul auswählen (Make) |
 
 **Sicherheitshinweis:** Trage Keys ausschließlich in `.env`-Dateien oder die Connection-Verwaltung von Make.com/n8n ein — niemals in ein Notion-Textfeld, einen Screenshot oder eine Chat-Nachricht.
 

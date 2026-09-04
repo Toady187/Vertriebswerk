@@ -1,0 +1,297 @@
+{
+  "name": "Account Intelligence Blueprint",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## Account Intelligence Blueprint — n8n-Workflow\n\n**Vor dem ersten Lauf:**\n1. Umgebungsvariablen auf deiner n8n-Instanz setzen: `ANTHROPIC_API_KEY`, `NOTION_API_KEY`, `NOTION_DATABASE_ID` (siehe `.env.example` im Blueprint-Ordner).\n2. Die Notion-Datenbank \"Account Dossiers\" muss existieren und mit deiner Notion-Integration verbunden sein (siehe Setup-Guide Schritt 1).\n3. Webhook-URL nach der Aktivierung aus dem Webhook-Knoten kopieren und beim Trigger (z. B. Notion-Button oder Scheduler) hinterlegen.\n\nErwarteter Webhook-Body: `{ company_name, domain, manual_social_insights?, existing_pitch_notes? }`\n\nDer System-Prompt im Claude-Knoten ist bereits aus `system-prompt.md` übernommen — bei inhaltlichen Änderungen dort UND hier pflegen.",
+        "height": 380,
+        "width": 460
+      },
+      "id": "sticky-setup",
+      "name": "Setup-Hinweise",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -380,
+        -40
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "account-intelligence",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "id": "webhook",
+      "name": "Webhook – Neuer Account",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -380,
+        300
+      ],
+      "webhookId": "account-intelligence-blueprint"
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "=https://r.jina.ai/{{ $json.body.domain.startsWith('http') ? $json.body.domain : 'https://' + $json.body.domain }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "text"
+            }
+          }
+        }
+      },
+      "id": "jina-reader",
+      "name": "Jina Reader – Website",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -140,
+        300
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "url": "=https://news.google.com/rss/search?q={{ encodeURIComponent($('Webhook – Neuer Account').first().json.body.company_name) }}&hl=de&gl=DE&ceid=DE:de",
+        "options": {}
+      },
+      "id": "rss-news",
+      "name": "Google News RSS",
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1.1,
+      "position": [
+        100,
+        300
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Fasst Webhook-Input + Jina-Reader-Text + News-RSS-Items zu einem\n// AccountEnrichmentRequest-Objekt zusammen (siehe webhook-payload-schema.json).\nconst webhookItem = $('Webhook \\u2013 Neuer Account').first().json;\nconst body = webhookItem.body || webhookItem;\n\nconst companyName = body.company_name;\nlet domain = (body.domain || '').trim();\nif (domain && !domain.startsWith('http')) domain = 'https://' + domain;\n\nconst dataGaps = [];\n\nlet websiteText = '';\nconst jinaItem = $('Jina Reader \\u2013 Website').first().json;\nif (jinaItem && jinaItem.error) {\n  dataGaps.push(`Website nicht erreichbar: ${jinaItem.error}`);\n} else {\n  websiteText = (jinaItem && (jinaItem.data || jinaItem.body || jinaItem.text)) || '';\n  if (typeof websiteText !== 'string') websiteText = JSON.stringify(websiteText);\n  websiteText = websiteText.slice(0, 20000);\n  if (!websiteText.trim()) dataGaps.push('Jina Reader lieferte leeren Website-Text.');\n}\n\nlet newsItems = [];\ntry {\n  const rssInput = $('Google News RSS').all();\n  newsItems = rssInput\n    .filter((i) => !i.json.error)\n    .slice(0, 5)\n    .map((i) => ({\n      title: i.json.title || '',\n      source: i.json.creator || 'Google News',\n      published_at: i.json.pubDate || i.json.isoDate || '',\n      snippet: i.json.contentSnippet || i.json.content || '',\n      link: i.json.link || '',\n    }));\n} catch (e) {\n  dataGaps.push('News-Feed konnte nicht gelesen werden.');\n}\nif (newsItems.length === 0) dataGaps.push(`Keine News-Treffer f\\u00fcr '${companyName}' gefunden.`);\n\nreturn [{\n  json: {\n    company_name: companyName,\n    domain,\n    raw_website_text: websiteText,\n    raw_news_items: newsItems,\n    manual_social_insights: body.manual_social_insights || null,\n    existing_pitch_notes: body.existing_pitch_notes || null,\n    data_gaps: dataGaps,\n  },\n}];\n"
+      },
+      "id": "build-payload",
+      "name": "LLM-Payload bauen",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        340,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.anthropic.com/v1/messages",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "x-api-key",
+              "value": "={{ $env.ANTHROPIC_API_KEY }}"
+            },
+            {
+              "name": "anthropic-version",
+              "value": "2023-06-01"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ {\n  \"model\": \"claude-sonnet-5\",\n  \"max_tokens\": 8192,\n  \"system\": \"Du bist \\\"Account Intelligence Analyst\\\" f\\u00fcr Vertriebswerk, ein Recherche-Assistent f\\u00fcr B2B Key Account Manager. Du erh\\u00e4ltst Rohdaten zu einem Unternehmen (Website-Text, News-Meldungen, ggf. manuelle Social-Insights) und strukturierst daraus ein Account Dossier f\\u00fcr Notion.\\n\\n## Eingabeformat\\nDu bekommst ein JSON-Objekt (Schema: AccountEnrichmentRequest) mit folgenden Feldern:\\n- company_name, domain\\n- raw_website_text: Website-Rohtext (via Jina AI Reader / Firecrawl)\\n- raw_news_items: Array von Google-News-RSS-Treffern (title, source, published_at, snippet, link)\\n- manual_social_insights: vom Nutzer manuell eingef\\u00fcgter Freitext (LinkedIn-Posts etc.), kann null sein\\n- existing_pitch_notes: bereits vorhandener Pitch-Text bei Re-Enrichment, kann null sein\\n\\n## Grundprinzipien (nicht verhandelbar)\\n1. DATENSPARSAMKEIT & FAKTENTREUE: Nutze ausschlie\\u00dflich die im Payload gelieferten Daten. Erfinde keine Fakten, Namen, Zahlen oder Zitate. Wenn eine Information nicht in den Quellen steht, lasse sie weg oder trage sie in \\\"data_gaps\\\" ein \\u2014 rate niemals.\\n2. QUELLENTREUE BEI NEWS: Jede Aussage in \\\"news_trigger_events\\\" muss auf einem konkreten Item aus raw_news_items zur\\u00fcckf\\u00fchrbar sein. Nenne Datum und Quelle im Text.\\n3. KEINE \\u00dcBERNAHME UNGEPR\\u00dcFTER SOCIAL-CLAIMS: Behandle manual_social_insights als Kontext-Hinweis des Nutzers, nicht als verifizierte Tatsache. Du darfst ihn f\\u00fcr den Icebreaker nutzen, aber kennzeichne ihn implizit als \\\"laut LinkedIn-Post\\\" statt ihn als harte Zahl zu pr\\u00e4sentieren.\\n4. DSGVO-BEWUSST: Nenne nur Personen (C-Level/Ansprechpartner), die explizit und \\u00f6ffentlich auf der Unternehmenswebsite oder in den News genannt werden. Keine Vermutungen \\u00fcber Privatpersonen.\\n5. KONSISTENZ BEI RE-ENRICHMENT: Falls existing_pitch_notes vorhanden ist, aktualisiere und verfeinere ihn anhand neuer Daten, statt ihn komplett zu ersetzen, wenn sich die Faktenlage nicht wesentlich ge\\u00e4ndert hat.\\n6. SPRACHE: Antworte immer auf Deutsch, direkt und ohne Floskeln \\u2014 kurze, konkrete S\\u00e4tze im Stil eines erfahrenen Vertriebspraktikers, keine Marketing-Buzzwords (\\\"innovativ\\\", \\\"revolution\\u00e4r\\\", \\\"state of the art\\\" sind verboten).\\n\\n## Analyseschritte\\n1. Branche klassifizieren (aus der enum-Liste die beste Passung w\\u00e4hlen; bei Unklarheit \\\"Sonstige\\\").\\n2. Mitarbeiterzahl nur \\u00fcbernehmen, wenn explizit genannt (Website \\\"\\u00dcber uns\\\"/\\\"Karriere\\\" oder News). Sonst null.\\n3. Key Metrics & Ansprechpartner: Umsatzgr\\u00f6\\u00dfenordnung, Standorte/M\\u00e4rkte, genannte Entscheider mit Rolle und Quelle in Klammern extrahieren.\\n4. News & Trigger-Events: Nur vertriebsrelevante Trigger filtern \\u2014 Funding-Runden, Expansion/neue Standorte, F\\u00fchrungswechsel, Restrukturierung/Stellenabbau, Produktlaunches, regulatorische \\u00c4nderungen, M&A. Reine PR-Meldungen ohne Trigger-Charakter weglassen. Chronologisch mit Datum.\\n5. Pitch-Ansatz nach BANT strukturieren:\\n   - Budget: Anhaltspunkte zu Unternehmensgr\\u00f6\\u00dfe/Finanzierungslage, die auf Budgetverf\\u00fcgbarkeit hindeuten (z.B. \\\"Series-B-Funding im M\\u00e4rz 2026 laut TechCrunch spricht f\\u00fcr verf\\u00fcgbares Budget f\\u00fcr Tooling\\\").\\n   - Authority: Wer ist laut Quellen vermutlich Entscheider/Budget-Owner f\\u00fcr das relevante Thema (Rolle nennen, keine Kontaktdaten erfinden).\\n   - Need: Konkreter Bedarf, der sich aus Website/News/Social ableiten l\\u00e4sst.\\n   - Timing: Warum JETZT der richtige Zeitpunkt ist (an einen Trigger aus den News koppeln, wenn m\\u00f6glich).\\n   - Pain Points: 1-3 konkrete B2B-Pain-Points aus dieser Liste, die am besten zur Datenlage passen (nur w\\u00e4hlen, was durch Quellen gest\\u00fctzt ist):\\n     * Effizienz/Kostendruck in operativen Prozessen\\n     * Skalierungsdruck durch schnelles Wachstum\\n     * Legacy-Systeme/fehlende Digitalisierung\\n     * Fachkr\\u00e4ftemangel/Personalengp\\u00e4sse\\n     * Compliance-/Regulatorik-Druck\\n     * Wettbewerbsdruck durch Marktver\\u00e4nderung\\n   - Icebreaker: 1-2 S\\u00e4tze, die konkret an einen News-Trigger oder Social-Insight ankn\\u00fcpfen. Kein generisches \\\"Ich habe gesehen, dass Sie im B2B-Bereich t\\u00e4tig sind.\\\"\\n6. Confidence ehrlich einsch\\u00e4tzen: \\\"niedrig\\\", wenn raw_website_text d\\u00fcnn ist und kaum News vorliegen; \\\"hoch\\\" nur bei mehreren belastbaren Quellen.\\n7. data_gaps auflisten: Was fehlt, damit der KAM gezielt nachrecherchieren oder den Kontakt selbst erg\\u00e4nzen kann.\\n\\n## Ausgabeformat\\nAntworte AUSSCHLIESSLICH mit einem einzigen validen JSON-Objekt nach dem Schema AccountEnrichmentResponse (siehe webhook-payload-schema.json). Kein Markdown, keine Codeblock-Fences, kein erkl\\u00e4render Text davor oder danach \\u2014 die Ausgabe wird direkt maschinell geparst und in Notion-Felder geschrieben.\\n\\nWenn raw_website_text und raw_news_items beide zu d\\u00fcnn f\\u00fcr eine seri\\u00f6se Analyse sind (z.B. < 200 Zeichen Website-Text und 0 News-Items), setze confidence auf \\\"niedrig\\\", f\\u00fclle nur die Felder, die sich seri\\u00f6s bef\\u00fcllen lassen, und trage den Rest der data_gaps entsprechend ein \\u2014 erfinde niemals Inhalte, um Felder aufzuf\\u00fcllen.\",\n  \"messages\": [ { \"role\": \"user\", \"content\": JSON.stringify($json) } ],\n  \"output_config\": { \"format\": { \"type\": \"json_schema\", \"schema\": {\"type\": \"object\", \"properties\": {\"branche\": {\"type\": \"string\", \"enum\": [\"SaaS / Software\", \"Industrie / Produktion\", \"Handel / E-Commerce\", \"Finanzdienstleistung\", \"Logistik\", \"Gesundheitswesen\", \"\\u00d6ffentlicher Sektor\", \"Sonstige\"]}, \"mitarbeiterzahl_schaetzung\": {\"type\": [\"integer\", \"null\"]}, \"key_metrics_ansprechpartner\": {\"type\": \"string\"}, \"news_trigger_events\": {\"type\": \"string\"}, \"pitch_ansatz\": {\"type\": \"object\", \"properties\": {\"budget\": {\"type\": \"string\"}, \"authority\": {\"type\": \"string\"}, \"need\": {\"type\": \"string\"}, \"timing\": {\"type\": \"string\"}, \"pain_points\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}, \"maxItems\": 3}, \"icebreaker\": {\"type\": \"string\"}}, \"required\": [\"budget\", \"authority\", \"need\", \"timing\", \"pain_points\", \"icebreaker\"], \"additionalProperties\": false}, \"confidence\": {\"type\": \"string\", \"enum\": [\"hoch\", \"mittel\", \"niedrig\"]}, \"data_gaps\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}}, \"required\": [\"branche\", \"mitarbeiterzahl_schaetzung\", \"key_metrics_ansprechpartner\", \"news_trigger_events\", \"pitch_ansatz\", \"confidence\", \"data_gaps\"], \"additionalProperties\": false} } }\n} }}",
+        "options": {}
+      },
+      "id": "claude-analyze",
+      "name": "Claude – Account analysieren",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        580,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Extrahiert den Text-Block aus der Claude-Response und parsed ihn als JSON.\n// Fällt bei Parse-Fehlern auf ein gültiges Fallback-Objekt zurück (crasht nie).\nconst response = $json;\nlet text = '';\ntry {\n  const block = (response.content || []).find((b) => b.type === 'text');\n  text = block ? block.text : '';\n} catch (e) {\n  text = '';\n}\n\nlet analysis;\ntry {\n  analysis = JSON.parse(text);\n} catch (e) {\n  analysis = {\n    branche: 'Sonstige',\n    mitarbeiterzahl_schaetzung: null,\n    key_metrics_ansprechpartner: '',\n    news_trigger_events: '',\n    pitch_ansatz: { budget: '', authority: '', need: '', timing: '', pain_points: [], icebreaker: '' },\n    confidence: 'niedrig',\n    data_gaps: ['KI-Antwort konnte nicht als JSON geparst werden.'],\n  };\n}\n\nreturn [{ json: analysis }];\n"
+      },
+      "id": "parse-claude",
+      "name": "Claude-Antwort parsen",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        820,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Mappt das EnrichmentResult + den Webhook-Input auf Notion-Property-Typen\n// (siehe notion-database-schema.json). Chunked Rich-Text auf <=1900 Zeichen.\nconst analysis = $json;\nconst webhookItem = $('Webhook \\u2013 Neuer Account').first().json;\nconst body = webhookItem.body || webhookItem;\nconst payload = $('LLM-Payload bauen').first().json;\n\nfunction chunkRichText(text) {\n  text = text || '';\n  if (!text) return [];\n  const chunks = [];\n  for (let i = 0; i < text.length; i += 1900) chunks.push(text.slice(i, i + 1900));\n  return chunks.map((c) => ({ type: 'text', text: { content: c } }));\n}\n\nconst pitch = analysis.pitch_ansatz || {};\nconst painPoints = (pitch.pain_points || []).map((p) => `  \\u2022 ${p}`).join('\\n') || '  \\u2022 \\u2014';\nlet pitchText = `BANT-Analyse\\nBudget: ${pitch.budget || ''}\\nAuthority: ${pitch.authority || ''}\\nNeed: ${pitch.need || ''}\\nTiming: ${pitch.timing || ''}\\nPain Points:\\n${painPoints}\\n\\nIcebreaker: ${pitch.icebreaker || ''}`;\n\nconst dataGaps = [...(payload.data_gaps || []), ...(analysis.data_gaps || [])];\nif (dataGaps.length) {\n  pitchText += `\\n\\nDatenl\\u00fccken:\\n${dataGaps.map((g) => `  \\u2022 ${g}`).join('\\n')}`;\n}\n\nconst properties = {\n  'Unternehmensname': { title: [{ type: 'text', text: { content: body.company_name } }] },\n  'Domain / URL': { url: payload.domain },\n  'Branche': { select: { name: analysis.branche || 'Sonstige' } },\n  'Key Metrics & C-Level': { rich_text: chunkRichText(analysis.key_metrics_ansprechpartner) },\n  'Manuelle Social Insights (LinkedIn)': { rich_text: chunkRichText(body.manual_social_insights || '') },\n  'News & Trigger-Events (Auto)': { rich_text: chunkRichText(analysis.news_trigger_events) },\n  'Pitch-Ansatz / Icebreaker (AI)': { rich_text: chunkRichText(pitchText) },\n  'Status': { select: { name: (analysis.confidence && analysis.confidence !== 'niedrig') ? 'Angereichert' : 'In Recherche' } },\n  'Letzte Anreicherung': { date: { start: new Date().toISOString().slice(0, 10) } },\n};\n\nif (analysis.mitarbeiterzahl_schaetzung !== null && analysis.mitarbeiterzahl_schaetzung !== undefined) {\n  properties['Mitarbeiterzahl'] = { number: analysis.mitarbeiterzahl_schaetzung };\n}\n\nreturn [{ json: { properties } }];\n"
+      },
+      "id": "build-notion-props",
+      "name": "Notion-Properties bauen",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1060,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.notion.com/v1/pages",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $env.NOTION_API_KEY }}"
+            },
+            {
+              "name": "Notion-Version",
+              "value": "2022-06-28"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ { \"parent\": { \"database_id\": $env.NOTION_DATABASE_ID }, \"properties\": $json.properties } }}",
+        "options": {}
+      },
+      "id": "notion-create",
+      "name": "Notion – Seite erstellen",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1300,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { \"success\": true, \"notion_page_id\": $json.id } }}",
+        "options": {}
+      },
+      "id": "respond",
+      "name": "Antwort senden",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        1540,
+        300
+      ]
+    }
+  ],
+  "connections": {
+    "Webhook – Neuer Account": {
+      "main": [
+        [
+          {
+            "node": "Jina Reader – Website",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Jina Reader – Website": {
+      "main": [
+        [
+          {
+            "node": "Google News RSS",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google News RSS": {
+      "main": [
+        [
+          {
+            "node": "LLM-Payload bauen",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "LLM-Payload bauen": {
+      "main": [
+        [
+          {
+            "node": "Claude – Account analysieren",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Claude – Account analysieren": {
+      "main": [
+        [
+          {
+            "node": "Claude-Antwort parsen",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Claude-Antwort parsen": {
+      "main": [
+        [
+          {
+            "node": "Notion-Properties bauen",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Notion-Properties bauen": {
+      "main": [
+        [
+          {
+            "node": "Notion – Seite erstellen",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Notion – Seite erstellen": {
+      "main": [
+        [
+          {
+            "node": "Antwort senden",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "templateCredsSetupCompleted": false,
+    "description": "Vertriebswerk Account Intelligence Blueprint: Website (Jina AI Reader) + Google News RSS -> Claude (strukturierter Output) -> Notion-Datenbank 'Account Dossiers'. Import: n8n -> Workflows -> Import from File."
+  },
+  "tags": []
+}

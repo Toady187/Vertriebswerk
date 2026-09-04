@@ -17,6 +17,10 @@ Notion-Datenbank + Automatisierungs-Blueprint für KAM/B2B-Vertriebler, die Acco
 | `generate_setup_guide_pdf.py` | Baut `setup-guide.pdf` aus `setup-guide.md`-Inhalten im Vertriebswerk-CI (Navy/Teal, DM Sans/DM Serif Display) |
 | `setup-guide.pdf` | Fertiges Kunden-PDF, wird beim Kauf mitgeliefert |
 | `assets/` | Fonts + Logo für den PDF-Build (aus vertriebswerk.shop/index.html übernommen) |
+| `blueprint-n8n.json` | Phase 4: Importierbarer n8n-Workflow (Ein-Klick-Import) — bildet den kompletten Flow ab: Webhook → Jina Reader → Google News RSS → Claude (mit eingebettetem System-Prompt) → Notion |
+| `produktkarte-index.html` | Phase 4: Fertiger `.tcard`-Snippet für `index.html`, noch mit Platzhalter-Checkout-URL |
+| `test_e2e.py` | Phase 4: Manueller Live-Smoke-Test gegen echte Anthropic-/Jina-/Notion-APIs vor Go-Live |
+| `ZIP-MANIFEST.md` | Phase 4: Checkliste, welche Dateien ins Lemon-Squeezy-Auslieferungs-ZIP gehören (und welche nicht) |
 
 ## Notion-Datenbank "Account Dossiers"
 
@@ -99,6 +103,35 @@ uvicorn pipeline:app --reload
 **Hinweis zur Modellwahl:** Die Aufgabenstellung nannte `claude-3-5-sonnet-20241022` — ein
 mittlerweile veraltetes/vsl. abgekündigtes Modell. `pipeline.py` verwendet standardmäßig die
 aktuelle Sonnet-Generation (`claude-sonnet-5`), überschreibbar via `ANTHROPIC_MODEL`.
+
+## Phase 4: Go-Live-Vorbereitung
+
+**n8n-Import statt Handaufbau:** `blueprint-n8n.json` bildet den kompletten Flow (10 Nodes:
+Webhook → Jina Reader → Google News RSS → LLM-Payload bauen → Claude → Antwort parsen →
+Notion-Properties bauen → Notion-Seite erstellen → Antwort senden) fertig verdrahtet ab,
+inklusive des vollständigen System-Prompts. Import über **n8n → Workflows → Import from
+File**; danach nur noch `ANTHROPIC_API_KEY`, `NOTION_API_KEY`, `NOTION_DATABASE_ID` als
+Umgebungsvariablen der n8n-Instanz setzen. Make.com bleibt beim manuellen Aufbau (siehe
+oben) — Make-Blueprints sind kontogebunden und nicht portabel exportierbar.
+
+**Vor dem Verkaufsstart real testen:** `test_e2e.py` führt `run_pipeline()` gegen echte
+Anthropic-/Jina-/Notion-APIs aus (kein Mocking) und prüft das Ergebnis gegen eine Reihe von
+Smoke-Test-Kriterien (Branche klassifiziert, Icebreaker nicht leer, Notion-Page-ID
+zurückgegeben, …). Läuft standardmäßig als Trockenlauf (prüft nur Env-Vars); echter Aufruf
+nur mit explizitem `--confirm`:
+
+```bash
+python3 test_e2e.py --company "Deine Test GmbH" --domain example.com --confirm
+```
+
+Auf eine **Test-Notion-Datenbank** zeigen lassen (`NOTION_DATABASE_ID`), nicht auf
+Produktivdaten — das Skript legt bei Erfolg eine echte Seite an.
+
+**Shop-Integration:** `produktkarte-index.html` enthält den fertigen `.tcard`-Snippet für
+`index.html` (Platzhalter `[[LEMON_SQUEEZY_CHECKOUT_URL]]` nach Anlage des Lemon-Squeezy-
+Produkts ersetzen). `ZIP-MANIFEST.md` listet exakt, welche Dateien in das
+Kunden-Auslieferungs-ZIP gehören — bewusst eine kleinere Teilmenge als dieser Ordner, da
+z. B. `README.md`, `shop-produktseite.md` und das PDF-Build-Tooling interne Dokumente sind.
 
 ## Design-Entscheidungen
 

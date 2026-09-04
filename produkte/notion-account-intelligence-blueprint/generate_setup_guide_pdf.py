@@ -39,6 +39,11 @@ TINT = colors.Color(27 / 255, 42 / 255, 74 / 255, alpha=0.06)
 pdfmetrics.registerFont(TTFont("DMSans", os.path.join(ASSETS, "fonts", "DMSans-Regular.ttf")))
 pdfmetrics.registerFont(TTFont("DMSans-Bold", os.path.join(ASSETS, "fonts", "DMSans-Bold.ttf")))
 pdfmetrics.registerFont(TTFont("DMSerif", os.path.join(ASSETS, "fonts", "DMSerifDisplay-Regular.ttf")))
+# Ohne Family-Mapping ignoriert reportlab <b>/<i>-Tags bei custom TTFs (fällt lautlos
+# auf unfette Darstellung zurück) — Mapping macht <b> in DMSans-Absätzen tatsächlich fett.
+pdfmetrics.registerFontFamily(
+    "DMSans", normal="DMSans", bold="DMSans-Bold", italic="DMSans", boldItalic="DMSans-Bold",
+)
 
 PAGE_W, PAGE_H = A4
 MARGIN = 2.2 * cm
@@ -231,7 +236,8 @@ story.extend(checklist([
 # --- Schritt 1 ---
 story.append(eyebrow_heading("Schritt 1", "Notion-Template duplizieren"))
 story.extend(numbered_list([
-    "Öffne den Duplizieren-Link aus deiner Bestell-E-Mail.",
+    "Öffne den Notion-Duplizieren-Link: <font name='DMSans-Bold'>[[NOTION_DUPLICATE_LINK]]</font> "
+    "— du findest ihn auch in deiner Bestell-E-Mail.",
     "Klicke oben rechts auf <b>Duplicate</b> und wähle deinen Ziel-Workspace.",
     "Die Datenbank <b>„Account Dossiers“</b> liegt danach in deinem Workspace — "
     "verschiebe sie an die gewünschte Stelle (z.&nbsp;B. unter dein Sales-Hub).",
@@ -265,18 +271,31 @@ story.extend(numbered_list([
     "Server hinter einem Reverse Proxy betreiben.",
 ]))
 
-story.append(Paragraph("Weg B — Make.com oder n8n, ohne eigenes Hosting", styles["h3"]))
+story.append(Paragraph("Weg B — n8n oder Make.com, ohne eigenes Hosting", styles["h3"]))
+story.append(Paragraph("<b>n8n (empfohlen — Ein-Klick-Import):</b>", styles["body"]))
 story.extend(numbered_list([
-    "Lege ein neues Szenario/Workflow an mit einem <b>Webhook-Trigger</b>.",
-    "Füge ein <b>HTTP-Request-Modul</b> für den Website-Abruf hinzu: "
-    "<font name='DMSans-Bold'>GET https://r.jina.ai/{domain}</font>",
-    "Füge ein zweites <b>HTTP-Request-Modul</b> für die News hinzu: "
-    "<font name='DMSans-Bold'>GET https://news.google.com/rss/search?q={firmenname}&amp;hl=de&amp;gl=DE&amp;ceid=DE:de</font>",
-    "Füge ein <b>LLM-Modul</b> (Claude oder GPT) hinzu und füge den System-Prompt aus "
-    "<font name='DMSans-Bold'>system-prompt.md</font> unverändert ein.",
-    "Füge ein <b>Notion-Modul „Create a Database Item“</b> hinzu und verbinde es mit "
-    "deinem Notion-Account aus Schritt 1.",
+    "n8n öffnen > <b>Workflows > Import from File</b> (oder Strg/Cmd+O) > "
+    "<font name='DMSans-Bold'>blueprint-n8n.json</font> aus deinem Download auswählen.",
+    "n8n zeigt den kompletten Workflow fertig verdrahtet — Webhook, Website-Abruf, "
+    "News-RSS, Claude-Analyse (System-Prompt bereits enthalten) und Notion-Rückschreibung.",
+    "Trage <font name='DMSans-Bold'>ANTHROPIC_API_KEY</font>, "
+    "<font name='DMSans-Bold'>NOTION_API_KEY</font> und "
+    "<font name='DMSans-Bold'>NOTION_DATABASE_ID</font> als Umgebungsvariablen deiner "
+    "n8n-Instanz ein (<b>Settings > Environment Variables</b>) — oder ersetze die "
+    "<font name='DMSans-Bold'>$env...</font>-Ausdrücke direkt in den beiden "
+    "HTTP-Request-Knoten durch n8n-Credentials.",
+    "Workflow aktivieren, Webhook-URL kopieren, an deinen Trigger (Notion-Button, "
+    "Scheduler o.&nbsp;Ä.) hängen.",
 ]))
+story.append(Paragraph("<b>Make.com:</b>", styles["body"]))
+story.append(Paragraph(
+    "Ein Ein-Klick-Import ist bei Make.com anders als bei n8n nicht möglich — "
+    "Make-Blueprints sind an das jeweilige Konto gebunden. Baue die 5 Module stattdessen "
+    "manuell nach: Webhook-Trigger, zwei HTTP-Request-Module (Jina Reader + Google News "
+    "RSS), ein LLM-Modul mit dem System-Prompt aus system-prompt.md, ein Notion-Modul "
+    "„Create a Database Item“.",
+    styles["body"],
+))
 story.append(Paragraph(
     "Ausführliche Modul-für-Modul-Beschreibung inkl. Feldmapping: siehe README.md im Blueprint-Ordner.",
     styles["body_muted"],
@@ -291,17 +310,17 @@ key_table = Table(
         [
             Paragraph("ANTHROPIC_API_KEY", styles["table_cell_mono"]),
             Paragraph("console.anthropic.com > API Keys > Create Key", styles["table_cell"]),
-            Paragraph(".env (Python) oder Connection im LLM-Modul (Make/n8n)", styles["table_cell"]),
+            Paragraph(".env (Python) · n8n Env Variables · LLM-Modul-Connection (Make)", styles["table_cell"]),
         ],
         [
             Paragraph("NOTION_API_KEY", styles["table_cell_mono"]),
             Paragraph("Notion > My Integrations > Integration Token", styles["table_cell"]),
-            Paragraph(".env (Python) oder Notion-Connection (Make/n8n)", styles["table_cell"]),
+            Paragraph(".env (Python) · n8n Env Variables · Notion-Connection (Make)", styles["table_cell"]),
         ],
         [
             Paragraph("NOTION_DATABASE_ID", styles["table_cell_mono"]),
             Paragraph("Aus Schritt 1.6", styles["table_cell"]),
-            Paragraph(".env (Python) oder direkt im Notion-Modul auswählen", styles["table_cell"]),
+            Paragraph(".env (Python) · n8n Env Variables · im Notion-Modul auswählen (Make)", styles["table_cell"]),
         ],
     ],
     colWidths=[4.8 * cm, 5.1 * cm, 6.2 * cm],
