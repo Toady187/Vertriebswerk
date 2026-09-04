@@ -1,0 +1,9 @@
+httpx>=0.27
+feedparser>=6.0
+anthropic>=0.40
+pydantic>=2.7
+
+# Nur nötig für den lokalen FastAPI-Betrieb (uvicorn pipeline:app).
+# Für reinen AWS-Lambda-Einsatz (pipeline.lambda_handler) können beide entfallen.
+fastapi>=0.110
+uvicorn>=0.29
