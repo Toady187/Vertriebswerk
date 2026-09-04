@@ -21,7 +21,7 @@ Halte bereit:
 
 ## Schritt 1 — Notion-Template duplizieren
 
-1. Öffne den Notion-Duplizieren-Link: **[[NOTION_DUPLICATE_LINK]]** — du findest ihn auch in deiner Bestell-E-Mail.
+1. Öffne den Notion-Duplizieren-Link: **https://rattle-lemur-713.notion.site/d823f487815940ad8d8f4a76877a6c55?v=884215b8692c40e591d2b66922b78192&pvs=73** — du findest ihn auch in deiner Bestell-E-Mail.
 2. Klicke oben rechts auf **Duplicate** und wähle deinen Ziel-Workspace.
 3. Die Datenbank **„Account Dossiers"** liegt danach in deinem Workspace — verschiebe sie an die gewünschte Stelle (z. B. unter dein Sales-Hub).
 4. Öffne **Settings → Connections** in Notion und lege eine neue Integration an (oder nutze eine bestehende): *My Integrations → New Integration → nur „Read/Update/Insert content"-Rechte nötig.*

@@ -2,10 +2,11 @@
 
 Ziel-Datei: **`Account-Intelligence-Blueprint.zip`**
 
-⚠️ **Vor dem Packen zwingend erledigen:** `[[NOTION_DUPLICATE_LINK]]` in `setup-guide.md`
-UND `generate_setup_guide_pdf.py` durch den echten Notion-Duplizieren-Link ersetzen, dann
-`python3 generate_setup_guide_pdf.py` neu laufen lassen. Ein ZIP mit Platzhalter-Link
-darf nicht ausgeliefert werden.
+✅ **Notion-Duplizieren-Link ist gesetzt:** `https://rattle-lemur-713.notion.site/d823f487815940ad8d8f4a76877a6c55` —
+in `setup-guide.md` und `generate_setup_guide_pdf.py` (Konstante `NOTION_TEMPLATE_DUPLICATE_URL`) eingetragen,
+`setup-guide.pdf` ist damit neu kompiliert. Einziger noch offener Platzhalter im Repo ist
+`[[LEMON_SQUEEZY_CHECKOUT_URL]]` in `produktkarte-index.html` — betrifft nur die Website-Karte,
+nicht das ZIP.
 
 ## Im ZIP enthalten (Kunden-Deliverables)
 
@@ -45,7 +46,8 @@ cd /tmp/aib-release && zip -r Account-Intelligence-Blueprint.zip . -x ".*"
 
 ## Vor dem Upload zu Lemon Squeezy prüfen
 
-- [ ] ZIP entpackt sich sauber, alle 8 Dateien vorhanden, keine Platzhalter-Reste (`grep -r "\[\[" .` sollte leer sein)
-- [ ] `Setup-Guide.pdf` öffnet sich und zeigt den echten Notion-Link, nicht `[[NOTION_DUPLICATE_LINK]]`
+- [ ] ZIP entpackt sich sauber, alle 8 Dateien vorhanden, keine Platzhalter-Reste (`grep -r "\[\[" .` im entpackten ZIP sollte leer sein)
+- [ ] `Setup-Guide.pdf` öffnet sich und zeigt `https://rattle-lemur-713.notion.site/...` als Link
+- [ ] Link im PDF selbst einmal öffnen (Inkognito-Fenster) und prüfen, dass ein "Duplicate"-Button für fremde Besucher erscheint
 - [ ] `.env.example` enthält keine echten Keys (nur leere Platzhalter-Zeilen)
 - [ ] Lemon-Squeezy-Produktbeschreibung nutzt den Text aus `shop-produktseite.md` (wird separat gepflegt, nicht mit ausgeliefert)

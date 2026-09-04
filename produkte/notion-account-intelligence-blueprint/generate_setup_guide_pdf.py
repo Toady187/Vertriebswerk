@@ -24,12 +24,15 @@ ASSETS = os.path.join(BASE_DIR, "assets")
 OUTPUT_PATH = os.path.join(BASE_DIR, "setup-guide.pdf")
 
 # Öffentlicher Notion-"Duplicate as template"-Link für die Account-Dossiers-Datenbank.
-# Kann nicht über die Notion-API gesetzt werden (Share-to-Web + "Allow duplicate as
-# template" ist ausschließlich eine manuelle UI-Aktion) — deshalb hier als einzige
-# Quelle der Wahrheit gepflegt und per Env-Var überschreibbar, statt im Fließtext
-# verstreut. Solange kein echter Link vorliegt, bleibt der Platzhalter stehen; PDF und
-# setup-guide.md MÜSSEN denselben Wert zeigen.
-NOTION_TEMPLATE_DUPLICATE_URL = os.getenv("NOTION_TEMPLATE_DUPLICATE_URL", "[[NOTION_DUPLICATE_LINK]]")
+# Kann nicht über die Notion-API gesetzt werden (Share-to-Web + "Die Seite als Vorlage
+# duplizieren" ist ausschließlich eine manuelle UI-Aktion unter dem "Veröffentlichen"-Tab)
+# — deshalb hier als einzige Quelle der Wahrheit gepflegt und per Env-Var überschreibbar.
+# PDF und setup-guide.md MÜSSEN denselben Wert zeigen.
+NOTION_TEMPLATE_DUPLICATE_URL = os.getenv(
+    "NOTION_TEMPLATE_DUPLICATE_URL",
+    "https://rattle-lemur-713.notion.site/d823f487815940ad8d8f4a76877a6c55"
+    "?v=884215b8692c40e591d2b66922b78192&pvs=73",
+)
 
 # ---------------------------------------------------------------------------
 # Brand: Farben & Fonts (aus dem CSS von vertriebswerk.shop/index.html übernommen)
