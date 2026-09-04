@@ -9,6 +9,9 @@ Notion-Datenbank + Automatisierungs-Blueprint für KAM/B2B-Vertriebler, die Acco
 | `notion-database-schema.json` | Notion API Property-Schema für die Datenbank "Account Dossiers" |
 | `webhook-payload-schema.json` | JSON Schema (Request an LLM + Response vom LLM) für den Make/n8n-Webhook |
 | `system-prompt.md` | Fertiger System-Prompt für den LLM-Knoten inkl. Integrationshinweisen |
+| `pipeline.py` | Phase 2: Python-Kern-Modul, das den kompletten Datenfluss selbst ausführt (Website + News → Claude → Notion) |
+| `requirements.txt` | Python-Abhängigkeiten für `pipeline.py` |
+| `.env.example` | Vorlage für die benötigten Umgebungsvariablen |
 
 ## Notion-Datenbank "Account Dossiers"
 
@@ -54,6 +57,43 @@ Notion-Datenbank + Automatisierungs-Blueprint für KAM/B2B-Vertriebler, die Acco
      Letzte Anreicherung → heute)
    → "Manuelle Social Insights" NIE überschreiben — nur lesend einbeziehen
 ```
+
+## Phase 2: Python-Pipeline (`pipeline.py`)
+
+Ersetzt die Schritte 2–6 des obigen Make/n8n-Flows durch ein eigenständiges Python-Modul, das
+als FastAPI-Endpoint oder AWS-Lambda-Handler läuft. Der Trigger (Notion-Button, Scheduler) bleibt
+weiterhin Sache von Make/n8n oder Notion Automations — die schickt nur noch
+`{company_name, domain, manual_social_insights?, existing_pitch_notes?}` an die Pipeline.
+
+**Ablauf:** Input-Validierung (Pydantic) → `fetch_website_text()` (Jina AI Reader) und
+`fetch_news()` (Google News RSS) parallel-fehlerresistent → `analyze_with_claude()` (Anthropic
+Messages API, `client.messages.parse()` mit `EnrichmentResult`-Pydantic-Modell als
+`output_format`, damit der Output garantiert schema-konform zurückkommt) → `create_notion_page()`
+(POST auf `/v1/pages`, legt einen neuen Eintrag in der Datenbank an).
+
+**Fehlerresistenz:** Jeder Netzwerk-/API-Aufruf ist einzeln abgesichert — schlägt Jina AI Reader
+oder der RSS-Feed fehl, läuft die Pipeline mit leeren Rohdaten weiter und trägt die Ursache in
+`data_gaps` ein; schlägt der Anthropic-Call fehl (Rate-Limit, Auth, Netzwerk, ungültiges JSON),
+liefert `analyze_with_claude()` ein `EnrichmentResult` mit `confidence: "niedrig"` statt zu
+crashen. Nur ein endgültig fehlgeschlagener Notion-Schreibvorgang führt zu `success: false` in
+der Antwort — alle anderen Fehlerklassen werden intern aufgefangen.
+
+**Betrieb:**
+
+```bash
+pip install -r requirements.txt
+cp .env.example .env   # ANTHROPIC_API_KEY, NOTION_API_KEY, NOTION_DATABASE_ID setzen
+
+# Lokal als FastAPI-Server:
+uvicorn pipeline:app --reload
+# POST http://localhost:8000/enrich  {"company_name": "...", "domain": "..."}
+
+# Als AWS Lambda: Handler pipeline.lambda_handler, Event-Body = obiges JSON.
+```
+
+**Hinweis zur Modellwahl:** Die Aufgabenstellung nannte `claude-3-5-sonnet-20241022` — ein
+mittlerweile veraltetes/vsl. abgekündigtes Modell. `pipeline.py` verwendet standardmäßig die
+aktuelle Sonnet-Generation (`claude-sonnet-5`), überschreibbar via `ANTHROPIC_MODEL`.
 
 ## Design-Entscheidungen
 
